@@ -1,3 +1,4 @@
+import {starTwinkle} from './nature-config.js';
 import Phaser from 'phaser';
 import {outfitKey} from './wardrobe-art.js';
 import {SESSION} from './session-config.js';
@@ -13,7 +14,7 @@ export class EntryScene extends Phaser.Scene{
  update(time,delta){if(this.finished||document.hidden)return;const dt=Math.min(delta,80)/1000;this.elapsed+=dt;this.accumulator+=dt;if(this.accumulator>=1/30){this.accumulator%=1/30;this.frame()}if(this.elapsed>=SESSION.duration)this.finish()}
  frame(){if(!this.c)return;const c=this.c,w=this.w,h=this.h,t=this.elapsed,q=Math.min(1,t/SESSION.duration),v=this.variant,progress=v===2?Math.min(1,t/4.8):0,a=skyPalette(v===2?lerp(4.1,7.6,progress):22);const rect=(x,y,ww,hh,col)=>{c.fillStyle=col;c.fillRect(Math.round(x),Math.round(y),Math.max(1,ww),Math.max(1,hh))},poly=(pts,col)=>{c.fillStyle=col;c.beginPath();pts.forEach(([x,y],i)=>i?c.lineTo(Math.round(x),Math.round(y)):c.moveTo(Math.round(x),Math.round(y)));c.closePath();c.fill()};c.globalAlpha=1;
   for(let y=0;y<h;y+=2)rect(0,y,w,2,mix(a.top,a.bottom,Math.min(1,y/(h*.72))));
-  for(const s of this.specks){c.globalAlpha=a.night*(.35+.4*Math.sin(t*s.speed+s.phase)**2);rect(s.x,s.y,s.i%13===0?2:1,1,'#edddc4')}c.globalAlpha=1;
+  for(const s of this.specks){c.globalAlpha=a.night*starTwinkle(t,s.phase,s.speed);rect(s.x,s.y,s.i%13===0?2:1,1,'#edddc4')}c.globalAlpha=1;
   if(v!==2){const mx=174,my=h*.20;c.globalAlpha=.05;pixelEllipse({r:rect},mx,my,19,19,'#ffe1ab');c.globalAlpha=1;for(let y=-10;y<=10;y++)for(let x=-10;x<=10;x++)if(x*x+y*y<100&&(x-4)*(x-4)+(y+3)*(y+3)>80)rect(mx+x,my+y,1,1,'#f9ddb0')}
   else{const sy=lerp(h*.76,h*.50,Math.max(0,(progress-.3)/.7));c.globalAlpha=.07;pixelEllipse({r:rect},167,sy,25,25,'#ffdeaa');c.globalAlpha=1;pixelEllipse({r:rect},167,sy,11,11,'#ffe4b3')}
   // Separate mountain silhouettes, with different lighting, behind the original-style roof.

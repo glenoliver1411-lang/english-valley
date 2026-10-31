@@ -1,3 +1,4 @@
+import {NATURE,starTwinkle} from './nature-config.js';
 // Original star art: deterministic dust, curved star clouds and faceted points.
 // Coordinates remain in the 216px landscape; distant stars use a half-pixel grid.
 const TAU=Math.PI*2;
@@ -40,20 +41,19 @@ export function paintMilkyWay(w,h){
 
 export class Starlight {
  constructor(w,h){
-  this.w=w;this.h=h;this.stars=createStarField(w,h);
+  this.w=w;this.h=h;this.stars=createStarField(w,h);this.twinkles=this.stars.filter((s,i)=>s.size>.8||i%9===0).slice(0,NATURE.twinkle.brightCount);const animated=new Set(this.twinkles);
   this.layers=Array.from({length:3},(_,layer)=>{
    const canvas=document.createElement('canvas');canvas.width=w*2;canvas.height=h*2;const c=canvas.getContext('2d');
-   for(const s of this.stars){if(s.layer!==layer)continue;c.globalAlpha=s.light*(s.size>.5?.56:.77);c.fillStyle=s.color;c.fillRect(Math.round(s.x*2),Math.round(s.y*2),s.size>.85?2:1,1);if(s.size>1){c.globalAlpha=s.light*.08;c.fillRect(Math.round(s.x*2)-2,Math.round(s.y*2)-1,5,3)}}
+   for(const s of this.stars){if(s.layer!==layer||animated.has(s))continue;c.globalAlpha=s.light*(s.size>.5?.56:.77);c.fillStyle=s.color;c.fillRect(Math.round(s.x*2),Math.round(s.y*2),s.size>.85?2:1,1);if(s.size>1){c.globalAlpha=s.light*.08;c.fillRect(Math.round(s.x*2)-2,Math.round(s.y*2)-1,5,3)}}
    return canvas;
   });
-  this.twinkles=this.stars.filter((s,i)=>s.size>.8||i%19===0).slice(0,135);
+
  }
  draw(c,{time=0,night=1,reveal=1,parallax=0,reduced=false}){
   if(night<.003)return;
   const alpha=night*(.44+.56*reveal);
   for(let i=0;i<3;i++){c.globalAlpha=alpha*(i===0?.69:1);c.drawImage(this.layers[i],Math.round(parallax*(.045+i*.085)*2)/2,0,this.w,this.h)}
-  const count=reduced?44:this.twinkles.length;
-  for(let i=0;i<count;i++){const s=this.twinkles[i],wave=.48+.32*Math.sin(time*s.speed+s.phase)+.2*Math.sin(time*s.speed*.39+s.phase*2.3),x=snap(s.x+parallax*(.045+s.layer*.085)),y=snap(s.y);c.globalAlpha=alpha*wave*s.light;c.fillStyle=s.color;c.fillRect(x,y,.5,.5);if(s.size>.85){c.globalAlpha*=.23;c.fillRect(x-.5,y,1.5,.5);c.fillRect(x,y-.5,.5,1.5)}}
+  for(let i=0;i<this.twinkles.length;i++){const s=this.twinkles[i],animated=!reduced||i<NATURE.twinkle.lowAnimated,wave=animated?starTwinkle(time,s.phase,s.speed):.27,x=snap(s.x+parallax*(.045+s.layer*.085)),y=snap(s.y),light=alpha*wave*Math.min(1,.35+s.light*.9);c.globalAlpha=light;c.fillStyle=s.color;c.fillRect(x,y,.5,.5);if(animated&&wave>.62){c.globalAlpha=light*.24;c.fillRect(x-.5,y,1.5,.5);c.fillRect(x,y-.5,.5,1.5);if(s.size>.85&&wave>.86){c.globalAlpha=light*.16;c.fillRect(x-1,y,2.5,.5);c.fillRect(x,y-1,.5,2.5)}}}
   c.globalAlpha=1;
  }
 }
@@ -61,7 +61,7 @@ export class Starlight {
 // A luminous jewel, with a cool edge, warm heart and very fine diffraction rays.
 // No circular badges: stars stay part of the sky, including the seven named stars.
 export function drawJewel(c,x,y,{alpha=1,time=0,phase=0,major=false,color='#cbdcf4'}={}){
- x=snap(x);y=snap(y);const breath=.8+.12*Math.sin(time*.57+phase)+.08*Math.sin(time*.23+phase*1.7),a=alpha*breath;
+ x=snap(x);y=snap(y);const pulse=starTwinkle(time,phase,.22),breath=major?.28+.72*pulse:.12+.88*pulse,a=alpha*breath;
  c.fillStyle=color;c.globalAlpha=a*.018;c.fillRect(x-4,y-1.5,8.5,3.5);c.fillRect(x-1.5,y-4,3.5,8.5);
  c.globalAlpha=a*.055;c.fillRect(x-2,y-1,4.5,2.5);c.fillRect(x-1,y-2,2.5,4.5);
  c.globalAlpha=a*.44;c.fillRect(x-.5,y-1.5,1.5,3.5);c.fillRect(x-1.5,y-.5,3.5,1.5);

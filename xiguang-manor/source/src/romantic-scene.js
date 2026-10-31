@@ -1,3 +1,6 @@
+import {FlowerPickupEffects} from './flower-effects.js';
+import {WindMeadow,grassMask} from './wind-grass.js';
+import {starTwinkle} from './nature-config.js';
 import {retreatRoute} from './retreat-navigation.js';
 import Phaser from 'phaser';
 import {controls} from './game.js';
@@ -12,7 +15,7 @@ export class RomanticScene extends Phaser.Scene {
  create(){
   this.cameras.main.setBackgroundColor('#493e52');this.repaint();
   this.player=this.add.sprite(216,785,outfitKey(this.profile),12).setOrigin(.5,.85).setScale(1.25);
-  this.cat=this.add.image(251,772,'cat').setScale(1.1);this.g=this.add.graphics();
+  this.cat=this.add.image(251,772,'cat').setScale(1.1);this.g=this.add.graphics();this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(6);this.meadow=this.place==='garden'?new WindMeadow(432,850,{mask:grassMask(this.textures.get('retreat-night').getSourceImage(),['#3d5557','#49645e','#617970']),minY:310,maxY:800,seed:407}):null;
   this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.07,.07,0,40);this.cameras.main.fadeIn(700,35,35,53);
   this.keys=this.input.keyboard.createCursorKeys();this.extra=this.input.keyboard.addKeys('W,A,S,D');
   this.input.on('pointerdown',p=>{if(this.api.blocked()||this.quiet)return;const hit=this.props().map(v=>({...v,d:Math.hypot(p.worldX-v.x,p.worldY-v.y)})).sort((a,b)=>a.d-b.d)[0];if(hit?.d<32){if(Math.hypot(hit.x-this.player.x,hit.y-this.player.y)<100)this.api.action(hit);else this.walkTo(this.standPoint(hit),hit)}else if(!this.blocked(p.worldX,p.worldY)){this.walkTo({x:p.worldX,y:p.worldY})}});
@@ -54,12 +57,14 @@ export class RomanticScene extends Phaser.Scene {
   else{if(this.target){this.target=null;this.path=[];this.selected=null}this.idle()}
  }
 
+ flowerPickup(kind,index){this.pickups.emit(kind,87+index%2*67,378+Math.floor(index/2)*61,{x:this.player.x+10,y:this.player.y-28})}
  update(time,delta){
   if(document.hidden||this.api.blocked()){this.stopMoving();return;}const dt=Math.min(delta,60)/1000;this.elapsed+=dt;const w=this.profile.romance;
   if(this.quiet)this.idle();else{this.movePlayer(dt);if(!this.quiet&&!this.api.blocked())this.api.near(this.nearest())}
-  if(delta>45)this.slow++;else this.slow=Math.max(0,this.slow-.25);const reduced=this.profile.scenery.lowEffects||this.slow>100;this.frameTime+=dt;if(this.frameTime<1/(reduced?16:30))return;this.frameTime=0;
+  if(delta>45)this.slow++;else this.slow=Math.max(0,this.slow-.25);const reduced=this.profile.scenery.lowEffects||this.slow>100;this.pickups.update(dt,{reduced,still:w.reducedMotion});this.meadow?.update(dt,{reduced,still:w.reducedMotion});this.frameTime+=dt;if(this.frameTime<1/(reduced?16:30))return;this.frameTime=0;
   if(w.theme!==this.lastPaint)this.repaint();const a=skyPalette(this.profile.scenery.clock),day=a.day,t=w.reducedMotion?0:this.elapsed;if(this.profile.scenery.clock>=17&&this.profile.scenery.clock<20){this.background.setTexture('retreat-dusk');this.blend.setAlpha(0)}else{this.background.setTexture('retreat-night');this.blend.setAlpha(day)}
   const g=this.g;g.clear();const rect=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),ww,hh)},ellipse=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillEllipse(x,y,ww,hh)};
+  this.meadow?.draw(rect,{day,player:this.player});const fg=this.pickupGraphics;fg.clear();this.pickups.draw((x,y,w,h,color,alpha)=>{fg.fillStyle(parseInt(color.slice(1),16),alpha);fg.fillRect(Math.round(x),Math.round(y),w,h)});
   ellipse(this.player.x+3,this.player.y+2,25,6,'#384955',.12);ellipse(this.cat.x+4,this.cat.y+15,26,5,'#384955',.1);
   // The cat is always safe. It follows, chases a butterfly, stretches, then naps.
   const cycle=t%47,follow=w.catFollow&&!this.quiet;
@@ -83,6 +88,7 @@ export class RomanticScene extends Phaser.Scene {
    // A handful of moving hearth pixels cast local warm light across the floor.
    for(let i=0;i<6;i++){const flame=8+Math.sin(t*4+i*2)*4;rect(51+i*6,309-flame,4,flame,i%2?'#efb77c':'#e38e72');rect(52+i*6,307-flame*.5,2,flame*.5,'#ffe1a2')}
    if(!reduced){ellipse(72,316,100,68,'#f7bd87',.055);ellipse(79,337,143,80,'#f1c18f',.04)}
+   if(a.night>.05)for(let i=0;i<24;i++)rect(140+i*47%151,90+i*19%66,1,1,i%4?'#e5d9e7':'#f4d9b3',a.night*starTwinkle(t,i*1.73,.2+i%5*.1));
    // Window glass is the only weather area inside; rain never falls through the roof.
    if(w.weather==='rain')for(let i=0;i<(reduced?18:42);i++){const x=134+i*37%163,y=83+(i*29+t*90)%135;rect(x,y,1,5,'#c1c8da',.5)}
    if(w.weather==='snow')for(let i=0;i<(reduced?10:25);i++){const x=134+(i*37+Math.sin(t*.3+i)*4)%162,y=83+(i*29+t*7)%135;rect(x,y,2,2,'#f5e8df',.7)}

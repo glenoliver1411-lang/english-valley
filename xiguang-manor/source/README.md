@@ -60,6 +60,7 @@ node tests/journey.mjs
 node tests/romantic-journey.mjs
 node tests/retreat-view-journey.mjs
 node tests/meteor-journey.mjs
+node tests/nature-journey.mjs
 node tests/candy-journey.mjs
 node tests/adventure-journey.mjs
 node tests/session-journey.mjs
@@ -70,3 +71,5 @@ node tests/romantic-journey.mjs --webkit
 WebKit 所需系统依赖按 Playwright 安装说明配置。开发环境可使用 `WEBKIT_PORTABLE_BIN` 指定可用的 WebKit 启动程序。浏览器自动化使用手机尺寸与真实点击/拖动，并通过仅在开发构建存在的只读测试入口辅助定位；正式站点不暴露入口。模拟不能替代真实手机验收。
 
 素材全部为原创代码像素绘图与 Web Audio 合成，无付费图片 API、下载素材或运行时第三方资源外链。详见 [ASSETS.md](ASSETS.md)。
+
+星光、草风与采花反馈：星星会独立明暗闪烁，草坪上的小草随阵风弯曲，草屑轻轻飘散。原花田和秘密花园的四种花分别触发「蔷薇心语 / 月光涟漪 / 暮紫星环 / 曦光萤舞」，成熟后采摘即可体验。`src/nature-config.js` 可调整闪烁、粒子上限与特效文案。
