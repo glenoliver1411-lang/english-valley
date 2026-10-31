@@ -1,7 +1,7 @@
 // 修改这里即可更换收礼物的人、所有游戏文案与糖果选项。
 export const CONFIG = {
-  recipient: '小曦', title: '曦光庄园', subtitle: '万圣夜的礼物', edition: 'HALLOWEEN · A LITTLE WORLD FOR YOU',
-  letter: '你的名字好美。\n所以，我想送给你一座庄园。\n今天是万圣节，\n我在里面偷偷放了好多糖果，\n还有几只笨笨的小幽灵。\n这里的一切都属于你。\n希望你会喜欢这个小小的世界。',
+  recipient: '小曦', title: '曦光庄园', subtitle: '万圣夜的礼物', edition: 'V4.0 · A LITTLE WORLD FOR YOU',
+  letter: '你的名字好美，所以我送给你一座庄园。\n今天是万圣节，\n我在里面偷偷放了好多糖果。\n晚风、花园，还有一只陪你的猫。\n这里的一切都属于你。\n希望你会喜欢这个小小的世界。',
   ending: '{name}，万圣节快乐！\n这座庄园是送给你的礼物。\n什么时候想来玩，都欢迎你。\n希望你每天都开开心心。',
   ui: {
     dedication:'一份只属于{name}的礼物', letterTag:'TO MY DEAREST', salutation:'亲爱的{name}：', signature:'把月光与甜蜜，都送给你', accept:'接收庄园', resume:'回到我的庄园', letterTitle:'一封悄悄写给你的信', saved:'心意已悄悄保存', saveError:'浏览器暂时无法保存，请保持本页打开',

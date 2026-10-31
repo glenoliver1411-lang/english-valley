@@ -1,3 +1,5 @@
+> 历史版本说明。V4 已移除 NPC、顾客与任务引导，当前功能请参阅 [V4_ROMANTIC_WORLD.md](V4_ROMANTIC_WORLD.md)。
+
 # 月下寻珍、糖果衣橱与同向星雨
 
 ## 体验入口

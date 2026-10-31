@@ -3,3 +3,5 @@ dist/
 *.zip
 *.png
 test-results/
+
+verification/
