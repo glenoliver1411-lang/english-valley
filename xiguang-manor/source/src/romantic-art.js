@@ -2,8 +2,11 @@ import {painter,tree,flower,lamp,fence} from './art.js';
 import {rng,pixelEllipse} from './scenery-art.js';
 import {mix,skyPalette} from './sky-model.js';
 import {ROMANCE} from './romantic-config.js';
+import {paintRoomSurfaces} from './home-art.js';
+import {meadowPainting} from './meadow-art.js';
 // Everything is drawn on the manor's existing two-pixel grid; no remote images.
-export function retreatPainting(place,hour,theme='rose'){
+export function retreatPainting(place,hour,theme='rose',room={}){
+ if(place==='meadow')return meadowPainting(hour);
  const p=painter(432,850),r=p.r,random=rng(311),a=skyPalette(hour),n=a.night,d=a.day;
  if(place==='garden'){
   r(0,0,432,850,mix('#3d5557','#7e987d',d));
@@ -31,6 +34,8 @@ export function retreatPainting(place,hour,theme='rose'){
   r(164,730,7,73,'#977e87');r(265,730,7,73,'#977e87');p.poly([[164,734],[164,713],[178,697],[197,689],[237,689],[257,701],[272,720],[272,738],[265,738],[265,723],[252,707],[234,698],[199,698],[183,706],[171,720],[171,734]],'#bda0a1');
   for(let i=0;i<18;i++){const angle=Math.PI+i/17*Math.PI,x=218+Math.cos(angle)*55,y=738+Math.sin(angle)*46;r(x,y,9,6,'#6f8b77');if(i%3!==0)flower(p,x+4,y-2,i%2?'#d7a7bd':'#c5b0d5')}
   for(let i=0;i<65;i++){const x=45+random()*343,y=320+random()*450;if(x>174&&x<279||x>53&&x<189&&y>375&&y<550)continue;flower(p,x,y,i%4?'#c5a3ba':'#e8d1a9')}
+  // A small side arch opens into the new flower meadow.
+  r(327,711,4,54,'#987b8a');r(382,711,4,54,'#987b8a');p.poly([[325,715],[327,699],[340,690],[366,690],[383,702],[387,716],[382,716],[379,705],[365,696],[342,696],[332,704],[330,715]],'#c6a5af');for(let i=0;i<9;i++){const x=328+i*7,y=708-Math.sin(i/8*Math.PI)*14;r(x,y,7,5,'#789582');flower(p,x+3,y-2,i%2?'#c7b5dc':'#e5bfd0')}
   // Tiny grass star and a pale sweet are discoveries, not quest markers.
   r(300,676,2,8,'#f1ddb4');r(297,679,8,2,'#d3b9dc');r(47,618,8,4,'#e5a3b7');r(45,617,2,6,'#e5c2bb');r(55,617,2,6,'#e5c2bb');
  }else{
@@ -39,6 +44,7 @@ export function retreatPainting(place,hour,theme='rose'){
   for(let y=30;y<274;y+=14){r(26,y,380,1,'#e4c8ae');for(let x=28;x<405;x+=28)r(x+(y%28?12:0),y,1,14,'#c9a696')}
   r(26,267,380,14,'#8e6f7d');r(26,281,380,528,'#a98b87');p.c.save();p.c.beginPath();p.c.rect(26,281,380,528);p.c.clip();for(let y=284;y<808;y+=26)for(let x=27;x<406;x+=54){r(x+(y%52?27:0),y,51,23,(x+y)%4?'#ba9b8f':'#b4958c');r(x+3,y+2,43,1,'#d0b09a')}
   p.c.restore();
+  paintRoomSurfaces(p,room,d);
   // Generous window, with hills outside and curtains in the familiar lavender.
   r(119,69,194,171,'#8c6f7f');r(125,75,182,154,'#ebcdb2');r(131,81,170,139,a.top);
   for(let y=82;y<220;y+=2)r(132,y,168,2,mix(a.top,a.bottom,(y-82)/138));

@@ -1,7 +1,9 @@
 import {ROMANCE} from './romantic-config.js';
-export const romanticDefaults=()=>({treeAwakened:false,personalStar:false,starPlace:'room',theme:'rose',weather:'clear',rainStoppedAt:0,catFollow:false,reducedMotion:false,flowers:[],secrets:[],starWishes:{},beds:Array.from({length:6},()=>({flower:null,wateredAt:0}))});
+import {roomDefaults,sanitizeRoom} from './home-model.js';
+export const romanticDefaults=()=>({room:roomDefaults(),treeAwakened:false,personalStar:false,starPlace:'room',theme:'rose',weather:'clear',rainStoppedAt:0,catFollow:false,reducedMotion:false,flowers:[],secrets:[],starWishes:{},beds:Array.from({length:6},()=>({flower:null,wateredAt:0}))});
 export function sanitizeRomantic(raw){
  const d=romanticDefaults();if(!raw||typeof raw!=='object')return d;
+ d.room=sanitizeRoom(raw.room);
  for(const k of ['treeAwakened','personalStar','catFollow','reducedMotion'])d[k]=!!raw[k];
  d.starPlace=raw.starPlace==='sky'?'sky':'room';
  if(ROMANCE.themes.some(x=>x.id===raw.theme))d.theme=raw.theme;
