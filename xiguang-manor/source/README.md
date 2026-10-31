@@ -58,6 +58,7 @@ npm test
 npx playwright install chromium webkit
 node tests/journey.mjs
 node tests/romantic-journey.mjs
+node tests/retreat-view-journey.mjs
 node tests/candy-journey.mjs
 node tests/adventure-journey.mjs
 node tests/session-journey.mjs

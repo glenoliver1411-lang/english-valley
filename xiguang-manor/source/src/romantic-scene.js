@@ -1,3 +1,4 @@
+import {retreatRoute} from './retreat-navigation.js';
 import Phaser from 'phaser';
 import {controls} from './game.js';
 import {outfitKey} from './wardrobe-art.js';
@@ -7,14 +8,14 @@ import {flowerStage} from './romantic-model.js';
 import {skyPalette,mix} from './sky-model.js';
 export class RomanticScene extends Phaser.Scene {
  constructor(profile,api){super('retreat');this.profile=profile;this.api=api}
- init({place}){this.place=place;this.elapsed=0;this.target=null;this.selected=null;this.facing=3;this.quiet=false;this.awaken=0;this.frameTime=0;this.lastPaint='';this.slow=0}
+ init({place}){this.place=place;this.elapsed=0;this.target=null;this.path=[];this.selected=null;this.facing=3;this.quiet=false;this.awaken=0;this.frameTime=0;this.lastPaint='';this.slow=0}
  create(){
   this.cameras.main.setBackgroundColor('#493e52');this.repaint();
   this.player=this.add.sprite(216,785,outfitKey(this.profile),12).setOrigin(.5,.85).setScale(1.25);
   this.cat=this.add.image(251,772,'cat').setScale(1.1);this.g=this.add.graphics();
   this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.07,.07,0,40);this.cameras.main.fadeIn(700,35,35,53);
   this.keys=this.input.keyboard.createCursorKeys();this.extra=this.input.keyboard.addKeys('W,A,S,D');
-  this.input.on('pointerdown',p=>{if(this.api.blocked()||this.quiet)return;const hit=this.props().map(v=>({...v,d:Math.hypot(p.worldX-v.x,p.worldY-v.y)})).sort((a,b)=>a.d-b.d)[0];if(hit?.d<32){if(Math.hypot(hit.x-this.player.x,hit.y-this.player.y)<100)this.api.action(hit);else{this.selected=hit;this.target=this.standPoint(hit)}}else if(!this.blocked(p.worldX,p.worldY)){this.selected=null;this.target={x:p.worldX,y:p.worldY}}});
+  this.input.on('pointerdown',p=>{if(this.api.blocked()||this.quiet)return;const hit=this.props().map(v=>({...v,d:Math.hypot(p.worldX-v.x,p.worldY-v.y)})).sort((a,b)=>a.d-b.d)[0];if(hit?.d<32){if(Math.hypot(hit.x-this.player.x,hit.y-this.player.y)<100)this.api.action(hit);else this.walkTo(this.standPoint(hit),hit)}else if(!this.blocked(p.worldX,p.worldY)){this.walkTo({x:p.worldX,y:p.worldY})}});
   this.events.once('shutdown',()=>{for(const k of ['retreat-night','retreat-day','retreat-dusk'])if(this.textures.exists(k))this.textures.remove(k)});this.api.ready(this);
  }
  repaint(){
@@ -28,14 +29,34 @@ export class RomanticScene extends Phaser.Scene {
   ...this.profile.romance.beds.map((b,i)=>({id:'bed',index:i,x:87+i%2*67,y:401+Math.floor(i/2)*61,title:flowerStage(b)===0?R.plant:flowerStage(b)===1?R.water:flowerStage(b)===4?R.harvest:R.growing})),
   {id:'exit',x:216,y:799,title:R.leave},{id:'cat',x:this.cat.x,y:this.cat.y,title:R.cat}
  ]:[{id:'window',x:212,y:325,title:R.seat},{id:'gift',x:240,y:294,title:R.gift},{id:'rest',x:272,y:538,title:R.rest},{id:'fire',x:105,y:313,title:R.lakeSit},{id:'sofa',x:108,y:451,title:R.seat},{id:'wardrobe',x:109,y:617,title:R.wardrobe},{id:'books',x:302,y:665,title:R.shelf},{id:'mail',x:174,y:298,title:R.mailbox},{id:'cat',x:this.cat.x,y:this.cat.y,title:R.cat},{id:'exit',x:216,y:798,title:R.leave}]}
- standPoint(p){if(p.id==='tree')return{x:215,y:310};if(p.id==='swing')return{x:356,y:569};return{x:p.x,y:Math.min(795,p.y+27)}}
+ standPoint(p){if(p.id==='tree')return{x:215,y:310};if(p.id==='swing')return{x:356,y:569};return{x:Phaser.Math.Clamp(p.x,40,398),y:Phaser.Math.Clamp(p.y+27,290,795)}}
  blocked(x,y){if(x<40||x>398||y<290||y>811)return true;if(this.place==='garden')return ((x-324)/53)**2+((y-280)/36)**2<1||(x>187&&x<234&&y<302);return(x>273&&x<392&&y>337&&y<527)||(x>29&&x<94&&y>363&&y<448)||(x>320&&y>578&&y<684)||(x<101&&y>562&&y<667)}
  nearest(){return this.props().map(p=>({...p,d:Math.hypot(p.x-this.player.x,p.y-this.player.y)})).filter(p=>p.d<80).sort((a,b)=>a.d-b.d)[0]}
- sit(kind){this.quiet=true;this.target=null;this.selected=null;this.seat=kind;const pos=kind==='swing'?{x:356,y:533}:kind==='window'?{x:207,y:327}:kind==='pool'?{x:279,y:329}:kind==='fire'?{x:115,y:341}:{x:73,y:435};this.player.setPosition(pos.x,pos.y);this.player.setFrame(kind==='window'?12:0);this.cameras.main.stopFollow();this.cameras.main.pan(216,kind==='swing'?510:kind==='pool'?315:340,2200,'Sine.easeInOut')}
- stand(){this.quiet=false;this.player.setPosition(this.place==='garden'?this.seat==='swing'?356:270:216,this.place==='garden'?this.seat==='swing'?572:340:354);this.cameras.main.startFollow(this.player,true,.07,.07,0,40)}
+ idle(){this.player.stop();this.player.setTexture(outfitKey(this.profile),this.facing*4)}
+ stopMoving(){this.target=null;this.path=[];this.selected=null;controls.x=controls.y=0;this.input.keyboard.resetKeys();this.idle()}
+ walkTo(point,selected=null){const path=retreatRoute(this.player,point,(x,y)=>this.blocked(x,y));this.stopMoving();this.target=path.shift()||null;this.path=path;this.selected=this.target?selected:null}
+ sit(kind){this.stopMoving();this.quiet=true;this.seat=kind;this.facing=kind==='window'?3:0;const pos=kind==='swing'?{x:356,y:533}:kind==='window'?{x:207,y:327}:kind==='pool'?{x:279,y:329}:kind==='fire'?{x:115,y:341}:{x:73,y:435};this.player.setPosition(pos.x,pos.y);this.idle();this.api.near(null);this.cameras.main.stopFollow();this.cameras.main.pan(216,kind==='swing'?510:kind==='pool'?315:340,2200,'Sine.easeInOut')}
+ stand(){this.stopMoving();this.quiet=false;this.player.setPosition(this.place==='garden'?this.seat==='swing'?356:270:216,this.place==='garden'?this.seat==='swing'?572:340:354);this.cameras.main.panEffect.reset();this.cameras.main.startFollow(this.player,true,.07,.07,0,40);this.api.near(this.nearest())}
+ movePlayer(dt){
+  let dx=controls.x+(this.keys.right.isDown||this.extra.D.isDown?1:0)-(this.keys.left.isDown||this.extra.A.isDown?1:0),dy=controls.y+(this.keys.down.isDown||this.extra.S.isDown?1:0)-(this.keys.up.isDown||this.extra.W.isDown?1:0);
+  if(dx||dy){this.target=null;this.path=[];this.selected=null}
+  else if(this.target){
+   if(this.selected&&Math.hypot(this.selected.x-this.player.x,this.selected.y-this.player.y)<62){const selected=this.selected;this.stopMoving();this.api.action(selected);return}
+   dx=this.target.x-this.player.x;dy=this.target.y-this.player.y;
+   if(Math.hypot(dx,dy)<1){this.player.setPosition(this.target.x,this.target.y);this.target=this.path.shift()||null;if(!this.target){const selected=this.selected;this.stopMoving();if(selected)this.api.action(selected);return}dx=this.target.x-this.player.x;dy=this.target.y-this.player.y}
+  }
+  const len=Math.hypot(dx,dy);if(len<=.08){this.idle();return}
+  const step=this.target?Math.min(87*dt,len):87*dt;dx/=Math.max(1,len);dy/=Math.max(1,len);const oldX=this.player.x,oldY=this.player.y,nx=oldX+dx*step,ny=oldY+dy*step;
+  if(!this.blocked(nx,this.player.y))this.player.x=nx;
+  if(!this.blocked(this.player.x,ny))this.player.y=ny;
+  this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;
+  if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)this.player.play(`dress-${this.profile.wardrobe.equipped}-${this.facing}`,true);
+  else{if(this.target){this.target=null;this.path=[];this.selected=null}this.idle()}
+ }
+
  update(time,delta){
-  if(document.hidden||this.api.blocked())return;const dt=Math.min(delta,60)/1000;this.elapsed+=dt;const w=this.profile.romance;
-  if(!this.quiet){let dx=controls.x+(this.keys.right.isDown||this.extra.D.isDown?1:0)-(this.keys.left.isDown||this.extra.A.isDown?1:0),dy=controls.y+(this.keys.down.isDown||this.extra.S.isDown?1:0)-(this.keys.up.isDown||this.extra.W.isDown?1:0);if(dx||dy){this.target=null;this.selected=null}else if(this.target){dx=this.target.x-this.player.x;dy=this.target.y-this.player.y;if(Math.hypot(dx,dy)<5){this.target=null;dx=dy=0;if(this.selected){const p=this.selected;this.selected=null;this.api.action(p)}}}const len=Math.hypot(dx,dy);if(len>.08){dx/=Math.max(1,len);dy/=Math.max(1,len);const nx=this.player.x+dx*87*dt,ny=this.player.y+dy*87*dt;if(!this.blocked(nx,this.player.y))this.player.x=nx;if(!this.blocked(this.player.x,ny))this.player.y=ny;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;this.player.play(`dress-${this.profile.wardrobe.equipped}-${this.facing}`,true)}else{this.player.stop();this.player.setTexture(outfitKey(this.profile),this.facing*4)}this.api.near(this.nearest())}
+  if(document.hidden||this.api.blocked()){this.stopMoving();return;}const dt=Math.min(delta,60)/1000;this.elapsed+=dt;const w=this.profile.romance;
+  if(this.quiet)this.idle();else{this.movePlayer(dt);if(!this.quiet&&!this.api.blocked())this.api.near(this.nearest())}
   if(delta>45)this.slow++;else this.slow=Math.max(0,this.slow-.25);const reduced=this.profile.scenery.lowEffects||this.slow>100;this.frameTime+=dt;if(this.frameTime<1/(reduced?16:30))return;this.frameTime=0;
   if(w.theme!==this.lastPaint)this.repaint();const a=skyPalette(this.profile.scenery.clock),day=a.day,t=w.reducedMotion?0:this.elapsed;if(this.profile.scenery.clock>=17&&this.profile.scenery.clock<20){this.background.setTexture('retreat-dusk');this.blend.setAlpha(0)}else{this.background.setTexture('retreat-night');this.blend.setAlpha(day)}
   const g=this.g;g.clear();const rect=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),ww,hh)},ellipse=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillEllipse(x,y,ww,hh)};
