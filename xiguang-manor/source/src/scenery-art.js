@@ -1,3 +1,4 @@
+import {paintMilkyWay} from './starlight.js';
 import {painter} from './art.js';
 export function rng(seed=217){return()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296}}
 export function pixelEllipse(p,x,y,rx,ry,color){for(let dy=-ry;dy<=ry;dy++)p.r(x-Math.floor(rx*Math.sqrt(1-dy*dy/(ry*ry))),y+dy,Math.floor(rx*Math.sqrt(1-dy*dy/(ry*ry)))*2+1,1,color)}
@@ -28,10 +29,16 @@ export function landscape(w,h,period='night',viewpoint='lake'){
  for(let i=0;i<34;i++){const x=rand()*w,y=g+14+rand()*(h-g-14);if(x>73&&x<148)continue;p.r(x,y,1,5,a.lit);p.r(x-1,y-2,3,3,i%3?a.flower:'#ddc79f');p.r(x,y-1,1,1,'#f9dbb5')}
  // Near blades and pastel flowers, deliberately asymmetric.
  for(let i=0;i<28;i++){let x=i*9-8,y=h-3-rand()*8;p.poly([[x,y+7],[x+2,y-7-rand()*7],[x+4,y+7]],a.grass2);if(i%4===0){p.r(x+2,y-9,1,8,a.lit);p.r(x,y-12,5,4,a.flower);p.r(x+2,y-11,1,1,'#f7d8af')}}
+ // Ferns, blossom clusters and trailing vines frame the shore in the original palette.
+ for(const [x,dir]of [[5,1],[w-5,-1]]){
+  for(let i=0;i<17;i++){const xx=x+dir*i*1.6,yy=g-53+i*1.22;r(xx,yy,2,2,a.leaf);r(xx+dir*2,yy-2,4,1,a.lit);if(i%3===1){r(xx,yy+2,1,6+i%5,a.leaf);r(xx-1,yy+7+i%5,3,3,period==='night'?'#b8a2c1':'#d9b9d0');r(xx,yy+8+i%5,1,1,'#f2d7c9')}}
+  for(let i=0;i<12;i++){const xx=x+dir*(i*7%38),yy=h-4-(i*13%24);r(xx,yy,1,6,a.lit);r(xx-2,yy-3,5,3,a.flower);r(xx-1,yy-4,3,5,a.flower);r(xx,yy-2,1,1,'#f2d5b1')}
+ }
+ if(viewpoint==='lake'){for(const [x,y]of [[118,g-13],[143,g-24]]){r(x-4,y,10,1,a.leaf);r(x-3,y-1,7,1,a.lit);r(x,y-4,2,4,a.flower);r(x-1,y-3,4,2,a.flower);r(x,y-3,1,1,'#f6dfbd')}}
  // Each viewing position has its own physical foreground, below the same horizon.
  if(viewpoint==='roof'){r(0,h-47,w,47,a.roof);for(let y=h-44;y<h;y+=5){r(0,y,w,1,a.tile);for(let x=0;x<w;x+=15)r(x+(y%10?7:0),y,1,5,a.trunk)}r(0,h-49,w,3,a.tile);r(12,h-78,13,33,a.wall2);r(10,h-80,17,4,a.tile);r(14,h-75,2,26,a.wall)}
  if(viewpoint==='window'){r(0,h-52,w,52,a.wall2);r(0,h-55,w,5,a.wall);r(0,h-50,w,2,a.tile);for(let y=h-40;y<h;y+=12)r(0,y,w,1,a.trunk)}
  return p.canvas;
 }
-export function makeNebula(w,h){const p=painter(w,h),rand=rng(817);for(let i=0;i<1000;i++){const t=rand(),x=w*.12+t*w*.92+(rand()-.5)*w*.55,y=h*.63-t*h*.58+(rand()-.5)*h*.21;const r=1+rand()*6;p.c.globalAlpha=.009+rand()*.025;pixelEllipse(p,x,y,r,r*.6,['#c59fce','#767ebc','#d7a5bf'][i%3])}p.c.globalAlpha=1;for(let i=0;i<140;i++){let t=rand();p.r(w*.1+t*w*.94+(rand()-.5)*w*.25,h*.63-t*h*.58+(rand()-.5)*h*.15,1,1,'#aaa2c233')}return p.canvas}
+export function makeNebula(w,h){return paintMilkyWay(w,h)}
 export function makeLookoutTexture(scene){const p=painter(82,55);p.r(2,24,77,28,'#7d7283');for(let y=26;y<53;y+=6)p.r(3,y,75,1,'#b4a0a8');p.r(7,20,2,12,'#cab0b7');p.r(72,20,2,12,'#cab0b7');p.r(5,20,70,2,'#c5a9b0');p.r(12,32,34,5,'#c5a0a4');p.r(14,28,30,3,'#9d829b');p.r(16,36,3,9,'#816d83');p.r(40,36,3,9,'#816d83');p.poly([[56,31],[49,45],[52,45],[57,35],[64,45],[67,45],[59,31]],'#b3a0af');p.poly([[49,22],[64,12],[69,19],[53,28]],'#aba0ca');p.r(61,11,6,3,'#e8c5b5');p.r(5,47,72,3,'#a38d9d');scene.textures.addCanvas('lookout-deck',p.canvas)}

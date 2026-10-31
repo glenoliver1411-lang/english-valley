@@ -23,6 +23,8 @@ npm run preview
 
 现有仓库 `glenoliver1411-lang/english-valley` 的 `.github/workflows/pages.yml` 发布整个仓库；将 `dist/` 内的文件放进 `xiguang-manor/`，源码放进 `xiguang-manor/source/`，提交 main 后由 Actions 发布。不要改动仓库根目录原来的 English Valley 游戏。详细记录见 [V4_ROMANTIC_WORLD.md](V4_ROMANTIC_WORLD.md)。
 
+观景星空已追加细碎星河美化：深蓝紫夜色、自然星团、蓝白与浅金星点、细光芒专属星、湖面碎光、薄云与垂花。保留现有角色、地图和全部玩法。
+
 ## 自由游玩
 
 - 接收信件后，全部区域直接开放。摇杆 / WASD / 方向键移动，点物件或靠近后点互动，E / 空格也可互动。
