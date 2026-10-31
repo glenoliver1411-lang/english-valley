@@ -5,3 +5,7 @@ dist/
 test-results/
 
 verification/
+
+# Selected licensed game art and the requested review evidence.
+!src/assets/lakeside/*.png
+!public/lakeside-review/*.png

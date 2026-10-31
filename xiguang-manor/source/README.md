@@ -74,7 +74,7 @@ node tests/romantic-journey.mjs --webkit
 
 WebKit 所需系统依赖按 Playwright 安装说明配置。开发环境可使用 `WEBKIT_PORTABLE_BIN` 指定可用的 WebKit 启动程序。浏览器自动化使用手机尺寸与真实点击/拖动，并通过仅在开发构建存在的只读测试入口辅助定位；正式站点不暴露入口。模拟不能替代真实手机验收。
 
-素材全部为原创代码像素绘图与 Web Audio 合成，无付费图片 API、下载素材或运行时第三方资源外链。详见 [ASSETS.md](ASSETS.md)。
+原版本以原创代码像素绘图与Web Audio合成为主；本湖畔实验分支另采用karsiori明确标注CC0的本地美术素材，并统一配色、像素密度和受光。无付费图片API或运行时第三方图片外链。详见[ASSET_CREDITS.md](ASSET_CREDITS.md)和[ASSETS.md](ASSETS.md)。
 
 星光、草风与采花反馈：星星会独立明暗闪烁，草坪上的小草随阵风弯曲，草屑轻轻飘散。原花田和秘密花园的四种花分别触发「蔷薇心语 / 月光涟漪 / 暮紫星环 / 曦光萤舞」，成熟后采摘即可体验。`src/nature-config.js` 可调整闪烁、粒子上限与特效文案。
 
@@ -97,3 +97,11 @@ node tests/gift-opening-journey.mjs --webkit
 ```
 
 部署继续使用`npm run build`输出的`dist/`，Vite的相对路径配置保持不变，兼容现有GitHub Pages子目录。已有进度的浏览器可从庄园手记重播本次开场，无需清除存档。
+
+## 湖畔高品质美术样板（独立分支）
+
+本轮位于`art/lakeside-quality-study`，未覆盖正式`main`。只将湖畔观星的建筑、山体、林丘、水面、植被和坐姿接入独立美术模块，其他视点与玩法保持原路径。
+
+启动仍使用`npm ci`、`npm run dev`；打开浏览器后从顶部星星按钮进入星光观景台。运行`npm run build`可得到相对路径静态版本，`dist/lakeside-review/index.html`是随构建附带的前后对比页；启动`npm run preview`后访问`/lakeside-review/`即可。
+
+来源、许可证与逐项修改见[ASSET_CREDITS.md](ASSET_CREDITS.md)；统一规范见[LAKESIDE_ART_DIRECTION.md](LAKESIDE_ART_DIRECTION.md)；修改文件、检查结果与未完善问题见[LAKESIDE_REVIEW.md](LAKESIDE_REVIEW.md)。浏览器核对可在开发服务器运行时执行`node tests/lakeside-art-journey.mjs`和同命令加`--webkit`。
