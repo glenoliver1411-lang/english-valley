@@ -5,27 +5,27 @@ const ease=v=>{v=clamp(v);return v*v*(3-2*v)};
 const snap=v=>Math.round(v*2)/2;
 export function meteorPosition(m,age,out={}){const t=clamp(age,0,m.duration),q=t/m.duration,curve=m.bend*q*q;out.x=m.originX+m.vx*t+m.normalX*curve;out.y=m.originY+m.vy*t+m.normalY*curve;return out}
 export function meteorDedication(time){const f=C.caption,t=time-f.start;if(t<0)return 0;if(t<f.fadeIn)return ease(t/f.fadeIn);if(t<f.fadeIn+f.hold)return 1;return 1-ease((t-f.fadeIn-f.hold)/f.fadeOut)}
-export function meteorSchedule(random=Math.random){
+export function meteorSchedule(random=Math.random,variation=C.variations[0]){
  const range=([a,b])=>a+(b-a)*random(),events=[{at:C.show.firstAt,kind:'bright'}];
- for(const [span,gap]of [[C.show.development,C.show.developmentGap],[C.show.rise,C.show.riseGap],[C.show.peak,C.show.peakGap]])for(let at=span[0];at<span[1];at+=range(gap))events.push({at,kind:random()<C.show.brightChance?'bright':'ordinary'});
+ for(const [span,gap]of [[C.show.development,C.show.developmentGap],[C.show.rise,C.show.riseGap],[C.show.peak,C.show.peakGap]])for(let at=span[0];at<span[1];at+=range(gap)*variation.gap)events.push({at,kind:random()<C.show.brightChance?'bright':'ordinary'});
  events.push({at:C.show.xiAt,kind:'xi'});for(const at of C.show.closing)events.push({at:at+random()*.3,kind:'ordinary'});return events.sort((a,b)=>a.at-b.at);
 }
 export class MeteorSystem{
- constructor(w=216,h=400,random=Math.random){this.w=w;this.h=h;this.random=random;this.pool=Array.from({length:C.poolSize},()=>({active:false}));this.dust=Array.from({length:C.dustPoolSize},()=>({active:false}));this.time=0;this.showTime=0;this.queue=[];this.showing=false;this.finished=false;this.low=false;this.sequence=0;this.nextIdle=this.range(C.idleInterval);this.specialEmitted=false;this.samples=[{},{}];this.specialColors=Array.from({length:C.tailSamples},(_,i)=>mix(C.xi.gold,C.xi.lavender,i/(C.tailSamples-1)))}
+ constructor(w=216,h=400,random=Math.random){this.w=w;this.h=h;this.random=random;this.pool=Array.from({length:C.poolSize},()=>({active:false}));this.dust=Array.from({length:C.dustPoolSize},()=>({active:false}));this.time=0;this.showTime=0;this.queue=[];this.showing=false;this.finished=false;this.low=false;this.sequence=0;this.nextIdle=this.range(C.idleInterval);this.specialEmitted=false;this.samples=[{},{}];this.showNumber=0;this.variation=C.variations[0];this.specialColors=Array.from({length:C.tailSamples},(_,i)=>mix(C.xi.gold,C.xi.lavender,i/(C.tailSamples-1)))}
  range([a,b]){return a+(b-a)*this.random()}
  resize(w,h){this.w=w;this.h=h;this.clearObjects()}
  clearObjects(){for(const m of this.pool)m.active=false;for(const d of this.dust)d.active=false}
  clear(){this.clearObjects();this.showing=false;this.finished=false;this.queue=[];this.nextIdle=this.time+this.range(C.idleInterval)}
- startShow(){this.clear();this.showTime=0;this.sequence=0;this.showing=true;this.specialEmitted=false;this.queue=meteorSchedule(this.random)}
+ startShow(){this.variation=C.variations[this.showNumber++%C.variations.length];this.clear();this.showTime=0;this.sequence=0;this.showing=true;this.specialEmitted=false;this.queue=meteorSchedule(this.random,this.variation)}
  spawn(kind='ordinary',age=0){
   const max=this.showing?(this.low?C.limits.lowShow:C.limits.show):C.limits.idle;
   const reserve=kind!=='xi'&&this.showing&&this.showTime>=C.show.xiAt-2&&this.showTime<C.show.xiAt;if(this.pool.filter(m=>m.active).length>=max-(reserve?1:0))return null;
   const m=this.pool.find(m=>!m.active);if(!m)return null;
   const spec=C[kind],special=kind==='xi',bright=kind!=='ordinary',distant=!bright&&this.random()<C.distant.chance;
-  const speed=this.range(spec.speed)*(distant?C.distant.speed:1),requestedLife=this.range(spec.life);
+  const speed=this.range(spec.speed)*this.variation.speed*(distant?C.distant.speed:1),requestedLife=this.range(spec.life);
   // Distribute mid-flight positions across the sky, rather than spawning everything at its top edge.
   // Their direction is derived from a common radiant: perspective changes the angle naturally.
-  const field=C.field,radiantX=this.w*C.radiant.x,radiantY=this.h*C.radiant.y;
+  const field=C.field,radiantX=this.w*this.variation.radiant.x,radiantY=this.h*this.variation.radiant.y;
   const column=(this.sequence++%field.columns+this.random())/field.columns;
   const centerX=this.w*(special?.67:field.left+(field.right-field.left)*column),dx=radiantX-centerX;
   const lowY=Math.max(this.h*field.top,radiantY+dx*Math.tan(C.angle[0]*Math.PI/180));
@@ -35,7 +35,7 @@ export class MeteorSystem{
   const originX=centerX-vx*requestedLife*.38,originY=centerY-vy*requestedLife*.38;
   const duration=Math.min(requestedLife,(this.h*C.skyBottom-originY-2)/vy,(originX+10)/-vx);
   let pick=this.random(),color=C.colors[0];for(let i=0;i<C.colors.length;i++){pick-=C.colorWeights[i];if(pick<=0){color=C.colors[i];break}}
-  Object.assign(m,{active:true,caught:false,kind,special,hero:bright,distant,age,duration,originX,originY,radiantX,radiantY,vx,vy,normalX:Math.sin(angle),normalY:Math.cos(angle),bend:this.range(spec.bend),tailLength:this.range(spec.tailLength)*(distant?C.distant.tail:1),brightness:this.range(spec.brightness)*(distant?C.distant.brightness:1),color:special?C.xi.gold:color,hasDust:bright||!distant&&this.random()<spec.dustChance,nextDust:.10+this.random()*.06,seed:this.random()*1000});
+  Object.assign(m,{active:true,caught:false,kind,special,hero:bright,distant,age,duration,originX,originY,radiantX,radiantY,vx,vy,normalX:Math.sin(angle),normalY:Math.cos(angle),bend:this.range(spec.bend),tailLength:this.range(spec.tailLength)*this.variation.tail*(distant?C.distant.tail:1),brightness:this.range(spec.brightness)*(distant?C.distant.brightness:1),color:special?C.xi.gold:color,hasDust:bright||!distant&&this.random()<spec.dustChance,nextDust:.10+this.random()*.06,seed:this.random()*1000});
   m.trailSeconds=Math.min(this.range(spec.tailSeconds),m.tailLength/speed);meteorPosition(m,age,m);if(special)this.specialEmitted=true;return m;
  }
  spawnDust(m){const d=this.dust.find(d=>!d.active);if(!d||this.low&&this.dust.filter(d=>d.active).length>=C.lowDustLimit)return;const side=(this.random()-.5)*C.dust.spread,at=Math.max(0,m.age-.035);meteorPosition(m,at,this.samples[0]);Object.assign(d,{active:true,age:0,life:this.range(C.dust.life),x:this.samples[0].x,y:this.samples[0].y,vx:m.vx*(.035+this.random()*.05)+m.normalX*side,vy:m.vy*.035+m.normalY*side,color:m.special?C.xi.lavender:m.color,brightness:C.dust.brightness*(m.special?1:.6),glint:m.special&&this.random()<.2})}

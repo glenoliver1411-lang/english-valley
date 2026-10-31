@@ -1,10 +1,10 @@
 import {landscapePainter} from './landscape-detail.js';
-import {mix} from './sky-model.js';
+import {mix,hourPhase} from './sky-model.js';
 import {LAKESIDE} from './lakeside-config.js';
 
 const noise=(x,y)=>{const n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)};
 function field(x,y){const ix=Math.floor(x),iy=Math.floor(y),u=x-ix,v=y-iy,s=u*u*(3-2*u),t=v*v*(3-2*v);return(noise(ix,iy)*(1-s)+noise(ix+1,iy)*s)*(1-t)+(noise(ix,iy+1)*(1-s)+noise(ix+1,iy+1)*s)*t}
-const weights=(scene,a)=>scene.baseHour===18?[['dusk',1]]:[['night',1],['dawn',Math.min(1,a.day*1.7)],['day',Math.max(0,(a.day-.58)/.42)]];
+const weights=(scene,a)=>(hourPhase(scene.baseHour)==='dusk')?[['dusk',1]]:[['night',1],['dawn',Math.min(1,a.day*1.7)],['day',Math.max(0,(a.day-.58)/.42)]];
 const rgb=hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));
 
 // Hand-pixeled CC0 mountain faces, cropped at native resolution. The three
@@ -15,7 +15,7 @@ export class LakesideMountains {
   const result=[];const palette=LAKESIDE.periods[period];
   for(const [index,x,top,tint]of [[0,215,this.h*.505,.26],[1,28,this.h*.563,.08]]){
    const p=landscapePainter(this.w+24,this.h*.715-top),image=this.materials.image('mountains-4',period),height=p.canvas.height;
-   p.c.save();p.c.translate(this.w+24,0);p.c.scale(-1,1);p.c.drawImage(image,x,0,(this.w+24)*2,height,0,0,this.w+24,height/2);p.c.restore();
+   p.c.save();p.c.translate(this.w+24,0);p.c.scale(-1,1);p.c.drawImage(image,x,0,(this.w+24)*2,height<144?256:height,0,0,this.w+24,height/2);p.c.restore();
    p.c.globalCompositeOperation='source-atop';p.c.globalAlpha=tint;p.r(0,0,this.w+24,height/2,period==='night'?'#8790b6':period==='dusk'?'#d3a7b8':'#e4c5c5');
    // Soft air at the foot of each mass, while the irregular rock ridges stay clear.
    for(let y=0;y<height/2;y+=.5){p.c.globalAlpha=Math.min(.48,(y/(height/2))**3*.48);p.r(0,y,this.w+24,.5,palette.water[2])}
@@ -42,7 +42,7 @@ export class LakesideMountains {
   return p.canvas;
  }
  draw(c,a,parallax=0){for(const[period,alpha]of weights(this.scene,a)){if(alpha<=0)continue;c.globalAlpha=alpha;for(const layer of this.cache.get(period))c.drawImage(layer.canvas,Math.round((-12+parallax*layer.parallax)*2)/2,layer.top,this.w+24,layer.canvas.height/2)}c.globalAlpha=1}
- drawForest(c,a,parallax=0){for(const[period,alpha]of weights(this.scene,a)){if(alpha<=0)continue;c.globalAlpha=alpha;c.drawImage(this.forests.get(period),Math.round((-10+parallax*.47)*2)/2,this.h*.695-41,this.w+20,44)}c.globalAlpha=1}
+ drawForest(c,a,parallax=0){for(const[period,alpha]of weights(this.scene,a)){if(alpha<=0)continue;c.globalAlpha=alpha;c.drawImage(this.forests.get(period),Math.round((-10+parallax*.47)*2)/2,this.h*.695-Math.min(44,this.h*.108)*.932,this.w+20,Math.min(44,this.h*.108))}c.globalAlpha=1}
  clear(){this.cache.clear();this.forests.clear()}
 }
 
@@ -69,7 +69,7 @@ export class LakesideWater {
    c.globalAlpha=(.27-row/height*.11)*(1-a.day*.23);
    c.drawImage(this.reflect,0,row*2,w*2,2,drift,top+row,w,1);
   }c.globalAlpha=1;
-  const lit=s.baseHour===18||p>.35,reflectX=w*(lit?.77:.85),color=lit?'#f1c4a3':'#c7d8e8';
+  const lit=(hourPhase(s.baseHour)==='dusk')||p>.35,reflectX=w*(lit?.77:.85),color=lit?'#f1c4a3':'#c7d8e8';
   // A broken, widening reflection with irregular gaps and small side echoes.
   for(let i=0;i<16;i++){
    if(i%5===2)continue;const u=i/16,y=top+5+u*(height-9),width=1.8+u*10+Math.sin(i*2.3)*1.3,x=reflectX+Math.sin(t*.43+i*1.31)*1.3;
@@ -87,7 +87,7 @@ export class LakesideWater {
    c.globalAlpha=.025+Math.max(0,phase)**3*.065;c.fillStyle=mix('#aac4d8','#e4c9b6',a.day);
    c.fillRect(Math.round((x+phase*.6)*2)/2,Math.round(y*2)/2,2+i%4,.5);
   }
-  s.meteors.drawReflection(c,top,bottom);c.globalAlpha=1;
+  s.meteors.drawReflection(c,top,bottom);s.fireworks.drawReflection?.(c,top,bottom);c.globalAlpha=1;
   const mist=p>.17&&p<.92?Math.sin((p-.17)/.75*Math.PI)*.085:.017*a.night;
   if(mist>0){for(let i=0;i<2;i++){c.globalAlpha=mist*(i?.5:1);c.fillStyle='#e2d8dc';for(let k=0;k<4;k++)c.fillRect(-35+i*97+Math.sin(t*.04+i)*9+k*12,top+4+i*8+k%2,74-k*11,.5)}}c.globalAlpha=1;
  }

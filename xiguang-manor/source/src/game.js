@@ -1,3 +1,5 @@
+import {preloadLakeside} from './lakeside-materials.js';
+import {refineWorld} from './world-detail.js';
 import {FlowerPickupEffects} from './flower-effects.js';
 import {ROMANCE as R} from './romantic-config.js';
 import {addRomanticEntrances} from './romantic-art.js';
@@ -14,8 +16,9 @@ import {grow,quest} from './save.js';
 export const controls={x:0,y:0};
 export class Manor extends Phaser.Scene {
  constructor(data,api){super('manor');this.dataSave=data;this.api=api;this.ready=false;this.locked=true;this.room=false;this.target=null;this.elapsedSave=0;this.facing=0}
+ preload(){preloadLakeside(this)}
  create(){
-  makeArt(this);refineMap(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
+  makeArt(this);refineMap(this);refineWorld(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
   this.cat=this.add.image(347,453,'cat').setScale(1.25);this.world.add(this.cat);this.tweens.add({targets:this.cat,scaleY:1.21,duration:1500,yoyo:true,repeat:-1});
   this.labels=[];for(let [x,y,text] of [[114,300,T.shop],[347,407,T.cat],[235,281,T.tree],[88,509,T.garden],[354,215,T.pond]]){
    let label=this.add.text(x,y,text,{fontSize:'11px',fontFamily:'sans-serif',color:'#ffebcf',backgroundColor:'#41374dd9',padding:{x:7,y:4}}).setOrigin(.5);this.world.add(label);this.labels.push(label);

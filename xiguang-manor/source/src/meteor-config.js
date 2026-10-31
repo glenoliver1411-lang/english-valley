@@ -1,5 +1,6 @@
 // 流星的数量、方向、寿命、拖尾、星尘及演出节奏集中在这里修改。
 export const METEORS={
+ variations:[{id:'moonfall',name:'月光来信',radiant:{x:1.8,y:-.08},speed:1,tail:1,gap:1},{id:'silvershore',name:'银湾星潮',radiant:{x:1.48,y:-.10},speed:.88,tail:1.1,gap:1.12},{id:'lavender',name:'暮紫星渡',radiant:{x:2.05,y:-.04},speed:1.12,tail:.9,gap:.92}],
  duration:34, poolSize:16, dustPoolSize:48, lowDustLimit:20,
  limits:{idle:2,show:12,lowShow:7},
  // Perspective: all paths recede towards one off-screen radiant, never a row of vertical strings.

@@ -1,5 +1,5 @@
 import {landscapePainter,pixelPolygon} from './landscape-detail.js';
-import {mix} from './sky-model.js';
+import {mix,hourPhase} from './sky-model.js';
 import {LAKESIDE} from './lakeside-config.js';
 import {LakeMaterials,stamp} from './lakeside-materials.js';
 import {LakesideMountains,LakesideWater} from './lakeside-background.js';
@@ -105,11 +105,11 @@ export class LakesideArt {
   return{back:p.canvas,front:front.canvas};
  }
  blend(c,source,a,offset=0){
-  const night=this.scene.baseHour===18?'dusk':'night';c.globalAlpha=1;c.drawImage(source[night],offset,0,this.w,this.h);
+  const night=(hourPhase(this.scene.baseHour)==='dusk')?'dusk':'night';c.globalAlpha=1;c.drawImage(source[night],offset,0,this.w,this.h);
   if(a.day>0&&night!=='dusk'){c.globalAlpha=Math.min(1,a.day*1.7);c.drawImage(source.dawn,offset,0,this.w,this.h);c.globalAlpha=Math.max(0,(a.day-.58)/.42);c.drawImage(source.day,offset,0,this.w,this.h)}c.globalAlpha=1;
  }
  drawActors(c,a,p,t,offset){
-  const period=this.scene.baseHour===18?'dusk':a.day>.8?'day':a.day>.25?'dawn':'night',palette=LAKESIDE.periods[period],painter={c,r:(x,y,w,h,col)=>{c.fillStyle=col;c.fillRect(Math.round(x*2)/2,Math.round(y*2)/2,w,h)}};
+  const period=(hourPhase(this.scene.baseHour)==='dusk')?'dusk':a.day>.8?'day':a.day>.25?'dawn':'night',palette=LAKESIDE.periods[period],painter={c,r:(x,y,w,h,col)=>{c.fillStyle=col;c.fillRect(Math.round(x*2)/2,Math.round(y*2)/2,w,h)}};
   // Feet, seat and body have separate contact shadows; the backrest occludes her.
   contact(painter,110+offset,this.h-33,9,1.5,palette.bark[0],.8);
   c.drawImage(this.actors.girl(this.scene.profile,period),98+offset,this.h-68,24,34);
@@ -121,7 +121,7 @@ export class LakesideArt {
  }
  ambient(c,a,p,t,offset){
   const s=this.scene,still=s.profile.romance.reducedMotion,h=this.h,w=this.w,g=h*.88;
-  const period=s.baseHour===18?'dusk':a.day>.8?'day':a.day>.25?'dawn':'night',palette=LAKESIDE.periods[period];
+  const period=(hourPhase(s.baseHour)==='dusk')?'dusk':a.day>.8?'day':a.day>.25?'dawn':'night',palette=LAKESIDE.periods[period];
   const pt={c,poly:(points,col)=>pixelPolygon(c,points,col),r:(x,y,ww,hh,col)=>{c.fillStyle=col;c.fillRect(Math.round(x*2)/2,Math.round(y*2)/2,ww,hh)}};
   // Local glass glow and doorstep spill: cold roof, warm glass, cool ground.
   if(a.night>.1){

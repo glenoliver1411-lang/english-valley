@@ -8,6 +8,12 @@ Phaser 3 + JavaScript + Vite 的手机竖屏像素庄园。沿用原地图与角
 
 在普通浏览器打开即可，不需要 GitHub 或 ChatGPT 登录。存档保存在当前浏览器本地。
 
+## 本轮全方位精修
+
+当前开发分支 `upgrade/romantic-world-finish` 已升级山景与极光、四时段光色、自动风景演出、三套流星雨、七类烟花、糖果屋及十二件家具和配套界面。详细文件清单、配置、验证与剩余美术边界见 [WORLD_FINISH.md](WORLD_FINISH.md)。回退标签为 `before-world-finish-20261031`。
+
+独立预览的比较页位于 `world-finish-review/index.html`，从那里可进入同一构建的完整游戏。正式 GitHub Pages 的 `main` 未被本轮覆盖；预览域名与正式域名的浏览器存档互不共享。
+
 ## 启动和构建
 
 需要 Node.js 20.19+ 或 22.12+。

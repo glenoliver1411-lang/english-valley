@@ -1,3 +1,4 @@
+import {refineCabin} from './room-detail.js';
 import {paintGarden} from './garden-art.js';
 import {painter} from './art.js';
 import {rng,pixelEllipse} from './scenery-art.js';
@@ -37,7 +38,7 @@ export function retreatPainting(place,hour,theme='rose',room={}){
   r(148,265,118,12,'#dfbda8');r(155,277,6,57,'#967486');r(252,277,6,57,'#967486');r(172,251,27,13,'#f1dfc8');r(176,254,19,1,'#bc9ca2');r(227,245,25,19,'#c89caf');r(237,245,4,19,'#f0d5af');r(224,250,31,4,'#f0d5af');
   // A hanging constellation stitched between the rafters.
   r(29,33,375,7,'#8f6e7f');for(const [x,y]of [[54,86],[86,112],[345,86],[375,126]]){r(x,40,1,y-40,'#a88a9e');r(x-1,y-4,3,9,'#eed4a5');r(x-4,y-1,9,3,'#eed4a5')}
-  r(181,748,72,72,'#755a71');r(186,754,62,64,'#c49fa1');r(193,759,48,48,'#e5c7aa');r(216,759,3,48,'#9d7c88');r(181,815,72,8,'#ecd0b2');
+  r(181,748,72,72,'#755a71');r(186,754,62,64,'#c49fa1');r(193,759,48,48,'#e5c7aa');r(216,759,3,48,'#9d7c88');r(181,815,72,8,'#ecd0b2');refineCabin(p,a,themeColor,hour,room);
  }
  return p.canvas;
 }

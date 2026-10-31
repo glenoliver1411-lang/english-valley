@@ -1,0 +1,64 @@
+/* One material language for the game UI: warm paper, plum ink, brass edges.
+   Gameplay IDs, drag surfaces, dialog order and touch handlers stay unchanged. */
+:root{--paper:#f3e4d1;--paper-edge:#c4a3ac;--plum:#66516c;--plum-light:#a78aab;--gold:#e7ccaa;--night-panel:#302b43}
+.topbar{border-bottom:1px solid #bc9ca12b;background:linear-gradient(180deg,#3c334b,#322e43);box-shadow:0 2px 0 #1f223a55;z-index:5}
+.topbar .icon-button{width:40px;height:40px;box-shadow:inset 0 1px #ead3d21a,0 2px 3px #161b2a33;border-color:#c4a9ba55;background:#8d769111}
+.primary{min-height:46px;font-size:13px;border:1px solid #b28a9f;background:linear-gradient(#ab879e,#8b6b89);box-shadow:inset 0 1px #f2d6cd77,inset 0 -2px #6e506c55,0 3px 0 #65516c;color:#fff0d9;border-radius:6px}
+.secondary{min-height:43px;border:1px solid #b69aac66;background:linear-gradient(#a088a821,#7b658919);box-shadow:inset 0 1px #f3d7d126,0 2px 0 #201d351c;border-radius:6px;font-size:12px}
+.primary:active,.secondary:active{translate:0 1px}.primary:disabled,.secondary:disabled{translate:none}
+.card{box-shadow:inset 0 1px #eedbcc2b,0 4px 0 -1px #211e32aa,0 18px 35px #11182b66;border-color:#b699ac}
+.card h2{letter-spacing:1.5px}.card .eyebrow{font-size:9px;letter-spacing:2.2px}
+.scenery-close,.corner{min-width:38px;min-height:38px;display:flex;align-items:center;justify-content:center;font-size:23px;border-radius:50%;background:#9b819518!important;border:1px solid #b799aa44!important;z-index:2}
+.workshop-modal{background:#262638b0;backdrop-filter:blur(3px)}
+.workshop-card,.romantic-card{color:#69536c;background:linear-gradient(115deg,#f7ead8,#ecd8c9);border:1px solid #b78f9f;border-radius:10px;box-shadow:inset 0 0 0 5px #f8ecdc,inset 0 0 0 6px #d0b4b9,0 5px 0 #7d627e,0 18px 40px #14192f80;padding:32px 23px 25px}
+.workshop-card h2,.romantic-card h2{color:#73536d;font-size:20px;font-weight:500;margin:12px 0 16px;line-height:1.65}
+.workshop-card h3,.romantic-card h3{color:#86607d;font-size:15px}
+.workshop-card p,.romantic-card p{font-size:12px;line-height:1.9;color:#806776}
+.workshop-card small,.romantic-card small{color:#a07f8c;font-size:10px;letter-spacing:.2px}
+.workshop-card .eyebrow,.romantic-card .eyebrow{color:#a17b91}
+.workshop-card .secondary,.romantic-card .secondary{color:#7a5c76;background:linear-gradient(#fff1df99,#e2c8cb88);border-color:#bd9aa7;box-shadow:inset 0 1px #fff5e9,0 2px 0 #b398a45c}
+.workshop-card .text-button,.romantic-card .text-button{font-size:11px;min-height:40px;color:#9d7a91}
+.workshop-card .scenery-close,.romantic-card .scenery-close{color:#97768b}
+.workshop-card input,.workshop-card textarea,.romantic-card input,.romantic-card textarea{font-size:16px;line-height:1.7;color:#68516b;background:#fff3df;border:1px solid #baa0ad;box-shadow:inset 0 2px 3px #8b718313;border-radius:5px}
+.workshop-card .workshop-label{font-size:11px;color:#967487;letter-spacing:1px;margin:18px 0 10px}
+.favorite-candies{gap:11px}.favorite-candies>button{border:1px solid #c7a8b4;background:#f9ecdb;color:#755772;border-radius:7px;box-shadow:inset 0 1px #fff7e9,0 3px 0 #c2a3b338;padding:12px;min-height:78px}
+.favorite-candies>button.selected{background:#ead0db;border-color:#a37796;box-shadow:inset 0 0 0 2px #f6e0e3,0 3px 0 #b28d9e66}
+.favorite-candies img{width:52px;height:52px;filter:drop-shadow(0 3px 0 #bda5b13b)}
+.favorite-candies strong{font-size:14px}.favorite-candies small{font-size:10px;line-height:1.7;color:#997689;margin-top:5px}
+.choice-row{gap:8px}.choice-row button{min-height:45px;font-size:12px;color:#906f86;background:#f7ead9;border:1px solid #c6a7b4;box-shadow:inset 0 1px #fff7ec,0 2px 0 #bfa0ae44;border-radius:6px}
+.choice-row button.selected{color:#684662;border-color:#a77696;background:#e5c8d6;box-shadow:inset 0 0 0 2px #f8e3e3,0 3px 0 #ad869c44}
+.product-large{width:92px;height:92px;margin:15px auto 18px;filter:drop-shadow(0 5px 0 #bda1b338)}
+.activity-canvas{border:4px solid #c6a1ad;outline:1px solid #f9e9d8;outline-offset:-6px;border-radius:8px;box-shadow:0 4px 0 #a5839a55}
+.mix-panel #stir-progress,.cook-panel #heat-round{color:#987186;font-size:12px}.cook-panel #heat-feedback{color:#8b8868;font-size:12px}
+.batch-display img{width:74px;height:74px;filter:drop-shadow(0 4px 0 #ba9db43b)}
+.gift-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;background:linear-gradient(#d7b7c2,#bfa0b2);border:5px double #f1d9bc;box-shadow:inset 0 4px 8px #8e6a8d55,0 4px 0 #a2809780;padding:13px 10px;border-radius:7px}
+.gift-slot{width:100%;height:77px;border:1px solid #b49cae;border-radius:50% 50% 6px 6px;background:#f0ded266;box-shadow:inset 0 3px 4px #94738e33;color:#947087}
+.gift-slot span{font-size:10px;line-height:1.6}.gift-slot img{width:58px;height:58px}
+.gift-stock{gap:8px}.gift-stock button{min-height:92px;border:1px solid #c6a6b5;background:#fbefdf;border-radius:6px;box-shadow:0 2px 0 #bba1b344;color:#87657f}
+.gift-stock img{width:45px;height:45px}.gift-stock span{font-size:10px}.gift-stock small{font-size:9px;color:#a78493}
+.gift-stock button.selected{background:#e4c8d7;border-color:#a17496}.gift-packing textarea{font-size:16px;background:#fff1de;color:#73586d;border-color:#c3a4b2}
+.gift-picture{max-width:280px;filter:drop-shadow(0 6px 0 #b79aaa44)}.gift-history button{background:#f7e9d7;border-color:#c8a8b6;box-shadow:0 2px 0 #c1a4b34d}.gift-history span{color:#947187;font-size:11px}
+.taste-pads{gap:9px}.taste-pads button{height:113px;max-width:92px;flex:1;border:1px solid #b795ad;background:linear-gradient(#f8ecdc,#e8d1d4);box-shadow:inset 0 1px #fff6e5,0 4px 0 #b49aac;color:#896981;border-radius:8px}
+.taste-pads img{width:55px;height:55px}.taste-pads span{font-size:11px}.taste-pads button.lit{background:#f1d6b0;border-color:#b68a87;box-shadow:0 4px 0 #9c788f,inset 0 0 0 3px #fff1d8}.taste-game #taste-status{color:#937286}
+.recipe-grid{gap:8px}.recipe-grid button{border:1px solid #c7a9b4;background:#eadbd28c;border-radius:7px;box-shadow:inset 0 1px #fff5e6,0 2px 0 #bea4b444;padding:12px 3px;color:#86667e}
+.recipe-grid button.known{background:#f9e8ce;border-color:#bb9c9e}.recipe-grid img{width:49px;height:49px}.recipe-grid strong{font-size:10px;line-height:1.7}.recipe-grid small{font-size:8px;color:#a07d8f}
+.candy-house-heading{background:linear-gradient(#5a4560ed,#3b334beb);border:1px solid #c3a3b566;box-shadow:inset 0 1px #edcfcb25,0 3px 0 #261e334d;border-radius:8px;padding:13px 15px}
+.candy-house-heading strong{font-size:16px}.candy-house-heading>span{font-size:10px;line-height:1.7}.candy-house-leave{min-height:35px;font-size:10px;top:14px}
+.candy-house-shortcuts{gap:6px;top:109px}.candy-house-shortcuts button{font-size:10px;padding:9px 12px;min-height:38px;background:#4e3e58e8;box-shadow:inset 0 1px #d6b4c12b,0 2px 0 #2a233e66;border-radius:18px}
+.furniture-grid{gap:10px}.furniture-card{background:linear-gradient(#fff1e0,#e8d0d3);border:1px solid #c3a1af;border-radius:7px;box-shadow:inset 0 1px #fff9e9,0 3px 0 #b99bab66;padding:15px 8px 12px!important}
+.furniture-card img{width:76px!important;height:83px!important;object-fit:contain;filter:drop-shadow(0 3px 0 #b69bb13b)}
+.furniture-card strong{font-size:12px!important;color:#79576e}.furniture-card small{font-size:10px!important;line-height:1.75;color:#a17b8b}.furniture-card>span{font-size:10px!important;min-height:30px;display:flex;align-items:center;justify-content:center;background:#c9a4bb55;border:1px solid #ba97ac;border-radius:15px;color:#87637d}
+.placed-furniture{border-color:#c7a7b4;background:#f9ebdc;border-radius:6px}.placed-furniture button{min-height:38px;background:#e1c4d0;border-color:#b68da4;color:#845f79}
+.home-themes button,.home-tabs button,.home-surfaces button{min-height:42px;font-size:11px}.home-tabs .selected{box-shadow:inset 0 -2px #a57e98}
+.scenery-card:not(.romantic-card){background:linear-gradient(135deg,#39344ce8,#2d2c43f5);border-color:#b298ad}.scenery-card p{font-size:12px;line-height:1.95}.scenery-card input,.scenery-card textarea{font-size:16px}
+.quality-switch{padding:13px 0;gap:16px;border-bottom:1px solid #b298a527}.quality-switch strong{font-size:12px}.quality-switch small{font-size:10px;line-height:1.8}
+.view-header h2{font-size:21px;letter-spacing:2px}.view-top-actions button{min-height:38px;font-size:11px}.view-action-row button{min-height:43px;border-radius:6px;box-shadow:inset 0 1px #f1d8c92e,0 2px 0 #201e344d}
+.firework-styles{gap:5px;justify-content:center}.firework-styles button{min-height:33px;padding:7px 9px;font-size:10px;border-radius:16px;box-shadow:inset 0 1px #f5d8cf22}
+.auto-performance .firework-styles,.auto-performance .sky-constellation,.auto-performance #launch-firework,.auto-performance #auto-fireworks{display:none}.auto-performance .view-controls{bottom:26px}.auto-performance .view-header{opacity:.86}
+.world-shortcuts button{min-height:39px;background:linear-gradient(#6f5874ed,#43374fe8);box-shadow:inset 0 1px #f1d3ca33,0 3px 0 #211e3659;border-color:#b89caf7d}
+#adventure-tools button{font-size:10px!important;min-height:33px;padding:7px 11px!important;border-radius:16px!important;background:#4a3b57e8!important;box-shadow:inset 0 1px #f1d0cf22,0 2px 0 #211c3159}
+.chapter{font-size:10px}.counts>span{box-shadow:inset 0 1px #f1d3ca22}.device .retreat-actions button{font-size:11px;min-height:36px;border-radius:18px;box-shadow:inset 0 1px #f1d4cb1c,0 2px 0 #211a3055}
+.device.reduce-motion *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(max-width:380px){.topbar{padding-left:13px;padding-right:13px}.topbar .icon-button{width:36px;height:36px}.brand strong{font-size:14px}.workshop-card,.romantic-card{padding:27px 18px 21px}.candy-house-heading strong{font-size:14px}.candy-house-shortcuts{gap:4px}.candy-house-shortcuts button{font-size:9px;padding:7px 9px}}
+@media(max-height:720px){.workshop-card h2,.romantic-card h2{font-size:18px;margin:8px 0 12px}.product-large{width:72px;height:72px;margin:12px auto}.gift-slot{height:64px}.activity-canvas{margin:13px 0}.candy-house-shortcuts{top:108px}}
+@media(prefers-reduced-motion:reduce){.device *{animation:none!important;transition:none!important}}
