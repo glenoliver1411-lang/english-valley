@@ -1,4 +1,5 @@
-import {painter,tree,flower,lamp,fence} from './art.js';
+import {paintGarden} from './garden-art.js';
+import {painter} from './art.js';
 import {rng,pixelEllipse} from './scenery-art.js';
 import {mix,skyPalette} from './sky-model.js';
 import {ROMANCE} from './romantic-config.js';
@@ -8,36 +9,7 @@ import {meadowPainting} from './meadow-art.js';
 export function retreatPainting(place,hour,theme='rose',room={}){
  if(place==='meadow')return meadowPainting(hour);
  const p=painter(432,850),r=p.r,random=rng(311),a=skyPalette(hour),n=a.night,d=a.day;
- if(place==='garden'){
-  r(0,0,432,850,mix('#3d5557','#7e987d',d));
-  for(let i=0;i<1000;i++){const x=Math.floor(random()*216)*2,y=Math.floor(random()*425)*2;r(x,y,i%3?2:4,2,mix(i%2?'#49645e':'#617970',i%2?'#8da583':'#a6b18d',d))}
-  // A winding path disappears beneath the south flower arch.
-  p.poly([[180,850],[242,850],[242,724],[282,656],[262,577],[216,527],[231,451],[294,401],[296,359],[260,355],[252,387],[189,431],[175,533],[217,590],[236,649],[194,709]],mix('#827b7a','#d1b6a3',d));
-  p.poly([[192,850],[229,850],[229,718],[268,652],[250,584],[203,530],[217,444],[281,394],[280,367],[268,365],[262,394],[204,436],[189,531],[231,588],[251,653],[207,713]],mix('#ad9991','#e0c9ae',d));
-  for(let i=0;i<42;i++){let y=400+i*10,x=205+Math.sin(y*.014)*31;r(x,y,12,2,mix('#8e8382','#baa292',d))}
-  // Old rosewood canopy, with roots that lead into the flower beds.
-  for(const [x,y,s]of [[20,128,1.6],[407,135,1.8],[12,338,1.7],[425,390,1.6],[17,605,1.6],[420,670,1.5],[28,810,1.2],[406,824,1.3]])tree(p,x,y,s);
-  r(189,187,44,98,'#584e5d');r(198,174,16,113,'#806778');r(206,174,4,105,'#a08488');p.poly([[201,225],[165,263],[146,273],[187,270],[210,245],[241,276],[274,279],[229,243]],'#806778');
-  // Dense, scalloped canopy with clusters, branch gaps and tiny edge highlights.
-  const canopy=rng(71);
-  for(let row=0;row<8;row++){const yy=75+row*16,half=[43,69,88,100,109,100,86,59][row];for(let x=216-half;x<216+half;x+=14){const edge=Math.abs(x-216)/half,shade=row<3?'#ad8fa9':edge>.75?'#7d6a86':'#967e9c';r(x+canopy()*7,yy+canopy()*7,19+canopy()*10,15+canopy()*8,mix(shade,row<3?'#d4b1c2':'#b79cb4',d));if(canopy()>.4){r(x+4,yy+2,8,2,mix('#c9a5bd','#ead0d0',d));r(x+1,yy+5,3,2,'#b193ae')}}}
-  for(let i=0;i<64;i++){const x=133+canopy()*170,y=89+canopy()*101;r(x,y,2+canopy()*3,2,i%3?'#caa5bd':'#e0bfcb')}
-  // Oval reflecting pool and the low stone lip.
-  pixelEllipse(p,324,285,54,37,'#827c89');pixelEllipse(p,324,280,51,32,'#beb1b2');pixelEllipse(p,324,280,44,26,mix('#455a72','#8faeb2',d));pixelEllipse(p,324,280,39,21,mix('#5c7188','#abc6c1',d));
-  for(const [x,y]of [[305,283],[342,270]]){pixelEllipse(p,x,y,8,3,'#7f9b86');flower(p,x+2,y-4,'#d9b3c9')}
-  // Six small flower plots, individually accessible from the path.
-  for(let i=0;i<6;i++){const x=87+i%2*67,y=401+Math.floor(i/2)*61;r(x-24,y-18,48,35,'#a28a88');r(x-21,y-15,42,28,'#64565e');for(let k=0;k<3;k++)r(x-17,y-9+k*8,33,2,'#806b70');r(x-22,y+13,45,3,'#c1a19b')}
-  // Swing ropes, hung from a quiet branch; seat is animated separately.
-  r(319,425,6,139,'#746170');r(391,425,6,139,'#746170');r(315,419,87,8,'#a1848b');r(335,427,2,102,'#ceb9a4');r(377,427,2,102,'#ceb9a4');
-  fence(p,281,604,6);lamp(p,285,635);
-  // Archway of vines and asymmetrical clusters of roses.
-  r(164,730,7,73,'#977e87');r(265,730,7,73,'#977e87');p.poly([[164,734],[164,713],[178,697],[197,689],[237,689],[257,701],[272,720],[272,738],[265,738],[265,723],[252,707],[234,698],[199,698],[183,706],[171,720],[171,734]],'#bda0a1');
-  for(let i=0;i<18;i++){const angle=Math.PI+i/17*Math.PI,x=218+Math.cos(angle)*55,y=738+Math.sin(angle)*46;r(x,y,9,6,'#6f8b77');if(i%3!==0)flower(p,x+4,y-2,i%2?'#d7a7bd':'#c5b0d5')}
-  for(let i=0;i<65;i++){const x=45+random()*343,y=320+random()*450;if(x>174&&x<279||x>53&&x<189&&y>375&&y<550)continue;flower(p,x,y,i%4?'#c5a3ba':'#e8d1a9')}
-  // A small side arch opens into the new flower meadow.
-  r(327,711,4,54,'#987b8a');r(382,711,4,54,'#987b8a');p.poly([[325,715],[327,699],[340,690],[366,690],[383,702],[387,716],[382,716],[379,705],[365,696],[342,696],[332,704],[330,715]],'#c6a5af');for(let i=0;i<9;i++){const x=328+i*7,y=708-Math.sin(i/8*Math.PI)*14;r(x,y,7,5,'#789582');flower(p,x+3,y-2,i%2?'#c7b5dc':'#e5bfd0')}
-  // Tiny grass star and a pale sweet are discoveries, not quest markers.
-  r(300,676,2,8,'#f1ddb4');r(297,679,8,2,'#d3b9dc');r(47,618,8,4,'#e5a3b7');r(45,617,2,6,'#e5c2bb');r(55,617,2,6,'#e5c2bb');
+ if(place==='garden'){paintGarden(p,a);
  }else{
   const themeColor=ROMANCE.themes.find(t=>t.id===theme)||ROMANCE.themes[0];
   r(0,0,432,850,'#594659');r(18,24,396,797,'#aa8c91');r(26,29,380,246,'#d3b4a2');

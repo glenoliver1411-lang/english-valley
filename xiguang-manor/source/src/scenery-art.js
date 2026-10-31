@@ -36,7 +36,10 @@ export function landscape(w,h,period='night',viewpoint='lake'){
  }
  if(viewpoint==='lake'){for(const [x,y]of [[118,g-13],[143,g-24]]){r(x-4,y,10,1,a.leaf);r(x-3,y-1,7,1,a.lit);r(x,y-4,2,4,a.flower);r(x-1,y-3,4,2,a.flower);r(x,y-3,1,1,'#f6dfbd')}}
  // Each viewing position has its own physical foreground, below the same horizon.
- if(viewpoint==='roof'){r(0,h-47,w,47,a.roof);for(let y=h-44;y<h;y+=5){r(0,y,w,1,a.tile);for(let x=0;x<w;x+=15)r(x+(y%10?7:0),y,1,5,a.trunk)}r(0,h-49,w,3,a.tile);r(12,h-78,13,33,a.wall2);r(10,h-80,17,4,a.tile);r(14,h-75,2,26,a.wall)}
+ if(viewpoint==='roof'){r(0,h-47,w,47,a.roof);for(let y=h-44;y<h;y+=5){r(0,y,w,1,a.tile);for(let x=0;x<w;x+=15)r(x+(y%10?7:0),y,1,5,a.trunk)}r(0,h-49,w,3,a.tile);r(12,h-78,13,33,a.wall2);r(10,h-80,17,4,a.tile);r(14,h-75,2,26,a.wall);
+  // The short ladder remains attached to the roof while the original girl climbs it.
+  r(106,h-43,1.5,44,a.trunk);r(115,h-43,1.5,44,a.trunk);for(let y=h-41;y<h;y+=6){r(105,y,13,1.5,a.wall2);r(106,y,11,.5,a.tile)}r(85,h-44,14,1,a.trunk);r(121,h-44,14,1,a.trunk);
+ }
  if(viewpoint==='window'){r(0,h-52,w,52,a.wall2);r(0,h-55,w,5,a.wall);r(0,h-50,w,2,a.tile);for(let y=h-40;y<h;y+=12)r(0,y,w,1,a.trunk)}
  return p.canvas;
 }
