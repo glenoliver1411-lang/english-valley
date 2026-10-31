@@ -1,10 +1,11 @@
+import {METEORS} from './meteor-config.js';
 // 星空、昼夜、演出时长和所有新增文案。名字仍来自 config.js 的 recipient。
 export const SCENERY={
- daySeconds:1200, meteorSeconds:34, sunriseSeconds:34,
+ daySeconds:1200, meteorSeconds:METEORS.duration, sunriseSeconds:34,
  text:{
   lookout:'星光观景台',look:'坐下看星星',heading:'为你留了一整片星空',first:'{name}，听说有人把整片星空都送给了你。',hint:'轻触星星，留下名字与愿望。',constellation:'曦光花冠座',skyTag:'THE SKY, JUST FOR YOU',leave:'回到庄园',
   meteor:'流星雨之夜',startMeteor:'送我一场流星雨',replayMeteor:'送我一场流星雨',waitDawn:'等待日出',replayDawn:'曦光初升',skip:'跳过演出',meteorGift:'{name}，从今晚开始，\n这片星空都属于你。',goodMorning:'早安，{name}。\n今天的第一缕阳光，也属于你。',
-  meteorPhases:['月光很轻，远处传来蟋蟀的声音','看，第一束远道而来的光','把愿望，交给这一场星雨','星河慢慢安静了下来','最后一颗，留给你'],
+  meteorPhases:METEORS.phases.map(p=>p.line),
   dawnPhases:['深夜 · 群星仍在守候','黎明前 · 东方泛起浅紫','破晓 · 云边染上金粉色','日出 · 第一缕阳光越过山峦','清晨 · 庄园慢慢醒来'],
   album:'星光与风景回忆册',albumNote:'不用赶时间。喜欢的风景，随时可以回来。',starBook:'星光图鉴',collection:'收藏这颗星',collected:'已收入图鉴',rename:'给星星取名',namePlaceholder:'写下一个名字（最多16字）',saveName:'记住这个名字',fixed:'这颗星的名字，是永远的「曦光星」。',undiscovered:'尚未发现',wish:'向星星许愿',wishPlaceholder:'想把什么愿望留在这里？（最多100字）',saveWish:'把愿望交给星星',wishSaved:'星星记住了你的愿望。',noWish:'你的愿望，可以慢慢想。',
   candy:'星星糖果',candyDesc:'最后一颗流星留下的纪念，永远留在庄园手记里。',takeCandy:'接住星星糖果',candyOwned:'星星糖果已收藏',candyLocked:'看过流星雨后，可以收藏这份纪念。',candyAvailable:'有一颗星星糖果，正在等你接住。',
