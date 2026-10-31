@@ -33,3 +33,12 @@
 斜向流星雨重制：`meteor-config.js` 与 `meteors.js` 的短轨迹像素段、细小流星头、淡金到浅紫的曦光流星、星尘与破碎水纹全部为原创代码绘制。没有改动地图素材、角色、月亮或夜空色板，没有下载外部素材，也未使用照片/视频或付费 API。
 
 草风与采花更新：`wind-grass.js` 的草丛弯曲与细草屑，`flower-effects.js` 的心形花瓣、铃兰波纹、紫色星芒与萤光，以及 `art.js` 的四种同风格花色均为原创代码绘图。没有使用 emoji、外部图片或录音，也没有调用图片生成 API。原有像素比例、角色和色板继续沿用。
+
+## 流星雨观测参考与密度升级
+
+本次查阅并观看下列公开参考；ESO照片仅下载至项目之外的开发参考目录进行观察，没有作为游戏素材、贴图或外链使用。正式游戏仍完全使用本地原创程序绘图，没有引入第三方美术或音频。
+
+- [NASA：Perseids or Sporadic Meteors? Maybe Both](https://science.nasa.gov/blogs/earth-matters/2016/08/17/perseids-or-sporadic-meteors-maybe-both/)：参考地面视角下的共同辐射点与透视方向。
+- [ESO：The 2010 Perseids over the VLT](https://www.eso.org/public/images/potw1033a/)（照片署名 ESO/S. Guisard）：观察细长渐变轨迹、星空与亮流星的亮度差异；原照片未收入发布目录。
+
+游戏把等待多时才能看见的流星适当压缩成34秒演出，不将观测时长累积的摄影效果冒充实时密度。`meteor-config.js`、`meteors.js` 的共同辐射点、远近流星、斜向像素拖尾、高潮编排与微弱水纹均为本项目原创代码。
