@@ -19,7 +19,7 @@ export class EntryScene extends Phaser.Scene{
   else{const sy=lerp(h*.76,h*.50,Math.max(0,(progress-.3)/.7));c.globalAlpha=.07;pixelEllipse({r:rect},167,sy,25,25,'#ffdeaa');c.globalAlpha=1;pixelEllipse({r:rect},167,sy,11,11,'#ffe4b3')}
   // Separate mountain silhouettes, with different lighting, behind the original-style roof.
   for(let k=0;k<3;k++){const points=[[-5,h]];for(let i=0;i<12;i++)points.push([i*24-12,h*(.63+k*.055)-Math.sin(i*1.8+k)*10-(i%3)*5]);points.push([w+5,h]);poly(points,[a.far,a.mid,a.near][k])}
-  c.drawImage(this.layers.night,0,0);if(v===2){c.globalAlpha=a.day;c.drawImage(this.layers.day,0,0);c.globalAlpha=1}
+  c.drawImage(this.layers.night,0,0,w,h);if(v===2){c.globalAlpha=a.day;c.drawImage(this.layers.day,0,0,w,h);c.globalAlpha=1}
   if(v===0)this.letter(rect,poly,q,t);else if(v===1)this.catWelcome(rect,t,h);else this.flowers(rect,t,h,progress);
   if(q>.90){c.globalAlpha=(q-.90)/.10*.65;rect(0,0,w,h,'#28283f');c.globalAlpha=1}this.texture.refresh();
  }
