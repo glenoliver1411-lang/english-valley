@@ -111,3 +111,5 @@ node tests/gift-opening-journey.mjs --webkit
 启动仍使用`npm ci`、`npm run dev`；打开浏览器后从顶部星星按钮进入星光观景台。运行`npm run build`可得到相对路径静态版本，`dist/lakeside-review/index.html`是随构建附带的前后对比页；启动`npm run preview`后访问`/lakeside-review/`即可。
 
 来源、许可证与逐项修改见[ASSET_CREDITS.md](ASSET_CREDITS.md)；统一规范见[LAKESIDE_ART_DIRECTION.md](LAKESIDE_ART_DIRECTION.md)；修改文件、检查结果与未完善问题见[LAKESIDE_REVIEW.md](LAKESIDE_REVIEW.md)。浏览器核对可在开发服务器运行时执行`node tests/lakeside-art-journey.mjs`和同命令加`--webkit`。
+
+极光专项精修：青绿色折叠光幕、薄荷色亮边、细光丝与极淡湖面碎影；保持原像素场景。比较页为 `world-finish-review/aurora.html`，文件、参考和检查见[AURORA_REFINEMENT.md](AURORA_REFINEMENT.md)。
