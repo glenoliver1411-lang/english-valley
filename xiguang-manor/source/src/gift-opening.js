@@ -108,7 +108,7 @@ export class GiftOpening {
     const letters=[...a,...b];
     const frame=()=>{n++;p.textContent=a.slice(0,Math.min(n,a.length));span.textContent=b.slice(0,Math.max(0,n-a.length-4));if(n>=letters.length+4){clearInterval(this.welcomeType);this.welcome.querySelector('small').textContent=GIFT.text.free}};
     if(this.reduced){p.textContent=a;span.textContent=b;this.welcome.querySelector('small').textContent=GIFT.text.free}else this.welcomeType=setInterval(frame,57);
-    this.welcomeEnd=setTimeout(()=>this.hideWelcome(),GIFT.timing.welcome*1000);this.nextHint=Date.now()+8000;
+    this.welcomeEnd=setTimeout(()=>{this.hideWelcome();if(!this.replay)this.api.welcomeDone?.()},GIFT.timing.welcome*1000);this.nextHint=Date.now()+8000;
   }
   hideWelcome() {clearInterval(this.welcomeType);clearTimeout(this.welcomeEnd);this.welcome.className='hidden';this.welcomeLabels?.forEach(({label,visible})=>label.setVisible(visible));this.welcomeLabels=null}
   hint(item) {

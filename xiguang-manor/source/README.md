@@ -125,3 +125,5 @@ node tests/gift-opening-journey.mjs --webkit
 2026-11-01：经用户确认，将 `v5/art-remaster` 的完整游戏发布到正式main，使用现有GitHub Pages地址。发布内容包括V5四大场景和最新独立极光之夜。旧档继续使用v1格式；预览域名的存档与正式域名分别保存。
 
 普通游戏页面也支持净景录屏：点击顶部斜线眼睛按钮，或在「庄园手记」选择「关闭全部选项」。双击画面或按Esc恢复；隐藏时仍可点空地行走。详见[CLEAN_VIEW.md](CLEAN_VIEW.md)。
+
+每日日期欢迎已接入原开场：按浏览器当地日期、星期、时段和季节显示约4秒的轻提示，支持轻点收起。配置、特殊日期接口和存档说明见[DAILY_WELCOME.md](DAILY_WELCOME.md)。

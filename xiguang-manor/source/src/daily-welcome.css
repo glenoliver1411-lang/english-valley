@@ -1,0 +1,14 @@
+.daily-welcome{position:absolute;top:112px;left:18px;right:18px;max-width:365px;margin:0 auto;z-index:11;pointer-events:none}
+.daily-welcome-card{display:block;position:relative;width:100%;padding:18px 19px 13px;text-align:left;pointer-events:auto;color:#584c63;background:linear-gradient(135deg,#f7ecd8f5,#e9deebf0);border:1px solid #e7d3bd;border-radius:4px;box-shadow:inset 0 0 0 3px #fff9ec55,0 4px 0 #73607d38,0 12px 25px #20213820;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;cursor:pointer;animation:daily-arrive .32s ease-out both;clip-path:polygon(0 6px,6px 6px,6px 0,calc(100% - 6px) 0,calc(100% - 6px) 6px,100% 6px,100% calc(100% - 6px),calc(100% - 6px) calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,6px calc(100% - 6px),0 calc(100% - 6px))}
+.daily-welcome-card[data-phase=night]{background:linear-gradient(135deg,#e9dfedf5,#e2d8eaf2)}
+.daily-welcome-header{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.daily-welcome-icon{flex:0 0 36px;width:36px;height:36px;image-rendering:pixelated}.daily-welcome-icon svg{display:block;width:36px;height:36px}
+.daily-welcome-title{display:block;font-size:13px;line-height:1.7;font-weight:500;letter-spacing:.3px}
+.daily-welcome-date{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;margin-top:2px;color:#715f77;font-size:12px;line-height:1.6}.daily-welcome-date time{font-variant-numeric:tabular-nums;font-weight:500}.daily-welcome-date span{color:#8b7d93;font-size:11px}
+.daily-welcome-greeting{display:block;font-size:12px;line-height:1.9;margin-top:7px}.daily-welcome-note{display:block;color:#8b798c;font-size:11px;line-height:1.9;margin-top:4px}
+.daily-welcome-dismiss{display:block;text-align:right;margin-top:10px;font-size:9px;letter-spacing:.7px;color:#9d8a99}
+.daily-welcome.leaving{opacity:0;transition:opacity .24s ease;pointer-events:none}.daily-welcome.leaving *{pointer-events:none}
+.daily-welcome.still .daily-welcome-card{animation:none}.daily-welcome.still.leaving{transition:none}
+@keyframes daily-arrive{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:360px),(max-height:700px){.daily-welcome{top:100px;left:13px;right:13px}.daily-welcome-card{padding:13px 15px 10px}.daily-welcome-title{font-size:12px}.daily-welcome-icon,.daily-welcome-icon svg{width:30px;height:30px}.daily-welcome-icon{flex-basis:30px}.daily-welcome-header{gap:8px;margin-bottom:6px}.daily-welcome-greeting{font-size:11px}.daily-welcome-note{font-size:10px}.daily-welcome-dismiss{margin-top:7px}}
+@media(prefers-reduced-motion:reduce){.daily-welcome-card{animation:none}.daily-welcome.leaving{transition:none}}
