@@ -1,3 +1,4 @@
+import {landscapeWeights} from './scenery-grounding.js';
 import {paintV5Lake} from './v5-landscape.js';
 import {v5Frame} from './v5-assets.js';
 import {landscapePainter,pixelPolygon} from './landscape-detail.js';
@@ -69,8 +70,7 @@ export class LakesideArt {
  constructor(scene,w,h){this.scene=scene;this.w=w;this.h=h;this.materials=new LakeMaterials(scene);this.actors=new LakesideActors();this.mountains=new LakesideMountains(scene,this.materials,w,h);this.water=new LakesideWater(scene,w,h);this.layers={};this.fronts={};this.windFlowers=[];for(const period of Object.keys(LAKESIDE.periods)){const {back,front}=this.paint(period);this.layers[period]=back;this.fronts[period]=front}}
  paint(period){return paintV5Lake(this.w,this.h,period)}
  blend(c,source,a,offset=0){
-  const night=(hourPhase(this.scene.baseHour)==='dusk')?'dusk':'night';c.globalAlpha=1;c.drawImage(source[night],offset,0,this.w,this.h);
-  if(a.day>0&&night!=='dusk'){c.globalAlpha=Math.min(1,a.day*1.7);c.drawImage(source.dawn,offset,0,this.w,this.h);c.globalAlpha=Math.max(0,(a.day-.78)/.22);c.drawImage(source.day,offset,0,this.w,this.h)}c.globalAlpha=1;
+  for(const[period,alpha]of landscapeWeights(this.scene,a)){if(alpha<=0)continue;c.globalAlpha=alpha;c.drawImage(source[period],offset,0,this.w,this.h)}c.globalAlpha=1;
  }
  drawActors(c,a,p,t,offset){
   const period=(hourPhase(this.scene.baseHour)==='dusk')?'dusk':a.day>.8?'day':a.day>.25?'dawn':'night',palette=LAKESIDE.periods[period],painter={c,r:(x,y,w,h,col)=>{c.fillStyle=col;c.fillRect(Math.round(x*2)/2,Math.round(y*2)/2,w,h)}};

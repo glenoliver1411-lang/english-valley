@@ -1,3 +1,4 @@
+import {landscapeWeights} from './scenery-grounding.js';
 import {GentleShowDirector} from './scene-director.js';
 import {LakeMaterials} from './lakeside-materials.js';
 import {LakesideMountains} from './lakeside-background.js';
@@ -64,7 +65,7 @@ export class SkyScene extends Phaser.Scene{
   this.drawDistantForest(rect,a,t);
   this.drawLake(rect,a,p,t);
   // Foreground shadows, roofs, trees and flowers change palette, not a screen tint.
-  const offset=Math.round(this.parallax*.75);c.drawImage((hourPhase(this.baseHour)==='dusk')?this.layers.dusk:this.layers.night,offset,0,w,h);if(a.day>0&&(hourPhase(this.baseHour)!=='dusk')){c.globalAlpha=Math.min(1,a.day*1.7);c.drawImage(this.layers.dawn,offset,0,w,h);c.globalAlpha=Math.max(0,(a.day-.58)/.42);c.drawImage(this.layers.day,offset,0,w,h);c.globalAlpha=1}
+  const offset=Math.round(this.parallax*.75);for(const[period,alpha]of landscapeWeights(this,a)){if(alpha<=0)continue;c.globalAlpha=alpha;c.drawImage(this.layers[period],offset,0,w,h)}c.globalAlpha=1;
   if(!this.lakeArt&&n>.1&&(this.profile.adventure.switches['sky-lamp']??true)){c.globalAlpha=n*.06;pixelEllipse({r:rect},54+offset,h-45,16,16,'#ffcc8e');c.globalAlpha=n*.12;pixelEllipse({r:rect},54+offset,h-45,8,8,'#ffce91');c.globalAlpha=1}
   if(this.viewpoint==='lake')this.meadow.draw((x,y,w,h,color,alpha)=>{c.globalAlpha=alpha;rect(x,y,w,h,color)},{day:a.day,offsetX:offset});c.globalAlpha=1;
   // Morning light shafts peek between the eastern leaves.

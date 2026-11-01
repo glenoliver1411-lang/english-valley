@@ -15,3 +15,5 @@ verification/
 !public/v5-review/*.png
 
 !public/aurora-review/*.png
+
+!public/scenery-fix-review/*.png

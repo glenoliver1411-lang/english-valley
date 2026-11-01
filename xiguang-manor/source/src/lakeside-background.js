@@ -1,3 +1,4 @@
+import {landscapeWeights} from './scenery-grounding.js';
 import {V5Mountains} from './v5-landscape.js';
 import {landscapePainter} from './landscape-detail.js';
 import {mix,hourPhase} from './sky-model.js';
@@ -5,7 +6,7 @@ import {LAKESIDE} from './lakeside-config.js';
 
 const noise=(x,y)=>{const n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)};
 function field(x,y){const ix=Math.floor(x),iy=Math.floor(y),u=x-ix,v=y-iy,s=u*u*(3-2*u),t=v*v*(3-2*v);return(noise(ix,iy)*(1-s)+noise(ix+1,iy)*s)*(1-t)+(noise(ix,iy+1)*(1-s)+noise(ix+1,iy+1)*s)*t}
-const weights=(scene,a)=>(hourPhase(scene.baseHour)==='dusk')?[['dusk',1]]:[['night',1],['dawn',Math.min(1,a.day*1.7)],['day',Math.max(0,(a.day-.58)/.42)]];
+const weights=(scene,a)=>landscapeWeights(scene,a);
 const rgb=hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));
 
 // Hand-pixeled CC0 mountain faces, cropped at native resolution. The three
