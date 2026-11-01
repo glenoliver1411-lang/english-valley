@@ -4,7 +4,7 @@
 
 Phaser 3 + JavaScript + Vite 的手机竖屏像素庄园。沿用原地图与角色，加入可散步的秘密花园、小屋和分层湖畔风景。没有 NPC、顾客、任务或每日登录要求。
 
-**原线上正式版（本轮未覆盖）**：https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/
+**线上正式版（V5）**：https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/
 
 在普通浏览器打开即可，不需要 GitHub 或 ChatGPT 登录。存档保存在当前浏览器本地。
 
@@ -121,3 +121,5 @@ node tests/gift-opening-journey.mjs --webkit
 独立花海极光页面：开发时打开`/aurora.html`；游戏内从晚风花海的「去花海看极光」进入。实现、存档返回规则及复用素材见[AURORA_MEADOW.md](AURORA_MEADOW.md)。
 
 极光之夜本轮精修与全隐藏录屏模式见[AURORA_ART.md](AURORA_ART.md)；三阶段手机实机截图和22秒原速视频位于`/aurora-review/`。净景模式双击画面或按Esc恢复全部选项。
+
+2026-11-01：经用户确认，将 `v5/art-remaster` 的完整游戏发布到正式main，使用现有GitHub Pages地址。发布内容包括V5四大场景和最新独立极光之夜。旧档继续使用v1格式；预览域名的存档与正式域名分别保存。
