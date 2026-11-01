@@ -47,7 +47,6 @@ export class LakesideWater {
   for(const [x,yy,strength]of [[89,bottom-20,1],[145,bottom-25,.7]])for(let i=0;i<6;i++){
    const width=(2+i*.9)*(1+Math.sin(i*1.7+t*.39)*.16);c.globalAlpha=a.night*strength*.15*(1-i/7);c.fillStyle='#efbf8d';c.fillRect(x-width/2+Math.sin(t*.36+i),yy+i*2.3,width,.5);
   }
-  s.aurora?.drawWaterReflection(c,top,bottom,{time:t,low:s.reduced});
   // Very few changing crests. The center stays quiet for the mirrored sky.
   for(let i=0;i<(s.reduced?12:LAKESIDE.limits.waterRipples);i++){
    const x=8+(i*47.317)%(w-16),y=top+3+(i*13.31)%(height-7),phase=Math.sin(t*(.24+i%4*.023)+i*1.7);

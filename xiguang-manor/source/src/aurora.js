@@ -44,11 +44,11 @@ export class AuroraCurtains{
   }
   c.fillStyle=g;c.fillRect(0,0,2,192);return ray;
  }
- draw(c,{time=0,night=1,reveal=1,low=false,still=false,enabled=true,parallax=0}={}){
+ draw(c,{time=0,night=1,reveal=1,low=false,still=false,enabled=true,parallax=0,strength=1}={}){
   this.visible=enabled&&night>=.05;this.night=night;if(!this.visible)return;
   const fps=low?WORLD.aurora.lowFps:WORLD.aurora.fps,tick=still?0:Math.floor(time*fps);
   if(tick!==this.tick||this.low!==low){this.tick=tick;this.low=low;this.paint(still?0:tick/fps,low);this.builds++}
-  c.save();c.globalAlpha=night*WORLD.aurora.opacity*(.6+.4*reveal);
+  c.save();c.globalAlpha=night*WORLD.aurora.opacity*clamp(strength)*(.6+.4*reveal);
   c.drawImage(this.canvas,snap(parallax*.11),0,this.w,this.h);c.restore();
  }
  paint(time,low){

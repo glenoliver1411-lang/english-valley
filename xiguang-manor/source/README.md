@@ -117,3 +117,5 @@ node tests/gift-opening-journey.mjs --webkit
 ## V5 主体美术重制
 
 独立分支 `v5/art-remaster` 使用92帧本地PNG图集重制湖畔、花海、糖果工坊、小屋及主地图；原玩法和v1进度保留。实机对比位于 `v5-review/index.html`。详见[V5_DELIVERY.md](V5_DELIVERY.md)、[V5_ART_DIRECTION.md](V5_ART_DIRECTION.md)、[资源许可](V5_ASSET_CREDITS.md)和[完整资源清单](V5_ASSET_INVENTORY.md)。正式main未覆盖。
+
+独立花海极光页面：开发时打开`/aurora.html`；游戏内从晚风花海的「去花海看极光」进入。实现、存档返回规则及复用素材见[AURORA_MEADOW.md](AURORA_MEADOW.md)。

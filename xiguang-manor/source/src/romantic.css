@@ -4,3 +4,5 @@
 .observing #adventure-tools,.in-retreat #adventure-tools,.in-retreat .scene-title{display:none!important}#adventure-tools{top:58px!important}.retreat-quiet .retreat-heading,.retreat-quiet .retreat-actions{display:none}.world-shortcuts button{border-radius:20px;padding:10px 18px}.scenic-quiet .lookout-ui{z-index:15}.in-candy-house #adventure-tools{display:none!important}
 
 #toast.flower-toast{top:auto;bottom:130px;left:50%;right:auto;width:max-content;max-width:calc(100% - 40px);padding:7px 12px;font-size:10px;background:#332a42b8;transform:translate(-50%,7px);transition:opacity .25s,transform .25s}#toast.flower-toast.show{transform:translate(-50%,0)}
+
+.retreat-ui a{pointer-events:auto;text-decoration:none}.retreat-actions #retreat-aurora{font-size:10px;padding:7px 10px;color:#d4e5de;background:#303e4bc9;border:1px solid #b7d0c35c;border-radius:3px}.aurora-destination{margin-top:16px;padding-top:12px;border-top:1px solid #bca3b63b}.aurora-destination p{font-size:11px}.aurora-destination a{display:block;text-align:center;text-decoration:none}
