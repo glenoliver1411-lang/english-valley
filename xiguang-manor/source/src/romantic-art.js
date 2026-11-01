@@ -1,3 +1,5 @@
+import {paintV5Cabin} from './v5-scenes.js';
+import {v5Blit} from './v5-assets.js';
 import {refineCabin} from './room-detail.js';
 import {paintGarden} from './garden-art.js';
 import {painter} from './art.js';
@@ -8,7 +10,7 @@ import {paintRoomSurfaces} from './home-art.js';
 import {meadowPainting} from './meadow-art.js';
 // Everything is drawn on the manor's existing two-pixel grid; no remote images.
 export function retreatPainting(place,hour,theme='rose',room={}){
- if(place==='meadow')return meadowPainting(hour);
+ if(place==='meadow')return meadowPainting(hour);if(place==='cabin')return paintV5Cabin(hour,theme,room);
  const p=painter(432,850),r=p.r,random=rng(311),a=skyPalette(hour),n=a.night,d=a.day;
  if(place==='garden'){paintGarden(p,a);
  }else{
@@ -43,7 +45,7 @@ export function retreatPainting(place,hour,theme='rose',room={}){
  return p.canvas;
 }
 export function addRomanticEntrances(scene){
- const p=painter(97,86);p.r(10,25,77,57,'#d9baa3');p.poly([[2,28],[27,2],[70,2],[96,28]],'#a7849d');for(let y=7;y<29;y+=5)p.r(27-y*.7,y,43+y*1.4,2,'#cda5b8');p.r(27,43,25,39,'#8f7186');p.r(31,47,17,27,'#f1d1a8');p.r(61,42,17,18,'#ad8b9a');p.r(63,44,13,14,'#f9d8a3');p.r(69,44,2,14,'#b8969b');p.r(12,80,77,4,'#ae8e91');scene.textures.addCanvas('personal-cabin',p.canvas);
+ const p=painter(97,86);p.r(10,25,77,57,'#d9baa3');p.poly([[2,28],[27,2],[70,2],[96,28]],'#a7849d');for(let y=7;y<29;y+=5)p.r(27-y*.7,y,43+y*1.4,2,'#cda5b8');p.r(27,43,25,39,'#8f7186');p.r(31,47,17,27,'#f1d1a8');p.r(61,42,17,18,'#ad8b9a');p.r(63,44,13,14,'#f9d8a3');p.r(69,44,2,14,'#b8969b');p.r(12,80,77,4,'#ae8e91');p.c.clearRect(0,0,97,86);v5Blit(p.c,'map-cabin',0,0,{period:'day',width:97,height:86});scene.textures.addCanvas('personal-cabin',p.canvas);
  scene.cabinImage=scene.add.image(340,665,'personal-cabin');scene.world.add(scene.cabinImage);
  const g=scene.add.graphics();g.lineStyle(5,0xbba0ad);g.strokeRoundedRect(49,665,62,65,28);g.fillStyle(0x567168);for(let i=0;i<12;i++){const x=49+i*5,y=677-Math.sin(i/11*Math.PI)*13;g.fillRect(x,y,7,6);g.fillStyle(i%3?0xd8acc1:0xc3afd7);g.fillRect(x+1,y,4,3);g.fillStyle(0x567168)}scene.world.add(g);
  // A small dock points toward the existing pond, without altering collisions.

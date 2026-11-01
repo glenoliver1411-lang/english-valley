@@ -1,3 +1,4 @@
+import {paintV5Workshop} from './v5-scenes.js';
 import {painter} from './art.js';
 import {skyPalette,mix} from './sky-model.js';
 import {volume,oval,framed,jar,book,blossom,line} from './material-painter.js';
@@ -5,7 +6,8 @@ import {drawCandy,giftImage} from './candy-art.js';
 import {CT} from './candy-config.js';
 import {paintWindowVista} from './world-detail.js';
 
-export function paintCandyRoom(hour=22){
+export function paintCandyRoom(hour=22){return paintV5Workshop(hour);
+
  const p=painter(432,850),r=p.r,a=skyPalette(hour),wood='#b58c9e',edge='#71566e',cream='#eed6bd',glass=mix('#655d7b','#b6d0da',a.day);
  r(0,0,432,850,'#55455d');r(16,24,400,292,'#c5a3b0');r(23,28,386,278,'#e6c8bc');
  for(let x=25;x<410;x+=18){r(x,29,6,276,'#d7b2bd');r(x+6,29,1,276,'#f0d5c4')}

@@ -1,3 +1,4 @@
+import {V5Mountains} from './v5-landscape.js';
 import {landscapePainter} from './landscape-detail.js';
 import {mix,hourPhase} from './sky-model.js';
 import {LAKESIDE} from './lakeside-config.js';
@@ -9,42 +10,7 @@ const rgb=hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));
 
 // Hand-pixeled CC0 mountain faces, cropped at native resolution. The three
 // depth layers have separate crops, values, haze and parallax, not cloned peaks.
-export class LakesideMountains {
- constructor(scene,materials,w,h){this.scene=scene;this.materials=materials;this.w=w;this.h=h;this.renders=0;this.cache=new Map();this.forests=new Map();for(const period of Object.keys(LAKESIDE.periods)){this.cache.set(period,this.build(period));this.forests.set(period,this.forest(period))}}
- build(period){
-  const result=[];const palette=LAKESIDE.periods[period];
-  for(const [index,x,top,tint]of [[0,215,this.h*.505,.26],[1,28,this.h*.563,.08]]){
-   const p=landscapePainter(this.w+24,this.h*.715-top),image=this.materials.image('mountains-4',period),height=p.canvas.height;
-   p.c.save();p.c.translate(this.w+24,0);p.c.scale(-1,1);p.c.drawImage(image,x,0,(this.w+24)*2,height<144?256:height,0,0,this.w+24,height/2);p.c.restore();
-   p.c.globalCompositeOperation='source-atop';p.c.globalAlpha=tint;p.r(0,0,this.w+24,height/2,period==='night'?'#8790b6':period==='dusk'?'#d3a7b8':'#e4c5c5');
-   // Soft air at the foot of each mass, while the irregular rock ridges stay clear.
-   for(let y=0;y<height/2;y+=.5){p.c.globalAlpha=Math.min(.48,(y/(height/2))**3*.48);p.r(0,y,this.w+24,.5,palette.water[2])}
-   p.c.globalAlpha=1;p.c.globalCompositeOperation='source-over';result.push({canvas:p.canvas,top,parallax:.16+index*.19});
-  }
-  this.renders++;return result;
- }
- forest(period){
-  const p=landscapePainter(this.w+20,44),a=LAKESIDE.periods[period],dark=mix(a.leaf[0],a.water[0],.3),mid=mix(a.leaf[1],a.water[1],.2);
-  const source=this.materials.image('mountains-3',period);p.c.globalAlpha=.15;p.c.drawImage(source,190,0,(this.w+20)*2,88,0,0,this.w+20,44);p.c.globalAlpha=1;
-  const ridge=x=>34-9*Math.exp(-(((x-25)/38)**2))-15*Math.exp(-(((x-194)/41)**2))+Math.sin(x*.079)*1.4;
-  const points=[];for(let x=-3;x<this.w+24;x+=3)points.push([x,ridge(x)]);
-  p.poly([...points,[this.w+24,44],[-3,44]],mix(mid,a.water[2],.14));
-  const near=[];for(let x=-3;x<this.w+24;x+=3)near.push([x,39-7*Math.exp(-(((x-28)/28)**2))-12*Math.exp(-(((x-194)/38)**2))+Math.sin(x*.111)*.8]);
-  p.poly([...near,[this.w+24,44],[-3,44]],dark);
-  // Three silhouettes in unequal groves: firs, rounded willow crowns and saplings.
-  for(let i=0;i<59;i++){
-   const x=(i*19.713)%(this.w+20),base=ridge(x)+1.5,height=1.5+noise(i,8)*6,wide=.7+noise(i,5)*1.5;
-   if(x>87&&x<124&&i%3)continue;
-   p.r(x,base-height*.74,.5,height*.8,dark);
-   if(i%4){for(let k=0;k<4;k++){const y=base-height+k*height*.24,r=wide*(.25+k*.23);p.poly([[x,y-1],[x-r,y+height*.33],[x+wide*.13,y+height*.25],[x+r,y+height*.35]],i%3?dark:mid)}}
-   else {for(const[dx,dy,r]of [[0,0,wide],[wide*.5,1,wide*.8],[-wide*.55,1.5,wide*.7]])p.poly([[x+dx-r,base-height+dy],[x+dx-r*.4,base-height+dy-2],[x+dx+r*.6,base-height+dy-1.5],[x+dx+r,base-height+dy+2],[x+dx-r,base-height+dy+3]],mid)}
-  }
-  return p.canvas;
- }
- draw(c,a,parallax=0){for(const[period,alpha]of weights(this.scene,a)){if(alpha<=0)continue;c.globalAlpha=alpha;for(const layer of this.cache.get(period))c.drawImage(layer.canvas,Math.round((-12+parallax*layer.parallax)*2)/2,layer.top,this.w+24,layer.canvas.height/2)}c.globalAlpha=1}
- drawForest(c,a,parallax=0){for(const[period,alpha]of weights(this.scene,a)){if(alpha<=0)continue;c.globalAlpha=alpha;c.drawImage(this.forests.get(period),Math.round((-10+parallax*.47)*2)/2,this.h*.695-Math.min(44,this.h*.108)*.932,this.w+20,Math.min(44,this.h*.108))}c.globalAlpha=1}
- clear(){this.cache.clear();this.forests.clear()}
-}
+export class LakesideMountains extends V5Mountains {}
 
 export class LakesideWater {
  constructor(scene,w,h){this.scene=scene;this.w=w;this.h=h;this.top=Math.round(h*.695);this.bottom=Math.round(h*.886);this.height=this.bottom-this.top;this.cache=new Map();this.renders=0;for(const period of Object.keys(LAKESIDE.periods))this.cache.set(period,this.paint(period));this.reflect=document.createElement('canvas');this.reflect.width=w*2;this.reflect.height=this.height*2}

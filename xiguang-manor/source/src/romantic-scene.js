@@ -1,3 +1,8 @@
+import {v5WindowContains} from './v5-config.js';
+import {LakesideActors} from './lakeside-actors.js';
+import {v5Period,V5_HOME_PROPS} from './v5-scenes.js';
+import {v5Frame} from './v5-assets.js';
+import {MeadowSprigs} from './v5-landscape.js';
 import {meadowPath} from './meadow-art.js';
 import {HOME,MEADOW} from './home-config.js';
 import {cabinBlocked,canPlace,furnitureBox,furniture,furnitureStandPoints} from './home-model.js';
@@ -15,15 +20,15 @@ import {flowerStage} from './romantic-model.js';
 import {skyPalette,mix} from './sky-model.js';
 export class RomanticScene extends Phaser.Scene {
  constructor(profile,api){super('retreat');this.profile=profile;this.api=api}
- init({place}){this.place=place;this.elapsed=0;this.target=null;this.path=[];this.selected=null;this.facing=3;this.quiet=false;this.awaken=0;this.frameTime=0;this.lastPaint='';this.slow=0;this.editing=null;this.homePulse=[];this.homeTextureKeys=new Set();this.homeSprites=new Map()}
+ init({place}){this.place=place;this.v5Cats=new LakesideActors();this.elapsed=0;this.target=null;this.path=[];this.selected=null;this.facing=3;this.quiet=false;this.awaken=0;this.frameTime=0;this.lastPaint='';this.slow=0;this.editing=null;this.homePulse=[];this.homeTextureKeys=new Set();this.homeSprites=new Map();this.fixedSprites=[];this.fixedSignature=''}
  create(){
   this.cameras.main.setBackgroundColor('#493e52');this.repaint();
   this.player=this.add.sprite(216,785,outfitKey(this.profile),12).setOrigin(.5,.85).setScale(1.25);
-  this.cat=this.add.image(251,772,'cat').setScale(1.1);this.g=this.add.graphics();this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(100);this.decorGraphics=this.add.graphics().setDepth(150);this.homeEffectGraphics=this.add.graphics().setDepth(110);this.syncHome();this.meadow=this.place!=='cabin'?new WindMeadow(432,850,{count:this.place==='meadow'?64:105,mask:this.place==='meadow'?(x,y)=>Math.abs(x-meadowPath(y).x)>meadowPath(y).width/2+7&&!(x>278&&x<393&&y>540&&y<622)&&!(x>55&&x<151&&y>614&&y<689):grassMask(this.textures.get('retreat-night').getSourceImage(),['#3d5557','#49645e','#617970']),minY:340,maxY:800,seed:407}):null;
-  this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.07,.07,0,40);this.cameras.main.fadeIn(700,35,35,53);
+  this.cat=this.add.image(251,772,'cat').setScale(1.1);this.g=this.add.graphics().setDepth(35);this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(100);this.decorGraphics=this.add.graphics().setDepth(150);this.homeEffectGraphics=this.add.graphics().setDepth(110);this.syncHome();this.syncFixed();this.meadow=this.place!=='cabin'?new WindMeadow(432,850,{count:this.place==='meadow'?64:105,mask:this.place==='meadow'?(x,y)=>Math.abs(x-meadowPath(y).x)>meadowPath(y).width/2+7&&!(x>278&&x<393&&y>540&&y<622)&&!(x>55&&x<151&&y>614&&y<689):grassMask(this.textures.get('retreat-night').getSourceImage(),['#3d5557','#49645e','#617970']),minY:340,maxY:800,seed:407}):null;
+  this.v5Sprigs=this.place==='meadow'?new MeadowSprigs(this):null;this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.07,.07,0,40);this.cameras.main.fadeIn(700,35,35,53);
   this.keys=this.input.keyboard.createCursorKeys();this.extra=this.input.keyboard.addKeys('W,A,S,D');
   this.input.on('pointerdown',p=>{if(this.api.blocked())return;if(this.editing){this.placeAt(p);return}if(this.quiet)return;const homeHit=this.place==='cabin'?this.props().filter(v=>v.id==='homeItem').sort((a,b)=>b.item.y-a.item.y).find(v=>{const f=furniture(v.item.type);return Math.abs(p.worldX-v.item.x)<f.w/2+4&&p.worldY>v.item.y-f.h&&p.worldY<v.item.y+10}):null;let hit=homeHit||this.props().map(v=>({...v,d:Math.hypot(p.worldX-v.x,p.worldY-v.y)})).sort((a,b)=>a.d-b.d)[0];if(this.place==='meadow'&&p.worldY>334&&!(hit?.d<32)&&Math.abs(p.worldX-meadowPath(p.worldY).x)>meadowPath(p.worldY).width/2+5){hit={id:'meadowPick',x:p.worldX,y:p.worldY,title:MEADOW.pick,d:0}}if(homeHit||hit?.d<32){if(Math.hypot(hit.x-this.player.x,hit.y-this.player.y)<100)this.api.action(hit);else this.walkTo(this.standPoint(hit),hit)}else if(!this.blocked(p.worldX,p.worldY)){this.walkTo({x:p.worldX,y:p.worldY})}});
-  this.input.on('pointermove',p=>{if(this.editing&&p.isDown&&!this.api.blocked())this.placeAt(p)});this.events.once('shutdown',()=>{for(const key of this.homeTextureKeys)if(this.textures.exists(key))this.textures.remove(key);for(const k of ['retreat-night','retreat-morning','retreat-day','retreat-dusk'])if(this.textures.exists(k))this.textures.remove(k)});this.api.ready(this);
+  this.input.on('pointermove',p=>{if(this.editing&&p.isDown&&!this.api.blocked())this.placeAt(p)});this.events.once('shutdown',()=>{this.v5Sprigs?.destroy();for(const key of this.homeTextureKeys)if(this.textures.exists(key))this.textures.remove(key);for(const k of ['retreat-night','retreat-morning','retreat-day','retreat-dusk'])if(this.textures.exists(k))this.textures.remove(k)});this.api.ready(this);
  }
  repaint(){
   const theme=this.profile.romance.theme;this.background?.destroy();this.blend?.destroy();
@@ -63,6 +68,11 @@ export class RomanticScene extends Phaser.Scene {
 
  paintKey(){const w=this.profile.romance;return[w.theme,w.room.wallpaper,w.room.floor].join('/')}
  homeTexture(item){const w=this.profile.romance,key=['home',item.type,w.theme,item.type==='vase'?w.room.bouquet:'plain',item.on?1:0].join('-');if(!this.textures.exists(key)){this.textures.addCanvas(key,furnitureCanvas(item.type,w.theme,w.room.bouquet,item.on));this.homeTextureKeys.add(key)}return key}
+ syncFixed(){
+  if(this.place!=='cabin')return;const period=v5Period(this.profile.scenery.clock),theme=this.profile.romance.theme,key=period+'/'+theme;if(key===this.fixedSignature)return;this.fixedSignature=key;
+  this.fixedSprites.forEach(v=>v.destroy());this.fixedSprites=[];
+  for(const p of V5_HOME_PROPS){const texture='v5-fixed-'+p.name+'-'+period+'-'+theme;if(!this.textures.exists(texture)){this.textures.addCanvas(texture,v5Frame(p.name,{period,theme}));this.homeTextureKeys.add(texture)}const sprite=this.add.image(p.x,p.y,texture).setOrigin(0).setDepth(20+p.foot*.01);if(p.height)sprite.setDisplaySize(sprite.width,p.height);this.fixedSprites.push(sprite)}
+ }
  syncHome(){
   if(this.place!=='cabin')return;const items=this.profile.romance.room.items;
   for(const [type,image]of this.homeSprites)if(!items.some(i=>i.type===type)){image.destroy();this.homeSprites.delete(type)}
@@ -101,8 +111,8 @@ export class RomanticScene extends Phaser.Scene {
   if(document.hidden||this.api.blocked()){this.stopMoving();return;}const dt=Math.min(delta,60)/1000;this.elapsed+=dt;const w=this.profile.romance;
   if(this.quiet||this.editing)this.idle();else{this.movePlayer(dt);if(!this.quiet&&!this.api.blocked())this.api.near(this.nearest())}
   if(delta>45)this.slow++;else this.slow=Math.max(0,this.slow-.25);const reduced=this.profile.scenery.lowEffects||this.slow>100;this.pickups.update(dt,{reduced,still:w.reducedMotion});this.meadow?.update(dt,{reduced,still:w.reducedMotion});this.frameTime+=dt;if(this.frameTime<1/(reduced?16:30))return;this.frameTime=0;
-  if(this.paintKey()!==this.lastPaint)this.repaint();this.syncHome();this.updatePlacement();const a=skyPalette(this.profile.scenery.clock),day=a.day,t=w.reducedMotion?0:this.elapsed;if(this.profile.scenery.clock>=17&&this.profile.scenery.clock<20){this.background.setTexture('retreat-dusk');this.blend.setAlpha(0)}else{this.background.setTexture('retreat-night');this.blend.setTexture(this.profile.scenery.clock<9?'retreat-morning':'retreat-day');this.blend.setAlpha(day)}
-  if(this.place==='cabin'){const lamps=w.room.items.filter(item=>item.on&&['lamp','candles'].includes(item.type));for(const item of w.room.items){const image=this.homeSprites.get(item.type);let warm=0;for(const lamp of lamps)warm=Math.max(warm,Math.max(0,1-Math.hypot(item.x-lamp.x,item.y-lamp.y)/140));image?.setTint(parseInt(mix(mix('#c6bed0','#f3dcc4',warm*.45),'#fff6e6',day).slice(1),16))}}const g=this.g;g.clear();const rect=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),ww,hh)},ellipse=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillEllipse(x,y,ww,hh)};
+  if(this.paintKey()!==this.lastPaint)this.repaint();this.syncHome();this.syncFixed();this.updatePlacement();const a=skyPalette(this.profile.scenery.clock),day=a.day,t=w.reducedMotion?0:this.elapsed;if(this.profile.scenery.clock>=17&&this.profile.scenery.clock<20){this.background.setTexture('retreat-dusk');this.blend.setAlpha(0)}else if(day>.65){this.background.setTexture(this.profile.scenery.clock<9?'retreat-morning':'retreat-day');this.blend.setTexture('retreat-day').setAlpha(this.profile.scenery.clock<9?Math.max(0,(day-.80)/.20):0)}else{this.background.setTexture('retreat-night');this.blend.setTexture('retreat-morning').setAlpha(Math.min(1,day*1.5))}
+  if(this.place==='cabin'){const lamps=w.room.items.filter(item=>item.on&&['lamp','candles'].includes(item.type));for(const item of w.room.items){const image=this.homeSprites.get(item.type);let warm=0;for(const lamp of lamps)warm=Math.max(warm,Math.max(0,1-Math.hypot(item.x-lamp.x,item.y-lamp.y)/140));image?.setTint(parseInt(mix(mix('#c6bed0','#f3dcc4',warm*.45),'#fff6e6',day).slice(1),16))}}this.player.setDepth(20+this.player.y*.01);this.cat.setDepth(20+(this.cat.y+13)*.01);this.v5Sprigs?.update(t,this.profile.scenery.clock,w.reducedMotion);const g=this.g;g.clear();const rect=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),ww,hh)},ellipse=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillEllipse(x,y,ww,hh)};
   this.meadow?.draw(rect,{day,player:this.player});const fg=this.pickupGraphics;fg.clear();this.pickups.draw((x,y,w,h,color,alpha)=>{fg.fillStyle(parseInt(color.slice(1),16),alpha);fg.fillRect(Math.round(x),Math.round(y),w,h)});
   ellipse(this.player.x+3,this.player.y+2,25,6,'#384955',.12);ellipse(this.cat.x+4,this.cat.y+15,26,5,'#384955',.1);
   // The cat is always safe. It follows, chases a butterfly, stretches, then naps.
@@ -111,7 +121,7 @@ export class RomanticScene extends Phaser.Scene {
   const cy=catBed&&!follow&&cycle>20?catBed.y-12:follow?this.player.y-12:this.place==='cabin'?cycle<14?249:714:this.place==='meadow'?this.quiet?this.player.y+12:cycle<20?597:677:cycle<15?362+Math.cos(t*.5)*13:338;
   this.cat.x+=(cx-this.cat.x)*.065;this.cat.y+=(cy-this.cat.y)*.065;
   const sleep=!follow&&(this.quiet||cycle>28),stretch=!sleep&&cycle>23&&cycle<28?Math.sin((cycle-23)/5*Math.PI):0;
-  const perspective=this.place==='meadow'?.45+Math.max(0,Math.min(1,(this.cat.y-310)/500))*.55:1;this.cat.setTexture(sleep?'cat-sleep':'cat').setScale((1.1+stretch*.2)*perspective,(sleep?.8+Math.sin(t)*.008:1.1-stretch*.3)*perspective);if(this.place==='meadow')this.player.setScale(.55+Math.max(0,Math.min(1,(this.player.y-330)/480))*.7);
+  const perspective=this.place==='meadow'?.45+Math.max(0,Math.min(1,(this.cat.y-310)/500))*.55:1;this.cat.setTexture(sleep?'cat-sleep':'cat').setScale((1.1+stretch*.2)*perspective,(sleep?.8+Math.sin(t)*.008:1.1-stretch*.3)*perspective);if(this.place==='meadow')this.player.setScale(.55+Math.max(0,Math.min(1,(this.player.y-330)/480))*.7);const catPeriod=v5Period(this.profile.scenery.clock),catPose=sleep?'sleep':stretch>.2?'stretch':'sit',catTexture='v5-cat-'+catPeriod+'-'+catPose;if(!this.textures.exists(catTexture)){this.textures.addCanvas(catTexture,this.v5Cats.cat(catPeriod,catPose));this.homeTextureKeys.add(catTexture)}this.cat.setTexture(catTexture).setDisplaySize((37+stretch*4)*perspective,(26-stretch*2)*perspective);
   if(this.place==='meadow'){this.drawMeadow(rect,ellipse,a,t,reduced)}else if(this.place==='garden'){
    for(let i=0;i<6;i++){const b=w.beds[i],stage=flowerStage(b),x=87+i%2*67,y=401+Math.floor(i/2)*61;if(stage===0)continue;const f=R.flowers.find(f=>f.id===b.flower),height=[0,4,8,16,24][stage],bend=Math.sin(t*.7+i*2.3)*1.4,near=Math.max(0,1-Math.hypot(this.player.x-x,this.player.y-y)/48);rect(x+bend+near*2,y-height,2,height,'#87a188');rect(x-7+bend,y-height*.6,8,3,'#a1b398');rect(x+2+bend,y-height*.4,8,3,'#809e87');if(stage>=3){const size=stage===4?10:5;rect(x-size/2+bend,y-height-3,size,7,f.color);rect(x-2+bend,y-height-6,5,12,f.color);rect(x+bend,y-height-2,2,2,f.center);if(f.id==='glow')ellipse(x,y-height,26,24,f.center,a.night*.12)}if(stage===2)rect(x+6,y-7,2,3,'#badcdb')}
    for(let i=0;i<(reduced?8:18);i++){const x=130+i*37%170,y=154+i*17%61,bend=w.reducedMotion?0:Math.sin(t*.58+i*2.3)*1.4;rect(x+bend,y,2,1,i%3?'#dfb4ca':'#edcdd3',.6)}
@@ -130,10 +140,10 @@ export class RomanticScene extends Phaser.Scene {
    // A handful of moving hearth pixels cast local warm light across the floor.
    for(let i=0;i<6;i++){const flame=8+Math.sin(t*4+i*2)*4;rect(51+i*6,309-flame,4,flame,i%2?'#efb77c':'#e38e72');rect(52+i*6,307-flame*.5,2,flame*.5,'#ffe1a2')}
    if(!reduced){ellipse(72,316,100,68,'#f7bd87',.055);ellipse(79,337,143,80,'#f1c18f',.04)}
-   if(a.night>.05)for(let i=0;i<24;i++)rect(140+i*47%151,90+i*19%66,1,1,i%4?'#e5d9e7':'#f4d9b3',a.night*starTwinkle(t,i*1.73,.2+i%5*.1));
+   if(a.night>.05)for(let i=0;i<24;i++){const x=140+i*47%151,y=90+i*19%66;if(v5WindowContains(x,y))rect(x,y,1,1,i%4?'#e5d9e7':'#f4d9b3',a.night*starTwinkle(t,i*1.73,.2+i%5*.1))}
    // Window glass is the only weather area inside; rain never falls through the roof.
-   if(w.weather==='rain')for(let i=0;i<(reduced?18:42);i++){const x=134+i*37%163,y=83+(i*29+t*90)%135;rect(x,y,1,5,'#c1c8da',.5)}
-   if(w.weather==='snow')for(let i=0;i<(reduced?10:25);i++){const x=134+(i*37+Math.sin(t*.3+i)*4)%162,y=83+(i*29+t*7)%135;rect(x,y,2,2,'#f5e8df',.7)}
+   if(w.weather==='rain')for(let i=0;i<(reduced?18:42);i++){const x=134+i*37%163,y=83+(i*29+t*90)%135;if(v5WindowContains(x,y+5))rect(x,y,1,5,'#c1c8da',.5)}
+   if(w.weather==='snow')for(let i=0;i<(reduced?10:25);i++){const x=134+(i*37+Math.sin(t*.3+i)*4)%162,y=83+(i*29+t*7)%135;if(v5WindowContains(x,y+2))rect(x,y,2,2,'#f5e8df',.7)}
    if(w.rainStoppedAt&&Date.now()-w.rainStoppedAt<180000&&w.weather==='clear'){g.lineStyle(2,0xd8a6ba,.35);g.beginPath();g.arc(218,151,48,Math.PI,Math.PI*2);g.strokePath();g.lineStyle(2,0xe5d1ac,.3);g.beginPath();g.arc(218,151,44,Math.PI,Math.PI*2);g.strokePath()}
    if(w.personalStar&&w.starPlace==='room'){rect(271,119,2,14,'#fae8bd');rect(266,125,12,2,'#fae8bd');ellipse(272,126,25,25,'#f9d4a7',.085)}
    if(w.personalStar){rect(227,245,25,19,'#bb9baa');rect(229,244,21,3,'#e1c4b8')}
@@ -142,6 +152,6 @@ export class RomanticScene extends Phaser.Scene {
   }
   // Finite deterministic petal pool, slow and not synchronized with tree sway.
   if(!w.reducedMotion)for(let i=0;i<(reduced?7:18);i++){const x=24+((i*73+t*(2+i%3))%384),y=this.place!=='cabin'?175+(i*47+t*(4+i%4))%620:290+(i*37-t*1.3+520)%480;rect(x+Math.sin(t*.7+i)*7,y,i%4?2:3,1,this.place!=='cabin'?'#e3b2c9':'#f2d6b2',this.place!=='cabin'?.5:.22)}
-  this.player.setDepth(20+this.player.y*.01);this.cat.setDepth(20+this.cat.y*.01);g.setDepth(2);
+  this.player.setDepth(20+this.player.y*.01);this.cat.setDepth(20+(this.cat.y+13)*.01);g.setDepth(this.place==='cabin'?35:18);
  }
 }

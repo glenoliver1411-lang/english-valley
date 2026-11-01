@@ -1,3 +1,4 @@
+import {V5} from './v5-config.js';
 import './home.css';
 import './gift.css';
 import {GiftOpening} from './gift-opening.js';
@@ -13,6 +14,7 @@ import './adventure.css';
 import './candy.css';
 import './romantic.css';
 import './world-polish.css';
+import './v5.css';
 import {CandyWorkshop} from './candy-ui.js';
 import {AdventureUI} from './adventure-ui.js';
 import {AT} from './adventure-config.js';
@@ -32,7 +34,7 @@ document.title=`${C.title}：${C.subtitle}`;
 $('#app').innerHTML=`<main class="shell"><aside class="intro"><div class="edition">${icon('star')} ${C.edition}</div><div class="side-title"><span>${C.title}</span><h1>${C.subtitle}</h1><p>${fmt(T.dedication)}</p></div><div class="moon-art"><i></i><b>✧</b><em>✧</em><span></span></div><div class="aside-note"><span>01 / 05</span><p>${T.home}</p><div class="line"></div></div><footer>${icon('heart')} ${T.signature}</footer></aside><section class="device"><header class="topbar"><div class="brand">${icon('moon')}<div><strong>${C.title}</strong><small>${C.subtitle}</small></div></div><nav><button id="scenery" class="icon-button" aria-label="${ST.album}">${icon('star')}</button><button id="music" class="icon-button"></button><button id="journal" class="icon-button" aria-label="${T.memories}">${icon('book')}</button><button id="exit-game" class="icon-button" aria-label="${XT.exit}">${icon('exit')}</button></nav></header><div class="playfield"><div id="game" aria-label="${C.title}"></div><div class="hud"><div class="chapter"><span class="live-dot"></span><span id="chapter"></span></div><div class="counts"><span>${icon('candy')}<b id="candies">0</b></span><span>${icon('star')}<b id="magic">0/3</b></span></div></div><div id="scene-title" class="scene-title"></div><div id="toast" role="status"></div><div class="bottom-controls"><div id="joystick" aria-label="${T.move}"><span class="joystick-ring"></span><span id="knob"></span><i class="up"></i><i class="down"></i><i class="left"></i><i class="right"></i></div><button id="interact" disabled>${icon('star')}<span>${T.interact}</span></button></div><div id="dialogue" class="dialogue hidden"><span id="speaker"></span><p id="dialogue-text"></p><button id="dialogue-next">${T.skip} ${icon('arrow')}</button></div><div id="modal" class="modal hidden" role="dialog" aria-modal="true"></div></div><footer class="device-footer"><span>${T.move}</span><span id="saveStatus">${T.saved}</span></footer></section><aside class="right-note"><div class="vertical">${fmt(T.dedication)}</div><span>✧</span></aside></main>`;
 $('.device').classList.toggle('reduce-motion',data.romance.reducedMotion);
 function save(){if(scene?.ready&&!scene.room&&!scene.observing&&!scene.exploring&&!progress.exited)data.position={x:scene.player.x,y:scene.player.y};const ok=progress.save(data);session?.saveStatus(ok);$('#saveStatus').textContent=ok?T.saved:T.saveError;return ok}
-function hud(){$('#chapter').textContent=R.title;$('#candies').textContent=data.candies;$('#magic').textContent=`${data.magic.length}/3`;$('.aside-note>span').textContent='V4.0';updateMusic();scenery?.updateTime()}
+function hud(){$('#chapter').textContent=R.title;$('#candies').textContent=data.candies;$('#magic').textContent=`${data.magic.length}/3`;$('.aside-note>span').textContent=V5.version;updateMusic();scenery?.updateTime()}
 
 function near(item){gift?.hint(item);current=item;const b=$('#interact');b.disabled=!item||modal;b.querySelector('span').textContent=item?item.title:T.interact}
 function toast(text,variant=''){$('#toast').classList.toggle('flower-toast',variant==='flower');$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toast.timeout);toast.timeout=setTimeout(()=>$('#toast').classList.remove('show'),2800)}

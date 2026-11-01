@@ -1,10 +1,10 @@
-# 曦光庄园：万圣夜的礼物 · V4.0
+# 曦光庄园：万圣夜的礼物 · V5.0
 
 “你的名字好美，所以我送给你一座庄园。”
 
 Phaser 3 + JavaScript + Vite 的手机竖屏像素庄园。沿用原地图与角色，加入可散步的秘密花园、小屋和分层湖畔风景。没有 NPC、顾客、任务或每日登录要求。
 
-**公开试玩**：https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/
+**原线上正式版（本轮未覆盖）**：https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/
 
 在普通浏览器打开即可，不需要 GitHub 或 ChatGPT 登录。存档保存在当前浏览器本地。
 
@@ -113,3 +113,7 @@ node tests/gift-opening-journey.mjs --webkit
 来源、许可证与逐项修改见[ASSET_CREDITS.md](ASSET_CREDITS.md)；统一规范见[LAKESIDE_ART_DIRECTION.md](LAKESIDE_ART_DIRECTION.md)；修改文件、检查结果与未完善问题见[LAKESIDE_REVIEW.md](LAKESIDE_REVIEW.md)。浏览器核对可在开发服务器运行时执行`node tests/lakeside-art-journey.mjs`和同命令加`--webkit`。
 
 极光专项精修：青绿色折叠光幕、薄荷色亮边、细光丝与极淡湖面碎影；保持原像素场景。比较页为 `world-finish-review/aurora.html`，文件、参考和检查见[AURORA_REFINEMENT.md](AURORA_REFINEMENT.md)。
+
+## V5 主体美术重制
+
+独立分支 `v5/art-remaster` 使用92帧本地PNG图集重制湖畔、花海、糖果工坊、小屋及主地图；原玩法和v1进度保留。实机对比位于 `v5-review/index.html`。详见[V5_DELIVERY.md](V5_DELIVERY.md)、[V5_ART_DIRECTION.md](V5_ART_DIRECTION.md)、[资源许可](V5_ASSET_CREDITS.md)和[完整资源清单](V5_ASSET_INVENTORY.md)。正式main未覆盖。

@@ -10,3 +10,6 @@ verification/
 !src/assets/lakeside/*.png
 !public/lakeside-review/*.png
 !public/world-finish-review/*.png
+!src/assets/v5/*.png
+!src/assets/v5/originals/*.png
+!public/v5-review/*.png

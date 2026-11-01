@@ -1,0 +1,657 @@
+{
+  "width": 2048,
+  "height": 2048,
+  "frames": {
+    "furniture-chair": {
+      "kind": "interior",
+      "x": 772,
+      "y": 1480,
+      "w": 44,
+      "h": 57
+    },
+    "furniture-tea": {
+      "kind": "interior",
+      "x": 1003,
+      "y": 1480,
+      "w": 54,
+      "h": 43
+    },
+    "furniture-lamp": {
+      "kind": "interior",
+      "x": 1518,
+      "y": 1381,
+      "w": 34,
+      "h": 77
+    },
+    "furniture-plant": {
+      "kind": "interior",
+      "x": 555,
+      "y": 1480,
+      "w": 42,
+      "h": 60
+    },
+    "furniture-vase": {
+      "kind": "interior",
+      "x": 819,
+      "y": 1480,
+      "w": 38,
+      "h": 54
+    },
+    "furniture-piano": {
+      "kind": "interior",
+      "x": 703,
+      "y": 1480,
+      "w": 66,
+      "h": 58
+    },
+    "furniture-candles": {
+      "kind": "interior",
+      "x": 1101,
+      "y": 1480,
+      "w": 30,
+      "h": 43
+    },
+    "furniture-record": {
+      "kind": "interior",
+      "x": 860,
+      "y": 1480,
+      "w": 43,
+      "h": 49
+    },
+    "furniture-screen": {
+      "kind": "interior",
+      "x": 1310,
+      "y": 1381,
+      "w": 57,
+      "h": 83
+    },
+    "furniture-cushion": {
+      "kind": "interior",
+      "x": 1680,
+      "y": 1480,
+      "w": 38,
+      "h": 22
+    },
+    "furniture-easel": {
+      "kind": "interior",
+      "x": 442,
+      "y": 1480,
+      "w": 42,
+      "h": 65
+    },
+    "furniture-catBed": {
+      "kind": "interior",
+      "x": 1539,
+      "y": 1480,
+      "w": 49,
+      "h": 29
+    },
+    "fixed-bed": {
+      "kind": "interior",
+      "x": 1035,
+      "y": 900,
+      "w": 124,
+      "h": 219
+    },
+    "fixed-fireplace": {
+      "kind": "interior",
+      "x": 867,
+      "y": 1183,
+      "w": 87,
+      "h": 153
+    },
+    "fixed-bookcase": {
+      "kind": "interior",
+      "x": 1309,
+      "y": 1183,
+      "w": 73,
+      "h": 125
+    },
+    "fixed-wardrobe": {
+      "kind": "interior",
+      "x": 1385,
+      "y": 1183,
+      "w": 78,
+      "h": 123
+    },
+    "fixed-sofa": {
+      "kind": "interior",
+      "x": 1558,
+      "y": 1183,
+      "w": 67,
+      "h": 116
+    },
+    "fixed-desk": {
+      "kind": "interior",
+      "x": 1171,
+      "y": 1381,
+      "w": 136,
+      "h": 89
+    },
+    "room-rug": {
+      "kind": "interior",
+      "x": 2,
+      "y": 1183,
+      "w": 175,
+      "h": 195
+    },
+    "cabin-walls-original": {
+      "kind": "interior",
+      "x": 1307,
+      "y": 575,
+      "w": 432,
+      "h": 300
+    },
+    "cabin-walls-floral": {
+      "kind": "interior",
+      "x": 437,
+      "y": 575,
+      "w": 432,
+      "h": 300
+    },
+    "cabin-walls-gingham": {
+      "kind": "interior",
+      "x": 872,
+      "y": 575,
+      "w": 432,
+      "h": 300
+    },
+    "candy-walls": {
+      "kind": "interior",
+      "x": 2,
+      "y": 575,
+      "w": 432,
+      "h": 322
+    },
+    "floor-wood": {
+      "kind": "interior",
+      "x": 1307,
+      "y": 2,
+      "w": 432,
+      "h": 570
+    },
+    "floor-pale": {
+      "kind": "interior",
+      "x": 872,
+      "y": 2,
+      "w": 432,
+      "h": 570
+    },
+    "floor-herringbone": {
+      "kind": "interior",
+      "x": 437,
+      "y": 2,
+      "w": 432,
+      "h": 570
+    },
+    "floor-candy": {
+      "kind": "interior",
+      "x": 2,
+      "y": 2,
+      "w": 432,
+      "h": 570
+    },
+    "candy-strawberry-moon": {
+      "kind": "ui",
+      "x": 596,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-strawberry-star": {
+      "kind": "ui",
+      "x": 695,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-strawberry-cat": {
+      "kind": "ui",
+      "x": 497,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-pumpkin-moon": {
+      "kind": "ui",
+      "x": 299,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-pumpkin-star": {
+      "kind": "ui",
+      "x": 398,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-pumpkin-cat": {
+      "kind": "ui",
+      "x": 200,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-lavender-moon": {
+      "kind": "ui",
+      "x": 2,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-lavender-star": {
+      "kind": "ui",
+      "x": 101,
+      "y": 1381,
+      "w": 96,
+      "h": 96
+    },
+    "candy-lavender-cat": {
+      "kind": "ui",
+      "x": 1943,
+      "y": 1183,
+      "w": 96,
+      "h": 96
+    },
+    "stage-mix": {
+      "kind": "ui",
+      "x": 2,
+      "y": 900,
+      "w": 432,
+      "h": 280
+    },
+    "stage-oven": {
+      "kind": "ui",
+      "x": 437,
+      "y": 900,
+      "w": 432,
+      "h": 280
+    },
+    "stage-recipe": {
+      "kind": "ui",
+      "x": 1502,
+      "y": 900,
+      "w": 432,
+      "h": 200
+    },
+    "gift-box-open": {
+      "kind": "ui",
+      "x": 439,
+      "y": 1183,
+      "w": 256,
+      "h": 182
+    },
+    "memory-cloche": {
+      "kind": "ui",
+      "x": 1628,
+      "y": 1183,
+      "w": 96,
+      "h": 115
+    },
+    "wardrobe-mirror": {
+      "kind": "ui",
+      "x": 872,
+      "y": 900,
+      "w": 160,
+      "h": 224
+    },
+    "shop-cabinet": {
+      "kind": "interior",
+      "x": 1377,
+      "y": 900,
+      "w": 122,
+      "h": 211
+    },
+    "shop-mix-table": {
+      "kind": "interior",
+      "x": 1370,
+      "y": 1381,
+      "w": 145,
+      "h": 79
+    },
+    "shop-oven": {
+      "kind": "interior",
+      "x": 1727,
+      "y": 1183,
+      "w": 109,
+      "h": 98
+    },
+    "shop-tasting-case": {
+      "kind": "interior",
+      "x": 1708,
+      "y": 1381,
+      "w": 103,
+      "h": 72
+    },
+    "shop-pack-table": {
+      "kind": "interior",
+      "x": 921,
+      "y": 1381,
+      "w": 126,
+      "h": 91
+    },
+    "shop-recipe-desk": {
+      "kind": "interior",
+      "x": 1915,
+      "y": 1381,
+      "w": 98,
+      "h": 66
+    },
+    "shop-gift-shelf": {
+      "kind": "interior",
+      "x": 600,
+      "y": 1480,
+      "w": 100,
+      "h": 58
+    },
+    "lake-cottage": {
+      "kind": "exterior",
+      "x": 1162,
+      "y": 900,
+      "w": 212,
+      "h": 214
+    },
+    "map-shop": {
+      "kind": "exterior",
+      "x": 698,
+      "y": 1183,
+      "w": 166,
+      "h": 166
+    },
+    "map-cabin": {
+      "kind": "exterior",
+      "x": 1839,
+      "y": 1183,
+      "w": 101,
+      "h": 96
+    },
+    "lake-conservatory": {
+      "kind": "exterior",
+      "x": 1065,
+      "y": 1183,
+      "w": 139,
+      "h": 145
+    },
+    "meadow-bench": {
+      "kind": "exterior",
+      "x": 1814,
+      "y": 1381,
+      "w": 98,
+      "h": 67
+    },
+    "meadow-picnic": {
+      "kind": "exterior",
+      "x": 794,
+      "y": 1381,
+      "w": 124,
+      "h": 94
+    },
+    "telescope": {
+      "kind": "exterior",
+      "x": 1466,
+      "y": 1183,
+      "w": 89,
+      "h": 116
+    },
+    "flower-cosmos": {
+      "kind": "nature",
+      "x": 487,
+      "y": 1480,
+      "w": 65,
+      "h": 63
+    },
+    "flower-rose": {
+      "kind": "nature",
+      "x": 1591,
+      "y": 1480,
+      "w": 15,
+      "h": 29
+    },
+    "flower-lily": {
+      "kind": "nature",
+      "x": 1134,
+      "y": 1480,
+      "w": 28,
+      "h": 43
+    },
+    "flower-daisy": {
+      "kind": "nature",
+      "x": 1721,
+      "y": 1480,
+      "w": 29,
+      "h": 18
+    },
+    "flower-lupin": {
+      "kind": "nature",
+      "x": 906,
+      "y": 1480,
+      "w": 61,
+      "h": 48
+    },
+    "flower-tulip": {
+      "kind": "nature",
+      "x": 1165,
+      "y": 1480,
+      "w": 49,
+      "h": 39
+    },
+    "flower-bell": {
+      "kind": "nature",
+      "x": 1448,
+      "y": 1480,
+      "w": 20,
+      "h": 31
+    },
+    "flower-aster": {
+      "kind": "nature",
+      "x": 1519,
+      "y": 1480,
+      "w": 17,
+      "h": 30
+    },
+    "flower-chamomile": {
+      "kind": "nature",
+      "x": 1428,
+      "y": 1480,
+      "w": 17,
+      "h": 32
+    },
+    "flower-low-pink": {
+      "kind": "nature",
+      "x": 1753,
+      "y": 1480,
+      "w": 51,
+      "h": 17
+    },
+    "flower-low-blue": {
+      "kind": "nature",
+      "x": 1831,
+      "y": 1480,
+      "w": 43,
+      "h": 15
+    },
+    "flower-bush-rose": {
+      "kind": "nature",
+      "x": 1609,
+      "y": 1480,
+      "w": 68,
+      "h": 27
+    },
+    "flower-bush-leaf": {
+      "kind": "nature",
+      "x": 1471,
+      "y": 1480,
+      "w": 45,
+      "h": 30
+    },
+    "flower-pot-fern": {
+      "kind": "nature",
+      "x": 1060,
+      "y": 1480,
+      "w": 38,
+      "h": 43
+    },
+    "flower-pot-lily": {
+      "kind": "nature",
+      "x": 970,
+      "y": 1480,
+      "w": 30,
+      "h": 45
+    },
+    "nature-oak": {
+      "kind": "nature",
+      "x": 957,
+      "y": 1183,
+      "w": 105,
+      "h": 148
+    },
+    "nature-rowan": {
+      "kind": "nature",
+      "x": 1207,
+      "y": 1183,
+      "w": 99,
+      "h": 137
+    },
+    "nature-shore-rock": {
+      "kind": "nature",
+      "x": 1877,
+      "y": 1480,
+      "w": 25,
+      "h": 13
+    },
+    "nature-grass-fan": {
+      "kind": "nature",
+      "x": 1807,
+      "y": 1480,
+      "w": 21,
+      "h": 17
+    },
+    "flavor-jar-strawberry": {
+      "kind": "ui",
+      "x": 1657,
+      "y": 1381,
+      "w": 48,
+      "h": 76
+    },
+    "flavor-jar-pumpkin": {
+      "kind": "ui",
+      "x": 1606,
+      "y": 1381,
+      "w": 48,
+      "h": 76
+    },
+    "flavor-jar-lavender": {
+      "kind": "ui",
+      "x": 1555,
+      "y": 1381,
+      "w": 48,
+      "h": 76
+    },
+    "gift-box-closed": {
+      "kind": "ui",
+      "x": 180,
+      "y": 1183,
+      "w": 256,
+      "h": 182
+    },
+    "map-pumpkin": {
+      "kind": "exterior",
+      "x": 1397,
+      "y": 1480,
+      "w": 28,
+      "h": 32
+    },
+    "map-pond": {
+      "kind": "exterior",
+      "x": 1050,
+      "y": 1381,
+      "w": 118,
+      "h": 90
+    },
+    "map-fence": {
+      "kind": "exterior",
+      "x": 1217,
+      "y": 1480,
+      "w": 64,
+      "h": 35
+    },
+    "map-lamp": {
+      "kind": "exterior",
+      "x": 415,
+      "y": 1480,
+      "w": 24,
+      "h": 66
+    },
+    "map-soil-bed": {
+      "kind": "exterior",
+      "x": 1284,
+      "y": 1480,
+      "w": 43,
+      "h": 35
+    },
+    "tile-stone": {
+      "kind": "exterior",
+      "x": 1330,
+      "y": 1480,
+      "w": 64,
+      "h": 32
+    },
+    "outfit-original": {
+      "kind": "ui",
+      "x": 179,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    },
+    "outfit-cocoa": {
+      "kind": "ui",
+      "x": 61,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    },
+    "outfit-rose": {
+      "kind": "ui",
+      "x": 297,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    },
+    "outfit-wild": {
+      "kind": "ui",
+      "x": 356,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    },
+    "outfit-berry": {
+      "kind": "ui",
+      "x": 2,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    },
+    "outfit-pearl": {
+      "kind": "ui",
+      "x": 238,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    },
+    "outfit-mist": {
+      "kind": "ui",
+      "x": 120,
+      "y": 1480,
+      "w": 56,
+      "h": 66
+    }
+  },
+  "fabric": [
+    "#78576f",
+    "#ac718e",
+    "#d798ae",
+    "#efbfd0",
+    "#ffe1d7"
+  ]
+}

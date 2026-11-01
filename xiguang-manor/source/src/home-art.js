@@ -1,11 +1,11 @@
-import {paintFurniture} from './furniture-atelier.js';
+import {v5Frame} from './v5-assets.js';
 import {painter} from './art.js';
 import {pixelEllipse} from './scenery-art.js';
 import {mix} from './sky-model.js';
 import {HOME} from './home-config.js';
 import {ROMANCE} from './romantic-config.js';
 const icons=new Map();
-export function furnitureCanvas(type,theme='rose',bouquet='rose',on=false){const f=HOME.items.find(f=>f.type===type),p=painter(f.w,f.h);paintFurniture(p,type,{theme,bouquet,on});return p.canvas}
+export function furnitureCanvas(type,theme='rose',bouquet='rose',on=false){return v5Frame('furniture-'+type,{theme,bouquet,on})}
 export function furnitureIcon(type,theme='rose',bouquet='rose'){const key=[type,theme,bouquet].join('-');if(!icons.has(key))icons.set(key,furnitureCanvas(type,theme,bouquet,true).toDataURL());return icons.get(key)}
 export function paintRoomSurfaces(p,room,day){
  const r=p.r;if(room.wallpaper==='floral'){r(26,29,380,238,'#bdaabf');for(let y=45;y<260;y+=29)for(let x=39;x<400;x+=31){r(x,y,1,13,'#a49aa8');r(x-4,y+5,4,2,'#d4c3c9');r(x+1,y+9,5,2,'#8f9f93');r(x-2,y-2,5,4,'#e9cad2');r(x,y-1,1,1,'#f4dfba')}}

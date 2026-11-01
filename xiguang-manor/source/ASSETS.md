@@ -77,3 +77,7 @@
 ## 全方位美术与氛围精修
 
 本轮新增原创极光、家具材质、糖果屋环境、配方和包装图标，以及七类烟花、三套流星编排与统一UI。现有13张karsiori CC0文件延伸用于各观景位置、主地图地平线和室内窗外，没有新增外部素材文件。具体源模块、修改方式和NOAA／SLYNYRD学习参考见[ASSET_CREDITS.md](ASSET_CREDITS.md)。旧阶段“不使用第三方素材”的描述仅指当时的原版，不指当前整合分支。
+
+## V5 本地PNG图集
+
+本轮不再依赖旧主体加线条：采用 `src/assets/v5/atelier.png` 的92帧素材与4张本地山景／森林纹理，生成器为 `tools/build-v5-art.py`。17张新外部源图逐项核实CC0；其余主体离线原创绘制。全部清单、原件与许可见[V5_ASSET_INVENTORY.md](V5_ASSET_INVENTORY.md)和[V5_ASSET_CREDITS.md](V5_ASSET_CREDITS.md)。

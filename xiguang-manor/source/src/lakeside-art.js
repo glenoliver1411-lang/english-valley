@@ -1,3 +1,5 @@
+import {paintV5Lake} from './v5-landscape.js';
+import {v5Frame} from './v5-assets.js';
 import {landscapePainter,pixelPolygon} from './landscape-detail.js';
 import {mix,hourPhase} from './sky-model.js';
 import {LAKESIDE} from './lakeside-config.js';
@@ -64,49 +66,11 @@ function bench(p,h,a,front=false){
 }
 
 export class LakesideArt {
- constructor(scene,w,h){this.scene=scene;this.w=w;this.h=h;this.materials=new LakeMaterials(scene);this.actors=new LakesideActors();this.mountains=new LakesideMountains(scene,this.materials,w,h);this.water=new LakesideWater(scene,w,h);this.layers={};this.fronts={};this.windFlowers=[['daisy',22,h-18],['rose',56,h-8],['wildflower',w-47,h-27],['rose',w-18,h-11]];for(const period of Object.keys(LAKESIDE.periods)){const {back,front}=this.paint(period);this.layers[period]=back;this.fronts[period]=front}}
- paint(period){
-  const w=this.w,h=this.h,g=h*.88,a=LAKESIDE.periods[period],p=landscapePainter(w,h),r=p.r;
-  // A curving bank, earth, moss, and stones create a physical edge to the lake.
-  const bank=[[0,g-3],[12,g-7],[26,g-4],[41,g+1],[57,g-2],[74,g-5],[88,g-1],[103,g+3],[119,g+1],[137,g-5],[155,g-8],[176,g-5],[193,g-6],[w,g-2],[w,h],[0,h]];
-  p.poly(bank,a.ground);p.poly([[0,g-3],[12,g-7],[26,g-4],[41,g+1],[57,g-2],[74,g-5],[88,g-1],[103,g+3],[119,g+1],[137,g-5],[155,g-8],[176,g-5],[193,g-6],[w,g-2],[w,g],[193,g-4],[176,g-3],[155,g-6],[137,g-3],[119,g+3],[103,g+5],[88,g+1],[74,g-3],[57,g],[41,g+3],[26,g-2],[12,g-5],[0,g-1]],mix(a.moss,a.stone[0],.43));
-  for(const [x,y,rx,ry]of [[20,g+9,25,7],[170,g+4,29,5],[34,h-4,29,10],[194,h-7,30,12]])contact(p,x,y,rx,ry,mix(a.ground,a.leaf[0],.45),.6);
-  // Ground shadows all recede to the lower-left from the upper-right key light.
-  p.poly([[13,g-3],[19,g],[3,g+18],[-10,g+18]],mix(a.ground,a.leaf[0],.7));p.poly([[w-14,g-2],[w-8,g+2],[w-42,g+22],[w-54,g+23]],mix(a.ground,a.leaf[0],.7));
-  // Stepping stones retain a quiet center instead of a flat pink trapezoid.
-  for(let i=0;i<5;i++){
-   const yy=g+9+i*8.7,half=8+i*1.4,x=106+Math.sin(i*.8)*2;
-   p.poly([[x-half,yy],[x-half+2,yy-1.5],[x+half,yy-1],[x+half+1,yy+4],[x+half-1,yy+5],[x-half-1,yy+4]],a.stone[0]);
-   p.poly([[x-half+.5,yy],[x-half+2,yy-1],[x+half-.5,yy-.5],[x+half,yy+3],[x-half,yy+3]],mix(a.stone[1],a.wood[2],.26));r(x-half+2,yy+.5,half*.8,.5,a.stone[2]);line(p,x+3,yy,x+1,yy+2,a.stone[0]);r(x+half-2,yy+3.5,2,.5,a.moss);
-  }
-  // Hand-pixeled cottage and asymmetric trees: local CC0 sources, palette edited.
-  contact(p,49,g+2,39,4,a.leaf[0],.7);
-  stamp(p,this.materials.image('cottage',period),11,g-67,{flip:true});
-  flowerBox(p,20,g-13,a);flowerBox(p,63,g-13,a);vine(p,86,g-38,18,a,-1);vine(p,13,g-30,13,a);
-  r(43,g+.5,16,2,a.stone[1]);r(41,g+2,20,2,a.stone[0]);r(42,g+2,18,.5,a.stone[2]);
-  littleCottage(p,w,g,a);
-  // Native one-pixel leaf clusters and branching replace repeated circular clumps.
-  stamp(p,this.materials.image('oak',period),-26,g-81,{flip:true});
-  stamp(p,this.materials.image('rowan',period),w-27,g-77,{flip:true});
-  vine(p,1,g-36,16,a);vine(p,w-7,g-45,14,a,-1);
-  // Shore rocks occupy unequal small groups, never an evenly tiled border.
-  for(const [x,y,s]of [[3,g+4,.65],[84,g+5,.5],[147,g-4,.65],[w-9,g+2,.7]])stamp(p,this.materials.image('shore-rock',period),x,y,{scale:s});
-  for(const [x,y,s]of [[3,h-5,1],[22,h-13,.8],[39,h-6,.9],[61,h-3,.8],[w-34,h-8,.9],[w-15,h-17,1],[w-5,h-1,.8]])stamp(p,this.materials.image('grass-fan',period),x,y-8,{scale:s,flip:x>100});
-  for(const [x,y]of [[12,g+7],[92,g+9],[145,g+4],[w-18,g+8],[57,h-5],[152,h-3]])stamp(p,this.materials.image('grass-tuft',period),x,y);
-  fern(p,16,h-4,a);fern(p,w-12,h-3,a,true);fern(p,53,h+1,a,true);iris(p,w-31,h-9,a,13);iris(p,35,h-12,a,9);
-  const blooms=[['rose',2,h-15],['pink-cosmos',9,h-25],['daisy',22,h-18],['bellflower',31,h-30],['wildflower',39,h-11],['pink-cosmos',48,h-20],['rose',56,h-8],['daisy',64,h-17],['bellflower',w-59,h-14],['wildflower',w-47,h-27],['pink-cosmos',w-37,h-19],['daisy',w-25,h-29],['rose',w-18,h-11],['bellflower',w-8,h-23]];
-  for(const [name,x,y]of blooms){contact(p,x+3,y+9,4,1,a.leaf[0],.45);if(!this.windFlowers.some(f=>f[1]===x&&f[2]===y))stamp(p,this.materials.image(name,period),x,y,{flip:x%3===0})}
-  // Fine ground life has scale, direction, and gaps. No uniform checker noise.
-  for(let i=0;i<85;i++){const x=(i*37.513)%w,y=g+7+(i*13.71)%(h-g-8);if(x>76&&x<146)continue;const shade=i%4?mix(a.moss,a.ground,.5):a.moss;r(x,y,1,.5,shade);if(i%5===0)r(x+.5,y-.5,.5,.5,shade)}
-  bench(p,h,a);telescope(p,h,a);
-  // The original clickable lantern stays in the same physical position.
-  r(53,h-40,1.5,21,a.bark[0]);r(53.5,h-39,.5,18,a.bark[2]);r(48.5,h-51,11,2,a.bark[1]);p.poly([[49.5,h-49],[58,h-49],[57,h-39],[50.5,h-39]],a.bark[0]);r(51,h-47,5,6,a.glass[1]);r(51.5,h-46,1,4,a.glass[2]);r(53.5,h-47,.5,6,a.bark[1]);r(50,h-40,7,1,a.bark[2]);r(53,h-54,2,3,a.wood[3]);
-  const front=landscapePainter(w,h);bench(front,h,a,true);
-  return{back:p.canvas,front:front.canvas};
- }
+ constructor(scene,w,h){this.scene=scene;this.w=w;this.h=h;this.materials=new LakeMaterials(scene);this.actors=new LakesideActors();this.mountains=new LakesideMountains(scene,this.materials,w,h);this.water=new LakesideWater(scene,w,h);this.layers={};this.fronts={};this.windFlowers=[];for(const period of Object.keys(LAKESIDE.periods)){const {back,front}=this.paint(period);this.layers[period]=back;this.fronts[period]=front}}
+ paint(period){return paintV5Lake(this.w,this.h,period)}
  blend(c,source,a,offset=0){
   const night=(hourPhase(this.scene.baseHour)==='dusk')?'dusk':'night';c.globalAlpha=1;c.drawImage(source[night],offset,0,this.w,this.h);
-  if(a.day>0&&night!=='dusk'){c.globalAlpha=Math.min(1,a.day*1.7);c.drawImage(source.dawn,offset,0,this.w,this.h);c.globalAlpha=Math.max(0,(a.day-.58)/.42);c.drawImage(source.day,offset,0,this.w,this.h)}c.globalAlpha=1;
+  if(a.day>0&&night!=='dusk'){c.globalAlpha=Math.min(1,a.day*1.7);c.drawImage(source.dawn,offset,0,this.w,this.h);c.globalAlpha=Math.max(0,(a.day-.78)/.22);c.drawImage(source.day,offset,0,this.w,this.h)}c.globalAlpha=1;
  }
  drawActors(c,a,p,t,offset){
   const period=(hourPhase(this.scene.baseHour)==='dusk')?'dusk':a.day>.8?'day':a.day>.25?'dawn':'night',palette=LAKESIDE.periods[period],painter={c,r:(x,y,w,h,col)=>{c.fillStyle=col;c.fillRect(Math.round(x*2)/2,Math.round(y*2)/2,w,h)}};
@@ -125,7 +89,7 @@ export class LakesideArt {
   const pt={c,poly:(points,col)=>pixelPolygon(c,points,col),r:(x,y,ww,hh,col)=>{c.fillStyle=col;c.fillRect(Math.round(x*2)/2,Math.round(y*2)/2,ww,hh)}};
   // Local glass glow and doorstep spill: cold roof, warm glass, cool ground.
   if(a.night>.1){
-   for(const [x,y,rx,ry]of [[25,g-27,11,14],[70,g-27,11,14],[w-43,g-12,8,10]]){
+   for(const [x,y,rx,ry]of [[15,g-43,11,14],[60,g-43,11,14],[w-48,g-23,8,10],[35,g-74,7,9]]){
     contact(pt,x+offset,y,rx,ry,palette.warm,a.night*.026);contact(pt,x+offset,y,rx*.6,ry*.6,palette.warm,a.night*.035);
    }
    c.globalAlpha=a.night*.065;c.fillStyle=palette.warm;c.beginPath();c.moveTo(42+offset,g-2);c.lineTo(47+offset,g-2);c.lineTo(52+offset,g+11);c.lineTo(33+offset,g+11);c.closePath();c.fill();c.globalAlpha=1;
@@ -136,6 +100,7 @@ export class LakesideArt {
    const image=this.materials.image(name,period),angle=still?0:Math.sin(t*(.48+i*.053)+i*2.91)*.035;
    c.save();c.translate(Math.round((x+offset+image.width/4)*2)/2,y+image.height/2);c.rotate(angle);c.drawImage(image,-image.width/4,-image.height/2,image.width/2,image.height/2);c.restore();
   });
+  for(const [i,name,x,y]of [[0,'cosmos',20,h-9],[1,'lily',w-37,h-7],[2,'lupin',w-10,h-19]]){const im=v5Frame('flower-'+name,{period}),width=15+i*3,height=im.height*width/im.width;c.save();c.translate(x+offset,y);c.rotate(still?0:Math.sin(t*.46+i*2.4)*.03);c.drawImage(im,-width/2,-height,width,height);c.restore()}
   if(still)return;
   // Only small leaf tips move. Trunks and the cottage never rock as a whole.
   for(const [i,x,y]of [[0,3,g-50],[1,w-7,g-56],[2,9,g-62],[3,w-17,g-48]]){
@@ -144,7 +109,7 @@ export class LakesideArt {
   }
   // Four reusable smoke wisps, each with a different age and a long quiet pause.
   if(t%39<27)for(let i=0;i<LAKESIDE.limits.smoke;i++){
-   const u=(t*.053+i*.23)%1,x=75+offset+Math.sin(u*3+i)*1.4-u*3,y=g-68-u*21;
+   const u=(t*.053+i*.23)%1,x=75+offset+Math.sin(u*3+i)*1.4-u*3,y=g-101-u*21;
    contact(pt,x,y,1+u*2.5,.6+u*1.1,mix('#b5a7bc','#dfd5cb',a.day),.11*(1-u)**1.6);
   }
   // Sparse, slow, phase-offset petals and occasional fireflies stay secondary.
