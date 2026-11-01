@@ -1,0 +1,18 @@
+/* Keep the canvas and its layout unchanged, including on small iPhones. */
+.manor-clean .topbar,
+.manor-clean .device-footer,
+.manor-clean .intro,
+.manor-clean .right-note,
+.manor-clean .playfield > :not(#game),
+.manor-clean .playfield > :not(#game) * {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
+}
+
+@media (max-width: 400px) {
+  .topbar { padding-left: 12px; padding-right: 12px; }
+  .topbar nav { gap: 4px; }
+  .topbar nav .icon-button { width: 29px; height: 29px; }
+  .brand strong { font-size: 14px; letter-spacing: 1px; }
+}
