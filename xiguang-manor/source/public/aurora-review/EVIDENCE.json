@@ -24,13 +24,13 @@
   "errors": [],
   "performance": {
     "lightMs": [
-      25.5,
-      31.599999999976717,
-      24.900000000023283,
-      23.79999999993015,
-      25.20000000006985,
-      24,
-      24.29999999993015
+      24.399999999906868,
+      25.9000000001397,
+      24.300000000046566,
+      24.4000000001397,
+      23.299999999813735,
+      26.300000000046566,
+      24.300000000046566
     ],
     "benchSeatY": 767,
     "actorHipY": 764.4705882352941
@@ -38,10 +38,10 @@
   "video": {
     "file": "flow.webm",
     "mime": "video/webm;codecs=vp9",
-    "bytes": 2484658,
+    "bytes": 2763920,
     "seconds": 22,
     "sceneStart": 18,
-    "sceneEnd": 40.048713333334085,
+    "sceneEnd": 40.04869666666719,
     "speed": 1,
     "mp4": {
       "file": "flow.mp4",
@@ -49,7 +49,8 @@
       "fps": 24,
       "width": 432,
       "height": 936,
-      "processing": "pad bottom one pixel and transcode to constant 24 fps; original scene time and speed retained"
+      "processing": "one bottom padding pixel; original timeline and speed retained"
     }
-  }
+  },
+  "reference": "User supplied aurora photograph; shape and color research only, never used as a game texture"
 }
