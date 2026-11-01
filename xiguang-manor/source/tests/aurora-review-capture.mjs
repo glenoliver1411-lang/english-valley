@@ -1,0 +1,14 @@
+import {chromium} from '@playwright/test';import fs from 'node:fs/promises';import assert from 'node:assert/strict';
+const browser=await chromium.launch({args:['--no-sandbox']});
+try{
+ const p=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),errors=[];p.on('pageerror',e=>errors.push(e.message));
+ await p.goto('http://localhost:5173/aurora.html');await p.waitForFunction(()=>window.__aurora?.scene?.texture);await p.click('#aurora-pause');await p.click('#aurora-quiet');await p.waitForTimeout(550);
+ const evidence={viewport:{width:390,height:844},renderer:'Actual Phaser Canvas2D game; screenshots via Playwright, video from game canvas captureStream at normal speed',screenshots:[],errors};
+ for(const[key,time]of [['appearing',3.5],['unfurled',27],['fading',69]]){await p.evaluate(t=>__aurora.seek(t),time);await p.screenshot({path:'public/aurora-review/'+key+'.png'});evidence.screenshots.push({file:key+'.png',sceneTime:time,envelope:await p.evaluate(()=>__aurora.scene.aurora.envelope)})}
+ // Inspect actual cached render timing without changing the viewing timeline.
+ evidence.performance=await p.evaluate(()=>{const s=__aurora.scene,ms=[];for(let i=0;i<7;i++){const start=performance.now();s.aurora.paint(27+i*.04,false);ms.push(performance.now()-start)}return{lightMs:ms,benchSeatY:s.art.bench.seatY,actorHipY:s.art.actor.y+s.art.actor.h*30/34}});
+ await p.touchscreen.tap(180,360);await p.touchscreen.tap(180,360);await p.click('#aurora-pause');await p.click('#aurora-quiet');await p.waitForTimeout(550);
+ await p.evaluate(()=>{__aurora.seek(18);const canvas=document.querySelector('#aurora-canvas canvas'),stream=canvas.captureStream(24),mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm';const recorder=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:1600000}),chunks=[];window.__recording={recorder,stream,mime,start:__aurora.scene.elapsed,done:new Promise(resolve=>{recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>resolve(new Blob(chunks,{type:mime}))})};recorder.start(1000)});
+ await p.waitForTimeout(22000);
+ const download=p.waitForEvent('download');evidence.video=await p.evaluate(async()=>{const r=window.__recording;r.recorder.stop();const blob=await r.done;r.stream.getTracks().forEach(t=>t.stop());const a=document.createElement('a');a.download='flow.webm';a.href=URL.createObjectURL(blob);a.click();return{file:'flow.webm',mime:r.mime,bytes:blob.size,seconds:22,sceneStart:r.start,sceneEnd:__aurora.scene.elapsed,speed:1}});await(await download).saveAs('public/aurora-review/flow.webm');assert.deepEqual(errors,[]);await fs.writeFile('public/aurora-review/EVIDENCE.json',JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence));
+}finally{await browser.close()}

@@ -13,3 +13,5 @@ verification/
 !src/assets/v5/*.png
 !src/assets/v5/originals/*.png
 !public/v5-review/*.png
+
+!public/aurora-review/*.png

@@ -16,11 +16,15 @@ const prefers=matchMedia('(prefers-reduced-motion: reduce)');let paused=profile.
 try{const saved=JSON.parse(localStorage.getItem(A.key));if(typeof saved?.paused==='boolean')paused=paused||saved.paused}catch{}
 const sound=createSoundscape(profile);sound.mood(0,true);
 document.title=A.title+' · '+CONFIG.title;
-app.innerHTML=`<div id="aurora-canvas" role="img" aria-label="${A.photoAlt}"></div><header class="aurora-heading"><small>${A.tag}</small><h1>${A.title}</h1><p>${A.line}</p></header><nav class="aurora-top"><button id="aurora-pause" aria-pressed="${paused}"></button><button id="aurora-music"></button></nav><footer class="aurora-bottom"><p class="aurora-note">${A.note}</p><a id="aurora-back" class="button" href="./index.html?return=meadow">${A.back}</a><button id="aurora-photo">${A.photo}</button><button id="aurora-quiet" aria-pressed="false">${A.quiet}</button></footer><div id="aurora-loading" role="status">${A.loading}</div><dialog id="aurora-photo-dialog" class="aurora-photo"><h2>${A.photoTitle}</h2><p>${A.photoHint}</p><img id="aurora-preview" alt="${A.photoAlt}"><footer><a id="aurora-download" class="button" download="${A.title}.png">${A.download}</a><button id="aurora-photo-close">${A.close}</button></footer></dialog>`;
+app.innerHTML=`<div id="aurora-canvas" role="img" aria-label="${A.photoAlt}"></div><header class="aurora-heading"><small>${A.tag}</small><h1>${A.title}</h1><p>${A.line}</p></header><nav class="aurora-top"><button id="aurora-pause" aria-pressed="${paused}"></button><button id="aurora-music"></button><button id="aurora-replay">${A.replay}</button></nav><footer class="aurora-bottom"><p class="aurora-note">${A.note}</p><a id="aurora-back" class="button" href="./index.html?return=meadow">${A.back}</a><button id="aurora-photo">${A.photo}</button><button id="aurora-quiet" aria-pressed="false">${A.quiet}</button></footer><div id="aurora-loading" role="status">${A.loading}</div><dialog id="aurora-photo-dialog" class="aurora-photo"><h2>${A.photoTitle}</h2><p>${A.photoHint}</p><img id="aurora-preview" alt="${A.photoAlt}"><footer><a id="aurora-download" class="button" download="${A.title}.png">${A.download}</a><button id="aurora-photo-close">${A.close}</button></footer></dialog>`;
 const $=s=>document.querySelector(s),updateButtons=()=>{$('#aurora-pause').textContent=paused?A.play:A.pause;$('#aurora-pause').setAttribute('aria-pressed',String(paused));$('#aurora-music').textContent=profile.music?A.musicOff:A.musicOn;$('#aurora-music').setAttribute('aria-pressed',String(profile.music))};updateButtons();
 $('#aurora-pause').onclick=()=>{paused=!paused;try{localStorage.setItem(A.key,JSON.stringify({paused}))}catch{}updateButtons();scene?.frame()};
 $('#aurora-music').onclick=()=>{profile.music=!profile.music;sound.enabled();updateButtons()};
-$('#aurora-quiet').onclick=()=>{quiet=!quiet;app.classList.toggle('quiet',quiet);$('#aurora-quiet').textContent=quiet?A.show:A.quiet;$('#aurora-quiet').setAttribute('aria-pressed',String(quiet))};
+function setQuiet(value){quiet=value;app.classList.toggle('quiet',quiet);for(const part of ['.aurora-heading','.aurora-top','.aurora-bottom']){$(part).inert=quiet;$(part).setAttribute('aria-hidden',String(quiet))}$('#aurora-quiet').setAttribute('aria-pressed',String(quiet))}
+$('#aurora-quiet').setAttribute('title',A.cleanHint);$('#aurora-quiet').onclick=()=>setQuiet(true);
+let lastTap=null;$('#aurora-canvas').addEventListener('pointerup',e=>{if(!quiet)return;const now=performance.now();if(lastTap&&now-lastTap.time<360&&Math.hypot(e.clientX-lastTap.x,e.clientY-lastTap.y)<30){setQuiet(false);lastTap=null}else lastTap={time:now,x:e.clientX,y:e.clientY}});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&quiet)setQuiet(false)});
+$('#aurora-replay').onclick=()=>{if(scene){paused=false;updateButtons();scene.elapsed=0;scene.frame()}};
 const dialog=$('#aurora-photo-dialog');
 const photoError=()=>{let note=$('#aurora-error');if(!note){note=document.createElement('p');note.id='aurora-error';note.setAttribute('role','status');note.className='aurora-note';$('.aurora-bottom').prepend(note)}note.textContent=A.photoFailed};
 $('#aurora-photo-close').onclick=()=>dialog.close();dialog.addEventListener('close',()=>{if(photoURL){URL.revokeObjectURL(photoURL);photoURL=null}});
@@ -32,7 +36,7 @@ document.addEventListener('pointerdown',()=>{audioUnlocked=true;sound.resume()},
 const viewport=()=>({width:432,height:Math.round(432*app.clientHeight/app.clientWidth)});
 
 class AuroraMeadowScene extends Phaser.Scene{
- constructor(){super('flower-aurora');this.elapsed=0;this.low=profile.scenery.lowEffects;this.slow=0;this.accumulator=0}
+ constructor(){super('flower-aurora');this.elapsed=paused?27:0;this.low=profile.scenery.lowEffects;this.slow=0;this.accumulator=0}
  preload(){preloadV5(this);this.load.on('loaderror',()=>{$('#aurora-loading').textContent=A.failed})}
  create(){installV5(this);scene=this;this.actors=new LakesideActors();this.build();this.scale.on('resize',this.build,this);$('#aurora-loading').remove();this.events.once('shutdown',()=>{this.scale.off('resize',this.build,this);this.release();this.actors.clear()})}
  release(){this.paint?.destroy();this.aurora?.destroy();if(this.textures.exists('flower-aurora-canvas'))this.textures.remove('flower-aurora-canvas')}
@@ -43,11 +47,11 @@ class AuroraMeadowScene extends Phaser.Scene{
   c.save();c.scale(2,2);this.aurora.draw(c,{time:t,night:1,reveal:1,strength:A.strength,low:this.low,still:false});this.stars.draw(c,{time:t,night:.72,reveal:1,reduced:this.low});c.restore();
   c.fillStyle='#ead9b7';for(let y=-12;y<=12;y++)for(let x=-12;x<=12;x++)if(x*x+y*y<144&&(x-5)**2+(y+3)**2>110)c.fillRect(w*.84+x,h*.25+y,1,1);
   for(let i=0;i<(this.low?2:3);i++){c.globalAlpha=.16;c.drawImage(this.cloud,((i*173+t*(.5+i*.17))%(w+240))-120,h*(.35+i*.07),220,36)}c.globalAlpha=1;c.drawImage(this.art.back,0,0);
-  const {seat,bench}=this.art;c.drawImage(this.actors.girl(profile,'night'),seat.x-21,seat.y-36,42,59);c.drawImage(this.actors.cat('night','sleep'),seat.x+58,seat.y+23,37,26);c.drawImage(this.art.rail,bench.x,bench.y);
+  const {seat,bench,actor}=this.art;c.drawImage(this.actors.girl(profile,'night'),actor.x,actor.y,actor.w,actor.h);c.drawImage(this.actors.cat('night','sleep'),seat.x+89,bench.y+77,37,26);c.drawImage(this.art.rail,bench.x,bench.y);
   c.drawImage(this.art.front,0,0);for(const [i,s]of this.art.sprigs.entries()){c.save();c.translate(s.x,s.y);c.rotate(paused?0:Math.sin(t*.45-s.y*.01+s.phase)*.026);c.drawImage(s.im,-s.width/2,-s.height,s.width,s.height);c.restore()}
   if(!this.low)for(let i=0;i<7;i++){const x=25+i*71%390+Math.sin(t*.17+i)*6,y=this.art.ground+38+i*53%Math.max(60,h-this.art.ground-50),alpha=.08+.24*Math.sin(t*.39+i*1.7)**6;c.fillStyle='#d7ddb2';c.globalAlpha=alpha;c.fillRect(Math.round(x),Math.round(y),1,1)}c.globalAlpha=1;this.texture.refresh();
  }
 }
 const game=new Phaser.Game({type:Phaser.CANVAS,parent:'aurora-canvas',...viewport(),backgroundColor:'#10172c',pixelArt:true,antialias:false,render:{roundPixels:true},scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},audio:{noAudio:true},scene:AuroraMeadowScene});
 new ResizeObserver(()=>{const v=viewport();if(v.height!==game.scale.gameSize.height)game.scale.resize(v.width,v.height)}).observe(app);
-if(import.meta.env.DEV)window.__aurora={get scene(){return scene},get paused(){return paused}};
+if(import.meta.env.DEV)window.__aurora={get scene(){return scene},get paused(){return paused},setQuiet,seek:t=>{scene.elapsed=t;scene.frame()}};

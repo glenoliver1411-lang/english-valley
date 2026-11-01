@@ -1,3 +1,4 @@
+import {auroraBench} from './aurora-bench.js';
 import {v5Frame,v5MountainSource} from './v5-assets.js';
 import {mix} from './sky-model.js';
 
@@ -28,10 +29,10 @@ export function auroraMeadowPainting(w,h){
   }
  }
  flowers.sort((a,b)=>a.y-b.y);for(const v of flowers){const layer=v.y>seat.y+36?f:c;layer.drawImage(v.im,Math.round(v.x-v.width/2),Math.round(v.y-v.height),Math.round(v.width),Math.round(v.height))}
- const bench=v5Frame('meadow-bench',{period}),bx=Math.round(seat.x-66),by=Math.round(seat.y-48);c.drawImage(bench,bx,by,132,90);
+ const bench=auroraBench(),bx=Math.round(seat.x-78),by=Math.round(seat.y-48);c.drawImage(bench.base,bx,by);
  // Contact shadows, then the seated character and cat are drawn by the scene.
- c.fillStyle='#1e303c';c.globalAlpha=.34;c.beginPath();c.ellipse(seat.x+2,seat.y+34,69,9,0,0,Math.PI*2);c.fill();c.globalAlpha=1;
- const rail=canvas(132,90),r=rail.getContext('2d');r.imageSmoothingEnabled=false;r.drawImage(bench,0,0,132,90);r.clearRect(0,0,132,54);
+ c.fillStyle='#1e303c';c.globalAlpha=.34;c.beginPath();c.ellipse(seat.x+2,by+99,79,8,0,0,Math.PI*2);c.fill();c.globalAlpha=1;
+ const rail=bench.front,actor={x:bx+bench.actor.x,y:by+bench.actor.y,w:bench.actor.w,h:bench.actor.h};
  const sprigs=[];for(let i=0;i<12;i++){const y=h-12-i*19%Math.max(60,(h-ground)*.48),p=path(y),x=i%2?Math.min(w-7,p.x+p.width/2+27+i*7):Math.max(4,p.x-p.width/2-25-i*9),im=v5Frame('flower-'+names[i%names.length],{period}),width=20+(y-ground)/(h-ground)*18;sprigs.push({x,y,im,width,height:im.height*width/im.width,phase:i*2.31})}
- return{back,front,rail,bench:{x:bx,y:by},seat,ground,sprigs};
+ return{back,front,rail,bench:{x:bx,y:by,seatY:by+bench.seatY},actor,seat,ground,sprigs};
 }
