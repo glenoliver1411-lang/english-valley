@@ -7,6 +7,7 @@ export function paintExpedition(layout,room){
  for(let y=128,row=0;y<C.height-35;y+=64,row++)for(let x=24-(row%2)*32,col=0;x<408;x+=64,col++){
   const index=(row*7+col*5+room*3+(row%3)*col)%12;c.drawImage(playFrame('ruins-floor-'+index),x,y);
  }
+ for(const p of layout.chests)c.drawImage(playFrame('ruins-light-amber'),p.x-72,p.y-45);c.drawImage(playFrame('ruins-light-cyan'),layout.puzzle.x-72,layout.puzzle.y-55);
  // Architectural side plinths give a vertical plane to the corridor.
  for(const x of [18,399]){c.fillStyle='#273e4d';c.fillRect(x,130,15,C.height-160);c.fillStyle='#70818b';c.fillRect(x+2,130,3,C.height-160);c.fillStyle='#a1a9a6';c.fillRect(x+3,130,1,C.height-160)}
  for(let y=235;y<C.height-150;y+=420){c.drawImage(playFrame('ruins-pillar'),6,y);c.drawImage(playFrame('ruins-pillar'),389,y+110)}

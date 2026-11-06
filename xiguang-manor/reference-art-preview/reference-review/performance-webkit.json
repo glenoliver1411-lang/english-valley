@@ -1,0 +1,109 @@
+{
+  "engine": "webkit",
+  "conditions": "Local development builds, same browser/mobile viewport; simulated device, not physical phone",
+  "versions": {
+    "before": {
+      "frames": [
+        {
+          "fps": 61.8,
+          "frameP95": 17
+        },
+        {
+          "fps": 60.3,
+          "frameP95": 18
+        },
+        {
+          "fps": 61.4,
+          "frameP95": 17
+        }
+      ],
+      "fpsMedian": 61.4,
+      "fpsRange": [
+        60.3,
+        61.8
+      ],
+      "sceneCycles": [
+        {
+          "textures": 41,
+          "heap": null
+        },
+        {
+          "textures": 41,
+          "heap": null
+        },
+        {
+          "textures": 41,
+          "heap": null
+        },
+        {
+          "textures": 41,
+          "heap": null
+        }
+      ]
+    },
+    "after": {
+      "frames": [
+        {
+          "fps": 44.9,
+          "frameP95": 44
+        },
+        {
+          "fps": 44.4,
+          "frameP95": 46
+        },
+        {
+          "fps": 44.9,
+          "frameP95": 47
+        }
+      ],
+      "fpsMedian": 44.9,
+      "fpsRange": [
+        44.4,
+        44.9
+      ],
+      "sceneCycles": [
+        {
+          "textures": 42,
+          "heap": null
+        },
+        {
+          "textures": 42,
+          "heap": null
+        },
+        {
+          "textures": 42,
+          "heap": null
+        },
+        {
+          "textures": 42,
+          "heap": null
+        }
+      ]
+    }
+  },
+  "smallScreen": {
+    "viewport": 375,
+    "overflow": false,
+    "close": {
+      "x": 284,
+      "y": 99,
+      "width": 44,
+      "height": 44,
+      "top": 99,
+      "right": 328,
+      "bottom": 143,
+      "left": 284
+    },
+    "make": {
+      "x": 36,
+      "y": 752.765625,
+      "width": 303,
+      "height": 45,
+      "top": 752.765625,
+      "right": 339,
+      "bottom": 797.765625,
+      "left": 36
+    }
+  },
+  "samplingNote": "During part of this run, a separate offline browser validation was running. Do not interpret these FPS samples as an isolated before/after performance comparison; scene texture-count checks remain reported."
+}

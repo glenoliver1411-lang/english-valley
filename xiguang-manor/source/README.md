@@ -127,3 +127,12 @@ node tests/gift-opening-journey.mjs --webkit
 普通游戏页面也支持净景录屏：点击顶部斜线眼睛按钮，或在「庄园手记」选择「关闭全部选项」。双击画面或按Esc恢复；隐藏时仍可点空地行走。详见[CLEAN_VIEW.md](CLEAN_VIEW.md)。
 
 每日日期欢迎已接入原开场：按浏览器当地日期、星期、时段和季节显示约4秒的轻提示，支持轻点收起。配置、特殊日期接口和存档说明见[DAILY_WELCOME.md](DAILY_WELCOME.md)。
+
+### 参考图质量样板
+
+独立试玩：<https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/reference-art-preview/>
+
+运行源码：`npm ci && npm run dev`。构建此独立预览：
+`MANOR_RELEASE=reference-art-20261106-1 npm run build:reference:preview`。
+素材再制作需要 Python 3 与 Pillow：`python tools/build-reference-art.py`。
+完整署名和改编许可见 `src/assets/reference/LICENSE.md`、`ASSET_CREDITS.md`。

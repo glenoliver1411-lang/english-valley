@@ -1,0 +1,46 @@
+{
+  "engine": "webkit",
+  "url": "http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/",
+  "audit": {
+    "version": "reference-art-20261106-1",
+    "scope": "http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/",
+    "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/::reference-art-20261106-1",
+    "complete": true,
+    "files": 36,
+    "bytes": 2799442,
+    "cacheEntries": 37,
+    "internalBytes": 66,
+    "missing": [],
+    "missingDetails": []
+  },
+  "smallScreen": {
+    "close": {
+      "x": 284,
+      "y": 99,
+      "width": 44,
+      "height": 44,
+      "top": 99,
+      "right": 328,
+      "bottom": 143,
+      "left": 284
+    },
+    "primary": {
+      "x": 36,
+      "y": 468.765625,
+      "width": 303,
+      "height": 45,
+      "top": 468.765625,
+      "right": 339,
+      "bottom": 513.765625,
+      "left": 36
+    },
+    "overflow": false
+  },
+  "passed": [
+    "local production HTTP complete new atlas/lazy graph",
+    "offline gift skip and real florist menus",
+    "375×667 scrollable card: primary and sticky close both reachable, no horizontal overflow",
+    "offline independent aurora and return"
+  ],
+  "errors": []
+}

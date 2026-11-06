@@ -1,0 +1,360 @@
+{
+  "width": 1024,
+  "height": 2048,
+  "frames": {
+    "florist-room": {
+      "x": 2,
+      "y": 2,
+      "w": 432,
+      "h": 850
+    },
+    "floor-wood": {
+      "x": 436,
+      "y": 2,
+      "w": 432,
+      "h": 570
+    },
+    "floor-pale": {
+      "x": 436,
+      "y": 574,
+      "w": 432,
+      "h": 570
+    },
+    "floor-herringbone": {
+      "x": 2,
+      "y": 854,
+      "w": 432,
+      "h": 570
+    },
+    "cabin-walls-original": {
+      "x": 436,
+      "y": 1146,
+      "w": 432,
+      "h": 300
+    },
+    "cabin-walls-floral": {
+      "x": 2,
+      "y": 1426,
+      "w": 432,
+      "h": 300
+    },
+    "cabin-walls-gingham": {
+      "x": 2,
+      "y": 1728,
+      "w": 432,
+      "h": 300
+    },
+    "fixed-bed": {
+      "x": 870,
+      "y": 2,
+      "w": 124,
+      "h": 219
+    },
+    "room-rug": {
+      "x": 436,
+      "y": 1448,
+      "w": 175,
+      "h": 195
+    },
+    "fixed-fireplace": {
+      "x": 870,
+      "y": 223,
+      "w": 87,
+      "h": 153
+    },
+    "ruins-light-amber": {
+      "x": 870,
+      "y": 378,
+      "w": 144,
+      "h": 100
+    },
+    "ruins-light-cyan": {
+      "x": 870,
+      "y": 480,
+      "w": 144,
+      "h": 100
+    },
+    "fixed-desk": {
+      "x": 870,
+      "y": 582,
+      "w": 136,
+      "h": 89
+    },
+    "fixed-bookcase": {
+      "x": 870,
+      "y": 673,
+      "w": 73,
+      "h": 125
+    },
+    "fixed-wardrobe": {
+      "x": 870,
+      "y": 800,
+      "w": 78,
+      "h": 123
+    },
+    "fixed-sofa": {
+      "x": 950,
+      "y": 673,
+      "w": 67,
+      "h": 116
+    },
+    "furniture-flowerSwing-off": {
+      "x": 950,
+      "y": 791,
+      "w": 66,
+      "h": 98
+    },
+    "furniture-flowerSwing-on": {
+      "x": 950,
+      "y": 891,
+      "w": 66,
+      "h": 98
+    },
+    "ruins-pillar": {
+      "x": 959,
+      "y": 223,
+      "w": 38,
+      "h": 98
+    },
+    "ruins-mural": {
+      "x": 870,
+      "y": 991,
+      "w": 98,
+      "h": 66
+    },
+    "ruins-wall-0": {
+      "x": 870,
+      "y": 1059,
+      "w": 96,
+      "h": 72
+    },
+    "ruins-wall-1": {
+      "x": 870,
+      "y": 1133,
+      "w": 96,
+      "h": 72
+    },
+    "ruins-wall-2": {
+      "x": 870,
+      "y": 1207,
+      "w": 96,
+      "h": 72
+    },
+    "ruins-statue": {
+      "x": 970,
+      "y": 991,
+      "w": 44,
+      "h": 94
+    },
+    "furniture-laceDrape-off": {
+      "x": 968,
+      "y": 1087,
+      "w": 54,
+      "h": 91
+    },
+    "furniture-laceDrape-on": {
+      "x": 968,
+      "y": 1180,
+      "w": 54,
+      "h": 91
+    },
+    "furniture-screen": {
+      "x": 870,
+      "y": 1281,
+      "w": 57,
+      "h": 83
+    },
+    "furniture-glassCabinet-off": {
+      "x": 968,
+      "y": 1273,
+      "w": 54,
+      "h": 83
+    },
+    "furniture-glassCabinet-on": {
+      "x": 929,
+      "y": 1358,
+      "w": 54,
+      "h": 83
+    },
+    "furniture-lamp": {
+      "x": 985,
+      "y": 1358,
+      "w": 34,
+      "h": 77
+    },
+    "furniture-vintageSofa-off": {
+      "x": 870,
+      "y": 925,
+      "w": 68,
+      "h": 57
+    },
+    "furniture-vintageSofa-on": {
+      "x": 870,
+      "y": 1443,
+      "w": 68,
+      "h": 57
+    },
+    "furniture-piano": {
+      "x": 940,
+      "y": 1443,
+      "w": 66,
+      "h": 58
+    },
+    "ruins-floor-0": {
+      "x": 613,
+      "y": 1448,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-1": {
+      "x": 679,
+      "y": 1448,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-2": {
+      "x": 745,
+      "y": 1448,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-3": {
+      "x": 811,
+      "y": 1502,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-4": {
+      "x": 877,
+      "y": 1503,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-5": {
+      "x": 943,
+      "y": 1503,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-6": {
+      "x": 613,
+      "y": 1514,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-7": {
+      "x": 679,
+      "y": 1514,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-8": {
+      "x": 745,
+      "y": 1514,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-9": {
+      "x": 811,
+      "y": 1568,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-10": {
+      "x": 877,
+      "y": 1569,
+      "w": 64,
+      "h": 64
+    },
+    "ruins-floor-11": {
+      "x": 943,
+      "y": 1569,
+      "w": 64,
+      "h": 64
+    },
+    "furniture-plant": {
+      "x": 870,
+      "y": 1366,
+      "w": 42,
+      "h": 60
+    },
+    "furniture-chair": {
+      "x": 613,
+      "y": 1580,
+      "w": 44,
+      "h": 57
+    },
+    "furniture-tea": {
+      "x": 811,
+      "y": 1448,
+      "w": 54,
+      "h": 43
+    },
+    "furniture-vase": {
+      "x": 659,
+      "y": 1580,
+      "w": 38,
+      "h": 54
+    },
+    "furniture-starProjector-off": {
+      "x": 959,
+      "y": 323,
+      "w": 40,
+      "h": 52
+    },
+    "furniture-starProjector-on": {
+      "x": 699,
+      "y": 1580,
+      "w": 40,
+      "h": 52
+    },
+    "furniture-catBed": {
+      "x": 741,
+      "y": 1580,
+      "w": 49,
+      "h": 29
+    },
+    "furniture-berryLamp-off": {
+      "x": 929,
+      "y": 1281,
+      "w": 34,
+      "h": 49
+    },
+    "furniture-berryLamp-on": {
+      "x": 741,
+      "y": 1611,
+      "w": 34,
+      "h": 49
+    },
+    "ruins-chest-0": {
+      "x": 659,
+      "y": 1636,
+      "w": 48,
+      "h": 48
+    },
+    "ruins-chest-1": {
+      "x": 777,
+      "y": 1634,
+      "w": 48,
+      "h": 48
+    },
+    "ruins-chest-2": {
+      "x": 827,
+      "y": 1634,
+      "w": 48,
+      "h": 48
+    },
+    "ruins-chest-3": {
+      "x": 709,
+      "y": 1662,
+      "w": 48,
+      "h": 48
+    },
+    "furniture-cushion": {
+      "x": 613,
+      "y": 1639,
+      "w": 38,
+      "h": 22
+    }
+  }
+}

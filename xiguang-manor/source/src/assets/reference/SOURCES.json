@@ -1,0 +1,46 @@
+{
+  "checked": "2026-11-06",
+  "derivativeAtlasLicense": "CC-BY-SA-4.0",
+  "sources": {
+    "white-wood.png": {
+      "author": "bluecarrot16, Baŝto, Lanea Zimmerman (Sharm), William Thompson, Tuomo Untinen (Reemax), Janna/Lilius/Jannax",
+      "source": "https://opengameart.org/content/lpc-wooden-furniture",
+      "download": "https://opengameart.org/sites/default/files/white-wood.png",
+      "license": "CC-BY-SA-4.0",
+      "sha256": "7b18a73e0103dc725e8fc020f14c0b2893e470c64f9189fab2c16632a13e7738",
+      "modifications": "cropped, recolored and composed for the existing manor perspective; original files retained"
+    },
+    "upholstery.png": {
+      "author": "bluecarrot16, Lanea Zimmerman (Sharm)",
+      "source": "https://opengameart.org/content/lpc-upholstery",
+      "download": "https://opengameart.org/sites/default/files/upholstery_3.png",
+      "license": "CC-BY-4.0",
+      "sha256": "3e1f3b7566506a0379ee6094fb3cf089df06b7ba51045d9d18a41a1cfe086a41",
+      "modifications": "cropped, recolored and composed for the existing manor perspective; original files retained"
+    },
+    "walls.png": {
+      "author": "See CREDITS-walls.txt",
+      "source": "https://opengameart.org/content/lpc-walls",
+      "download": "https://opengameart.org/sites/default/files/lpc-walls.zip",
+      "license": "CC-BY-SA-3.0",
+      "sha256": "6b55f7b5be42da1614cbf0983e62ce1a0b2010171a0bd5b99dbd0e44803678b8",
+      "modifications": "cropped, recolored and composed for the existing manor perspective; original files retained"
+    },
+    "floors.png": {
+      "author": "See CREDITS-floors.txt",
+      "source": "https://opengameart.org/content/lpc-floors",
+      "download": "https://opengameart.org/sites/default/files/lpc-floors.zip",
+      "license": "CC-BY-SA-4.0",
+      "sha256": "02c0a5bdf0c881148a9f65f4c82b63c9bb0ddca2c1546470aac897118e9cc030",
+      "modifications": "cropped, recolored and composed for the existing manor perspective; original files retained"
+    },
+    "container.png": {
+      "author": "See originals/CREDITS-container.txt",
+      "source": "https://opengameart.org/content/lpc-containers",
+      "download": "https://opengameart.org/sites/default/files/container-v4_2.zip",
+      "license": "CC-BY-SA-4.0",
+      "sha256": "cb8a60d1eac758f87785e0168370ad772fe57e0c2e6f76a127833c63d33fed03",
+      "modifications": "cropped, desaturated and composed into four chest poses; glassware used on the florist bench; original and complete author notices retained"
+    }
+  }
+}

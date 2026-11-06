@@ -1,0 +1,108 @@
+{
+  "engine": "chromium",
+  "conditions": "Local development builds, same browser/mobile viewport; simulated device, not physical phone",
+  "versions": {
+    "before": {
+      "frames": [
+        {
+          "fps": 54,
+          "frameP95": 33.4
+        },
+        {
+          "fps": 51.1,
+          "frameP95": 33.4
+        },
+        {
+          "fps": 52.6,
+          "frameP95": 33.4
+        }
+      ],
+      "fpsMedian": 52.6,
+      "fpsRange": [
+        51.1,
+        54
+      ],
+      "sceneCycles": [
+        {
+          "textures": 41,
+          "heap": 30202838
+        },
+        {
+          "textures": 41,
+          "heap": 30519237
+        },
+        {
+          "textures": 41,
+          "heap": 30544328
+        },
+        {
+          "textures": 41,
+          "heap": 30498316
+        }
+      ]
+    },
+    "after": {
+      "frames": [
+        {
+          "fps": 55.9,
+          "frameP95": 33.3
+        },
+        {
+          "fps": 52.3,
+          "frameP95": 33.3
+        },
+        {
+          "fps": 54.6,
+          "frameP95": 33.3
+        }
+      ],
+      "fpsMedian": 54.6,
+      "fpsRange": [
+        52.3,
+        55.9
+      ],
+      "sceneCycles": [
+        {
+          "textures": 42,
+          "heap": 30317781
+        },
+        {
+          "textures": 42,
+          "heap": 29815703
+        },
+        {
+          "textures": 42,
+          "heap": 30614212
+        },
+        {
+          "textures": 42,
+          "heap": 30450219
+        }
+      ]
+    }
+  },
+  "smallScreen": {
+    "viewport": 375,
+    "overflow": false,
+    "close": {
+      "x": 284,
+      "y": 99,
+      "width": 44,
+      "height": 44,
+      "top": 99,
+      "right": 328,
+      "bottom": 143,
+      "left": 284
+    },
+    "make": {
+      "x": 36,
+      "y": 751.765625,
+      "width": 303,
+      "height": 45,
+      "top": 751.765625,
+      "right": 339,
+      "bottom": 796.765625,
+      "left": 36
+    }
+  }
+}

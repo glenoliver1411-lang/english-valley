@@ -31,3 +31,7 @@ __pycache__/
 
 !src/assets/v6/*.png
 !public/v6-review/**/*.png
+
+!src/assets/reference/**/*.png
+!src/assets/reference/*.png
+!public/reference-review/**/*.png

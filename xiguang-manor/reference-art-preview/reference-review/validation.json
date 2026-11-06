@@ -1,0 +1,73 @@
+{
+  "release": "reference-art-20261106-1",
+  "unitTests": {
+    "passed": 94,
+    "failed": 0
+  },
+  "materialContract": {
+    "originalInputSha256": "all 5 verified",
+    "atlasBounds": "all 59 verified",
+    "replacementDimensions": "all identical to previous frames"
+  },
+  "actualJourney": {
+    "sixFurniturePurchasePlaceUse": "passed",
+    "harvestSaleBouquetHomeReload": "passed"
+  },
+  "offline": {
+    "chromium": {
+      "engine": "chromium",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "reference-art-20261106-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/::reference-art-20261106-1",
+        "complete": true,
+        "files": 36,
+        "bytes": 2799442,
+        "cacheEntries": 37,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "webkit": {
+      "engine": "webkit",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "reference-art-20261106-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/reference-art-preview/::reference-art-20261106-1",
+        "complete": true,
+        "files": 36,
+        "bytes": 2799442,
+        "cacheEntries": 37,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  },
+  "publishedGraphMatchesOfflineTestedGraph": true
+}

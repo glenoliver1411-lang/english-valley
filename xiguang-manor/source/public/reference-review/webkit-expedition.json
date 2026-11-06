@@ -1,0 +1,47 @@
+{
+  "engine": "webkit",
+  "steps": [
+    "four independent permanent equipment slots produce real visible sprites/light/following cat",
+    "real touch walking and animated chest -> temporary loot, reload/resume keeps seed and prevents repeated chest award",
+    "actual stairs extraction transfers loot once and survives reload",
+    "two real chests, readable three-glyph mechanism, unlocked portal and next seeded room retain temporary bag",
+    "wrong-mechanism danger followed by real timed hazard triggers one deterministic failure settlement, protects old treasures/furniture/equipment"
+  ],
+  "success": {
+    "id": 1,
+    "outcome": "success",
+    "chance": 1,
+    "kept": [
+      {
+        "key": "0:0",
+        "relic": "crown",
+        "quality": "gold",
+        "candies": 10
+      }
+    ],
+    "lost": [],
+    "candies": 10
+  },
+  "failure": {
+    "id": 2,
+    "outcome": "failure",
+    "chance": 0.5033783119171857,
+    "kept": [
+      {
+        "key": "0:0",
+        "relic": "rosepin",
+        "quality": "fine",
+        "candies": 4
+      },
+      {
+        "key": "0:1",
+        "relic": "rosepin",
+        "quality": "fine",
+        "candies": 4
+      }
+    ],
+    "lost": [],
+    "candies": 8
+  },
+  "errors": []
+}

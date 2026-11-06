@@ -124,3 +124,17 @@
 图块含花铺室内、12 块破损石板、3 种厚墙、石柱、雕像、壁画、积水、4 段宝箱、3 种帘墙、两种木地板、床铺、壁炉、地毯、固定家具、主地图灯与石路，以及原七套服装的四方向行走表（每套 16 帧）。完整位置与尺寸见同目录 `atlas.json`；装备挂点见 `anchors.json`。衣服的名称、身份和颜色直接读取原 `adventure-config.js`，没有新增服装或修改价格。
 
 `public/v6-review/before/` 和 `after/` 为相同 390×844 视口、同位置／时间／天气／服装／遗迹种子的真实浏览器截图。基线来自 `before-v6-art-20261106` 回退点。制作与检验记录见 [V6_ART_REFINEMENT.md](V6_ART_REFINEMENT.md)。
+
+## 参考图质量样板 · 2026-11-06
+
+本轮新增本地手工像素素材改编图集 `src/assets/reference/atelier.png`，而非引用用户截图或商业游戏美术。运行时仅加载组合图集；源图保留在源码目录，便于核实和再制作。
+
+| 素材 | 作者与来源 | 本轮选择的许可 | 修改 |
+| --- | --- | --- | --- |
+| LPC Wooden Furniture | bluecarrot16 等；[原页](https://opengameart.org/content/lpc-wooden-furniture) | CC BY-SA 4.0 | 裁切床、柜、架、桌、钢琴与壁炉；适配原占地 |
+| LPC Upholstery | bluecarrot16、Lanea Zimmerman (Sharm)；[原页](https://opengameart.org/content/lpc-upholstery) | CC BY 4.0 | 雾紫／草莓粉布艺、帘、座垫；保留原主题换色 |
+| LPC Walls | bluecarrot16 等；[原页](https://opengameart.org/content/lpc-walls) | 原图 CC BY-SA 3.0，改编图集 CC BY-SA 4.0 | 室内墙材、遗迹石墙与配色 |
+| LPC Floors | bluecarrot16 等；[原页](https://opengameart.org/content/lpc-floors) | CC BY-SA 4.0 | 连续木板、织毯、石板，重新配色和组合 |
+| LPC Containers | bluecarrot16、Sharm 等；[原页](https://opengameart.org/content/lpc-containers) | CC BY-SA 4.0 | 四种宝箱状态、金属包边、玻璃器皿 |
+
+以上所有作者与上游署名完整保留在 `src/assets/reference/originals/CREDITS-*.txt`，不要只保留表格中的简称。下载地址、原文件哈希、具体许可和改动记录见 `src/assets/reference/SOURCES.json`。组合图集及改编遵守 CC BY-SA 4.0，许可说明见同目录 `LICENSE.md`。玩家可在「庄园手记 → 美术来源与许可」离线查看完整署名。原有美术、代码和音频的许可保持原状。本轮没有新增音效或字体，没有收费素材。
