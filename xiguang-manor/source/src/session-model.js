@@ -5,6 +5,7 @@ const clone=value=>JSON.parse(JSON.stringify(value));
 export function nextEntrance(storage){let count=0;try{storage??=globalThis.localStorage;const raw=Number(storage.getItem(ENTRY_KEY));count=Number.isSafeInteger(raw)&&raw>=0?raw:0;storage.setItem(ENTRY_KEY,String((count+1)%3000000))}catch{}return count%3}
 export class SessionProgress{
  constructor(profile,storage){this.baseline=clone(profile);this.storage=storage;this.exited=false;this.lastSaveOK=true}
+ checkpoint(profile){this.baseline=clone(profile)}
  save(profile){if(this.exited)return true;this.lastSaveOK=persist(profile,this.storage);return this.lastSaveOK}
- exit(profile,saveCurrent){if(this.exited)return true;this.lastSaveOK=persist(saveCurrent?profile:this.baseline,this.storage);if(this.lastSaveOK)this.exited=true;return this.lastSaveOK}
+ exit(profile,saveCurrent){if(this.exited)return true;this.lastSaveOK=persist(saveCurrent||profile.play?.expedition?.state==='active'?profile:this.baseline,this.storage);if(this.lastSaveOK)this.exited=true;return this.lastSaveOK}
 }

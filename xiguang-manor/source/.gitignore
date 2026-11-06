@@ -25,3 +25,6 @@ __pycache__/
 
 !public/pwa-icons/*.png
 !public/pwa-review/*.png
+
+!src/assets/play/*.png
+!public/play-review/*.png

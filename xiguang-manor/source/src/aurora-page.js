@@ -1,3 +1,4 @@
+import {preloadPlay,installPlay} from './play-assets.js';
 import Phaser from 'phaser';
 import './aurora-page.css';
 import {AURORA_PAGE as A} from './aurora-config.js';
@@ -37,8 +38,8 @@ const viewport=()=>({width:432,height:Math.round(432*app.clientHeight/app.client
 
 class AuroraMeadowScene extends Phaser.Scene{
  constructor(){super('flower-aurora');this.elapsed=paused?27:0;this.low=profile.scenery.lowEffects;this.slow=0;this.accumulator=0}
- preload(){preloadV5(this);this.load.on('loaderror',()=>{$('#aurora-loading').textContent=A.failed})}
- create(){installV5(this);scene=this;this.actors=new LakesideActors();this.build();this.scale.on('resize',this.build,this);$('#aurora-loading').remove();this.events.once('shutdown',()=>{this.scale.off('resize',this.build,this);this.release();this.actors.clear()})}
+ preload(){preloadV5(this);preloadPlay(this);this.load.on('loaderror',()=>{$('#aurora-loading').textContent=A.failed})}
+ create(){installV5(this);installPlay(this);scene=this;this.actors=new LakesideActors();this.build();this.scale.on('resize',this.build,this);$('#aurora-loading').remove();this.events.once('shutdown',()=>{this.scale.off('resize',this.build,this);this.release();this.actors.clear()})}
  release(){this.paint?.destroy();this.aurora?.destroy();if(this.textures.exists('flower-aurora-canvas'))this.textures.remove('flower-aurora-canvas')}
  build(){this.release();this.w=432;this.h=this.scale.gameSize.height;this.texture=this.textures.createCanvas('flower-aurora-canvas',this.w,this.h);this.ctx=this.texture.getContext();this.ctx.imageSmoothingEnabled=false;this.paint=this.add.image(0,0,'flower-aurora-canvas').setOrigin(0);this.art=auroraMeadowPainting(this.w,this.h);this.aurora=new AuroraCurtains(this.w/2,this.h/2);this.stars=new Starlight(this.w/2,this.h/2);this.cloud=paintCloud(8);this.sky=document.createElement('canvas');this.sky.width=this.w;this.sky.height=this.h;const c=this.sky.getContext('2d');for(let y=0;y<this.h;y++){c.fillStyle=mix('#0c142b','#34334d',Math.min(1,y/(this.h*.65)));c.fillRect(0,y,this.w,1)}this.frame()}
  update(_,delta){if(document.hidden||dialog.open)return;if(delta>44)this.slow++;else this.slow=Math.max(0,this.slow-.2);if(this.slow>75)this.low=true;const dt=Math.min(delta,100)/1000;if(!paused)this.elapsed+=dt;this.accumulator+=dt;if(this.accumulator>=1/(this.low?A.lowFps:A.maxFps)){this.accumulator=0;this.frame()}}

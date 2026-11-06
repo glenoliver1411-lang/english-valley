@@ -1,0 +1,56 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "renderer": "Actual Phaser Canvas2D game; screenshots via Playwright, video from game canvas captureStream at normal speed",
+  "screenshots": [
+    {
+      "file": "appearing.png",
+      "sceneTime": 3.5,
+      "envelope": 0.20558449074074078
+    },
+    {
+      "file": "unfurled.png",
+      "sceneTime": 27,
+      "envelope": 1
+    },
+    {
+      "file": "fading.png",
+      "sceneTime": 69,
+      "envelope": 0.40272869236459286
+    }
+  ],
+  "errors": [],
+  "performance": {
+    "lightMs": [
+      24.399999999906868,
+      25.9000000001397,
+      24.300000000046566,
+      24.4000000001397,
+      23.299999999813735,
+      26.300000000046566,
+      24.300000000046566
+    ],
+    "benchSeatY": 767,
+    "actorHipY": 764.4705882352941
+  },
+  "video": {
+    "file": "flow.webm",
+    "mime": "video/webm;codecs=vp9",
+    "bytes": 2763920,
+    "seconds": 22,
+    "sceneStart": 18,
+    "sceneEnd": 40.04869666666719,
+    "speed": 1,
+    "mp4": {
+      "file": "flow.mp4",
+      "codec": "H.264",
+      "fps": 24,
+      "width": 432,
+      "height": 936,
+      "processing": "one bottom padding pixel; original timeline and speed retained"
+    }
+  },
+  "reference": "User supplied aurora photograph; shape and color research only, never used as a game texture"
+}

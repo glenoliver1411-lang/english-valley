@@ -1,0 +1,171 @@
+{
+  "release": "play-20261106-1",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "units": {
+    "passed": 92,
+    "failed": 0
+  },
+  "results": {
+    "chromium-expedition": {
+      "engine": "chromium",
+      "steps": [
+        "four independent permanent equipment slots produce real visible sprites/light/following cat",
+        "real touch walking and animated chest -> temporary loot, reload/resume keeps seed and prevents repeated chest award",
+        "actual stairs extraction transfers loot once and survives reload",
+        "two real chests, readable three-glyph mechanism, unlocked portal and next seeded room retain temporary bag",
+        "wrong-mechanism danger followed by real timed hazard triggers one deterministic failure settlement, protects old treasures/furniture/equipment"
+      ],
+      "success": {
+        "id": 1,
+        "outcome": "success",
+        "chance": 1,
+        "kept": [
+          {
+            "key": "0:0",
+            "relic": "crown",
+            "quality": "gold",
+            "candies": 10
+          }
+        ],
+        "lost": [],
+        "candies": 10
+      },
+      "failure": {
+        "id": 2,
+        "outcome": "failure",
+        "chance": 0.4226156116463244,
+        "kept": [
+          {
+            "key": "0:0",
+            "relic": "catbell",
+            "quality": "fine",
+            "candies": 4
+          }
+        ],
+        "lost": [
+          {
+            "key": "0:1",
+            "relic": "starwatch",
+            "quality": "rare",
+            "candies": 6
+          }
+        ],
+        "candies": 4
+      },
+      "errors": []
+    },
+    "chromium-offline": {
+      "engine": "chromium",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "play-20261106-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/play-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/play-preview/::play-20261106-1",
+        "complete": true,
+        "files": 33,
+        "bytes": 2474543,
+        "cacheEntries": 34,
+        "internalBytes": 57,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "furniture": {
+      "steps": [
+        "all six purchased through real shop buttons",
+        "all six really placed together after storing original free furniture",
+        "four on/off actions persist; two true seated poses render and stand up cleanly"
+      ],
+      "errors": []
+    },
+    "webkit-expedition": {
+      "engine": "webkit",
+      "steps": [
+        "four independent permanent equipment slots produce real visible sprites/light/following cat",
+        "real touch walking and animated chest -> temporary loot, reload/resume keeps seed and prevents repeated chest award",
+        "actual stairs extraction transfers loot once and survives reload",
+        "two real chests, readable three-glyph mechanism, unlocked portal and next seeded room retain temporary bag",
+        "wrong-mechanism danger followed by real timed hazard triggers one deterministic failure settlement, protects old treasures/furniture/equipment"
+      ],
+      "success": {
+        "id": 1,
+        "outcome": "success",
+        "chance": 1,
+        "kept": [
+          {
+            "key": "0:0",
+            "relic": "catbell",
+            "quality": "fine",
+            "candies": 4
+          }
+        ],
+        "lost": [],
+        "candies": 4
+      },
+      "failure": {
+        "id": 2,
+        "outcome": "failure",
+        "chance": 0.5489819960668683,
+        "kept": [
+          {
+            "key": "0:1",
+            "relic": "crown",
+            "quality": "gold",
+            "candies": 10
+          }
+        ],
+        "lost": [
+          {
+            "key": "0:0",
+            "relic": "starwatch",
+            "quality": "rare",
+            "candies": 6
+          }
+        ],
+        "candies": 10
+      },
+      "errors": []
+    },
+    "webkit-offline": {
+      "engine": "webkit",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "play-20261106-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/play-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/play-preview/::play-20261106-1",
+        "complete": true,
+        "files": 33,
+        "bytes": 2474543,
+        "cacheEntries": 34,
+        "internalBytes": 57,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  }
+}

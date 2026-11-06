@@ -9,6 +9,7 @@ export function inspectBackup(text){
  const raw=root.format?root.data:root;
  if(!raw||raw.version!==1)throw Error('version');
  if(typeof raw.accepted!=='boolean'||!Number.isSafeInteger(raw.candies)||raw.candies<0||!Array.isArray(raw.magic)||!Array.isArray(raw.plots)||!Number.isFinite(raw.position?.x)||!Number.isFinite(raw.position?.y))throw Error('format');
- for(const k of ['romance','wardrobe','adventure','scenery','shop'])if(raw[k]!==undefined&&(!raw[k]||typeof raw[k]!=='object'||Array.isArray(raw[k])))throw Error('format');
+ for(const k of ['romance','wardrobe','adventure','scenery','shop','play'])if(raw[k]!==undefined&&(!raw[k]||typeof raw[k]!=='object'||Array.isArray(raw[k])))throw Error('format');
+ if(raw.play!==undefined&&raw.play.version!==1)throw Error('version');
  const data=sanitize(raw);return{data,exportedAt:typeof root.exportedAt==='string'?root.exportedAt:null,summary:{candies:data.candies,catName:data.catName,outfits:data.wardrobe.owned.length,treasures:Object.values(data.adventure.inventory).reduce((a,b)=>a+b,0),furniture:data.romance.room.items.length,flowers:data.romance.flowers.length,completed:data.completed,music:data.music,weather:data.romance.weather}};
 }

@@ -1,0 +1,252 @@
+{
+  "width": 1024,
+  "height": 1024,
+  "frames": {
+    "florist-room": {
+      "x": 2,
+      "y": 2,
+      "w": 432,
+      "h": 850
+    },
+    "ruins-portal": {
+      "x": 437,
+      "y": 2,
+      "w": 84,
+      "h": 105
+    },
+    "furniture-flowerSwing-off": {
+      "x": 524,
+      "y": 2,
+      "w": 66,
+      "h": 98
+    },
+    "furniture-flowerSwing-on": {
+      "x": 593,
+      "y": 2,
+      "w": 66,
+      "h": 98
+    },
+    "ruins-pillar": {
+      "x": 662,
+      "y": 2,
+      "w": 36,
+      "h": 98
+    },
+    "furniture-laceDrape-off": {
+      "x": 701,
+      "y": 2,
+      "w": 54,
+      "h": 91
+    },
+    "furniture-laceDrape-on": {
+      "x": 758,
+      "y": 2,
+      "w": 54,
+      "h": 91
+    },
+    "wrap-back-cream": {
+      "x": 815,
+      "y": 2,
+      "w": 70,
+      "h": 90
+    },
+    "wrap-front-cream": {
+      "x": 888,
+      "y": 2,
+      "w": 70,
+      "h": 90
+    },
+    "wrap-back-rose": {
+      "x": 2,
+      "y": 855,
+      "w": 70,
+      "h": 90
+    },
+    "wrap-front-rose": {
+      "x": 75,
+      "y": 855,
+      "w": 70,
+      "h": 90
+    },
+    "wrap-back-night": {
+      "x": 148,
+      "y": 855,
+      "w": 70,
+      "h": 90
+    },
+    "wrap-front-night": {
+      "x": 221,
+      "y": 855,
+      "w": 70,
+      "h": 90
+    },
+    "ruins-mechanism": {
+      "x": 294,
+      "y": 855,
+      "w": 76,
+      "h": 86
+    },
+    "furniture-glassCabinet-off": {
+      "x": 373,
+      "y": 855,
+      "w": 54,
+      "h": 83
+    },
+    "furniture-glassCabinet-on": {
+      "x": 430,
+      "y": 855,
+      "w": 54,
+      "h": 83
+    },
+    "ruins-stairs": {
+      "x": 487,
+      "y": 855,
+      "w": 90,
+      "h": 62
+    },
+    "furniture-vintageSofa-off": {
+      "x": 580,
+      "y": 855,
+      "w": 68,
+      "h": 57
+    },
+    "furniture-vintageSofa-on": {
+      "x": 651,
+      "y": 855,
+      "w": 68,
+      "h": 57
+    },
+    "ruins-wall": {
+      "x": 722,
+      "y": 855,
+      "w": 96,
+      "h": 56
+    },
+    "furniture-starProjector-off": {
+      "x": 821,
+      "y": 855,
+      "w": 40,
+      "h": 52
+    },
+    "furniture-starProjector-on": {
+      "x": 864,
+      "y": 855,
+      "w": 40,
+      "h": 52
+    },
+    "furniture-berryLamp-off": {
+      "x": 907,
+      "y": 855,
+      "w": 34,
+      "h": 49
+    },
+    "furniture-berryLamp-on": {
+      "x": 944,
+      "y": 855,
+      "w": 34,
+      "h": 49
+    },
+    "ruins-chest-0": {
+      "x": 2,
+      "y": 948,
+      "w": 48,
+      "h": 44
+    },
+    "ruins-chest-1": {
+      "x": 53,
+      "y": 948,
+      "w": 48,
+      "h": 44
+    },
+    "ruins-chest-2": {
+      "x": 104,
+      "y": 948,
+      "w": 48,
+      "h": 44
+    },
+    "flower-rose": {
+      "x": 155,
+      "y": 948,
+      "w": 26,
+      "h": 40
+    },
+    "flower-lily": {
+      "x": 184,
+      "y": 948,
+      "w": 26,
+      "h": 40
+    },
+    "flower-aster": {
+      "x": 213,
+      "y": 948,
+      "w": 26,
+      "h": 40
+    },
+    "flower-glow": {
+      "x": 242,
+      "y": 948,
+      "w": 26,
+      "h": 40
+    },
+    "ruins-floor-0": {
+      "x": 271,
+      "y": 948,
+      "w": 32,
+      "h": 32
+    },
+    "ruins-floor-1": {
+      "x": 306,
+      "y": 948,
+      "w": 32,
+      "h": 32
+    },
+    "ruins-floor-2": {
+      "x": 341,
+      "y": 948,
+      "w": 32,
+      "h": 32
+    },
+    "equip-ghostlamp": {
+      "x": 376,
+      "y": 948,
+      "w": 15,
+      "h": 25
+    },
+    "glyph-0": {
+      "x": 394,
+      "y": 948,
+      "w": 23,
+      "h": 23
+    },
+    "glyph-1": {
+      "x": 420,
+      "y": 948,
+      "w": 23,
+      "h": 23
+    },
+    "glyph-2": {
+      "x": 446,
+      "y": 948,
+      "w": 23,
+      "h": 23
+    },
+    "equip-catbell": {
+      "x": 472,
+      "y": 948,
+      "w": 12,
+      "h": 13
+    },
+    "equip-crown": {
+      "x": 487,
+      "y": 948,
+      "w": 26,
+      "h": 12
+    },
+    "equip-rosepin": {
+      "x": 516,
+      "y": 948,
+      "w": 10,
+      "h": 12
+    }
+  }
+}

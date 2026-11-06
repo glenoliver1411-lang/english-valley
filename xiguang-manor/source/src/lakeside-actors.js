@@ -1,3 +1,4 @@
+import {playFrame} from './play-assets.js';
 import {landscapePainter} from './landscape-detail.js';
 import {ADVENTURE} from './adventure-config.js';
 import {mix} from './sky-model.js';
@@ -11,7 +12,7 @@ export function contact(p,x,y,rx,ry,color,alpha=1){p.c.save();p.c.globalAlpha=al
 export class LakesideActors {
  constructor(){this.girls=new Map();this.cats=new Map()}
  girl(profile,period){
-  const id=profile.wardrobe.equipped,key=id+'/'+period;if(this.girls.has(key))return this.girls.get(key);
+  const id=profile.wardrobe.equipped,key=id+'/'+period+'/'+Object.values(profile.play?.equipment||{}).join(',');if(this.girls.has(key))return this.girls.get(key);
   const p=landscapePainter(24,34),r=p.r,a=LAKESIDE.periods[period],o=ADVENTURE.outfits.find(o=>o.id===id),coat=o?.coat||'#b598bc',top=o?.top||'#c5acd0',skirt=o?.skirt||'#8c6991';
   const hair=period==='night'?['#44384f','#644b62','#816075','#a18096','#c3a6b9']:period==='dusk'?['#4c394f','#705063','#956b7f','#bc8c9f','#dfb2bd']:['#564052','#785568','#a27787','#c89da9','#e6c5c7'];
   // Bent knees and the shadowed hem sit on the cushion, not above the backrest.
@@ -37,7 +38,7 @@ export class LakesideActors {
   p.c.drawImage(hp.canvas,0,0,24,18.5);
   // A fine moon/sun rim on the right shoulder binds the sprite to the scene.
   r(20,18.5,.5,3,mix(coat,a.light,.55));r(18.5,24,1,.5,mix(coat,a.light,.4));
-  this.girls.set(key,p.canvas);return p.canvas;
+  const eq=profile.play?.equipment||{};if(eq.head==='crown')p.c.drawImage(playFrame('equip-crown'),1,-1,23,11);if(eq.pin==='rosepin')p.c.drawImage(playFrame('equip-rosepin'),13,19,6,7);if(eq.hand==='ghostlamp')p.c.drawImage(playFrame('equip-ghostlamp'),18,22,7,12);this.girls.set(key,p.canvas);return p.canvas;
  }
  cat(period,pose='sleep'){
   const key=period+'/'+pose;if(this.cats.has(key))return this.cats.get(key);

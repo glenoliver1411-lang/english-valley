@@ -102,3 +102,17 @@
 本轮没有替换场景美术，也没有引入网络图片或音频。`public/pwa-icons/icon-{180,192,512}.png` 是本项目原创：以 64px 像素画绘制月亮、暖灯小屋与花朵，再使用最近邻采样输出手机图标；制作源码为 `tools/pwa-icons.mjs`。安装指引中的分享／添加图示为原创 SVG。
 
 离线缓存采用 [vite-plugin-pwa 1.3.0](https://github.com/vite-pwa/vite-plugin-pwa) 与 [Google Workbox 7.4.1](https://github.com/GoogleChrome/workbox)，均为 MIT 许可的软件依赖；原始许可随 npm 包保留。原有第三方游戏美术的 CC0 来源与修改记录仍见本文及 V5 素材记录，没有改变其授权。
+
+## 生活玩法预览（2026-11-06）
+
+新增本地原创图集 `src/assets/play/atelier.png`（1024×1024，59,630 字节）与 `atlas.json`，共 41 帧。制作源码 `tools/build-play-art.py` 复用本项目 V5 像素绘图工具及色板，全部重新绘制；没有从网络下载或复制新的图像、录音、字体，也没有调用收费服务。已有第三方素材及其许可保持原记录。
+
+| 原创帧 | 实际用途 |
+| --- | --- |
+| `florist-room` | 432×850 可走动花铺：柜台、玻璃花瓶、包装桌、纸卷、剪刀、花柜、帘架和地毯。 |
+| `furniture-{berryLamp,starProjector,laceDrape,vintageSofa,flowerSwing,glassCabinet}-{off,on}` | 六件新家具的完整开／关 PNG 帧；保留可辨识的木脚、玻璃、布褶、灯罩、铜件和接地阴影。 |
+| `flower-{rose,lily,aster,glow}`、`wrap-{back,front}-{cream,rose,night}` | 四种真实库存鲜花；三种包装前后层，运行时合成玩家选择的三朵花束。 |
+| `equip-{crown,rosepin,ghostlamp,catbell}` | 真实角色花冠、胸针、手持灯和猫铃；不替换原角色身份及服装。 |
+| `ruins-floor-0..2`、`ruins-wall`、`ruins-pillar`、`ruins-chest-0..2`、`glyph-0..2`、`ruins-mechanism`、`ruins-stairs`、`ruins-portal` | 遗迹地砖、厚石墙、柱、三段开箱、可解机关、真实撤离石阶和层间拱门。 |
+
+本轮的坐姿延用原项目原创 `LakesideActors`，保留原衣服；危机提示音为本地 Web Audio 合成并遵守静音。未修改极光美术或混入新的外部风格。`public/play-review/` 的截图由真实 Chromium／WebKit 游戏运行产生，包含测试档案状态，不是概念图。

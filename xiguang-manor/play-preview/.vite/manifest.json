@@ -1,0 +1,271 @@
+{
+  "_config-BFjzXxvb.js": {
+    "file": "assets/config-BFjzXxvb.js",
+    "name": "config"
+  },
+  "_lakeside-actors-CHlAVzZP.js": {
+    "file": "assets/lakeside-actors-CHlAVzZP.js",
+    "name": "lakeside-actors",
+    "imports": [
+      "_landscape-detail-Bf_HjeQd.js",
+      "_config-BFjzXxvb.js"
+    ]
+  },
+  "_landscape-detail-Bf_HjeQd.js": {
+    "file": "assets/landscape-detail-Bf_HjeQd.js",
+    "name": "landscape-detail",
+    "imports": [
+      "_phaser-0YPJO2g1.js",
+      "_config-BFjzXxvb.js"
+    ],
+    "assets": [
+      "assets/atelier-lOGJP6Vn.png",
+      "assets/atelier-MTDNbFML.webp",
+      "assets/atelier-CVujiCBd.png",
+      "assets/mountain-rock-DGUQWuCO.png",
+      "assets/mountain-forest-1-DpL9WU5G.png",
+      "assets/mountain-forest-2-UC11eqjd.png",
+      "assets/mountain-forest-3-zRErqGQp.png"
+    ]
+  },
+  "_main-CTx15UEe.css": {
+    "file": "assets/main-CTx15UEe.css",
+    "src": "_main-CTx15UEe.css"
+  },
+  "_main-CYl07KoO.js": {
+    "file": "assets/main-CYl07KoO.js",
+    "name": "main",
+    "isDynamicEntry": true,
+    "imports": [
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/sky-scene.js",
+      "src/florist-ui.js",
+      "src/candy-ui.js",
+      "src/romantic-ui.js",
+      "src/pwa-ui.js"
+    ],
+    "css": [
+      "assets/main-CTx15UEe.css"
+    ]
+  },
+  "_phaser-0YPJO2g1.js": {
+    "file": "assets/phaser-0YPJO2g1.js",
+    "name": "phaser"
+  },
+  "_scene-paint-cache-BPCn3vQc.js": {
+    "file": "assets/scene-paint-cache-BPCn3vQc.js",
+    "name": "scene-paint-cache"
+  },
+  "aurora.html": {
+    "file": "assets/aurora-CGERaKaj.js",
+    "name": "aurora",
+    "src": "aurora.html",
+    "isEntry": true,
+    "imports": [
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "_lakeside-actors-CHlAVzZP.js",
+      "_phaser-0YPJO2g1.js"
+    ],
+    "dynamicImports": [
+      "src/pwa-service.js"
+    ],
+    "css": [
+      "assets/aurora-Bo08VzWJ.css"
+    ]
+  },
+  "index.html": {
+    "file": "assets/manor-CFskKXvL.js",
+    "name": "manor",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_config-BFjzXxvb.js"
+    ],
+    "dynamicImports": [
+      "_main-CYl07KoO.js"
+    ],
+    "css": [
+      "assets/manor-2rEKZYZW.css"
+    ]
+  },
+  "src/assets/lakeside/bellflower.png": {
+    "file": "assets/bellflower-3V4XsgS5.png",
+    "src": "src/assets/lakeside/bellflower.png"
+  },
+  "src/assets/lakeside/cottage.png": {
+    "file": "assets/cottage-BewczTOJ.png",
+    "src": "src/assets/lakeside/cottage.png"
+  },
+  "src/assets/lakeside/daisy.png": {
+    "file": "assets/daisy-B3Lm6mkc.png",
+    "src": "src/assets/lakeside/daisy.png"
+  },
+  "src/assets/lakeside/grass-fan.png": {
+    "file": "assets/grass-fan-BKhpgw5y.png",
+    "src": "src/assets/lakeside/grass-fan.png"
+  },
+  "src/assets/lakeside/grass-tuft.png": {
+    "file": "assets/grass-tuft-p6LKhOg2.png",
+    "src": "src/assets/lakeside/grass-tuft.png"
+  },
+  "src/assets/lakeside/mountains-3.png": {
+    "file": "assets/mountains-3-BJ-OlSCB.png",
+    "src": "src/assets/lakeside/mountains-3.png"
+  },
+  "src/assets/lakeside/mountains-4.png": {
+    "file": "assets/mountains-4-DlB9nZ4k.png",
+    "src": "src/assets/lakeside/mountains-4.png"
+  },
+  "src/assets/lakeside/oak.png": {
+    "file": "assets/oak-BH_FlCW7.png",
+    "src": "src/assets/lakeside/oak.png"
+  },
+  "src/assets/lakeside/pink-cosmos.png": {
+    "file": "assets/pink-cosmos-DusGsfh_.png",
+    "src": "src/assets/lakeside/pink-cosmos.png"
+  },
+  "src/assets/lakeside/rose.png": {
+    "file": "assets/rose-D3PwtyZw.png",
+    "src": "src/assets/lakeside/rose.png"
+  },
+  "src/assets/lakeside/rowan.png": {
+    "file": "assets/rowan-D4Xmazar.png",
+    "src": "src/assets/lakeside/rowan.png"
+  },
+  "src/assets/lakeside/shore-rock.png": {
+    "file": "assets/shore-rock-DL5vOhA-.png",
+    "src": "src/assets/lakeside/shore-rock.png"
+  },
+  "src/assets/lakeside/wildflower.png": {
+    "file": "assets/wildflower-ELMLi3gi.png",
+    "src": "src/assets/lakeside/wildflower.png"
+  },
+  "src/assets/play/atelier.png": {
+    "file": "assets/atelier-lOGJP6Vn.png",
+    "src": "src/assets/play/atelier.png"
+  },
+  "src/assets/v5/atelier.png": {
+    "file": "assets/atelier-CVujiCBd.png",
+    "src": "src/assets/v5/atelier.png"
+  },
+  "src/assets/v5/atelier.webp": {
+    "file": "assets/atelier-MTDNbFML.webp",
+    "src": "src/assets/v5/atelier.webp"
+  },
+  "src/assets/v5/mountain-forest-1.png": {
+    "file": "assets/mountain-forest-1-DpL9WU5G.png",
+    "src": "src/assets/v5/mountain-forest-1.png"
+  },
+  "src/assets/v5/mountain-forest-2.png": {
+    "file": "assets/mountain-forest-2-UC11eqjd.png",
+    "src": "src/assets/v5/mountain-forest-2.png"
+  },
+  "src/assets/v5/mountain-forest-3.png": {
+    "file": "assets/mountain-forest-3-zRErqGQp.png",
+    "src": "src/assets/v5/mountain-forest-3.png"
+  },
+  "src/assets/v5/mountain-rock.png": {
+    "file": "assets/mountain-rock-DGUQWuCO.png",
+    "src": "src/assets/v5/mountain-rock.png"
+  },
+  "src/candy-ui.js": {
+    "file": "assets/candy-ui-BxaPyI3L.js",
+    "name": "candy-ui",
+    "src": "src/candy-ui.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_main-CYl07KoO.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "_scene-paint-cache-BPCn3vQc.js",
+      "_config-BFjzXxvb.js",
+      "index.html",
+      "_phaser-0YPJO2g1.js"
+    ]
+  },
+  "src/florist-ui.js": {
+    "file": "assets/florist-ui-pqX2QMxs.js",
+    "name": "florist-ui",
+    "src": "src/florist-ui.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "_main-CYl07KoO.js",
+      "_phaser-0YPJO2g1.js",
+      "index.html"
+    ]
+  },
+  "src/home-ui.js": {
+    "file": "assets/home-ui-BbnZTvdZ.js",
+    "name": "home-ui",
+    "src": "src/home-ui.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "_main-CYl07KoO.js",
+      "_phaser-0YPJO2g1.js",
+      "index.html"
+    ]
+  },
+  "src/pwa-service.js": {
+    "file": "assets/pwa-service-CzflIpP8.js",
+    "name": "pwa-service",
+    "src": "src/pwa-service.js",
+    "isDynamicEntry": true
+  },
+  "src/pwa-ui.js": {
+    "file": "assets/pwa-ui-Bm0tJ1z4.js",
+    "name": "pwa-ui",
+    "src": "src/pwa-ui.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/pwa-service.js",
+      "_main-CYl07KoO.js",
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "_phaser-0YPJO2g1.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/pwa-ui-B97XHYGT.css"
+    ]
+  },
+  "src/romantic-ui.js": {
+    "file": "assets/romantic-ui-CeuqQFky.js",
+    "name": "romantic-ui",
+    "src": "src/romantic-ui.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "_main-CYl07KoO.js",
+      "_scene-paint-cache-BPCn3vQc.js",
+      "_lakeside-actors-CHlAVzZP.js",
+      "_phaser-0YPJO2g1.js",
+      "index.html"
+    ],
+    "dynamicImports": [
+      "src/home-ui.js"
+    ]
+  },
+  "src/sky-scene.js": {
+    "file": "assets/sky-scene-Cz3rHUFf.js",
+    "name": "sky-scene",
+    "src": "src/sky-scene.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_main-CYl07KoO.js",
+      "_lakeside-actors-CHlAVzZP.js",
+      "_config-BFjzXxvb.js",
+      "_landscape-detail-Bf_HjeQd.js",
+      "index.html",
+      "_phaser-0YPJO2g1.js"
+    ]
+  }
+}

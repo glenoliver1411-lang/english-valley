@@ -1,10 +1,12 @@
-// 家具、软装、花海与新增文案的统一配置。全部家具免费使用。
+import {PLAY} from './play-config.js';
+// 家具、软装、花海与新增文案的统一配置。原有家具免费，新增六件以糖果兑换。
 export const HOME={
  maxItems:10,grid:8,
- text:{catalog:'家具与软装',note:'这些小小的家具，都已经为你准备好了。选一件，放在喜欢的地方。',furniture:'添置家具',surfaces:'墙面与地板',placed:'已经摆好',place:'放进小屋',move:'挪个位置',store:'收进家具箱',done:'摆在这里',cancel:'取消',flip:'换个朝向',editing:'轻点地面或拖动家具，选择位置',valid:'这里刚刚好。',invalid:'这里有些拥挤，换个位置试试。',full:'小屋先留一点走路的空间，可以收起一件再添新的。',saved:'小屋记住了你喜欢的样子。',empty:'家具箱是满满的，房间可以慢慢布置。',allFree:'家具免费 · 自动保存',wallpaper:'墙面',floor:'地板',use:'和它待一会儿',turnOn:'亮起来',turnOff:'暂时关上',water:'给叶子一点水',watered:'叶尖留住了一点露水。',brew:'泡一壶热茶',tea:'热茶慢慢冒着香气，不必急着喝。',piano:'弹一小段旋律',pianoHint:'轻点琴键，给小屋留下一段自己的旋律。',sound:'开启音乐与琴声',soundHint:'音乐开关也会控制琴声。',vase:'花瓶里的花',vaseHint:'去花海采一束喜欢的花，回来就会在这里开放。',chooseBouquet:'换一束花',lit:'暖光轻轻亮起来了。',quiet:'就这样坐一会儿。',painting:'看看画里的风景',paintingLine:'一幅收藏花与星光的小画，可以翻转换个朝向。',shelf:'翻开收藏册',catBed:'让小猫来这里休息',catRest:'小猫找到了一块软软的地方。',sparkle:'一点点星光，落进了房间。'},
+ text:{catalog:'家具与软装',note:'这些小小的家具，都已经为你准备好了。选一件，放在喜欢的地方。',newDecor:'新装饰',furniture:'免费家具',surfaces:'墙面与地板',placed:'已经摆好',place:'放进小屋',move:'挪个位置',store:'收进家具箱',done:'摆在这里',cancel:'取消',flip:'换个朝向',editing:'轻点地面或拖动家具，选择位置',valid:'这里刚刚好。',invalid:'这里有些拥挤，换个位置试试。',full:'小屋先留一点走路的空间，可以收起一件再添新的。',saved:'小屋记住了你喜欢的样子。',empty:'家具箱是满满的，房间可以慢慢布置。',allFree:'原有家具免费 · 新装饰可购买 · 自动保存',wallpaper:'墙面',floor:'地板',use:'和它待一会儿',turnOn:'亮起来',turnOff:'暂时关上',water:'给叶子一点水',watered:'叶尖留住了一点露水。',brew:'泡一壶热茶',tea:'热茶慢慢冒着香气，不必急着喝。',piano:'弹一小段旋律',pianoHint:'轻点琴键，给小屋留下一段自己的旋律。',sound:'开启音乐与琴声',soundHint:'音乐开关也会控制琴声。',vase:'花瓶里的花',vaseHint:'去花海采一束喜欢的花，回来就会在这里开放。',chooseBouquet:'换一束花',lit:'暖光轻轻亮起来了。',quiet:'就这样坐一会儿。',painting:'看看画里的风景',paintingLine:'一幅收藏花与星光的小画，可以翻转换个朝向。',shelf:'翻开收藏册',catBed:'让小猫来这里休息',catRest:'小猫找到了一块软软的地方。',sparkle:'一点点星光，落进了房间。'},
  walls:[{id:'original',name:'奶油木墙'},{id:'floral',name:'雾紫花枝'},{id:'gingham',name:'草莓格纹'}],
  floors:[{id:'original',name:'暖木地板'},{id:'herringbone',name:'蜂蜜鱼骨木'},{id:'pale',name:'月白木纹'}],
  items:[
+  ...PLAY.goods,
   {type:'chair',name:'云朵阅读椅',desc:'坐下来，慢慢看一本书。',w:44,h:57,footW:36,footH:17,action:'sit'},
   {type:'tea',name:'花瓣茶桌',desc:'一壶会冒热气的花茶。',w:54,h:43,footW:44,footH:20,action:'tea'},
   {type:'lamp',name:'弯月落地灯',desc:'把一小弯月亮留在床边。',w:34,h:77,footW:22,footH:12,action:'light'},

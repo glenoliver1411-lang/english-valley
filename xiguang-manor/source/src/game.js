@@ -1,3 +1,4 @@
+import {preloadPlay,installPlay} from './play-assets.js';
 import {TreeOcclusion} from './tree-occlusion.js';
 import {BOOT} from './boot-config.js';
 import {bootStatus} from './boot-status.js';
@@ -23,7 +24,7 @@ export class Manor extends Phaser.Scene {
   this.load.on('progress',p=>bootStatus('assets',.15+p*.65));
   this.load.on('loaderror',file=>this.failedAssets.set(file.key,{key:file.key,url:file.url}));
   this.load.on('filecomplete',key=>this.failedAssets.delete(key));
-  preloadV5(this);
+  preloadV5(this);preloadPlay(this);
  }
  create(){
   if(this.failedAssets.size){
@@ -33,7 +34,7 @@ export class Manor extends Phaser.Scene {
    this.time.delayedCall(250,()=>{this.load.reset();for(const file of files){let url=v5FallbackURL(file.key)||file.url;if(!/^(data:|blob:)/.test(url))url+=(url.includes('?')?'&':'?')+'retry='+this.assetAttempts;this.load.image(file.key,url)}this.load.once('complete',()=>this.create());this.load.start()});return;
   }
   bootStatus('initializing',.85);
-  installV5(this);makeArt(this,{metadataOnly:true});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
+  installV5(this);installPlay(this);makeArt(this,{metadataOnly:true});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
   this.cat=this.add.image(347,453,'cat').setScale(1.25);this.world.add(this.cat);this.tweens.add({targets:this.cat,scaleY:1.21,duration:1500,yoyo:true,repeat:-1});
   this.labels=[];for(let [x,y,text] of [[114,300,T.shop],[347,407,T.cat],[235,281,T.tree],[88,509,T.garden],[354,215,T.pond]]){
    let label=this.add.text(x,y,text,{fontSize:'11px',fontFamily:'sans-serif',color:'#ffebcf',backgroundColor:'#41374dd9',padding:{x:7,y:4}}).setOrigin(.5);this.world.add(label);this.labels.push(label);

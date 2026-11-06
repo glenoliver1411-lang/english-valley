@@ -26,7 +26,7 @@ for directory in ['src','tests','public','tools']:
  target=source/directory
  if target.exists():shutil.rmtree(target)
  shutil.copytree(project/directory,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
-for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','.gitignore','.env.pwa-preview']:
+for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','.gitignore','.env.pwa-preview','.env.gameplay-preview']:
  shutil.copy2(project/name,source/name)
 for item in project.glob('*.md'):shutil.copy2(item,source/item.name)
 (site/'.nojekyll').touch()
