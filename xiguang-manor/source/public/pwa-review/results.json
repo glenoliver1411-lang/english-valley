@@ -164,7 +164,7 @@
     "decodedResponseBytes": 2362463,
     "serviceWorkerBytes": 24272,
     "scope": "/english-valley/xiguang-manor/experience-preview/",
-    "status": "built; public HTTPS verification follows deployment"
+    "status": "Verified on public GitHub Pages in Chromium and WebKit: complete cache and offline main/meadow/aurora round trip"
   },
   "limitations": [
     "Native iOS Add to Home Screen dialogs and actual iPhone OS process/storage policies are not verified by desktop WebKit.",
@@ -330,5 +330,107 @@
   ],
   "testNotes": [
     "One WebKit timing assertion in the unchanged 180 ms joystick regression failed while builds and browser suites shared the machine; the unchanged suite passed in an isolated rerun. No movement code or assertion threshold was changed."
-  ]
+  ],
+  "publicChecks": [
+    {
+      "engine": "chromium",
+      "url": "https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/",
+      "audit": {
+        "version": "pwa-offline-20261106-1",
+        "scope": "https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/",
+        "cache": "xiguang-precache::https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/::pwa-offline-20261106-1",
+        "complete": true,
+        "files": 31,
+        "bytes": 2362463,
+        "cacheEntries": 32,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      },
+      "manifest": {
+        "name": "曦光庄园",
+        "short_name": "曦光庄园",
+        "description": "一座可以放进口袋、离线游玩的私人童话庄园",
+        "start_url": "/english-valley/xiguang-manor/experience-preview/index.html",
+        "display": "standalone",
+        "background_color": "#28263f",
+        "theme_color": "#28263f",
+        "lang": "zh-CN",
+        "scope": "/english-valley/xiguang-manor/experience-preview/",
+        "id": "/english-valley/xiguang-manor/experience-preview/",
+        "orientation": "portrait",
+        "icons": [
+          {
+            "src": "/english-valley/xiguang-manor/experience-preview/pwa-icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "/english-valley/xiguang-manor/experience-preview/pwa-icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+          }
+        ]
+      },
+      "passed": "HTTPS publication: complete install; offline main, gift skip, hand book, first meadow, independent aurora round trip",
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "url": "https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/",
+      "audit": {
+        "version": "pwa-offline-20261106-1",
+        "scope": "https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/",
+        "cache": "xiguang-precache::https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/::pwa-offline-20261106-1",
+        "complete": true,
+        "files": 31,
+        "bytes": 2362463,
+        "cacheEntries": 32,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      },
+      "manifest": {
+        "name": "曦光庄园",
+        "short_name": "曦光庄园",
+        "description": "一座可以放进口袋、离线游玩的私人童话庄园",
+        "start_url": "/english-valley/xiguang-manor/experience-preview/index.html",
+        "display": "standalone",
+        "background_color": "#28263f",
+        "theme_color": "#28263f",
+        "lang": "zh-CN",
+        "scope": "/english-valley/xiguang-manor/experience-preview/",
+        "id": "/english-valley/xiguang-manor/experience-preview/",
+        "orientation": "portrait",
+        "icons": [
+          {
+            "src": "/english-valley/xiguang-manor/experience-preview/pwa-icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "/english-valley/xiguang-manor/experience-preview/pwa-icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+          }
+        ]
+      },
+      "passed": "HTTPS publication: complete install; offline main, gift skip, hand book, first meadow, independent aurora round trip",
+      "errors": []
+    }
+  ],
+  "formalAfter": {
+    "sha256": "423eb893f81222964ae5436eebe34b4e2d4aa6c0f508dedd0092192b22fa1099",
+    "bytes": 2691
+  },
+  "publication": {
+    "commit": "8b57df2d364b8012a04ea0a8d17fde1b73c3a652",
+    "workflow": "https://github.com/glenoliver1411-lang/english-valley/actions/runs/42263765088",
+    "conclusion": "success",
+    "verifiedAt": "2026-11-06T17:47:47.775570+00:00"
+  }
 }

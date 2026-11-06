@@ -1,6 +1,8 @@
 # 曦光庄园：完整离线游玩与存档保护
 
-这一阶段只发布到 [PWA 独立预览](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/)。正式版 `xiguang-manor/index.html` 与正式版资源不变。开发分支为 `pwa/offline-stage1`，修改前回退标签为 `before-pwa-stage1-20261106`。
+这一阶段只发布到 [PWA 独立预览](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/experience-preview/?v=pwa-offline-20261106-1)。正式版 `xiguang-manor/index.html` 与正式版资源不变。开发分支为 `pwa/offline-stage1`，修改前回退标签为 `before-pwa-stage1-20261106`。
+
+已发布版本 `pwa-offline-20261106-1`，GitHub Pages 部署成功，公网 Chromium／WebKit 安装核验及离线主页面、花海、极光往返均通过。当前完整资源 **31 项 / 2,362,463 字节（约 2.25 MiB）**；另有 64 字节的内部激活标记及浏览器单独保存的 24,272 字节 Service Worker 脚本。正式版页面发布前后的 SHA-256 相同。
 
 ## 玩家使用
 
@@ -33,9 +35,9 @@ iPhone：使用 Safari 打开 → 分享 → 添加到主屏幕 → 添加。主
 
 ## 验收证据
 
-两种浏览器均已通过完整断网旅程、更新与六项故障恢复检查；79 项单元测试通过。测试发行包每版实际核验 31 项资源、2,362,443 字节（约 2.25 MiB），另有一个内部激活标记。正式预览构建的准确数字见下列记录。
+两种浏览器均已通过完整断网旅程、更新与六项故障恢复检查；79 项单元测试通过。测试发行包每版实际核验 31 项资源、2,362,443 字节（约 2.25 MiB），另有一个内部激活标记。正式预览构建及公网核验的准确数字见下列记录。
 
-缓存数量、体积和浏览器结果见本轮的 `public/pwa-review/results.json`（发布前由实测结果生成）；截图也位于该目录。资源体积按 Cache Storage 中解压后的响应体逐项相加，不冒充网络压缩流量或设备总占用。Workbox 构建日志可能包含重复追加的 manifest 条目；运行时去重，以实际核验数量为准。激活标记是额外的一个内部缓存项。
+缓存数量、体积和浏览器结果见本轮的 `public/pwa-review/results.json`（含本地 A/B 更新测试及实际 HTTPS 公网核验）；截图也位于该目录。资源体积按 Cache Storage 中解压后的响应体逐项相加，不冒充网络压缩流量或设备总占用。Workbox 构建日志可能包含重复追加的 manifest 条目；运行时去重，以实际核验数量为准。激活标记是额外的一个内部缓存项。
 
 自动化使用 Chromium／WebKit 手机视口。联网安装后关闭整个持久化浏览器进程，保留用户数据目录，重启时同时设置浏览器 offline 和测试服务器 HTTP 503；随后用实际按钮／触摸进入从未打开过的懒加载场景。没有使用开发态 `__manor` 跳过离线验收步骤。在线更新由同一路径下的 A/B 两个 production 构建模拟。
 
@@ -70,3 +72,5 @@ python tools/stage-release.py /path/to/english-valley --preview experience-previ
 ## 主要文件
 
 `vite.config.js`、`.env.pwa-preview`、`tools/offline-manifest.js` 负责构建清单；`src/sw.js` 负责 Workbox 缓存和版本生命周期；`src/pwa-service.js` 负责注册、状态和确认激活；`src/pwa-ui.js`／`pwa.css`／`pwa-config.js` 负责安装、更新和备份界面；`src/backup-model.js`、`src/save.js` 负责校验和保护；`main.js`、`early-gift.js`、`aurora-page.js` 只增加必要接点。图标及软件依赖来源见 `ASSET_CREDITS.md`。
+
+公网手机视口截图：[Chromium 离线状态](public/pwa-review/chromium-published-offline.png) · [WebKit 离线状态](public/pwa-review/webkit-published-offline.png)。本机完整原始测试结果写入 `verification/pwa-results/`。原有手机体验回归在两个引擎通过：五种视口、摇杆、独立开场、重复场景清理与极光往返；其中 WebKit 在并行构建时曾有一次原有 180ms 摇杆时序断言失败，隔离重跑原测试通过，没有修改移动逻辑或放宽断言。
