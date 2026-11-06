@@ -1,0 +1,506 @@
+{
+  "release": "v6-art-20261106-1",
+  "unitTests": {
+    "passed": 94,
+    "failed": 0
+  },
+  "modelsUnchanged": [
+    "save.js",
+    "play-model.js",
+    "expedition-model.js",
+    "adventure-model.js",
+    "session-model.js"
+  ],
+  "newAtlas": {
+    "bytes": 134623,
+    "width": 1024,
+    "height": 2048,
+    "frames": 45,
+    "sha256": "705e7ae39b11e966e63d019bcdf66baf08824c56fa9786c499f14af75348cc99"
+  },
+  "captures": {
+    "before": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "clock": {
+        "manor": 21,
+        "florist": 21,
+        "home-day": 9.5,
+        "home-night": 21
+      },
+      "weather": "clear",
+      "outfit": "cocoa",
+      "seed": 42654,
+      "errors": [],
+      "equipmentCamera": {
+        "zoom": 2.5,
+        "center": [
+          216,
+          650
+        ],
+        "cleanView": true
+      }
+    },
+    "after": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "clock": {
+        "manor": 21,
+        "florist": 21,
+        "home-day": 9.5,
+        "home-night": 21
+      },
+      "weather": "clear",
+      "outfit": "cocoa",
+      "seed": 42654,
+      "errors": [],
+      "equipmentCamera": {
+        "zoom": 2.5,
+        "center": [
+          216,
+          650
+        ],
+        "cleanView": true
+      }
+    }
+  },
+  "regression": {
+    "webkit-offline": {
+      "engine": "webkit",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "v6-art-20261106-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/v6-art-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/v6-art-preview/::v6-art-20261106-1",
+        "complete": true,
+        "files": 34,
+        "bytes": 2626018,
+        "cacheEntries": 35,
+        "internalBytes": 59,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "chromium-offline": {
+      "engine": "chromium",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "v6-art-20261106-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/v6-art-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/v6-art-preview/::v6-art-20261106-1",
+        "complete": true,
+        "files": 34,
+        "bytes": 2626018,
+        "cacheEntries": 35,
+        "internalBytes": 59,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "chromium-expedition": {
+      "engine": "chromium",
+      "steps": [
+        "four independent permanent equipment slots produce real visible sprites/light/following cat",
+        "real touch walking and animated chest -> temporary loot, reload/resume keeps seed and prevents repeated chest award",
+        "actual stairs extraction transfers loot once and survives reload",
+        "two real chests, readable three-glyph mechanism, unlocked portal and next seeded room retain temporary bag",
+        "wrong-mechanism danger followed by real timed hazard triggers one deterministic failure settlement, protects old treasures/furniture/equipment"
+      ],
+      "success": {
+        "id": 1,
+        "outcome": "success",
+        "chance": 1,
+        "kept": [
+          {
+            "key": "0:0",
+            "relic": "starwatch",
+            "quality": "rare",
+            "candies": 6
+          }
+        ],
+        "lost": [],
+        "candies": 6
+      },
+      "failure": {
+        "id": 2,
+        "outcome": "failure",
+        "chance": 0.4646409388631582,
+        "kept": [
+          {
+            "key": "0:0",
+            "relic": "rosepin",
+            "quality": "fine",
+            "candies": 4
+          },
+          {
+            "key": "0:1",
+            "relic": "rosepin",
+            "quality": "fine",
+            "candies": 4
+          }
+        ],
+        "lost": [],
+        "candies": 8
+      },
+      "errors": []
+    },
+    "webkit-expedition": {
+      "engine": "webkit",
+      "steps": [
+        "four independent permanent equipment slots produce real visible sprites/light/following cat",
+        "real touch walking and animated chest -> temporary loot, reload/resume keeps seed and prevents repeated chest award",
+        "actual stairs extraction transfers loot once and survives reload",
+        "two real chests, readable three-glyph mechanism, unlocked portal and next seeded room retain temporary bag",
+        "wrong-mechanism danger followed by real timed hazard triggers one deterministic failure settlement, protects old treasures/furniture/equipment"
+      ],
+      "success": {
+        "id": 1,
+        "outcome": "success",
+        "chance": 1,
+        "kept": [
+          {
+            "key": "0:0",
+            "relic": "rosepin",
+            "quality": "fine",
+            "candies": 4
+          }
+        ],
+        "lost": [],
+        "candies": 4
+      },
+      "failure": {
+        "id": 2,
+        "outcome": "failure",
+        "chance": 0.4557453059591353,
+        "kept": [
+          {
+            "key": "0:1",
+            "relic": "catbell",
+            "quality": "fine",
+            "candies": 4
+          }
+        ],
+        "lost": [
+          {
+            "key": "0:0",
+            "relic": "catbell",
+            "quality": "fine",
+            "candies": 4
+          }
+        ],
+        "candies": 4
+      },
+      "errors": []
+    },
+    "furniture": {
+      "steps": [
+        "all six purchased through real shop buttons",
+        "all six really placed together after storing original free furniture",
+        "four on/off actions persist; two true seated poses render and stand up cleanly"
+      ],
+      "errors": []
+    }
+  },
+  "performance": {
+    "performance-webkit": {
+      "engine": "webkit",
+      "conditions": "Local development builds, same browser/mobile viewport; simulated device, not physical phone",
+      "versions": {
+        "before": {
+          "frames": [
+            {
+              "fps": 62,
+              "frameP95": 17
+            },
+            {
+              "fps": 61.6,
+              "frameP95": 17
+            },
+            {
+              "fps": 61.5,
+              "frameP95": 17
+            }
+          ],
+          "fpsMedian": 61.6,
+          "fpsRange": [
+            61.5,
+            62
+          ],
+          "sceneCycles": [
+            {
+              "textures": 40,
+              "heap": null
+            },
+            {
+              "textures": 40,
+              "heap": null
+            },
+            {
+              "textures": 40,
+              "heap": null
+            },
+            {
+              "textures": 40,
+              "heap": null
+            }
+          ]
+        },
+        "after": {
+          "frames": [
+            {
+              "fps": 61.7,
+              "frameP95": 17
+            },
+            {
+              "fps": 61.7,
+              "frameP95": 17
+            },
+            {
+              "fps": 61.6,
+              "frameP95": 17
+            }
+          ],
+          "fpsMedian": 61.7,
+          "fpsRange": [
+            61.6,
+            61.7
+          ],
+          "sceneCycles": [
+            {
+              "textures": 41,
+              "heap": null
+            },
+            {
+              "textures": 41,
+              "heap": null
+            },
+            {
+              "textures": 41,
+              "heap": null
+            },
+            {
+              "textures": 41,
+              "heap": null
+            }
+          ]
+        }
+      },
+      "smallScreen": {
+        "viewport": 375,
+        "overflow": false,
+        "close": {
+          "x": 284,
+          "y": 99,
+          "width": 44,
+          "height": 44,
+          "top": 99,
+          "right": 328,
+          "bottom": 143,
+          "left": 284
+        },
+        "make": {
+          "x": 36,
+          "y": 752.765625,
+          "width": 303,
+          "height": 45,
+          "top": 752.765625,
+          "right": 339,
+          "bottom": 797.765625,
+          "left": 36
+        }
+      }
+    },
+    "performance-chromium": {
+      "engine": "chromium",
+      "conditions": "Local development builds, same browser/mobile viewport; simulated device, not physical phone",
+      "versions": {
+        "before": {
+          "frames": [
+            {
+              "fps": 54.5,
+              "frameP95": 33.3
+            },
+            {
+              "fps": 54.9,
+              "frameP95": 33.3
+            },
+            {
+              "fps": 53.6,
+              "frameP95": 33.3
+            }
+          ],
+          "fpsMedian": 54.5,
+          "fpsRange": [
+            53.6,
+            54.9
+          ],
+          "sceneCycles": [
+            {
+              "textures": 40,
+              "heap": 29994708
+            },
+            {
+              "textures": 40,
+              "heap": 30459694
+            },
+            {
+              "textures": 40,
+              "heap": 30322810
+            },
+            {
+              "textures": 40,
+              "heap": 30298982
+            }
+          ]
+        },
+        "after": {
+          "frames": [
+            {
+              "fps": 53.4,
+              "frameP95": 33.3
+            },
+            {
+              "fps": 52.7,
+              "frameP95": 33.4
+            },
+            {
+              "fps": 51.7,
+              "frameP95": 33.4
+            }
+          ],
+          "fpsMedian": 52.7,
+          "fpsRange": [
+            51.7,
+            53.4
+          ],
+          "sceneCycles": [
+            {
+              "textures": 41,
+              "heap": 29903502
+            },
+            {
+              "textures": 41,
+              "heap": 30094220
+            },
+            {
+              "textures": 41,
+              "heap": 30291780
+            },
+            {
+              "textures": 41,
+              "heap": 30513148
+            }
+          ]
+        }
+      },
+      "smallScreen": {
+        "viewport": 375,
+        "overflow": false,
+        "close": {
+          "x": 284,
+          "y": 99,
+          "width": 44,
+          "height": 44,
+          "top": 99,
+          "right": 328,
+          "bottom": 143,
+          "left": 284
+        },
+        "make": {
+          "x": 36,
+          "y": 751.765625,
+          "width": 303,
+          "height": 45,
+          "top": 751.765625,
+          "right": 339,
+          "bottom": 796.765625,
+          "left": 36
+        }
+      }
+    }
+  },
+  "smallScreen": [
+    {
+      "engine": "chromium",
+      "testedURL": "http://localhost:4180/english-valley/xiguang-manor/v6-art-preview/",
+      "bounds": {
+        "close": {
+          "x": 284,
+          "y": 99,
+          "width": 44,
+          "height": 44,
+          "top": 99,
+          "right": 328,
+          "bottom": 143,
+          "left": 284
+        },
+        "primary": {
+          "x": 36,
+          "y": 468.765625,
+          "width": 303,
+          "height": 45,
+          "top": 468.765625,
+          "right": 339,
+          "bottom": 513.765625,
+          "left": 36
+        },
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "testedURL": "http://localhost:4180/english-valley/xiguang-manor/v6-art-preview/",
+      "bounds": {
+        "close": {
+          "x": 284,
+          "y": 99,
+          "width": 44,
+          "height": 44,
+          "top": 99,
+          "right": 328,
+          "bottom": 143,
+          "left": 284
+        },
+        "primary": {
+          "x": 36,
+          "y": 468.765625,
+          "width": 303,
+          "height": 45,
+          "top": 468.765625,
+          "right": 339,
+          "bottom": 513.765625,
+          "left": 36
+        },
+        "overflow": false
+      },
+      "errors": []
+    }
+  ]
+}

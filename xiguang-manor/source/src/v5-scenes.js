@@ -24,6 +24,11 @@ export function paintV5Cabin(hour,theme,room){
  // not a full-screen color tint or an overlay on the previous room painting.
  c.fillStyle=period==='night'?'#725b70':'#9f7d87';c.beginPath();c.moveTo(16,294);c.lineTo(25,285);c.lineTo(25,828);c.lineTo(16,836);c.fill();c.fillStyle=period==='night'?'#4c4055':'#786073';c.fillRect(407,294,9,540);
  v5Blit(c,'room-rug',79,405,opts);
+ // Floor-bound window light and a small hearth wash. No full-screen filter.
+ if(period==='night'){
+  for(let i=3;i>0;i--){c.fillStyle=`rgba(241,184,116,${.018+(3-i)*.009})`;c.beginPath();c.ellipse(78,340,36+i*21,14+i*12,0,0,Math.PI*2);c.fill()}
+  c.fillStyle='rgba(236,190,135,.08)';c.beginPath();c.moveTo(47,313);c.lineTo(88,313);c.lineTo(133,425);c.lineTo(28,405);c.closePath();c.fill();
+ }
  if(a.day>.2){c.globalAlpha=a.day*.12;c.fillStyle='#fff1c8';c.beginPath();c.moveTo(149,284);c.lineTo(238,284);c.lineTo(179,558);c.lineTo(66,536);c.closePath();c.fill();c.globalAlpha=a.day*.07;c.fillRect(117,333,73,4);c.globalAlpha=1}
  // Fixed subjects are separate Phaser sprites, sorted at their original footprints.
  v5Blit(c,'furniture-catBed',282,690,{...opts,width:88,height:52});

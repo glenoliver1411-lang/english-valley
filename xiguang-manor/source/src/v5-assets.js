@@ -1,3 +1,4 @@
+import {v6Frame} from './v6-assets.js';
 import atlasURL from './assets/v5/atelier.webp';
 import atlasFallbackURL from './assets/v5/atelier.png';
 import meta from './assets/v5/atlas.json';
@@ -18,13 +19,13 @@ const emission=new Set();for(const color of ['#ffd59a','#f3d79f','#edc999'])for(
 export function v5Frame(name,{period='day',theme=null,on=false,bouquet='rose'}={}){
  const key=[name,period,theme,on,bouquet].join('/');if(cache.has(key))return cache.get(key);
  const f=meta.frames[name];if(!f||!source)throw Error('V5 artwork unavailable: '+name);
- const canvas=document.createElement('canvas');canvas.width=f.w;canvas.height=f.h;const c=canvas.getContext('2d',{willReadFrequently:true});c.imageSmoothingEnabled=false;c.drawImage(source,f.x,f.y,f.w,f.h,0,0,f.w,f.h);
+ const canvas=document.createElement('canvas');canvas.width=f.w;canvas.height=f.h;const c=canvas.getContext('2d',{willReadFrequently:true});c.imageSmoothingEnabled=false;const refined=v6Frame(name);if(refined)c.drawImage(refined,0,0);else c.drawImage(source,f.x,f.y,f.w,f.h,0,0,f.w,f.h);
  const cloth=ROMANCE.themes.find(t=>t.id===theme)?.bed,clothRamp=cloth?[mix(cloth,'#3f354d',.56),mix(cloth,'#533750',.27),cloth,mix(cloth,'#ffe0cf',.26),mix(cloth,'#ffeed4',.52)].map(rgb):null;
  if(f.kind!=='ui'&&(period!=='day'||clothRamp)){
   const data=c.getImageData(0,0,f.w,f.h),p=data.data;
   for(let i=0;i<p.length;i+=4){if(!p[i+3])continue;const color=[p[i],p[i+1],p[i+2]],id=color.join(',');let col=clothRamp&&fabric.has(id)?clothRamp[fabric.get(id)]:color;
    if(period!=='day'){
-    const indoor=f.kind==='interior',n=period==='night',dusk=period==='dusk',factor=n?(indoor?.88:.55):dusk?.80:.95;
+    const indoor=f.kind==='interior',n=period==='night',dusk=period==='dusk',factor=n?(indoor?(refined?.73:.88):.55):dusk?.80:.95;
     col=col.map((v,j)=>Math.max(0,Math.min(255,Math.round(v*factor+(n?[2,5,15]:dusk?[22,3,14]:[12,7,-1])[j]))));
    }
    if(f.kind==='exterior'&&emission.has(id))col=rgb(period==='night'||period==='dusk'?mix('#e2a365','#ffe6a7',color[0]/255):mix('#8daab4','#d3d4bf',color[0]/255));

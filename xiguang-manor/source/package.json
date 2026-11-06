@@ -9,7 +9,8 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --test tests/*.test.js",
     "build:pwa:preview": "vite build --mode pwa-preview",
-    "build:play:preview": "vite build --mode gameplay-preview"
+    "build:play:preview": "vite build --mode gameplay-preview",
+    "build:art:preview": "vite build --mode art-preview"
   },
   "dependencies": {
     "phaser": "^3.90.0",

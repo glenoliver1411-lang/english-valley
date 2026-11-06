@@ -116,3 +116,11 @@
 | `ruins-floor-0..2`、`ruins-wall`、`ruins-pillar`、`ruins-chest-0..2`、`glyph-0..2`、`ruins-mechanism`、`ruins-stairs`、`ruins-portal` | 遗迹地砖、厚石墙、柱、三段开箱、可解机关、真实撤离石阶和层间拱门。 |
 
 本轮的坐姿延用原项目原创 `LakesideActors`，保留原衣服；危机提示音为本地 Web Audio 合成并遵守静音。未修改极光美术或混入新的外部风格。`public/play-review/` 的截图由真实 Chromium／WebKit 游戏运行产生，包含测试档案状态，不是概念图。
+
+## V6 美术专项（2026-11-06）
+
+新增 `src/assets/v6/atelier.png`，1024×2048、134,623 字节，共 45 个打包图块。全部由本项目 `tools/build-v6-art.py` 原创绘制，复用项目已有像素绘图工具；本轮没有下载新的外部图片、音频或字体，也没有调用图像生成服务。原 V5 第三方资源及其 CC0 许可维持原记录。
+
+图块含花铺室内、12 块破损石板、3 种厚墙、石柱、雕像、壁画、积水、4 段宝箱、3 种帘墙、两种木地板、床铺、壁炉、地毯、固定家具、主地图灯与石路，以及原七套服装的四方向行走表（每套 16 帧）。完整位置与尺寸见同目录 `atlas.json`；装备挂点见 `anchors.json`。衣服的名称、身份和颜色直接读取原 `adventure-config.js`，没有新增服装或修改价格。
+
+`public/v6-review/before/` 和 `after/` 为相同 390×844 视口、同位置／时间／天气／服装／遗迹种子的真实浏览器截图。基线来自 `before-v6-art-20261106` 回退点。制作与检验记录见 [V6_ART_REFINEMENT.md](V6_ART_REFINEMENT.md)。

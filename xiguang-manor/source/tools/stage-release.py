@@ -18,13 +18,14 @@ for revision in ([] if args.preview else ['origin/main','origin/main^']):
   target=repo/path
   if not target.exists():target.write_bytes(subprocess.check_output(['git','show',f'{revision}:{path}'],cwd=repo))
 # Never remove the older content-hashed files when installing a new graph.
-if args.preview=='play-preview':
+if args.preview in ('play-preview','v6-art-preview'):
  # This new preview needs the playable graph and this round's evidence, not
  # copies of every historical art review. Existing hashed files remain safe.
  release=json.loads((dist/'offline-release.json').read_text())
  for name in [*[a['url'] for a in release['assets']],'offline-release.json','sw.js']:
   target=site/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(dist/name,target)
- shutil.copytree(dist/'play-review',site/'play-review',dirs_exist_ok=True)
+ review='v6-review' if args.preview=='v6-art-preview' else 'play-review'
+ shutil.copytree(dist/review,site/review,dirs_exist_ok=True)
 else:
  for item in dist.iterdir():
   if item.is_dir():shutil.copytree(item,site/item.name,dirs_exist_ok=True)
@@ -34,7 +35,7 @@ for directory in ['src','tests','public','tools']:
  target=source/directory
  if target.exists():shutil.rmtree(target)
  shutil.copytree(project/directory,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
-for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','.gitignore','.env.pwa-preview','.env.gameplay-preview']:
+for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','.gitignore','.env.pwa-preview','.env.gameplay-preview','.env.art-preview']:
  shutil.copy2(project/name,source/name)
 for item in project.glob('*.md'):shutil.copy2(item,source/item.name)
 (site/'.nojekyll').touch()

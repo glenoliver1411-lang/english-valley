@@ -28,3 +28,6 @@ __pycache__/
 
 !src/assets/play/*.png
 !public/play-review/*.png
+
+!src/assets/v6/*.png
+!public/v6-review/**/*.png

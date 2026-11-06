@@ -1,0 +1,2 @@
+// Exercise the visible summary before the existing action; never force hidden clicks.
+export function compactMenuClicks(page){const click=page.click.bind(page);page.click=async(selector,options)=>{const loc=page.locator(selector).first();await loc.waitFor({state:'attached',timeout:options?.timeout});const menu=await loc.evaluate(el=>el.closest('details:not([open])')?.id);if(menu)await page.locator(`#${menu}>summary`).click();return click(selector,options)}}

@@ -1,3 +1,4 @@
+import {preloadV6,installV6} from './v6-assets.js';
 import {preloadPlay,installPlay} from './play-assets.js';
 import {TreeOcclusion} from './tree-occlusion.js';
 import {BOOT} from './boot-config.js';
@@ -24,7 +25,7 @@ export class Manor extends Phaser.Scene {
   this.load.on('progress',p=>bootStatus('assets',.15+p*.65));
   this.load.on('loaderror',file=>this.failedAssets.set(file.key,{key:file.key,url:file.url}));
   this.load.on('filecomplete',key=>this.failedAssets.delete(key));
-  preloadV5(this);preloadPlay(this);
+  preloadV5(this);preloadPlay(this);preloadV6(this);
  }
  create(){
   if(this.failedAssets.size){
@@ -34,10 +35,10 @@ export class Manor extends Phaser.Scene {
    this.time.delayedCall(250,()=>{this.load.reset();for(const file of files){let url=v5FallbackURL(file.key)||file.url;if(!/^(data:|blob:)/.test(url))url+=(url.includes('?')?'&':'?')+'retry='+this.assetAttempts;this.load.image(file.key,url)}this.load.once('complete',()=>this.create());this.load.start()});return;
   }
   bootStatus('initializing',.85);
-  installV5(this);installPlay(this);makeArt(this,{metadataOnly:true});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
+  installV6(this);installV5(this);installPlay(this);makeArt(this,{metadataOnly:true});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
   this.cat=this.add.image(347,453,'cat').setScale(1.25);this.world.add(this.cat);this.tweens.add({targets:this.cat,scaleY:1.21,duration:1500,yoyo:true,repeat:-1});
   this.labels=[];for(let [x,y,text] of [[114,300,T.shop],[347,407,T.cat],[235,281,T.tree],[88,509,T.garden],[354,215,T.pond]]){
-   let label=this.add.text(x,y,text,{fontSize:'11px',fontFamily:'sans-serif',color:'#ffebcf',backgroundColor:'#41374dd9',padding:{x:7,y:4}}).setOrigin(.5);this.world.add(label);this.labels.push(label);
+   let label=this.add.text(x,y,text,{fontSize:'11px',fontFamily:'sans-serif',color:'#ffebcf',backgroundColor:'#41374dd9',padding:{x:7,y:4}}).setOrigin(.5);label.setVisible(false);this.world.add(label);this.labels.push(label);
   }
   this.magicPositions=[[169,235],[368,317],[44,646]];
   this.magic=this.magicPositions.map(([x,y],i)=>{let star=this.add.image(x,y,'magic').setScale(1.2);this.world.add(star);this.tweens.add({targets:star,y:y-5,duration:1000+i*160,yoyo:true,repeat:-1});return star});
@@ -46,7 +47,7 @@ export class Manor extends Phaser.Scene {
   this.gates=[this.add.rectangle(207,754,28,29,0x6e6079).setStrokeStyle(2,0xa893a8),this.add.rectangle(235,754,28,29,0x6e6079).setStrokeStyle(2,0xa893a8)];this.gates.forEach(v=>this.world.add(v));
   this.player=this.add.sprite(this.dataSave.position.x,this.dataSave.position.y,outfitKey(this.dataSave),0).setScale(1.25).setOrigin(.5,.85);
   for(let dir=0;dir<4;dir++)this.anims.create({key:`walk${dir}`,frames:this.anims.generateFrameNumbers('girl',{start:dir*4,end:dir*4+3}),frameRate:8,repeat:-1});
-  this.world.add(this.player);this.roomImage=this.add.image(0,0,'room').setOrigin(0).setVisible(false).setDepth(100);
+  this.world.add(this.player);this.contactShadow=this.add.ellipse(this.player.x,this.player.y+3,19,5,0x1d3540,.28).setDepth(9);this.world.addAt(this.contactShadow,this.world.getIndex(this.player));this.roomImage=this.add.image(0,0,'room').setOrigin(0).setVisible(false).setDepth(100);
   this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.08,.08,0,50);
   this.cursor=this.input.keyboard.createCursorKeys();this.keys=this.input.keyboard.addKeys('W,A,S,D,E,SPACE');this.keys.E.on('down',()=>this.api.interact());this.keys.SPACE.on('down',()=>this.api.interact());
   this.input.on('pointerdown',p=>{if(!this.locked&&!this.room&&!this.observing&&!this.exploring){const hit=mapHit(this,p.worldX,p.worldY);if(hit){this.api.touch?.(hit);return}this.target={x:Phaser.Math.Clamp(p.worldX,22,410),y:Phaser.Math.Clamp(p.worldY,185,802)};this.ripple(p.worldX,p.worldY)}});
@@ -77,7 +78,7 @@ export class Manor extends Phaser.Scene {
   let dx=controls.x+(this.cursor.right.isDown||this.keys.D.isDown?1:0)-(this.cursor.left.isDown||this.keys.A.isDown?1:0),dy=controls.y+(this.cursor.down.isDown||this.keys.S.isDown?1:0)-(this.cursor.up.isDown||this.keys.W.isDown?1:0);
   if(dx||dy)this.target=null;else if(this.target){dx=this.target.x-this.player.x;dy=this.target.y-this.player.y;if(Math.hypot(dx,dy)<4){this.target=null;dx=dy=0}}
   const len=Math.hypot(dx,dy);if(len>.08){dx/=Math.max(1,len);dy/=Math.max(1,len);const oldX=this.player.x,oldY=this.player.y,step=Math.min(this.target?len:Infinity,86*Math.min(delta,40)/1000);let nx=this.player.x+dx*step,ny=this.player.y+dy*step;if(!this.blocked(nx,this.player.y))this.player.x=nx;else if(this.target)this.target=null;if(!this.blocked(this.player.x,ny))this.player.y=ny;else if(this.target)this.target=null;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)this.player.play(`dress-${this.dataSave.wardrobe.equipped}-${this.facing}`,true);else{this.player.stop();this.player.setFrame(this.facing*4)}}else{this.player.anims.stop();this.player.setFrame(this.facing*4)}
-  this.player.setDepth(10);this.api.near(this.nearest());this.elapsedSave+=delta;if(this.elapsedSave>1600){this.elapsedSave=0;this.dataSave.position={x:this.player.x,y:this.player.y};this.api.save()}
+  this.contactShadow.setPosition(this.player.x+1,this.player.y+3);this.player.setDepth(10);this.api.near(this.nearest());this.elapsedSave+=delta;if(this.elapsedSave>1600){this.elapsedSave=0;this.dataSave.position={x:this.player.x,y:this.player.y};this.api.save()}
  }
 }
 export function createGame(data,api){const scene=new Manor(data,api);const host=document.getElementById('game');const viewportHeight=()=>Math.max(480,Math.round(432*host.clientHeight/host.clientWidth));const game=new Phaser.Game({type:new URLSearchParams(location.search).get('renderer')==='canvas'?Phaser.CANVAS:Phaser.AUTO,parent:'game',width:432,height:viewportHeight(),backgroundColor:'#35344f',pixelArt:true,roundPixels:true,antialias:false,resolution:1,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[scene],loader:{timeout:12000},input:{activePointers:3},render:{transparent:false},audio:{noAudio:true}});game.canvas.addEventListener('webglcontextlost',()=>bootStatus('graphics'));game.canvas.addEventListener('webglcontextrestored',()=>{if(scene.ready)bootStatus('ready',1)});const resize=new ResizeObserver(()=>{if(host.clientWidth&&host.clientHeight)game.scale.setGameSize(432,viewportHeight())});resize.observe(host);game.events.once('destroy',()=>resize.disconnect());return{scene,game}}

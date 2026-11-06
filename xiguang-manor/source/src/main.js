@@ -24,6 +24,7 @@ import './world-polish.css';
 import './v5.css';
 import './clean-view.css';
 import './daily-welcome.css';
+import './v6.css';
 import {AdventureUI} from './adventure-ui.js';
 import {AT} from './adventure-config.js';
 import {SessionUI} from './session-ui.js';

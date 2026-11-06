@@ -1,0 +1,24 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "clock": {
+    "manor": 21,
+    "florist": 21,
+    "home-day": 9.5,
+    "home-night": 21
+  },
+  "weather": "clear",
+  "outfit": "cocoa",
+  "seed": 42654,
+  "errors": [],
+  "equipmentCamera": {
+    "zoom": 2.5,
+    "center": [
+      216,
+      650
+    ],
+    "cleanView": true
+  }
+}
