@@ -20,11 +20,11 @@ try {
   await p.waitForSelector('#accept');assert.ok(await p.locator('#gift-letter p').textContent().then(s=>s.includes('你的名字好美，所以我送给你一座庄园。')));await p.waitForTimeout(650);
   await p.screenshot({path:`verification/gift-letter-${engine.name()}.png`});await tap(p,'#accept');
   await p.waitForFunction(()=>__manor.gift.awakening?.elapsed>1.4);assert.ok(await p.evaluate(()=>__manor.scene.cameras.main.scrollY<-250));
-  const early=await p.evaluate(()=>new Promise(resolve=>__manor.scene.sys.game.renderer.snapshot(image=>{const c=document.createElement('canvas');c.width=image.width;c.height=image.height;c.getContext('2d').drawImage(image,0,0);resolve(Array.from(c.getContext('2d').getImageData(0,0,c.width,c.height).data))})));
+  const early=await p.evaluate(()=>new Promise(resolve=>__manor.scene.sys.game.renderer.snapshot(image=>{const c=document.createElement('canvas');c.width=image.width;c.height=image.height;c.getContext('2d').drawImage(image,0,0);const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data,bins=[];for(let y=0;y<c.height;y+=16)for(let x=0;x<c.width;x+=16){const i=(y*c.width+x)*4;bins.push((d[i]<<16)|(d[i+1]<<8)|d[i+2])}resolve(bins)})));
   await p.waitForFunction(()=>__manor.gift.awakening?.elapsed>6.8,{},{timeout:15000});
   assert.ok(await p.evaluate(()=>__manor.scene.gates[0].x<201));assert.ok(await p.evaluate(()=>__manor.scene.giftLight>.95));
-  const late=await p.evaluate(()=>new Promise(resolve=>__manor.scene.sys.game.renderer.snapshot(image=>{const c=document.createElement('canvas');c.width=image.width;c.height=image.height;c.getContext('2d').drawImage(image,0,0);resolve(Array.from(c.getContext('2d').getImageData(0,0,c.width,c.height).data))})));
-  assert.ok(early.filter((value,i)=>i%4!==3&&value!==late[i]).length>100000,'camera must reveal the rendered original manor, not just run a timer');
+  const late=await p.evaluate(()=>new Promise(resolve=>__manor.scene.sys.game.renderer.snapshot(image=>{const c=document.createElement('canvas');c.width=image.width;c.height=image.height;c.getContext('2d').drawImage(image,0,0);const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data,bins=[];for(let y=0;y<c.height;y+=16)for(let x=0;x<c.width;x+=16){const i=(y*c.width+x)*4;bins.push((d[i]<<16)|(d[i+1]<<8)|d[i+2])}resolve(bins)})));
+  assert.ok(early.filter((value,i)=>value!==late[i]).length>400,'camera must reveal the rendered original manor, not just run a timer');
   await free(p);await clean(p);assert.equal(await p.evaluate(()=>__manor.data.accepted),true);assert.equal(await p.evaluate(()=>__manor.data.stage),0);
   await p.waitForFunction(()=>document.querySelector('#gift-welcome>span')?.textContent==='这里的每一寸风景，都为你准备好了。');
   const x=await p.evaluate(()=>__manor.scene.player.x);await p.keyboard.down('ArrowRight');await p.waitForTimeout(350);await p.keyboard.up('ArrowRight');await p.waitForTimeout(150);

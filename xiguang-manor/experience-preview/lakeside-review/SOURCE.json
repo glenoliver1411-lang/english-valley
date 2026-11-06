@@ -1,0 +1,74 @@
+{
+  "title": "FREE Pixel Art Mountains Tileset and Backgrounds",
+  "author": "karsiori",
+  "source": "https://karsiori.itch.io/free-pixel-art-mountains-tileset-and-backgrounds",
+  "license": "CC0-1.0",
+  "retrieved": "2026-10-31",
+  "original_files": [
+    {
+      "file": "cottage.png",
+      "original": "Decoration/House.png",
+      "sha256": "87389fee8483dbab0efa0308cb801b74642d6ff42d0008d6d22319bb8c31e0f4"
+    },
+    {
+      "file": "oak.png",
+      "original": "Decoration/Tree 1.png",
+      "sha256": "1c1e285a922c0284972de08b4ae011b188a586edc956f04541a476d288206f03"
+    },
+    {
+      "file": "rowan.png",
+      "original": "Decoration/Tree 2.png",
+      "sha256": "be01c48605f236fbf14fd2275ebcfd5be8823b12523e6fbd4d8126c357cd828d"
+    },
+    {
+      "file": "pink-cosmos.png",
+      "original": "Decoration/Flower 1.png",
+      "sha256": "84babd10339d696c86ce1d9802b318977147be74455e1c8e7390043c72d2e6db"
+    },
+    {
+      "file": "rose.png",
+      "original": "Decoration/Flower 2.png",
+      "sha256": "f80e4412597f3a36f8fda0dc6c7c382e0ef27aea9c07836f854a97e61cca0786"
+    },
+    {
+      "file": "daisy.png",
+      "original": "Decoration/Flower 3.png",
+      "sha256": "1e36099410f4369613be2c374669f2ae3d9e3466a5335cc03274fe50f01a9526"
+    },
+    {
+      "file": "wildflower.png",
+      "original": "Decoration/Flower 4.png",
+      "sha256": "42ed36e4f19bee93efedca41a119056b4805f7f719997352087620f51ab108ab"
+    },
+    {
+      "file": "bellflower.png",
+      "original": "Decoration/Flower 5.png",
+      "sha256": "73d01fcf5d749164a29dfc6b9af1599d3a956d72fa1533e6d4108bd2ae27d947"
+    },
+    {
+      "file": "grass-fan.png",
+      "original": "Decoration/Grass 1.png",
+      "sha256": "785e4f1741d32db274268c40da84d556bb12513ed422715609dcd17758d07cdb"
+    },
+    {
+      "file": "grass-tuft.png",
+      "original": "Decoration/Grass 2.png",
+      "sha256": "1140044b831d5fc8d49d2f7340ad733972ef27fb90fab78f5b1f88906583ef7c"
+    },
+    {
+      "file": "shore-rock.png",
+      "original": "Decoration/Rock 3.png",
+      "sha256": "6bfe4616afc46b5925e3d1ce60cc4bf90112c614a192353f447e96609ff647ba"
+    },
+    {
+      "file": "mountains-3.png",
+      "original": "Backgrounds/Mountains 3.png",
+      "sha256": "ce93d41d89ad5c540760b092eb4e90559a9f5f71bfb5f8b9944162b2cb628498"
+    },
+    {
+      "file": "mountains-4.png",
+      "original": "Backgrounds/Mountains 4.png",
+      "sha256": "20193b23af52e9edabe89c57613a0df3630dc30ca45fc0b12c1eff5c7c7dca9c"
+    }
+  ]
+}

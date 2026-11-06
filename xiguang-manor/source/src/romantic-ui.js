@@ -1,20 +1,21 @@
 import {AURORA_PAGE as A} from './aurora-config.js';
 import {rememberMeadow} from './aurora-navigation.js';
-import {HomeUI} from './home-ui.js';
+import {lazyFeature} from './lazy-feature.js';
 import {MEADOW} from './home-config.js';
 import {NATURE} from './nature-config.js';
-import {RomanticScene} from './romantic-scene.js';
+import {RomanticScene,warmRetreat} from './romantic-scene.js';
 import {ROMANCE as R} from './romantic-config.js';
 import {flowerStage,harvestFlower} from './romantic-model.js';
 import {CONFIG,T,fmt} from './config.js';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const btn=(id,text,cls='secondary')=>`<button id="${id}" class="${cls}">${esc(text)}</button>`;
+export const prewarm=profile=>warmRetreat('meadow',profile);
 export class RomanticUI {
  constructor(manor,data,api){
-  this.manor=manor;this.data=data;this.api=api;this.active=false;this.view=null;this.home=new HomeUI(this);
+  this.manor=manor;this.data=data;this.api=api;this.active=false;this.view=null;this.home=lazyFeature(()=>import('./home-ui.js'),m=>new m.HomeUI(this),{close:()=>this.api.close(),lock:v=>{if(v)this.view?.stopMoving()}});
   this.root=document.createElement('div');this.root.id='romantic-ui';this.root.className='hidden';$('.playfield').append(this.root);
-  manor.sys.game.scene.add('retreat',new RomanticScene(data,{ready:s=>{this.view=s;if(this.returnPoint){s.player.setPosition(this.returnPoint.x,this.returnPoint.y);this.returnPoint=null}},action:p=>this.action(p),blocked:()=>api.isModal()||manor.observing,near:api.near,editChanged:()=>this.home.status()}),false);
+  manor.sys.game.scene.add('retreat',new RomanticScene(data,{ready:s=>{this.view=s;if(this.returnPoint){s.player.setPosition(this.returnPoint.x,this.returnPoint.y);this.returnPoint=null}},action:p=>this.action(p),blocked:()=>api.isModal()||manor.observing,near:api.near,editChanged:()=>{if(this.home.loaded)this.home.status()}}),false);
  }
  enter(place){if(this.active)return;this.api.close();this.active=true;this.place=place;this.manor.inRetreat=true;this.manor.room=true;this.manor.locked=true;this.manor.target=null;this.manor.world.setVisible(false);$('.device').classList.add('in-retreat');this.render();this.manor.scene.launch('retreat',{place});this.api.save();this.api.rain?.(place==='cabin'&&this.data.romance.weather==='rain')}
  render(){const meadow=this.place==='meadow';this.root.className='retreat-ui';this.root.innerHTML=`<div class="retreat-heading"><span>${meadow?MEADOW.tag:this.place==='garden'?R.gardenTag:R.cabinTag}</span><strong>${esc(fmt(meadow?MEADOW.title:this.place==='garden'?R.garden:R.cabin))}</strong>${btn('leave-retreat',R.leave,'view-link')}</div><div class="retreat-actions">${btn('retreat-flowers',R.flowerBook,'view-link')}${btn('retreat-cat',R.cat,'view-link')}${btn('retreat-photo',R.photo,'view-link')}${this.place==='cabin'?btn('retreat-decor',R.room,'view-link')+btn('retreat-weather',R.weather,'view-link'):meadow?btn('retreat-bouquet',MEADOW.pick,'view-link')+btn('retreat-field-sit',MEADOW.view,'view-link')+`<a id="retreat-aurora" class="view-link" href="./aurora.html">${A.enter}</a>`:btn('retreat-meadow',MEADOW.enter,'view-link')}</div>`;$('#leave-retreat').onclick=()=>{if(!this.api.isModal())this.leave()};$('#retreat-flowers').onclick=()=>{if(!this.api.isModal())this.collection()};$('#retreat-cat').onclick=()=>{if(!this.api.isModal())this.cat()};$('#retreat-photo').onclick=()=>{if(!this.api.isModal())this.api.photo()};if(this.place==='cabin'){$('#retreat-decor').onclick=()=>this.decorate();$('#retreat-weather').onclick=()=>this.weather()}if($('#retreat-meadow'))$('#retreat-meadow').onclick=()=>this.travel('meadow');if(meadow){$('#retreat-bouquet').onclick=()=>this.bouquet(true);$('#retreat-field-sit').onclick=()=>this.sit('meadowBench');$('#retreat-aurora').onclick=e=>{if(this.api.isModal()){e.preventDefault();return}this.view.stopMoving();if(!this.api.save()){e.preventDefault();this.api.toast(A.saveFailed);return}rememberMeadow(this.view.player)}}}

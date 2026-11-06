@@ -95,3 +95,5 @@
 2026-11-01 树木落地与天空山景衔接修正：没有新增外部素材。复用原V5本地树木与已记录的CC0山体；仅调整树干与树根衔接、接地阴影、山体裁切接缝、空气透视和主地图合成顺序。
 
 2026-11-06 手机加载优化：新增`src/assets/v5/atelier.webp`，由项目原`atelier.png`无损转换（可见像素及透明度保持一致，原PNG保留作兼容回退）。素材作者、授权和修改归属沿用[V5_ASSET_CREDITS.md](V5_ASSET_CREDITS.md)，无新增第三方素材。
+
+2026-11-06 第二轮体验优化：无新增外部美术、音频、字体或服务。`v5-meadow.js`仅将已有花海代码分离，`tree-occlusion.js`遮挡纹理来自原图集透明轮廓与当前地图像素；原PNG／WebP文件不变。完整实测与修改清单见[EXPERIENCE_ROUND2.md](EXPERIENCE_ROUND2.md)。

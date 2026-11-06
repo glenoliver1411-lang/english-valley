@@ -1,6 +1,7 @@
 // Loading copy and recovery controls. No game progress is stored here.
 export const BOOT={
   slowAfter:12000,retries:2,
+  sceneLoading:'正在准备这片风景……',cancel:'取消',
   title:'正在点亮庄园里的灯',progressLabel:'加载进度',
   script:'正在打开这份小小的礼物……',
   assets:'正在准备花草、小屋和星光……',

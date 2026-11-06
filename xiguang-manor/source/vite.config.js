@@ -9,7 +9,7 @@ export default defineConfig({
     }
   }],
   build:{
-    target:'es2020',assetsInlineLimit:0,
+    target:'es2020',assetsInlineLimit:0,manifest:true,
     rollupOptions:{
       input:{manor:'index.html',aurora:'aurora.html'},
       output:{manualChunks:{phaser:['phaser']}}

@@ -1,0 +1,9 @@
+import {v5Frame} from './v5-assets.js';
+// Reuse the actual map pixels through the tree's existing alpha silhouette.
+// This preserves the pink tree, four palettes and the original pixel alignment.
+export class TreeOcclusion{
+ constructor(scene){this.scene=scene;this.keys=new Set();this.trees=(scene.worldObjects||[]).filter(t=>t.kind==='tree').map(t=>{const im=v5Frame(t.x<230?'nature-oak':'nature-rowan'),h=t.special?152:88,w=im.width*h/im.height,x=t.x-w/2,y=t.y+(t.special?50:28)-h;const a=scene.add.image(Math.floor(x),Math.floor(y),'world').setOrigin(0).setVisible(false),b=scene.add.image(Math.floor(x),Math.floor(y),'world').setOrigin(0).setVisible(false);scene.world.add([a,b]);return{t,im,x,y,w,h,a,b}})}
+ image(tree,mapKey){const key='tree-front/'+tree.t.id+'/'+mapKey;if(this.scene.textures.exists(key))return key;const c=document.createElement('canvas');c.width=Math.ceil(tree.w+1);c.height=Math.ceil(tree.h+1);const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(tree.im,tree.x-Math.floor(tree.x),tree.y-Math.floor(tree.y),tree.w,tree.h);g.globalCompositeOperation='source-in';g.drawImage(this.scene.textures.get(mapKey).getSourceImage(),Math.floor(tree.x),Math.floor(tree.y),c.width,c.height,0,0,c.width,c.height);this.scene.textures.addCanvas(key,c);this.keys.add(key);return key}
+ update(){const s=this.scene,p=s.player,e=s.environment;for(const tree of this.trees){const visible=!s.room&&!s.observing&&!s.exploring&&p.y<tree.y+tree.h-5&&p.y>tree.y-12&&Math.abs(p.x-tree.t.x)<tree.w/2+12;tree.a.setVisible(visible);tree.b.setVisible(visible&&e.blend.alpha>0);if(!visible)continue;tree.a.setTexture(this.image(tree,s.baseMap.texture.key));if(e.blend.alpha>0)tree.b.setTexture(this.image(tree,e.blend.texture.key)).setAlpha(e.blend.alpha)}}
+ destroy(){for(const t of this.trees){t.a.destroy();t.b.destroy()}for(const key of this.keys)if(this.scene.textures.exists(key))this.scene.textures.remove(key);this.keys.clear()}
+}

@@ -1,3 +1,4 @@
+import {BOOT} from './boot-config.js';
 import {CONFIG,T,fmt} from './config.js';
 import {GIFT} from './gift-config.js';
 import {GiftSky,envelopeGeometry,paintEnvelope} from './gift-art.js';
@@ -24,6 +25,8 @@ export class GiftOpening {
       const first=buttons[0],last=buttons.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus()}
     }};document.addEventListener('keydown',this.onKey);
   }
+  attach(manor,api){this.manor=manor;this.api=api;const action=this.pendingAction;this.pendingAction=null;document.querySelector('#gift-engine-wait')?.remove();if(action)this[action]()}
+  waitForWorld(action){if(this.manor.ready)return false;this.pendingAction=action;let note=document.querySelector('#gift-engine-wait');if(!note){note=document.createElement('p');note.id='gift-engine-wait';note.setAttribute('role','status');this.root.append(note)}note.textContent=BOOT.initializing;return true}
   get reduced(){return this.reduceOverride??(this.data.romance.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches)}
   start(replay=false) {
     if(this.active)return;
@@ -37,7 +40,7 @@ export class GiftOpening {
     $('#gift-envelope').onclick=()=>this.openEnvelope();$('#skip-gift').onclick=()=>this.skip();
     $('#gift-music').onclick=()=>{this.data.music=!this.data.music;this.api.music();$('#gift-music').textContent=fmt(GIFT.text[this.data.music?'musicOn':'music'])};
     $('#gift-reduced').onchange=e=>{this.reduceOverride=e.target.checked;this.data.romance.reducedMotion=e.target.checked;this.root.classList.toggle('gift-still',this.reduced);this.api.save();if(this.stage==='unfolding')this.readLetter();if(this.awakening)this.awakening.finish()};
-    $('#gift-envelope').focus({preventScroll:true});this.draw();this.raf=requestAnimationFrame(stamp=>this.tick(stamp));
+    $('#gift-envelope').focus({preventScroll:true});this.draw();performance.mark('manor-envelope-interactive');this.raf=requestAnimationFrame(stamp=>this.tick(stamp));
   }
   resizeCanvas() {
     if(!this.canvas)return;
@@ -66,7 +69,7 @@ export class GiftOpening {
   }
   accept() {
     if(!this.active||this.stage==='awakening')return;
-    this.api.gesture();this.commitAcceptance();this.stage='awakening';this.root.dataset.stage=this.stage;
+    this.api.gesture();this.commitAcceptance();if(this.waitForWorld('accept'))return;this.stage='awakening';this.root.dataset.stage=this.stage;
     $('#gift-letter').classList.add('gift-letter-leaving');
     $('#skip-gift').textContent=fmt(GIFT.text.skip);$('#skip-gift').focus({preventScroll:true});
     this.awakening=new ManorAwakening(this.manor,{reduced:this.reduced,done:()=>this.finish()});
@@ -75,7 +78,7 @@ export class GiftOpening {
     if(!this.active)return;
     this.api.gesture();
     if(this.stage==='unfolding'){this.readLetter();return}
-    this.commitAcceptance();
+    this.commitAcceptance();if(this.waitForWorld('skip'))return;
     if(this.awakening)this.awakening.finish();else this.finish();
   }
   tick(stamp) {
@@ -95,7 +98,7 @@ export class GiftOpening {
     this.active=false;cancelAnimationFrame(this.raf);this.raf=0;
     if(!this.awakening){this.manor.gates.forEach((gate,i)=>gate.setPosition(i?255:187,754).setScale(.25,1))}
     this.root.className='hidden';this.root.innerHTML='';this.root.removeAttribute('aria-modal');this.canvas=null;this.sky=null;this.awakening=null;
-    $('.device').classList.remove('gift-playing');this.api.block(false);
+    $('.device').classList.remove('gift-playing');this.api.block(false);performance.mark('manor-free');
     if(!this.replay)this.api.save();this.showWelcome();
     $('#joystick').setAttribute('tabindex','0');$('#joystick').focus({preventScroll:true});
   }

@@ -19,3 +19,6 @@ verification/
 !public/scenery-fix-review/*.png
 
 !src/assets/v5/*.webp
+
+__pycache__/
+*.pyc

@@ -1,0 +1,14 @@
+#gift-engine-wait{position:absolute;bottom:15px;left:24px;right:24px;font:12px/1.8 system-ui,sans-serif;text-align:center;color:#e9d4c6;background:#25233beb;border-radius:9px;padding:10px;z-index:5}
+.feature-loading{position:absolute;inset:0;z-index:55;display:grid;place-items:center;background:#24243b88}.feature-loading>div{max-width:280px;background:#393249f5;border:1px solid #af92ab66;border-radius:14px;padding:22px;color:#f0dac5;text-align:center;font:14px/1.8 system-ui,sans-serif}.feature-loading button{min-height:44px;padding:10px 22px;margin-top:8px;border-radius:9px;background:#c7a1b6;color:#352b40}
+#game canvas,#joystick{touch-action:none;overscroll-behavior:none}#game{touch-action:none}.modal,.gift-letter article{touch-action:pan-y;overscroll-behavior:contain}
+@media(pointer:coarse),(max-width:700px){
+ .topbar{padding-left:8px;padding-right:8px;gap:6px}.topbar .brand{gap:5px;min-width:0;max-width:calc(100% - 226px)}.topbar .brand strong{font-size:15px;letter-spacing:1px;white-space:nowrap}.topbar .brand small{font-size:8px;letter-spacing:1px;white-space:nowrap}.topbar .brand>svg{width:18px}.topbar nav{gap:0;flex-shrink:0}.topbar .icon-button{width:44px;height:44px;min-width:44px;padding:11px}
+ .view-link,.view-secondary,.view-primary,.scenery-close,.candy-house-leave,.retreat-actions button,.retreat-actions a,.quiet-actions button,.home-tabs button{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center}.view-link{padding:9px 12px}.scenery-close{top:8px;right:8px}.view-action-row{gap:6px;flex-wrap:wrap}.candy-house-shortcuts{gap:4px}.candy-house-shortcuts button{min-height:44px;padding:8px 10px}.outfit-list button,.flower-choices button,.home-surfaces button{min-height:48px}
+ .world-shortcuts button{min-height:44px;padding:10px 18px}.world-destinations .button-stack{gap:9px}.world-destinations button{min-height:48px}
+}
+@media(max-width:370px){.topbar .brand>svg{display:none}.topbar .brand strong{font-size:14px}.retreat-actions{gap:3px}.retreat-actions .view-link{padding-left:7px;padding-right:7px;font-size:10px}}
+@media(pointer:coarse),(max-width:700px){
+ #app .topbar nav{gap:0}#app .topbar nav .icon-button{box-sizing:border-box;width:44px;height:44px;min-width:44px;min-height:44px;padding:11px}
+ #app .device .retreat-actions button,#app .device .retreat-actions a,#app .device .view-link,#app .device .scenery-close{min-height:44px;min-width:44px}
+}
+@media(pointer:coarse),(max-width:700px){#app .world-shortcuts button{min-height:44px}}

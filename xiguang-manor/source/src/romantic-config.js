@@ -1,6 +1,6 @@
 // V4 风景、房间、花园与文字的统一配置；收礼人通过 fmt 的 {name} 修改。
 export const ROMANCE = {
-  wander:'在庄园里漫游', photo:'风景拍照', title: '属于你的浪漫世界', version: 'V4.0 · A WORLD THAT BREATHES',
+  wander:'去逛逛 · 花海与小屋', photo:'风景拍照', title: '属于你的浪漫世界', version: 'V4.0 · A WORLD THAT BREATHES',
   garden: '林间秘密花园', cabin: '{name}的小屋', lake: '黄昏湖畔',
   enterGarden: '穿过花拱门', enterCabin: '推开小屋的门', lakeSit: '静静看一会儿',
   treeLine: '愿你经过的每一个季节，都有花为你盛开。',

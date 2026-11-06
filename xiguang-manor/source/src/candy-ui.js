@@ -1,12 +1,13 @@
 import {V5} from './v5-config.js';
 import {v5Icon} from './v5-assets.js';
-import {CandyHouseScene} from './candy-scene.js';
+import {CandyHouseScene,warmCandy} from './candy-scene.js';
 import {CANDY,CT,products,productId} from './candy-config.js';
 import {beginBatch,finishBatch,currentOrder,deliverOrder,sealGift,beginTaste,awardTaste,stockCount} from './candy-model.js';
 import {candyImage,giftImage,paintMix,paintOven} from './candy-art.js';
 import {CONFIG,T,fmt} from './config.js';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const btn=(id,s,cls='secondary')=>`<button id="${id}" class="${cls}">${s}</button>`;
+export const prewarm=warmCandy;
 export class CandyWorkshop{
  constructor(manor,profile,api){this.manor=manor;this.profile=profile;this.api=api;this.active=false;this.view=null;this.raf=0;this.timers=[];this.epoch=0;this.root=document.createElement('div');this.root.id='candy-house-ui';this.root.className='hidden';$('.playfield').append(this.root);manor.sys.game.scene.add('candy-house',new CandyHouseScene(profile,{ready:v=>this.view=v,blocked:api.isModal,near:api.near,action:p=>this.action(p),status:()=>this.status()}),false)}
  enter(){if(this.active)return;this.active=true;this.manor.inShop=true;this.manor.room=true;this.manor.locked=true;this.manor.target=null;this.manor.world.setVisible(false);$('.device').classList.add('in-candy-house');this.root.className='candy-house-ui';this.root.innerHTML=`<div class="candy-house-heading"><strong>${CT.title}</strong><span id="shop-status"></span>${btn('leave-candy-house',CT.leave,'candy-house-leave')}</div><div class="candy-house-shortcuts">${btn('shop-taste',CT.taste)}${btn('shop-make',CT.make)}${btn('shop-orders',CT.orders)}${btn('shop-gifts',CT.gifts)}${btn('shop-book',CT.book)}</div>`;$('#leave-candy-house').onclick=()=>{if(!this.api.isModal())this.leave()};for(const [id,method]of[['shop-taste','tasting'],['shop-make','builder'],['shop-orders','orders'],['shop-gifts','packing'],['shop-book','book']])$( '#'+id).onclick=()=>{if(!this.api.isModal())this[method]()};this.manor.scene.launch('candy-house');this.status();if(this.profile.stage===1||!this.profile.favorite)this.tasting();else this.api.toast(fmt(CT.welcome))}

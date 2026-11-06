@@ -1,4 +1,4 @@
-import {paintV5Meadow} from './v5-landscape.js';
+import {paintV5Meadow} from './v5-meadow.js';
 import {painter} from './art.js';
 import {mix,skyPalette} from './sky-model.js';
 import {MountainBackdrop} from './landscape-detail.js';

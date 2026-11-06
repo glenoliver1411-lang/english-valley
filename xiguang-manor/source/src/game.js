@@ -1,8 +1,8 @@
+import {TreeOcclusion} from './tree-occlusion.js';
 import {BOOT} from './boot-config.js';
 import {bootStatus} from './boot-status.js';
 import {refineV5Map} from './v5-map.js';
 import {preloadV5,installV5,v5FallbackURL} from './v5-assets.js';
-import {refineWorld} from './world-detail.js';
 import {FlowerPickupEffects} from './flower-effects.js';
 import {ROMANCE as R} from './romantic-config.js';
 import {addRomanticEntrances} from './romantic-art.js';
@@ -33,7 +33,7 @@ export class Manor extends Phaser.Scene {
    this.time.delayedCall(250,()=>{this.load.reset();for(const file of files){let url=v5FallbackURL(file.key)||file.url;if(!/^(data:|blob:)/.test(url))url+=(url.includes('?')?'&':'?')+'retry='+this.assetAttempts;this.load.image(file.key,url)}this.load.once('complete',()=>this.create());this.load.start()});return;
   }
   bootStatus('initializing',.85);
-  installV5(this);makeArt(this,{metadataOnly:true});refineWorld(this,{paint:false});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
+  installV5(this);makeArt(this,{metadataOnly:true});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
   this.cat=this.add.image(347,453,'cat').setScale(1.25);this.world.add(this.cat);this.tweens.add({targets:this.cat,scaleY:1.21,duration:1500,yoyo:true,repeat:-1});
   this.labels=[];for(let [x,y,text] of [[114,300,T.shop],[347,407,T.cat],[235,281,T.tree],[88,509,T.garden],[354,215,T.pond]]){
    let label=this.add.text(x,y,text,{fontSize:'11px',fontFamily:'sans-serif',color:'#ffebcf',backgroundColor:'#41374dd9',padding:{x:7,y:4}}).setOrigin(.5);this.world.add(label);this.labels.push(label);
@@ -51,7 +51,7 @@ export class Manor extends Phaser.Scene {
   this.input.on('pointerdown',p=>{if(!this.locked&&!this.room&&!this.observing&&!this.exploring){const hit=mapHit(this,p.worldX,p.worldY);if(hit){this.api.touch?.(hit);return}this.target={x:Phaser.Math.Clamp(p.worldX,22,410),y:Phaser.Math.Clamp(p.worldY,185,802)};this.ripple(p.worldX,p.worldY)}});
   this.nightVeil=this.add.rectangle(216,425,432,850,0x181c38,.20).setDepth(200).setVisible(false);
   this.stars=Array.from({length:20},(_,i)=>{let s=this.add.rectangle((i*83)%430,175+(i*73)%620,2,2,0xffe4b2,.6).setDepth(5);this.tweens.add({targets:s,alpha:.05,y:s.y-12,duration:1800+i*67,yoyo:true,repeat:-1});this.world.add(s);return s});
-  this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(30);addRomanticEntrances(this);this.environment=new MapEnvironment(this,this.dataSave,this.api);this.ready=true;this.refresh();this.api.ready(this);bootStatus('ready',1);
+  this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(30);addRomanticEntrances(this);this.environment=new MapEnvironment(this,this.dataSave,this.api);this.treeOcclusion=new TreeOcclusion(this);this.events.once('shutdown',()=>this.treeOcclusion.destroy());this.ready=true;this.refresh();this.api.ready(this);bootStatus('ready',1);
  }
  refresh(){if(!this.ready)return;this.magic.forEach((s,i)=>s.setVisible(!this.dataSave.magic.includes(i)));this.plotSprites.forEach((s,i)=>{let p=grow(this.dataSave.plots[i]);s.setVisible(p.state>0);s.setTint(p.state===3?0xffffff:p.state===2?0xa8c4b0:0x8baf90);s.setScale(p.state===3?1.3:.65)});this.api.hud()}
  ripple(x,y){let s=this.add.circle(x,y,6,0xffe3ad,.1).setStrokeStyle(1,0xffe3ad,.7);this.tweens.add({targets:s,scale:3,alpha:0,duration:500,onComplete:()=>s.destroy()})}
@@ -71,11 +71,11 @@ export class Manor extends Phaser.Scene {
  enterRoom(){this.room=true;this.target=null;this.roomImage.setVisible(true);this.cameras.main.stopFollow();this.cameras.main.setScroll(0,0)}
  leaveRoom(){this.room=false;this.roomImage.setVisible(false);this.cameras.main.startFollow(this.player,true,.08,.08,0,50)}
 
- update(time,delta){if(!this.ready)return;this.environment.update(delta);this.pickupGraphics.setVisible(!this.room&&!this.observing&&!this.exploring);this.pickups.update(Math.min(delta,80)/1000,{reduced:this.dataSave.scenery.lowEffects,still:this.dataSave.romance.reducedMotion});if(!this.room&&!this.observing&&!this.exploring){const g=this.pickupGraphics;g.clear();this.pickups.draw((x,y,w,h,color,alpha)=>{g.fillStyle(parseInt(color.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),w,h)})}this.api.worldFrame?.();this.sweets.forEach(s=>{if(s.at&&Date.now()>=s.at){s.at=0;s.obj.setVisible(true)}});if(Math.floor(time/1000)!==this.lastGrowth){this.lastGrowth=Math.floor(time/1000);this.refresh()}
+ update(time,delta){if(!this.ready)return;this.environment.update(delta);this.treeOcclusion.update();this.pickupGraphics.setVisible(!this.room&&!this.observing&&!this.exploring);this.pickups.update(Math.min(delta,80)/1000,{reduced:this.dataSave.scenery.lowEffects,still:this.dataSave.romance.reducedMotion});if(!this.room&&!this.observing&&!this.exploring){const g=this.pickupGraphics;g.clear();this.pickups.draw((x,y,w,h,color,alpha)=>{g.fillStyle(parseInt(color.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),w,h)})}this.api.worldFrame?.();this.sweets.forEach(s=>{if(s.at&&Date.now()>=s.at){s.at=0;s.obj.setVisible(true)}});if(Math.floor(time/1000)!==this.lastGrowth){this.lastGrowth=Math.floor(time/1000);this.refresh()}
   if(this.locked||this.room||this.observing||this.exploring){this.player.anims.stop();return}
   let dx=controls.x+(this.cursor.right.isDown||this.keys.D.isDown?1:0)-(this.cursor.left.isDown||this.keys.A.isDown?1:0),dy=controls.y+(this.cursor.down.isDown||this.keys.S.isDown?1:0)-(this.cursor.up.isDown||this.keys.W.isDown?1:0);
   if(dx||dy)this.target=null;else if(this.target){dx=this.target.x-this.player.x;dy=this.target.y-this.player.y;if(Math.hypot(dx,dy)<4){this.target=null;dx=dy=0}}
-  const len=Math.hypot(dx,dy);if(len>.08){dx/=Math.max(1,len);dy/=Math.max(1,len);const step=86*Math.min(delta,40)/1000;let nx=this.player.x+dx*step,ny=this.player.y+dy*step;if(!this.blocked(nx,this.player.y))this.player.x=nx;else if(this.target)this.target=null;if(!this.blocked(this.player.x,ny))this.player.y=ny;else if(this.target)this.target=null;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;this.player.play(`dress-${this.dataSave.wardrobe.equipped}-${this.facing}`,true)}else{this.player.anims.stop();this.player.setFrame(this.facing*4)}
+  const len=Math.hypot(dx,dy);if(len>.08){dx/=Math.max(1,len);dy/=Math.max(1,len);const oldX=this.player.x,oldY=this.player.y,step=Math.min(this.target?len:Infinity,86*Math.min(delta,40)/1000);let nx=this.player.x+dx*step,ny=this.player.y+dy*step;if(!this.blocked(nx,this.player.y))this.player.x=nx;else if(this.target)this.target=null;if(!this.blocked(this.player.x,ny))this.player.y=ny;else if(this.target)this.target=null;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)this.player.play(`dress-${this.dataSave.wardrobe.equipped}-${this.facing}`,true);else{this.player.stop();this.player.setFrame(this.facing*4)}}else{this.player.anims.stop();this.player.setFrame(this.facing*4)}
   this.player.setDepth(10);this.api.near(this.nearest());this.elapsedSave+=delta;if(this.elapsedSave>1600){this.elapsedSave=0;this.dataSave.position={x:this.player.x,y:this.player.y};this.api.save()}
  }
 }
