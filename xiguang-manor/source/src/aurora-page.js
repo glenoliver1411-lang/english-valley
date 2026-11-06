@@ -55,3 +55,6 @@ class AuroraMeadowScene extends Phaser.Scene{
 const game=new Phaser.Game({type:Phaser.CANVAS,parent:'aurora-canvas',...viewport(),backgroundColor:'#10172c',pixelArt:true,antialias:false,render:{roundPixels:true},scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},audio:{noAudio:true},scene:AuroraMeadowScene});
 new ResizeObserver(()=>{const v=viewport();if(v.height!==game.scale.gameSize.height)game.scale.resize(v.width,v.height)}).observe(app);
 if(import.meta.env.DEV)window.__aurora={get scene(){return scene},get paused(){return paused},setQuiet,seek:t=>{scene.elapsed=t;scene.frame()}};
+
+// Use the same narrowly scoped offline release; no update or install overlays interrupt the sky.
+if(import.meta.env.PROD)import('./pwa-service.js').then(({offlineManor})=>offlineManor.start());

@@ -97,3 +97,8 @@
 2026-11-06 手机加载优化：新增`src/assets/v5/atelier.webp`，由项目原`atelier.png`无损转换（可见像素及透明度保持一致，原PNG保留作兼容回退）。素材作者、授权和修改归属沿用[V5_ASSET_CREDITS.md](V5_ASSET_CREDITS.md)，无新增第三方素材。
 
 2026-11-06 第二轮体验优化：无新增外部美术、音频、字体或服务。`v5-meadow.js`仅将已有花海代码分离，`tree-occlusion.js`遮挡纹理来自原图集透明轮廓与当前地图像素；原PNG／WebP文件不变。完整实测与修改清单见[EXPERIENCE_ROUND2.md](EXPERIENCE_ROUND2.md)。
+# 离线版补充（2026-11-06）
+
+本轮没有替换场景美术，也没有引入网络图片或音频。`public/pwa-icons/icon-{180,192,512}.png` 是本项目原创：以 64px 像素画绘制月亮、暖灯小屋与花朵，再使用最近邻采样输出手机图标；制作源码为 `tools/pwa-icons.mjs`。安装指引中的分享／添加图示为原创 SVG。
+
+离线缓存采用 [vite-plugin-pwa 1.3.0](https://github.com/vite-pwa/vite-plugin-pwa) 与 [Google Workbox 7.4.1](https://github.com/GoogleChrome/workbox)，均为 MIT 许可的软件依赖；原始许可随 npm 包保留。原有第三方游戏美术的 CC0 来源与修改记录仍见本文及 V5 素材记录，没有改变其授权。

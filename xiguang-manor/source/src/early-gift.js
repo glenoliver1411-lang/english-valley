@@ -1,3 +1,4 @@
+import {saveProtection} from './save.js';
 import './style.css';
 import './gift.css';
 import './mobile-experience.css';
@@ -6,7 +7,7 @@ import {GiftOpening} from './gift-opening.js';
 import {startup,saveEarly} from './startup-session.js';
 import {bootStatus} from './boot-status.js';
 export function earlyGift(){
-  if(startup.data.accepted||new URL(location.href).searchParams.get('return')==='meadow')return;
+  if(saveProtection().blocked||startup.data.accepted||new URL(location.href).searchParams.get('return')==='meadow')return;
   renderShell();
   const gesture=()=>{startup.audioUnlocked=true;startup.sound.resume()};
   startup.gift=new GiftOpening({ready:false},startup.data,{

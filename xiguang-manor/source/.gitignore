@@ -22,3 +22,6 @@ verification/
 
 __pycache__/
 *.pyc
+
+!public/pwa-icons/*.png
+!public/pwa-review/*.png

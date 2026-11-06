@@ -1,22 +1,22 @@
 {
-  "_config-DQpYpcVO.js": {
-    "file": "assets/config-DQpYpcVO.js",
+  "_config-B6OZvYQq.js": {
+    "file": "assets/config-B6OZvYQq.js",
     "name": "config"
   },
-  "_lakeside-actors-DESp9JCi.js": {
-    "file": "assets/lakeside-actors-DESp9JCi.js",
+  "_lakeside-actors-DRsotT2M.js": {
+    "file": "assets/lakeside-actors-DRsotT2M.js",
     "name": "lakeside-actors",
     "imports": [
-      "_landscape-detail-CB2eldaJ.js",
-      "_config-DQpYpcVO.js"
+      "_landscape-detail-Dl2AsmKE.js",
+      "_config-B6OZvYQq.js"
     ]
   },
-  "_landscape-detail-CB2eldaJ.js": {
-    "file": "assets/landscape-detail-CB2eldaJ.js",
+  "_landscape-detail-Dl2AsmKE.js": {
+    "file": "assets/landscape-detail-Dl2AsmKE.js",
     "name": "landscape-detail",
     "imports": [
       "_phaser-0YPJO2g1.js",
-      "_config-DQpYpcVO.js"
+      "_config-B6OZvYQq.js"
     ],
     "assets": [
       "assets/atelier-MTDNbFML.webp",
@@ -31,19 +31,20 @@
     "file": "assets/main-CLardbM_.css",
     "src": "_main-CLardbM_.css"
   },
-  "_main-D8Cu9l71.js": {
-    "file": "assets/main-D8Cu9l71.js",
+  "_main-ShrZTJqa.js": {
+    "file": "assets/main-ShrZTJqa.js",
     "name": "main",
     "isDynamicEntry": true,
     "imports": [
+      "_config-B6OZvYQq.js",
       "index.html",
-      "_config-DQpYpcVO.js",
-      "_landscape-detail-CB2eldaJ.js"
+      "_landscape-detail-Dl2AsmKE.js"
     ],
     "dynamicImports": [
       "src/sky-scene.js",
       "src/candy-ui.js",
-      "src/romantic-ui.js"
+      "src/romantic-ui.js",
+      "src/pwa-ui.js"
     ],
     "css": [
       "assets/main-CLardbM_.css"
@@ -58,30 +59,33 @@
     "name": "scene-paint-cache"
   },
   "aurora.html": {
-    "file": "assets/aurora-DkExkcoK.js",
+    "file": "assets/aurora-Du27DprW.js",
     "name": "aurora",
     "src": "aurora.html",
     "isEntry": true,
     "imports": [
-      "_config-DQpYpcVO.js",
-      "_landscape-detail-CB2eldaJ.js",
-      "_lakeside-actors-DESp9JCi.js",
+      "_config-B6OZvYQq.js",
+      "_landscape-detail-Dl2AsmKE.js",
+      "_lakeside-actors-DRsotT2M.js",
       "_phaser-0YPJO2g1.js"
+    ],
+    "dynamicImports": [
+      "src/pwa-service.js"
     ],
     "css": [
       "assets/aurora-Bo08VzWJ.css"
     ]
   },
   "index.html": {
-    "file": "assets/manor-B12lTq-L.js",
+    "file": "assets/manor-pJP_ZFF3.js",
     "name": "manor",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_config-DQpYpcVO.js"
+      "_config-B6OZvYQq.js"
     ],
     "dynamicImports": [
-      "_main-D8Cu9l71.js"
+      "_main-ShrZTJqa.js"
     ],
     "css": [
       "assets/manor-2rEKZYZW.css"
@@ -164,60 +168,83 @@
     "src": "src/assets/v5/mountain-rock.png"
   },
   "src/candy-ui.js": {
-    "file": "assets/candy-ui-B13DP7Y8.js",
+    "file": "assets/candy-ui-DIwVeBIF.js",
     "name": "candy-ui",
     "src": "src/candy-ui.js",
     "isDynamicEntry": true,
     "imports": [
-      "_main-D8Cu9l71.js",
-      "_landscape-detail-CB2eldaJ.js",
+      "_main-ShrZTJqa.js",
+      "_landscape-detail-Dl2AsmKE.js",
       "_scene-paint-cache-BPCn3vQc.js",
-      "_config-DQpYpcVO.js",
+      "_config-B6OZvYQq.js",
       "index.html",
       "_phaser-0YPJO2g1.js"
     ]
   },
   "src/home-ui.js": {
-    "file": "assets/home-ui-7bIiJvB_.js",
+    "file": "assets/home-ui-Ck1oGp9T.js",
     "name": "home-ui",
     "src": "src/home-ui.js",
     "isDynamicEntry": true,
     "imports": [
-      "_config-DQpYpcVO.js",
-      "_main-D8Cu9l71.js",
+      "_config-B6OZvYQq.js",
+      "_main-ShrZTJqa.js",
       "index.html",
-      "_landscape-detail-CB2eldaJ.js",
+      "_landscape-detail-Dl2AsmKE.js",
       "_phaser-0YPJO2g1.js"
     ]
   },
+  "src/pwa-service.js": {
+    "file": "assets/pwa-service-Dv-QAVNI.js",
+    "name": "pwa-service",
+    "src": "src/pwa-service.js",
+    "isDynamicEntry": true
+  },
+  "src/pwa-ui.js": {
+    "file": "assets/pwa-ui-CHTmCkku.js",
+    "name": "pwa-ui",
+    "src": "src/pwa-ui.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/pwa-service.js",
+      "_main-ShrZTJqa.js",
+      "_config-B6OZvYQq.js",
+      "index.html",
+      "_landscape-detail-Dl2AsmKE.js",
+      "_phaser-0YPJO2g1.js"
+    ],
+    "css": [
+      "assets/pwa-ui-B97XHYGT.css"
+    ]
+  },
   "src/romantic-ui.js": {
-    "file": "assets/romantic-ui-DcfyxBDQ.js",
+    "file": "assets/romantic-ui-GKZhhvUI.js",
     "name": "romantic-ui",
     "src": "src/romantic-ui.js",
     "isDynamicEntry": true,
     "imports": [
-      "index.html",
-      "_landscape-detail-CB2eldaJ.js",
-      "_main-D8Cu9l71.js",
-      "_config-DQpYpcVO.js",
+      "_config-B6OZvYQq.js",
+      "_landscape-detail-Dl2AsmKE.js",
+      "_main-ShrZTJqa.js",
       "_scene-paint-cache-BPCn3vQc.js",
-      "_lakeside-actors-DESp9JCi.js",
-      "_phaser-0YPJO2g1.js"
+      "_lakeside-actors-DRsotT2M.js",
+      "_phaser-0YPJO2g1.js",
+      "index.html"
     ],
     "dynamicImports": [
       "src/home-ui.js"
     ]
   },
   "src/sky-scene.js": {
-    "file": "assets/sky-scene-Cr9_Kjmp.js",
+    "file": "assets/sky-scene-DPNcMRJW.js",
     "name": "sky-scene",
     "src": "src/sky-scene.js",
     "isDynamicEntry": true,
     "imports": [
-      "_main-D8Cu9l71.js",
-      "_lakeside-actors-DESp9JCi.js",
-      "_config-DQpYpcVO.js",
-      "_landscape-detail-CB2eldaJ.js",
+      "_main-ShrZTJqa.js",
+      "_lakeside-actors-DRsotT2M.js",
+      "_config-B6OZvYQq.js",
+      "_landscape-detail-Dl2AsmKE.js",
       "index.html",
       "_phaser-0YPJO2g1.js"
     ]
