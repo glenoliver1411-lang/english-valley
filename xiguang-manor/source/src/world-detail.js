@@ -10,8 +10,8 @@ export function paintWindowVista(p,x,y,width,height,hour){
  p.c.drawImage(canvas,x,y,width,height);
 }
 
-export function refineWorld(scene){
- worldScene=scene;
+export function refineWorld(scene,{paint=true}={}){
+ worldScene=scene;if(!paint)return;
  const source=scene.textures.get('world').getSourceImage(),c=source.getContext('2d'),pixels=c.getImageData(0,0,432,180),mask=new Set([0x35344f,0x403d5a,0x50475f,0x354e55]);
  const horizon=document.createElement('canvas');horizon.width=432;horizon.height=180;const hc=horizon.getContext('2d');hc.imageSmoothingEnabled=false;hc.scale(2,2);
  const view={baseHour:22},materials=new LakeMaterials(scene),mountains=new LakesideMountains(view,materials,216,110),a=skyPalette(22);hc.fillStyle=a.top;hc.fillRect(0,0,216,90);mountains.draw(hc,a,0);mountains.drawForest(hc,a,0);

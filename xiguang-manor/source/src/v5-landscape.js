@@ -2,20 +2,19 @@ import {bindToSky,drawGroundedTree,landscapeWeights} from './scenery-grounding.j
 import {v5Frame,v5Blit,v5MountainSource} from './v5-assets.js';
 import {skyPalette,mix,hourPhase} from './sky-model.js';
 import {meadowPath} from './meadow-art.js';
-const periods=['night','dawn','day','dusk'];
 const canvas=(w,h)=>{const v=document.createElement('canvas');v.width=w;v.height=h;return v};
 const random=seed=>()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296};
 const opts=period=>({period});
 export class V5Mountains{
- constructor(scene,materials,w,h){this.scene=scene;this.w=w;this.h=h;this.cache=new Map();this.forests=new Map();this.renders=0;for(const p of periods){this.cache.set(p,this.build(p));this.forests.set(p,this.forest(p))}}
+ constructor(scene,materials,w,h){this.scene=scene;this.w=w;this.h=h;this.cache=new Map();this.forests=new Map();this.renders=0;}
  build(period){const out=canvas((this.w+24)*2,this.h*.31*2),c=out.getContext('2d');c.imageSmoothingEnabled=false;const source=v5MountainSource('rock',period,true),near=v5MountainSource('rock',period),W=out.width,H=out.height;
   // Whole authored ranges, each with a separate crop and horizon, replace the
   // old pair of mirrored repeated peaks. Native rock faces remain visible.
   const distant=canvas(W,H),d=distant.getContext('2d');d.imageSmoothingEnabled=false;d.drawImage(source,0,0,768,240,0,0,W,H*.77);bindToSky(distant,period,{far:true});const ridge=canvas(W,H),r=ridge.getContext('2d');r.imageSmoothingEnabled=false;r.drawImage(near,360,0,408,244,-W*.08,H*.24,W*.72,H*.83);r.globalCompositeOperation='destination-in';const edge=r.createLinearGradient(W*.50,0,W*.64,0);edge.addColorStop(0,'#fff');edge.addColorStop(1,'#fff0');r.fillStyle=edge;r.fillRect(0,0,W,H);c.save();c.translate(W,0);c.scale(-1,1);c.globalAlpha=1;c.drawImage(distant,0,0);c.drawImage(ridge,0,0);c.restore();bindToSky(out,period);this.renders++;return out;}
  forest(period){const out=canvas((this.w+20)*2,this.h*.11*2),c=out.getContext('2d');c.imageSmoothingEnabled=false;const W=out.width,H=out.height;c.drawImage(v5MountainSource('forest2',period,true),0,0,768,170,0,0,W,H*.95);c.drawImage(v5MountainSource('forest1',period),0,0,768,120,0,H*.34,W,H*.8);return bindToSky(out,period,{forest:true})}
  weights(a){return landscapeWeights(this.scene,a)}
- draw(c,a,parallax=0){for(const[p,alpha]of this.weights(a)){if(alpha<=0)continue;c.globalAlpha=alpha;const image=this.cache.get(p);c.drawImage(image,Math.round((-12+parallax*.25)*2)/2,this.h*.414,this.w+24,image.height/2)}c.globalAlpha=1}
- drawForest(c,a,parallax=0){for(const[p,alpha]of this.weights(a)){if(alpha<=0)continue;c.globalAlpha=alpha;const image=this.forests.get(p);c.drawImage(image,Math.round((-10+parallax*.47)*2)/2,this.h*.610,this.w+20,image.height/2)}c.globalAlpha=1}
+ draw(c,a,parallax=0){for(const[p,alpha]of this.weights(a)){if(alpha<=0)continue;c.globalAlpha=alpha;if(!this.cache.has(p))this.cache.set(p,this.build(p));const image=this.cache.get(p);c.drawImage(image,Math.round((-12+parallax*.25)*2)/2,this.h*.414,this.w+24,image.height/2)}c.globalAlpha=1}
+ drawForest(c,a,parallax=0){for(const[p,alpha]of this.weights(a)){if(alpha<=0)continue;c.globalAlpha=alpha;if(!this.forests.has(p))this.forests.set(p,this.forest(p));const image=this.forests.get(p);c.drawImage(image,Math.round((-10+parallax*.47)*2)/2,this.h*.610,this.w+20,image.height/2)}c.globalAlpha=1}
  clear(){this.cache.clear();this.forests.clear()}
 }
 export function paintV5Lake(w,h,period){

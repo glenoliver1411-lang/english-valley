@@ -1,6 +1,7 @@
+import {BOOT} from './boot-config.js';
+import {bootStatus} from './boot-status.js';
 import {refineV5Map} from './v5-map.js';
-import {preloadV5,installV5} from './v5-assets.js';
-import {preloadLakeside} from './lakeside-materials.js';
+import {preloadV5,installV5,v5FallbackURL} from './v5-assets.js';
 import {refineWorld} from './world-detail.js';
 import {FlowerPickupEffects} from './flower-effects.js';
 import {ROMANCE as R} from './romantic-config.js';
@@ -12,15 +13,27 @@ import {ST} from './scenery-config.js';
 import {AT} from './adventure-config.js';
 import {registerWardrobe,outfitKey} from './wardrobe-art.js';
 import {mapHit,closeDecoration} from './world-touch.js';
-import {refineMap} from './map-detail.js';
 import {CONFIG,T,fmt} from './config.js';
 import {grow,quest} from './save.js';
 export const controls={x:0,y:0};
 export class Manor extends Phaser.Scene {
  constructor(data,api){super('manor');this.dataSave=data;this.api=api;this.ready=false;this.locked=true;this.room=false;this.target=null;this.elapsedSave=0;this.facing=0}
- preload(){preloadLakeside(this);preloadV5(this)}
+ preload(){
+  this.failedAssets=new Map();this.assetAttempts=0;
+  this.load.on('progress',p=>bootStatus('assets',.15+p*.65));
+  this.load.on('loaderror',file=>this.failedAssets.set(file.key,{key:file.key,url:file.url}));
+  this.load.on('filecomplete',key=>this.failedAssets.delete(key));
+  preloadV5(this);
+ }
  create(){
-  installV5(this);makeArt(this);refineMap(this);refineWorld(this);refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
+  if(this.failedAssets.size){
+   if(this.assetAttempts++>=BOOT.retries){bootStatus('failed');return}
+   bootStatus('retrying',.8);
+   const files=[...this.failedAssets.values()];
+   this.time.delayedCall(250,()=>{this.load.reset();for(const file of files){let url=v5FallbackURL(file.key)||file.url;if(!/^(data:|blob:)/.test(url))url+=(url.includes('?')?'&':'?')+'retry='+this.assetAttempts;this.load.image(file.key,url)}this.load.once('complete',()=>this.create());this.load.start()});return;
+  }
+  bootStatus('initializing',.85);
+  installV5(this);makeArt(this,{metadataOnly:true});refineWorld(this,{paint:false});refineV5Map(this);registerWardrobe(this);this.world=this.add.container(0,0);this.baseMap=this.add.image(0,0,'world').setOrigin(0);this.world.add(this.baseMap);
   this.cat=this.add.image(347,453,'cat').setScale(1.25);this.world.add(this.cat);this.tweens.add({targets:this.cat,scaleY:1.21,duration:1500,yoyo:true,repeat:-1});
   this.labels=[];for(let [x,y,text] of [[114,300,T.shop],[347,407,T.cat],[235,281,T.tree],[88,509,T.garden],[354,215,T.pond]]){
    let label=this.add.text(x,y,text,{fontSize:'11px',fontFamily:'sans-serif',color:'#ffebcf',backgroundColor:'#41374dd9',padding:{x:7,y:4}}).setOrigin(.5);this.world.add(label);this.labels.push(label);
@@ -38,7 +51,7 @@ export class Manor extends Phaser.Scene {
   this.input.on('pointerdown',p=>{if(!this.locked&&!this.room&&!this.observing&&!this.exploring){const hit=mapHit(this,p.worldX,p.worldY);if(hit){this.api.touch?.(hit);return}this.target={x:Phaser.Math.Clamp(p.worldX,22,410),y:Phaser.Math.Clamp(p.worldY,185,802)};this.ripple(p.worldX,p.worldY)}});
   this.nightVeil=this.add.rectangle(216,425,432,850,0x181c38,.20).setDepth(200).setVisible(false);
   this.stars=Array.from({length:20},(_,i)=>{let s=this.add.rectangle((i*83)%430,175+(i*73)%620,2,2,0xffe4b2,.6).setDepth(5);this.tweens.add({targets:s,alpha:.05,y:s.y-12,duration:1800+i*67,yoyo:true,repeat:-1});this.world.add(s);return s});
-  this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(30);addRomanticEntrances(this);this.environment=new MapEnvironment(this,this.dataSave,this.api);this.ready=true;this.refresh();this.api.ready(this);
+  this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(30);addRomanticEntrances(this);this.environment=new MapEnvironment(this,this.dataSave,this.api);this.ready=true;this.refresh();this.api.ready(this);bootStatus('ready',1);
  }
  refresh(){if(!this.ready)return;this.magic.forEach((s,i)=>s.setVisible(!this.dataSave.magic.includes(i)));this.plotSprites.forEach((s,i)=>{let p=grow(this.dataSave.plots[i]);s.setVisible(p.state>0);s.setTint(p.state===3?0xffffff:p.state===2?0xa8c4b0:0x8baf90);s.setScale(p.state===3?1.3:.65)});this.api.hud()}
  ripple(x,y){let s=this.add.circle(x,y,6,0xffe3ad,.1).setStrokeStyle(1,0xffe3ad,.7);this.tweens.add({targets:s,scale:3,alpha:0,duration:500,onComplete:()=>s.destroy()})}
@@ -66,4 +79,4 @@ export class Manor extends Phaser.Scene {
   this.player.setDepth(10);this.api.near(this.nearest());this.elapsedSave+=delta;if(this.elapsedSave>1600){this.elapsedSave=0;this.dataSave.position={x:this.player.x,y:this.player.y};this.api.save()}
  }
 }
-export function createGame(data,api){const scene=new Manor(data,api);const host=document.getElementById('game');const viewportHeight=()=>Math.max(480,Math.round(432*host.clientHeight/host.clientWidth));const game=new Phaser.Game({type:Phaser.AUTO,parent:'game',width:432,height:viewportHeight(),backgroundColor:'#35344f',pixelArt:true,roundPixels:true,antialias:false,resolution:1,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[scene],input:{activePointers:3},render:{transparent:false},audio:{noAudio:true}});const resize=new ResizeObserver(()=>{if(host.clientWidth&&host.clientHeight)game.scale.setGameSize(432,viewportHeight())});resize.observe(host);game.events.once('destroy',()=>resize.disconnect());return{scene,game}}
+export function createGame(data,api){const scene=new Manor(data,api);const host=document.getElementById('game');const viewportHeight=()=>Math.max(480,Math.round(432*host.clientHeight/host.clientWidth));const game=new Phaser.Game({type:new URLSearchParams(location.search).get('renderer')==='canvas'?Phaser.CANVAS:Phaser.AUTO,parent:'game',width:432,height:viewportHeight(),backgroundColor:'#35344f',pixelArt:true,roundPixels:true,antialias:false,resolution:1,scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:[scene],loader:{timeout:12000},input:{activePointers:3},render:{transparent:false},audio:{noAudio:true}});game.canvas.addEventListener('webglcontextlost',()=>bootStatus('graphics'));game.canvas.addEventListener('webglcontextrestored',()=>{if(scene.ready)bootStatus('ready',1)});const resize=new ResizeObserver(()=>{if(host.clientWidth&&host.clientHeight)game.scale.setGameSize(432,viewportHeight())});resize.observe(host);game.events.once('destroy',()=>resize.disconnect());return{scene,game}}

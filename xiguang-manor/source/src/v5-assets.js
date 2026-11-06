@@ -1,4 +1,5 @@
-import atlasURL from './assets/v5/atelier.png';
+import atlasURL from './assets/v5/atelier.webp';
+import atlasFallbackURL from './assets/v5/atelier.png';
 import meta from './assets/v5/atlas.json';
 import rockURL from './assets/v5/mountain-rock.png';
 import forest1URL from './assets/v5/mountain-forest-1.png';
@@ -7,6 +8,7 @@ import forest3URL from './assets/v5/mountain-forest-3.png';
 import {mix,rgb} from './sky-model.js';
 import {ROMANCE} from './romantic-config.js';
 let source=null;const cache=new Map(),icons=new Map(),extras={};
+export const v5FallbackURL=key=>key==='v5-atelier'?atlasFallbackURL:null;
 export function preloadV5(scene){for(const[key,url]of [['atelier',atlasURL],['rock',rockURL],['forest1',forest1URL],['forest2',forest2URL],['forest3',forest3URL]])if(!scene.textures.exists('v5-'+key))scene.load.image('v5-'+key,url)}
 export function installV5(scene){source=scene.textures.get('v5-atelier').getSourceImage();for(const key of ['rock','forest1','forest2','forest3'])extras[key]=scene.textures.get('v5-'+key).getSourceImage();document.documentElement.style.setProperty('--v5-mirror',`url("${v5Icon('wardrobe-mirror')}")`)}
 export function hasV5(){return !!source}
@@ -40,5 +42,12 @@ export function v5Blit(c,name,x,y,{width,height,flip=false,...options}={}){const
 export function v5MountainSource(name,period,far=false){
  const key='panorama/'+name+'/'+period+'/'+far;if(cache.has(key))return cache.get(key);const image=extras[name],out=document.createElement('canvas');out.width=image.width;out.height=Math.min(256,image.height);const c=out.getContext('2d',{willReadFrequently:true});c.drawImage(image,0,0);const data=c.getImageData(0,0,out.width,out.height),d=data.data;
  const ramps={night:['#25334c','#384965','#4c6080','#6f819f','#9aa7b8'],dawn:['#68788c','#8c94a5','#adb3bb','#d6bec0','#f0d2c6'],day:['#567d8d','#6d96a1','#94aeb5','#bdd0ca','#e3e1ce'],dusk:['#50516f','#716682','#97809c','#c9a1b1','#e8bdba']},ramp=name.startsWith('forest')?({night:['#1c3544','#2d4d55','#456b68','#64847b','#8da394'],dawn:['#506f72','#6d8d83','#8ea799','#b4bcaa','#d5cbb2'],day:['#315c54','#578273','#85a38a','#b1c49c','#d6dbad'],dusk:['#3b4d5c','#5b7070','#819084','#adb09b','#d2c0ab']}[period]):ramps[period];
- for(let i=0;i<d.length;i+=4){if(!d[i+3])continue;const lum=(d[i]*.30+d[i+1]*.58+d[i+2]*.12)/255,level=Math.max(0,Math.min(3.999,(lum-.12)/.5*4)),col=rgb(mix(ramp[Math.floor(level)],ramp[Math.ceil(level)],level%1));for(let j=0;j<3;j++)d[i+j]=Math.round(far?col[j]*.74+rgb(ramp[3])[j]*.26:col[j]);}c.putImageData(data,0,0);cache.set(key,out);return out;
+ // Pixel art repeats a small authored palette. Transform each source color
+ // once, rather than parsing/mixing hex colors for millions of identical pixels.
+ const mapping=new Map(),haze=rgb(ramp[3]);
+ for(let i=0;i<d.length;i+=4){
+  if(!d[i+3])continue;const key=(d[i]<<16)|(d[i+1]<<8)|d[i+2];let col=mapping.get(key);
+  if(!col){const lum=(d[i]*.30+d[i+1]*.58+d[i+2]*.12)/255,level=Math.max(0,Math.min(3.999,(lum-.12)/.5*4));col=rgb(mix(ramp[Math.floor(level)],ramp[Math.ceil(level)],level%1)).map((v,j)=>Math.round(far?v*.74+haze[j]*.26:v));mapping.set(key,col)}
+  for(let j=0;j<3;j++)d[i+j]=col[j];
+ }c.putImageData(data,0,0);cache.set(key,out);return out;
 }
