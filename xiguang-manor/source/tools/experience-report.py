@@ -70,7 +70,7 @@ WebKit（iPhone 13配置）及Chromium（Pixel 7配置）通过上述尺寸、�
 交互／协调：`mobile-experience.css`、`tree-occlusion.js`、`game.js`、`romantic-config.js`、`boot-config.js`、`soundscape.js`。
 构建／验收：`vite.config.js`、`tools/stage-release.py`、`tools/benchmark-server.py`、`tests/experience-*.mjs`及原回归脚本异步等待／截图采样修正。
 
-运行：`npm install && npm run dev`；构建：`npm run build`。复测：`python tools/benchmark-server.py dist`，另一个终端运行`node tests/experience-benchmark.mjs label`。基线检出上述旧提交，采用同一脚本、服务和条件。仅测切换可设`BENCH_RUNS=0`。
+运行：`npm install && npm run dev`；构建：`npm run build`。复测：`python tools/benchmark-server.py dist`，另一个终端运行`node tests/experience-benchmark.mjs label`。基线检出上述旧提交，采用同一脚本、服务和条件。结果默认写入`verification/experience-label.json`；可用`BENCH_OUTPUT_DIR`指定目录。仅测切换可设`BENCH_RUNS=0`。
 
 本轮发布到独立`experience-preview/`供验收，原正式版入口保留。
 '''
