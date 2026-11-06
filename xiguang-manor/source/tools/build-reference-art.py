@@ -41,6 +41,12 @@ def tone(im,ramp):
    ps[x,y]=(*cache[px[:3]],px[3])
  return out
 def fabric(im):return recolor(im,FAB,True)
+def open_curtain():
+ im=fabric(crop(U,0,0,96,64))
+ # The source sheet contains a detached spare rail in its transparent opening.
+ # Keep the gathered cloth, but do not composite the spare rail across the glass.
+ im.paste((0,0,0,0),(24,20,72,48))
+ return im
 def canvas(w,h):return Image.new('RGBA',(w,h))
 def paste(out,im,x,y,w=None,h=None):
  if w is not None:im=im.resize((round(w),round(h)),Image.Resampling.NEAREST)
@@ -86,7 +92,7 @@ def furniture():
  for on in [False,True]:
   suffix='-on'if on else'-off'
   p=canvas(68,57);shadow(p,34,54,61);paste(p,fabric(crop(U,128,224,64,32)),1,16,66,33);add('furniture-vintageSofa'+suffix,p)
-  p=canvas(54,91);paste(p,crop(W,192,416,64,112),0,0,54,91);curtain=fabric(crop(U,0,0,96,64))if not on else fabric(crop(U,96,0,64,64));paste(p,curtain,3,1,48,76);add('furniture-laceDrape'+suffix,p)
+  p=canvas(54,91);paste(p,crop(W,192,416,64,112),0,0,54,91);curtain=open_curtain()if not on else fabric(crop(U,96,0,64,64));paste(p,curtain,3,1,48,76);add('furniture-laceDrape'+suffix,p)
   p=canvas(54,83);shadow(p,27,80,46);paste(p,crop(W,352,64,32,64),6,4,42,76)
   for x,y,n in [(11,20,'flower-pot-lily'),(29,39,'flower-pot-fern'),(10,54,'flower-pot-lily')]:paste(p,flower(n),x,y,15,21)
   if on:
@@ -115,7 +121,7 @@ def surfaces():
   p.putalpha(mask)
   # Restore frame/glass area from the original before adding detailed drapery.
   original=frame(v6,v6m,'cabin-walls-original');paste(p,crop(original,98,42,238,201),98,42)
-  paste(p,fabric(crop(U,0,0,96,64)),96,44,242,171)
+  paste(p,open_curtain(),96,44,242,171)
   # Open the fabric over the glass; only the ties and valance remain in front.
   # Source open curtains have native alpha so the mountain window stays visible.
   add('cabin-walls-'+n,p)

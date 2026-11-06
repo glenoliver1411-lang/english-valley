@@ -16,7 +16,7 @@
       "download": "https://opengameart.org/sites/default/files/upholstery_3.png",
       "license": "CC-BY-4.0",
       "sha256": "3e1f3b7566506a0379ee6094fb3cf089df06b7ba51045d9d18a41a1cfe086a41",
-      "modifications": "cropped, recolored and composed for the existing manor perspective; original files retained"
+      "modifications": "cropped, recolored and composed for the existing manor perspective; original files retained; detached spare curtain rail omitted from the open-glass crop"
     },
     "walls.png": {
       "author": "See CREDITS-walls.txt",

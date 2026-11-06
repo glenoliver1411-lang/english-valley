@@ -1,0 +1,2581 @@
+{
+  "engine": "chromium",
+  "errors": [],
+  "seats": [
+    {
+      "type": "chair",
+      "low": false,
+      "textures": [
+        "home-seated-original-dawn"
+      ],
+      "textureAssignments": [
+        "girl",
+        "home-seated-original-dawn"
+      ],
+      "samples": [
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        }
+      ]
+    },
+    {
+      "type": "chair",
+      "low": true,
+      "textures": [
+        "home-seated-original-dawn"
+      ],
+      "textureAssignments": [
+        "girl",
+        "home-seated-original-dawn"
+      ],
+      "samples": [
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        },
+        {
+          "texture": "home-seated-original-dawn",
+          "depth": 27.05,
+          "playing": false,
+          "x": 72,
+          "y": 694
+        }
+      ]
+    },
+    {
+      "type": "window",
+      "low": false,
+      "textures": [
+        "girl"
+      ],
+      "textureAssignments": [
+        "girl"
+      ],
+      "samples": [
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        }
+      ]
+    },
+    {
+      "type": "window",
+      "low": true,
+      "textures": [
+        "girl"
+      ],
+      "textureAssignments": [
+        "girl"
+      ],
+      "samples": [
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        },
+        {
+          "texture": "girl",
+          "depth": 23.31,
+          "playing": false,
+          "x": 207,
+          "y": 327
+        }
+      ]
+    }
+  ],
+  "window": {
+    "maxDarkRun": 80,
+    "width": 432,
+    "height": 850
+  }
+}

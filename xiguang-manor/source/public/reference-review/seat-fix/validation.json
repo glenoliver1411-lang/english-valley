@@ -1,0 +1,66 @@
+{
+  "release": "reference-art-20261106-2",
+  "unitTests": {
+    "passed": 94,
+    "failed": 0
+  },
+  "beforeRegression": "fails: standing texture assigned during seated updates",
+  "windowDarkRun": {
+    "chromium": 0,
+    "webkit": 0
+  },
+  "seatedFrameCounts": {
+    "chromium": 180,
+    "webkit": 180
+  },
+  "production": {
+    "chromium": {
+      "engine": "chromium",
+      "scope": "http://localhost:4180/english-valley/xiguang-manor/reference-art-preview/",
+      "errors": [],
+      "cache": {
+        "version": "reference-art-20261106-2",
+        "scope": "http://localhost:4180/english-valley/xiguang-manor/reference-art-preview/",
+        "cache": "xiguang-precache::http://localhost:4180/english-valley/xiguang-manor/reference-art-preview/::reference-art-20261106-2",
+        "complete": true,
+        "files": 36,
+        "bytes": 2799574,
+        "cacheEntries": 37,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      },
+      "passed": [
+        "complete new release cached",
+        "offline reload and first lazy cabin visit",
+        "real touch chair approach, sit, photo, stand",
+        "real touch window approach and stand",
+        "old candies/cat/room layout preserved"
+      ]
+    },
+    "webkit": {
+      "engine": "webkit",
+      "scope": "http://localhost:4180/english-valley/xiguang-manor/reference-art-preview/",
+      "errors": [],
+      "cache": {
+        "version": "reference-art-20261106-2",
+        "scope": "http://localhost:4180/english-valley/xiguang-manor/reference-art-preview/",
+        "cache": "xiguang-precache::http://localhost:4180/english-valley/xiguang-manor/reference-art-preview/::reference-art-20261106-2",
+        "complete": true,
+        "files": 36,
+        "bytes": 2799574,
+        "cacheEntries": 37,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      },
+      "passed": [
+        "complete new release cached",
+        "offline reload and first lazy cabin visit",
+        "real touch chair approach, sit, photo, stand",
+        "real touch window approach and stand",
+        "old candies/cat/room layout preserved"
+      ]
+    }
+  }
+}
