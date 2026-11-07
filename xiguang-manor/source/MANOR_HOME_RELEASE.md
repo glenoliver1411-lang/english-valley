@@ -1,8 +1,8 @@
 # 新庄园与可互动小屋 · 正式接入
 
-版本`manor-home-20261107-1`；分支`release/manor-home-interactions`；回退标签`before-manor-home-20261107`。用户本轮已明确授权替换原庄园。
+版本`manor-home-20261107-2`；分支`release/manor-home-interactions`；回退标签`before-manor-home-20261107`。用户本轮已明确授权替换原庄园。
 
-- [正式游戏](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/?v=manor-home-20261107-1)
+- [正式游戏](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/?v=manor-home-20261107-2)
 - [真实游戏截图与前后对比](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/home-release-review/)
 - 原`world-garden-preview`及全部旧预览保持原构建。
 
@@ -30,13 +30,13 @@
 
 ## 检查与离线
 
-构建：`MANOR_BASE=/english-valley/xiguang-manor/ MANOR_RELEASE=manor-home-20261107-1 npm run build`。
+构建：`MANOR_BASE=/english-valley/xiguang-manor/ MANOR_RELEASE=manor-home-20261107-2 npm run build`。
 
-最终发行清单：**94项资源、23,716,802字节**。包含全部懒加载模块、新小屋、原花铺、独立极光及PWA图标；截图/文档/原始家具大图不预缓存。是否“准备好离线”仍以Service Worker逐资源实际审计为准。
+最终发行清单：**94项资源（最终字节见验收页实时发行清单）**。包含全部懒加载模块、新小屋、原花铺、独立极光及PWA图标；截图/文档/原始家具大图不预缓存。是否“准备好离线”仍以Service Worker逐资源实际审计为准。
 
 |检查|结果|
 |---|---|
-|Node|100项通过，0失败|
+|Node|102项通过，0失败|
 |Chromium/WebKit主流程|默认新庄园、真实18秒种植采收、遗迹暂存、换装、泡茶、摆钢琴/弹奏、材质/翻转、坐姿、休息夜景、天气、375×667、刷新保留旧档通过|
 |坐姿/重复进出|八次采样稳定；主流程纹理86/86/86；最终分层专项92/92/92。路径/素材阶段不同，数量不混作同一内存成绩|
 |最终分层WebKit|真实三花种花束、帘布开关、烛台灭火、连续材质、三次进出、原魔法糖防重复通过|
@@ -61,3 +61,5 @@
 本轮是新庄园正式接入与小屋首轮重制，未宣称全世界已完成。森林、花谷、完整可走湖岸、果园、山顶、工坊及遗迹主体继续按全图规划推进，原玩法可正常进入。
 
 角色仍是原32×40身份/服装；夜景尚非专门重绘的整套原画，原底板晨光纹理还在；墙纸为窄装饰条，部分家具足迹偏保守，完整幼苗/花苞图集还需补绘。本轮必要检查后停止，交给用户体验。
+
+正式触屏复核补丁：点击按实际可见alpha判定，透明树冠不抢花朵，盛开花头也可点击花圃；原先被实心树叶遮住的可采玫瑰移到无遮挡草地。相应物品ID和库存不变。

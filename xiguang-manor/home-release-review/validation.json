@@ -88,6 +88,11 @@
       "missingDetails": []
     }
   },
+  "touch": {
+    "engine": "chromium",
+    "passed": "Actual overview touch on visible rose pixels walks to the new unobstructed flower and saves one rose, without triggering the tree",
+    "errors": []
+  },
   "chromiumOffline": {
     "engine": "chromium",
     "steps": [
@@ -143,9 +148,9 @@
     }
   },
   "finalReleaseManifest": {
-    "version": "manor-home-20261107-1",
+    "version": "manor-home-20261107-2",
     "files": 94,
-    "bytes": 23716802
+    "bytes": 23717208
   },
   "notes": "Real browser mobile emulation, controlled test profiles; not a physical iPhone benchmark. Main operation journeys precede final material/state-art derivatives. Offline/update reports retain their actual build bytes; final release manifest is separate. Public-site final smoke runs after deployment."
 }

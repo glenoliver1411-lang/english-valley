@@ -137,8 +137,8 @@
     {
       "id": "plant-0",
       "frame": "rose",
-      "x": 125,
-      "y": 660,
+      "x": 330,
+      "y": 750,
       "width": 115,
       "kind": "plant",
       "wind": 0
@@ -718,12 +718,12 @@
     {
       "id": "pick-rose",
       "title": "采一朵玫瑰",
-      "x": 125,
-      "y": 630,
+      "x": 330,
+      "y": 750,
       "kind": "flower",
       "stand": {
-        "x": 190,
-        "y": 700
+        "x": 330,
+        "y": 792
       },
       "flower": "rose",
       "object": "plant-0"

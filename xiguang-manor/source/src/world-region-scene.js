@@ -9,6 +9,7 @@ import {worldNavigation,readWorldPose} from './world-navigation.js';
 import map from './assets/world/rose-court.json';
 import {FlowerPickupEffects} from './flower-effects.js';
 import {grow} from './save.js';
+import {pickWorldInteraction} from './world-hit.js';
 
 const color=(a,b,t)=>{const A=Phaser.Display.Color.IntegerToColor(a),B=Phaser.Display.Color.IntegerToColor(b),c=Phaser.Display.Color.Interpolate.ColorWithColor(A,B,1,t);return Phaser.Display.Color.GetColor(c.r,c.g,c.b)};
 export class WorldRegionScene extends Phaser.Scene{
@@ -32,7 +33,7 @@ export class WorldRegionScene extends Phaser.Scene{
    if(this.quiet){this.stand();return}
    const q=this.cameras.main.getWorldPoint(p.x,p.y);if(this.overview)this.setOverview(false);
    if(Math.hypot(q.x-this.cat.x,q.y-this.cat.y)<44){this.api.action({id:'cat',kind:'cat'});return}
-   const hit=this.nodes.filter(n=>n.sprite.getBounds().contains(q.x,q.y)).sort((a,b)=>b.o.y-a.o.y).map(n=>map.interactions.find(v=>v.object===n.o.id)).find(Boolean)||map.interactions.filter(v=>Math.hypot(q.x-v.x,q.y-v.y)<65).sort((a,b)=>Math.hypot(q.x-a.x,q.y-a.y)-Math.hypot(q.x-b.x,q.y-b.y))[0];
+   const hit=pickWorldInteraction(this.nodes,map.interactions,q,(sprite,p)=>{const at=sprite.getLocalPoint(p.x,p.y);return(this.textures.getPixelAlpha(sprite.flipX?sprite.width-at.x:at.x,sprite.flipY?sprite.height-at.y:at.y,sprite.texture.key,sprite.frame.name)||0)*sprite.alpha})||map.interactions.filter(v=>Math.hypot(q.x-v.x,q.y-v.y)<65).sort((a,b)=>Math.hypot(q.x-a.x,q.y-a.y)-Math.hypot(q.x-b.x,q.y-b.y))[0];
    if(hit)this.approach(hit);else if(!this.blocked(q.x,q.y))this.walkTo(q);
   });
   this.resizeCamera();this.scale.on('resize',this.resizeCamera,this);this.follow();this.currentLight=R.periods[0];this.phaseSignature='';this.updateLighting(true);

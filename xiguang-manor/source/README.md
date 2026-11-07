@@ -151,4 +151,4 @@ node tests/gift-opening-journey.mjs --webkit
 
 ### 新庄园与小屋互动正式版
 
-已接入原正式路径：<https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/?v=manor-home-20261107-1>。新门庭为默认地图，花圃/遗迹/随身功能已接回，小屋使用独立高清家具原画，保留旧存档和离线。旧预览不覆盖；原地图可用`?visit=legacy`。修改与限制见[MANOR_HOME_RELEASE.md](MANOR_HOME_RELEASE.md)。
+已接入原正式路径：<https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/?v=manor-home-20261107-2>。新门庭为默认地图，花圃/遗迹/随身功能已接回，小屋使用独立高清家具原画，保留旧存档和离线。旧预览不覆盖；原地图可用`?visit=legacy`。修改与限制见[MANOR_HOME_RELEASE.md](MANOR_HOME_RELEASE.md)。
