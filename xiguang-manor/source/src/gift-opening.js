@@ -32,7 +32,7 @@ export class GiftOpening {
     if(this.active)return;
     if(!replay&&!this.data.accepted&&matchMedia('(prefers-reduced-motion: reduce)').matches)this.data.romance.reducedMotion=true;
     this.replay=replay;this.active=true;this.stage='envelope';this.time=0;this.stageTime=0;this.lastStamp=0;this.lastDraw=0;
-    this.awakening=null;this.api.close();this.api.block(true);this.hideWelcome();this.tip.classList.remove('show');
+    this.finishing=false;this.revealing=null;this.awakening=null;this.api.close();this.api.block(true);this.hideWelcome();this.tip.classList.remove('show');
     $('.device').classList.add('gift-playing');this.root.className=`gift-opening${this.reduced?' gift-still':''}`;this.root.dataset.stage=this.stage;
     this.root.setAttribute('role','dialog');this.root.setAttribute('aria-modal','true');this.root.setAttribute('aria-label',T.letterTitle);
     this.root.innerHTML=`<canvas aria-hidden="true"></canvas><div class="gift-toolbar"><label><input id="gift-reduced" type="checkbox" ${this.reduced?'checked':''}><span>${text('reduced')}</span></label><button id="skip-gift">${text('skip')}</button></div><header class="gift-heading"><span>${text('tag')}</span><h1>${text('heading')}</h1></header><button id="gift-envelope" aria-label="${text('open')}"><span>${text('envelope')}</span></button><div class="gift-invitation"><p>${text('touch')}</p><button id="gift-music">${text(this.data.music?'musicOn':'music')}</button></div><div id="gift-letter" class="gift-letter hidden"></div><p class="gift-awakening-note">${text('awakening')}</p>`;
@@ -67,12 +67,17 @@ export class GiftOpening {
   commitAcceptance() {
     if(!this.data.accepted){this.data.accepted=true;this.api.save();this.hints.enabled=true;this.storeHints()}
   }
-  accept() {
-    if(!this.active||this.stage==='awakening')return;
-    this.api.gesture();this.commitAcceptance();if(this.waitForWorld('accept'))return;this.stage='awakening';this.root.dataset.stage=this.stage;
-    $('#gift-letter').classList.add('gift-letter-leaving');
-    $('#skip-gift').textContent=fmt(GIFT.text.skip);$('#skip-gift').focus({preventScroll:true});
-    this.awakening=new ManorAwakening(this.manor,{reduced:this.reduced,done:()=>this.finish()});
+  async revealWorld(){const ready=await(this.revealing??=this.api.revealWorld());if(!ready)this.revealing=null;return ready}
+  async accept() {
+    if(!this.active||this.stage==='awakening'||this.accepting)return;
+    this.api.gesture();this.commitAcceptance();if(this.waitForWorld('accept'))return;
+    this.accepting=true;if($('#accept')){$('#accept').disabled=true;$('#accept').textContent='庄园正在苏醒……'}
+    try{if(!await this.revealWorld()){this.api.engineError?.();return}if(!this.active||this.finishing)return;
+      this.stage='awakening';this.root.dataset.stage=this.stage;
+      $('#gift-letter').classList.add('gift-letter-leaving');
+      $('#skip-gift').textContent=fmt(GIFT.text.skip);
+      this.awakening=new ManorAwakening(this.api.worldScene(),{reduced:this.reduced,done:()=>this.finish()});
+    }catch{this.revealing=null;this.api.engineError?.()}finally{this.accepting=false;if(this.stage==='letter'&&$('#accept')){$('#accept').disabled=false;$('#accept').textContent=fmt(T.accept)}}
   }
   skip() {
     if(!this.active)return;
@@ -93,10 +98,10 @@ export class GiftOpening {
     const c=this.canvas.getContext('2d');this.sky.draw(c,this.time,{still:this.reduced,low:this.data.scenery.lowEffects});
     if(this.stage==='envelope'||this.stage==='unfolding')paintEnvelope(c,envelopeGeometry(this.canvas.height,this.stage==='unfolding'?this.stageTime/GIFT.timing.unfold:0,this.time,this.reduced));
   }
-  finish() {
-    if(!this.active)return;
+  async finish() {
+    if(!this.active||this.finishing)return;this.finishing=true;
+    try{if(!await this.revealWorld()){this.finishing=false;this.revealing=null;return}}catch{this.finishing=false;this.revealing=null;return}
     this.active=false;cancelAnimationFrame(this.raf);this.raf=0;
-    if(!this.awakening){this.manor.gates.forEach((gate,i)=>gate.setPosition(i?255:187,754).setScale(.25,1))}
     this.root.className='hidden';this.root.innerHTML='';this.root.removeAttribute('aria-modal');this.canvas=null;this.sky=null;this.awakening=null;
     $('.device').classList.remove('gift-playing');this.api.block(false);performance.mark('manor-free');
     if(!this.replay)this.api.save();this.showWelcome();

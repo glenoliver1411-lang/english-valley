@@ -18,14 +18,15 @@ for revision in ([] if args.preview else ['origin/main','origin/main^']):
   target=repo/path
   if not target.exists():target.write_bytes(subprocess.check_output(['git','show',f'{revision}:{path}'],cwd=repo))
 # Never remove the older content-hashed files when installing a new graph.
-formal_review=not args.preview and (dist/'home-release-review').is_dir()
+formal_gallery='candy-scenes-review' if (dist/'candy-scenes-review').is_dir() else 'home-release-review'
+formal_review=not args.preview and (dist/formal_gallery).is_dir()
 if formal_review or args.preview in ('play-preview','v6-art-preview','reference-art-preview','florist-original-preview','florist-skill-preview','world-garden-preview'):
  # This new preview needs the playable graph and this round's evidence, not
  # copies of every historical art review. Existing hashed files remain safe.
  release=json.loads((dist/'offline-release.json').read_text())
  for name in [*[a['url'] for a in release['assets']],'offline-release.json','sw.js']:
   target=site/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(dist/name,target)
- review={'v6-art-preview':'v6-review','play-preview':'play-review','reference-art-preview':'reference-review','florist-original-preview':'florist-review','florist-skill-preview':'florist-skill-review','world-garden-preview':'world-region-review'}.get(args.preview,'home-release-review')
+ review={'v6-art-preview':'v6-review','play-preview':'play-review','reference-art-preview':'reference-review','florist-original-preview':'florist-review','florist-skill-preview':'florist-skill-review','world-garden-preview':'world-region-review'}.get(args.preview,formal_gallery)
  shutil.copytree(dist/review,site/review,dirs_exist_ok=True)
 else:
  for item in dist.iterdir():

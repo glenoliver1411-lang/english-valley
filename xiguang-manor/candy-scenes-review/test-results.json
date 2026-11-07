@@ -1,0 +1,138 @@
+{
+  "release": "manor-candy-20261107-1",
+  "date": "2026-11-07",
+  "unit": {
+    "passed": 104,
+    "failed": 0
+  },
+  "desktopMobileEmulationOnly": true,
+  "entry": {
+    "fullGiftAndThreeReturns": true,
+    "mapDownloadFailureRetry": true,
+    "oldMapVisible": false
+  },
+  "journey": {
+    "chromium": {
+      "engine": "chromium",
+      "steps": [
+        "even the old legacy query opens only the new map after the welcome; no public old-map exit",
+        "375×667 destination/time cards have explicit Safari-safe colors, readable text and 48px touch targets",
+        "new PNG counters have physical walkable stand points; actor walks around furniture to the actual mixer",
+        "existing mixing, three heat rounds, three-candy gift packing and memory game really complete and persist",
+        "window and roof sunrise use the whole portrait canvas; closing restores the high-density home, including resize",
+        "all five scenic modes start directly from the new map and return to its saved position",
+        "independent aurora returns directly to new map, without a detour through the old garden",
+        "reload preserves old inventory, cat name, room layout and all new candy operations without resetting the save"
+      ],
+      "errors": [],
+      "buttons": {
+        "bg": "rgb(73, 59, 84)",
+        "text": "rgb(255, 241, 220)",
+        "appearance": "none",
+        "h": 50
+      }
+    },
+    "webkit": {
+      "engine": "webkit",
+      "steps": [
+        "even the old legacy query opens only the new map after the welcome; no public old-map exit",
+        "375×667 destination/time cards have explicit Safari-safe colors, readable text and 48px touch targets",
+        "new PNG counters have physical walkable stand points; actor walks around furniture to the actual mixer",
+        "existing mixing, three heat rounds, three-candy gift packing and memory game really complete and persist",
+        "window and roof sunrise use the whole portrait canvas; closing restores the high-density home, including resize",
+        "all five scenic modes start directly from the new map and return to its saved position",
+        "independent aurora returns directly to new map, without a detour through the old garden",
+        "reload preserves old inventory, cat name, room layout and all new candy operations without resetting the save"
+      ],
+      "errors": [],
+      "buttons": {
+        "bg": "rgb(73, 59, 84)",
+        "text": "rgb(255, 241, 220)",
+        "appearance": "none",
+        "h": 50
+      }
+    }
+  },
+  "offline": {
+    "chromium": {
+      "engine": "chromium",
+      "steps": [
+        "online new world and complete current graph prepared, including all original PNG atlases and lazy indoor modules",
+        "whole browser closed and restarted offline; local server also forced to 503",
+        "real offline touch on original rose sprite -> character walks -> actual inventory receives one flower",
+        "first offline lazy florist visit, actual sale and physical door return",
+        "first offline illustrated cabin loads all new local art; original chair flips and a piano is really placed and saved",
+        "first offline candy workshop visit completes all three actual cooking rounds",
+        "offline meadow -> independent aurora page -> meadow -> new world door resumes after full-page navigation",
+        "offline lake viewpoint returns to the same world path",
+        "new-map aurora entrance and its from=world query work completely offline and return directly to the new map",
+        "second closed-browser offline restart preserves new trades and all original save fields; world coordinates never overwrite legacy position",
+        "save-and-exit and the in-game reenter button reload the new world with progress intact"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "manor-candy-20261107-1",
+        "scope": "http://localhost:4186/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4186/english-valley/xiguang-manor/::manor-candy-20261107-1",
+        "complete": true,
+        "files": 120,
+        "bytes": 28656320,
+        "cacheEntries": 121,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "webkit": {
+      "engine": "webkit",
+      "steps": [
+        "online new world and complete current graph prepared, including all original PNG atlases and lazy indoor modules",
+        "whole browser closed and restarted offline; local server also forced to 503",
+        "real offline touch on original rose sprite -> character walks -> actual inventory receives one flower",
+        "first offline lazy florist visit, actual sale and physical door return",
+        "first offline illustrated cabin loads all new local art; original chair flips and a piano is really placed and saved",
+        "first offline candy workshop visit completes all three actual cooking rounds",
+        "offline meadow -> independent aurora page -> meadow -> new world door resumes after full-page navigation",
+        "offline lake viewpoint returns to the same world path",
+        "new-map aurora entrance and its from=world query work completely offline and return directly to the new map",
+        "second closed-browser offline restart preserves new trades and all original save fields; world coordinates never overwrite legacy position",
+        "save-and-exit and the in-game reenter button reload the new world with progress intact"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "manor-candy-20261107-1",
+        "scope": "http://localhost:4186/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4186/english-valley/xiguang-manor/::manor-candy-20261107-1",
+        "complete": true,
+        "files": 120,
+        "bytes": 28656320,
+        "cacheEntries": 121,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  },
+  "update": {
+    "steps": [
+      "previous formal release installed completely at formal scope and opens the new default manor",
+      "final release downloads in background while furniture editing stays active; no automatic refresh",
+      "player-approved update from the default manor saves and reloads with every old field and furniture change intact",
+      "choosing morning in the final manor also sets the existing clock used by the cabin"
+    ],
+    "errors": [],
+    "fixture": "Actual formal manor-home-20261107-2 -> manor-candy-20261107-1 at one scope; no synthetic old version.",
+    "cache": {
+      "version": "manor-candy-20261107-1",
+      "scope": "http://localhost:4186/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4186/english-valley/xiguang-manor/::manor-candy-20261107-1",
+      "complete": true,
+      "files": 120,
+      "bytes": 28656320,
+      "cacheEntries": 121,
+      "internalBytes": 64,
+      "missing": [],
+      "missingDetails": []
+    }
+  }
+}

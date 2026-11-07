@@ -1138,6 +1138,78 @@
         "x": 1130,
         "y": 1492
       }
+    },
+    {
+      "id": "view-stars",
+      "title": "湖畔星空",
+      "kind": "portal",
+      "destination": "stars",
+      "x": 1200,
+      "y": 655,
+      "stand": {
+        "x": 1110,
+        "y": 890
+      }
+    },
+    {
+      "id": "view-meteor",
+      "title": "送我一场流星雨",
+      "kind": "portal",
+      "destination": "meteor",
+      "x": 1200,
+      "y": 655,
+      "stand": {
+        "x": 1110,
+        "y": 890
+      }
+    },
+    {
+      "id": "view-dawn",
+      "title": "去屋顶等日出",
+      "kind": "portal",
+      "destination": "dawn",
+      "x": 930,
+      "y": 1580,
+      "stand": {
+        "x": 930,
+        "y": 1720
+      }
+    },
+    {
+      "id": "view-dusk",
+      "title": "静静看黄昏",
+      "kind": "portal",
+      "destination": "dusk",
+      "x": 930,
+      "y": 1580,
+      "stand": {
+        "x": 930,
+        "y": 1720
+      }
+    },
+    {
+      "id": "view-fireworks",
+      "title": "湖畔烟花",
+      "kind": "portal",
+      "destination": "fireworks",
+      "x": 1200,
+      "y": 655,
+      "stand": {
+        "x": 1110,
+        "y": 890
+      }
+    },
+    {
+      "id": "view-aurora",
+      "title": "花海极光之夜",
+      "kind": "portal",
+      "destination": "aurora",
+      "x": 640,
+      "y": 1730,
+      "stand": {
+        "x": 640,
+        "y": 1882
+      }
     }
   ]
 }

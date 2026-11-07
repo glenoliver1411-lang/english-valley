@@ -1,0 +1,305 @@
+{
+  "frames": {
+    "mixing": {
+      "file": "mixing.webp",
+      "width": 412,
+      "height": 370,
+      "source": "stations-source.png",
+      "crop": [
+        16,
+        55,
+        428,
+        425
+      ]
+    },
+    "oven": {
+      "file": "oven.webp",
+      "width": 295,
+      "height": 444,
+      "source": "stations-source.png",
+      "crop": [
+        517,
+        0,
+        812,
+        444
+      ]
+    },
+    "display": {
+      "file": "display.webp",
+      "width": 432,
+      "height": 308,
+      "source": "stations-source.png",
+      "crop": [
+        893,
+        99,
+        1325,
+        407
+      ]
+    },
+    "packing": {
+      "file": "packing.webp",
+      "width": 414,
+      "height": 345,
+      "source": "stations-source.png",
+      "crop": [
+        1346,
+        75,
+        1760,
+        420
+      ]
+    },
+    "desk": {
+      "file": "desk.webp",
+      "width": 405,
+      "height": 364,
+      "source": "stations-source.png",
+      "crop": [
+        19,
+        502,
+        424,
+        866
+      ]
+    },
+    "cabinet": {
+      "file": "cabinet.webp",
+      "width": 318,
+      "height": 441,
+      "source": "stations-source.png",
+      "crop": [
+        505,
+        444,
+        823,
+        885
+      ]
+    },
+    "ingredients": {
+      "file": "ingredients.webp",
+      "width": 402,
+      "height": 317,
+      "source": "stations-source.png",
+      "crop": [
+        906,
+        524,
+        1308,
+        841
+      ]
+    },
+    "bookstand": {
+      "file": "bookstand.webp",
+      "width": 405,
+      "height": 275,
+      "source": "stations-source.png",
+      "crop": [
+        1353,
+        550,
+        1758,
+        825
+      ]
+    },
+    "strawberry-moon": {
+      "file": "strawberry-moon.webp",
+      "width": 280,
+      "height": 304,
+      "source": "items-source.png",
+      "crop": [
+        48,
+        37,
+        328,
+        341
+      ]
+    },
+    "strawberry-star": {
+      "file": "strawberry-star.webp",
+      "width": 301,
+      "height": 290,
+      "source": "items-source.png",
+      "crop": [
+        388,
+        39,
+        689,
+        329
+      ]
+    },
+    "strawberry-cat": {
+      "file": "strawberry-cat.webp",
+      "width": 293,
+      "height": 276,
+      "source": "items-source.png",
+      "crop": [
+        744,
+        54,
+        1037,
+        330
+      ]
+    },
+    "pumpkin-moon": {
+      "file": "pumpkin-moon.webp",
+      "width": 281,
+      "height": 305,
+      "source": "items-source.png",
+      "crop": [
+        45,
+        376,
+        326,
+        681
+      ]
+    },
+    "pumpkin-star": {
+      "file": "pumpkin-star.webp",
+      "width": 300,
+      "height": 291,
+      "source": "items-source.png",
+      "crop": [
+        389,
+        378,
+        689,
+        669
+      ]
+    },
+    "pumpkin-cat": {
+      "file": "pumpkin-cat.webp",
+      "width": 295,
+      "height": 275,
+      "source": "items-source.png",
+      "crop": [
+        744,
+        395,
+        1039,
+        670
+      ]
+    },
+    "lavender-moon": {
+      "file": "lavender-moon.webp",
+      "width": 283,
+      "height": 297,
+      "source": "items-source.png",
+      "crop": [
+        45,
+        724,
+        328,
+        1021
+      ]
+    },
+    "lavender-star": {
+      "file": "lavender-star.webp",
+      "width": 302,
+      "height": 285,
+      "source": "items-source.png",
+      "crop": [
+        387,
+        724,
+        689,
+        1009
+      ]
+    },
+    "lavender-cat": {
+      "file": "lavender-cat.webp",
+      "width": 294,
+      "height": 273,
+      "source": "items-source.png",
+      "crop": [
+        744,
+        736,
+        1038,
+        1009
+      ]
+    },
+    "bowl": {
+      "file": "bowl.webp",
+      "width": 334,
+      "height": 336,
+      "source": "items-source.png",
+      "crop": [
+        10,
+        1086,
+        344,
+        1422
+      ]
+    },
+    "box-open": {
+      "file": "box-open.webp",
+      "width": 347,
+      "height": 319,
+      "source": "items-source.png",
+      "crop": [
+        362,
+        1086,
+        709,
+        1405
+      ]
+    },
+    "box-closed": {
+      "file": "box-closed.webp",
+      "width": 352,
+      "height": 277,
+      "source": "items-source.png",
+      "crop": [
+        728,
+        1114,
+        1080,
+        1391
+      ]
+    },
+    "box-open-violet": {
+      "file": "box-open-violet.webp",
+      "width": 347,
+      "height": 319,
+      "source": "box-open.png",
+      "modification": "Only pink paper/ribbon color; original per-pixel lightness retained."
+    },
+    "box-open-cream": {
+      "file": "box-open-cream.webp",
+      "width": 347,
+      "height": 319,
+      "source": "box-open.png",
+      "modification": "Only pink paper/ribbon color; original per-pixel lightness retained."
+    },
+    "box-closed-violet": {
+      "file": "box-closed-violet.webp",
+      "width": 352,
+      "height": 277,
+      "source": "box-closed.png",
+      "modification": "Only pink paper/ribbon color; original per-pixel lightness retained."
+    },
+    "box-closed-cream": {
+      "file": "box-closed-cream.webp",
+      "width": 352,
+      "height": 277,
+      "source": "box-closed.png",
+      "modification": "Only pink paper/ribbon color; original per-pixel lightness retained."
+    }
+  },
+  "sources": [
+    {
+      "file": "room-source.png",
+      "pixels": [
+        887,
+        1774
+      ],
+      "sha256": "5d21e0cd7bb1c10bb3afd369be34ad29183c34257d754a64f307534c36db0054",
+      "source": "Original generation for this project with the built-in image tool; no third-party commercial game content.",
+      "permission": "Project generated artwork, not declared CC0."
+    },
+    {
+      "file": "stations-source.png",
+      "pixels": [
+        1774,
+        887
+      ],
+      "sha256": "a5643521d5655387d0ebb0610f8e3eaad0ca4e8ea3766fb88ec92b565c096341",
+      "source": "Original generation for this project with the built-in image tool; no third-party commercial game content.",
+      "permission": "Project generated artwork, not declared CC0."
+    },
+    {
+      "file": "items-source.png",
+      "pixels": [
+        1086,
+        1448
+      ],
+      "sha256": "400e9ad0916a893afc555038f93ef8c539d205381100d89b7789366a22dc23f5",
+      "source": "Original generation for this project with the built-in image tool; no third-party commercial game content.",
+      "permission": "Project generated artwork, not declared CC0."
+    }
+  ],
+  "preparation": "Original sources retained. Alpha and source crops only. Runtime WebP exact RGBA/RGB verified."
+}

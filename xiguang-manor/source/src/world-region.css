@@ -14,4 +14,10 @@
 .in-world .topbar .icon-button{width:40px;height:44px;min-width:40px;min-height:44px}
 #district-stand{position:absolute;top:74px;right:12px;white-space:nowrap}.world-region-ui.seated header,.world-region-ui.seated .scene-tools{opacity:.2}.in-world .world-region-ui.seated~.bottom-controls{opacity:.2}
 .district-destinations{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.district-destinations button{min-height:48px;font-size:14px}.district-note{font-size:12px;line-height:1.7;color:#c5b2c8}
+.district-card{max-height:min(92%,calc(100dvh - 150px));overflow:auto;overscroll-behavior:contain}
+.district-card .district-destinations button{appearance:none;-webkit-appearance:none;background:#493b54;color:#fff1dc;border:1px solid #bca0b2;border-radius:9px;padding:12px 8px;line-height:1.6;box-shadow:0 3px 0 #2a2235;text-shadow:none;font:inherit;min-height:48px}
+.district-card .district-destinations button:active{background:#66516f;box-shadow:0 1px 0 #2a2235;transform:translateY(1px)}
+.district-card .district-destinations button:focus-visible{outline:2px solid #f5d39c;outline-offset:2px}
+#district-seat-views{position:absolute;top:126px;right:12px}#district-seat-views[hidden]{display:none!important}
+.returning .world-region-ui{visibility:hidden}.return-world-loading{padding:12px 18px;color:#fff0d9;font-size:12px;text-align:center}
 @media(max-height:720px){.world-region-ui header{top:9px}.world-region-ui .scene-tools{top:64px}#district-stand{top:64px}}

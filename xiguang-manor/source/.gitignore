@@ -48,3 +48,7 @@ __pycache__/
 !public/home-release-review/**/*.webp
 
 !src/assets/cottage/*.webp
+
+!src/assets/candy-atelier/*.png
+!src/assets/candy-atelier/*.webp
+!public/candy-scenes-review/**/*.webp
