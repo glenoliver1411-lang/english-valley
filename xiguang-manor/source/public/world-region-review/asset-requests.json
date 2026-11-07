@@ -1,0 +1,265 @@
+{
+  "reference": "User-provided original florist PNG; commercial screenshots are reference only",
+  "requests": [
+    {
+      "region": "主世界",
+      "file": "terrain_transition_atlas.png",
+      "recommendedPixels": [
+        2048,
+        2048
+      ],
+      "state": "missing",
+      "requirements": "石路/泥路/草边/岸线/台阶全套过渡，随机细节不形成方格"
+    },
+    {
+      "region": "主世界",
+      "file": "gate_wall_fence.png",
+      "recommendedPixels": [
+        1536,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "主门、围墙转角、篱笆、开门帧，前后图层分离"
+    },
+    {
+      "region": "主世界",
+      "file": "building_roof_wall_layers.png",
+      "recommendedPixels": [
+        2048,
+        2048
+      ],
+      "state": "missing",
+      "requirements": "三栋建筑屋顶/墙体/门开合/夜间窗灯完整独立层"
+    },
+    {
+      "region": "花谷",
+      "file": "flower_growth_atlas.png",
+      "recommendedPixels": [
+        2048,
+        2048
+      ],
+      "state": "missing",
+      "requirements": "至少五种花的空地/幼苗/花苞/盛开/采后状态及近中远簇"
+    },
+    {
+      "region": "花谷",
+      "file": "picnic_swing_baskets.png",
+      "recommendedPixels": [
+        1536,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "长椅/秋千/野餐毯/花篮结构完整且前景栏杆独立"
+    },
+    {
+      "region": "花谷",
+      "file": "butterfly_animation.png",
+      "recommendedPixels": [
+        512,
+        512
+      ],
+      "state": "missing",
+      "requirements": "飞行、停驻、振翅帧，风格统一"
+    },
+    {
+      "region": "森林",
+      "file": "oak_trunk_canopy.png",
+      "recommendedPixels": [
+        1024,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "树干、树根、树冠分别透明层，精修细叶边缘"
+    },
+    {
+      "region": "森林",
+      "file": "birch_fir_forest.png",
+      "recommendedPixels": [
+        1536,
+        1536
+      ],
+      "state": "missing",
+      "requirements": "桦木/杉木/蕨类/树洞/枯木，俯视透视一致"
+    },
+    {
+      "region": "森林",
+      "file": "stream_bridge_tiles.png",
+      "recommendedPixels": [
+        1536,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "溪水弯道/浅滩/木桥中段/栏杆前景及碰撞锚点"
+    },
+    {
+      "region": "湖畔",
+      "file": "shore_pier_layers.png",
+      "recommendedPixels": [
+        2048,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "自然连续岸线、石滩、芦苇、栈桥与可遮挡栏杆"
+    },
+    {
+      "region": "湖畔",
+      "file": "mountain_depth_layers.png",
+      "recommendedPixels": [
+        2048,
+        1536
+      ],
+      "state": "missing",
+      "requirements": "远中近山脊/树线/岩面/晨雾，各四时段受光变体"
+    },
+    {
+      "region": "湖畔",
+      "file": "water_reflection_masks.png",
+      "recommendedPixels": [
+        1024,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "天空/远山/窗灯对应的反射遮罩与水纹"
+    },
+    {
+      "region": "果园",
+      "file": "windmill_layers.png",
+      "recommendedPixels": [
+        1024,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "风车塔身、叶片、轮轴与前后遮挡"
+    },
+    {
+      "region": "果园",
+      "file": "fruit_trees.png",
+      "recommendedPixels": [
+        1536,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "果树、独立果实、收获帧、梯田与围栏"
+    },
+    {
+      "region": "山顶",
+      "file": "summit_rocks_stairs.png",
+      "recommendedPixels": [
+        2048,
+        1536
+      ],
+      "state": "missing",
+      "requirements": "山路、岩阶、观景平台、悬崖面及云层"
+    },
+    {
+      "region": "小屋",
+      "file": "home_empty_shell.png",
+      "recommendedPixels": [
+        1536,
+        1536
+      ],
+      "state": "missing",
+      "requirements": "无家具墙地底板，窗玻璃/窗框/窗帘分层"
+    },
+    {
+      "region": "小屋",
+      "file": "home_furniture_atlas.png",
+      "recommendedPixels": [
+        2048,
+        2048
+      ],
+      "state": "missing",
+      "requirements": "床/柜/沙发/桌椅/钢琴/灯/花瓶/猫窝；接地阴影、翻转及使用帧"
+    },
+    {
+      "region": "工坊",
+      "file": "candy_empty_shell.png",
+      "recommendedPixels": [
+        1536,
+        1536
+      ],
+      "state": "missing",
+      "requirements": "无家具墙地底板与分层窗灯"
+    },
+    {
+      "region": "工坊",
+      "file": "candy_counter_tools.png",
+      "recommendedPixels": [
+        2048,
+        1536
+      ],
+      "state": "missing",
+      "requirements": "玻璃柜、罐、剪刀、丝带、烤炉和搅拌操作帧"
+    },
+    {
+      "region": "工坊",
+      "file": "candy_recipe_ui.png",
+      "recommendedPixels": [
+        1024,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "糖果、配方、结果、包装收藏品级图标"
+    },
+    {
+      "region": "遗迹",
+      "file": "ruins_walls_floor_atlas.png",
+      "recommendedPixels": [
+        2048,
+        2048
+      ],
+      "state": "missing",
+      "requirements": "三层石材差异、墙体厚度、破损、苔藓、拱门、柱、壁画"
+    },
+    {
+      "region": "遗迹",
+      "file": "ruins_chest_animation.png",
+      "recommendedPixels": [
+        1024,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "锁扣/箱盖/内部/战利品/辉光完整帧及独立前景"
+    },
+    {
+      "region": "遗迹",
+      "file": "ruins_mechanism_hazards.png",
+      "recommendedPixels": [
+        1536,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "机关预警/触发/恢复，危险可辨；出口阶梯"
+    },
+    {
+      "region": "角色",
+      "file": "xiaoxi_detailed_walk.png",
+      "recommendedPixels": [
+        256,
+        320
+      ],
+      "state": "missing",
+      "requirements": "原发型和服装身份的64×80四向各4帧，脚底与装备锚点"
+    },
+    {
+      "region": "角色",
+      "file": "xiaoxi_actions.png",
+      "recommendedPixels": [
+        1024,
+        1024
+      ],
+      "state": "missing",
+      "requirements": "坐下/采花/钓鱼/持灯等动作，身份不变"
+    },
+    {
+      "region": "全区域",
+      "file": "dawn_day_dusk_night_variants.png",
+      "recommendedPixels": [
+        2048,
+        2048
+      ],
+      "state": "missing",
+      "requirements": "同机位材质受光变体，非全屏色层"
+    }
+  ]
+}

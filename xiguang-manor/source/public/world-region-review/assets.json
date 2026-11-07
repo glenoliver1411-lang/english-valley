@@ -1,0 +1,313 @@
+{
+  "frames": {
+    "cottage": {
+      "sheet": "architecture",
+      "x": 11,
+      "y": 9,
+      "w": 501,
+      "h": 469,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "greenhouse": {
+      "sheet": "architecture",
+      "x": 512,
+      "y": 36,
+      "w": 512,
+      "h": 440,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "workshop": {
+      "sheet": "architecture",
+      "x": 1053,
+      "y": 11,
+      "w": 473,
+      "h": 467,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "bench": {
+      "sheet": "architecture",
+      "x": 34,
+      "y": 624,
+      "w": 445,
+      "h": 337,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "arch": {
+      "sheet": "architecture",
+      "x": 512,
+      "y": 513,
+      "w": 496,
+      "h": 478,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "fountain": {
+      "sheet": "architecture",
+      "x": 1042,
+      "y": 562,
+      "w": 474,
+      "h": 415,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "oak": {
+      "sheet": "botanical",
+      "x": 0,
+      "y": 5,
+      "w": 379,
+      "h": 332,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "birch": {
+      "sheet": "botanical",
+      "x": 441,
+      "y": 4,
+      "w": 261,
+      "h": 336,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "cherry": {
+      "sheet": "botanical",
+      "x": 778,
+      "y": 7,
+      "w": 370,
+      "h": 333,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "fir": {
+      "sheet": "botanical",
+      "x": 1219,
+      "y": 5,
+      "w": 265,
+      "h": 336,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "rose": {
+      "sheet": "botanical",
+      "x": 15,
+      "y": 361,
+      "w": 345,
+      "h": 300,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "hydrangea": {
+      "sheet": "botanical",
+      "x": 405,
+      "y": 401,
+      "w": 333,
+      "h": 235,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "daisies": {
+      "sheet": "botanical",
+      "x": 781,
+      "y": 393,
+      "w": 359,
+      "h": 243,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "sunflower": {
+      "sheet": "botanical",
+      "x": 1179,
+      "y": 360,
+      "w": 331,
+      "h": 297,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "lavender": {
+      "sheet": "botanical",
+      "x": 16,
+      "y": 704,
+      "w": 337,
+      "h": 276,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "rock": {
+      "sheet": "botanical",
+      "x": 405,
+      "y": 761,
+      "w": 346,
+      "h": 224,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "planter": {
+      "sheet": "botanical",
+      "x": 799,
+      "y": 686,
+      "w": 313,
+      "h": 306,
+      "anchor": [
+        0.5,
+        1
+      ]
+    },
+    "clover": {
+      "sheet": "botanical",
+      "x": 1167,
+      "y": 759,
+      "w": 357,
+      "h": 223,
+      "anchor": [
+        0.5,
+        1
+      ]
+    }
+  },
+  "seatedFrames": {
+    "original": {
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    },
+    "cocoa": {
+      "x": 32,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    },
+    "rose": {
+      "x": 64,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    },
+    "wild": {
+      "x": 96,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    },
+    "berry": {
+      "x": 128,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    },
+    "pearl": {
+      "x": 160,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    },
+    "mist": {
+      "x": 192,
+      "y": 0,
+      "w": 32,
+      "h": 40
+    }
+  },
+  "sources": [
+    {
+      "file": "architecture-source.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3063984,
+      "sha256": "2dbdfc20e0c67dc7fcc4310995afb59a3ed691abb139291e7df618f97f90f2b7",
+      "source": "Original generation for this project using the built-in image tool",
+      "permission": "Generated project artwork; not claimed to be CC0 or copied from third-party screenshots"
+    },
+    {
+      "file": "botanical-source.png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3583903,
+      "sha256": "b69bcdaa6db712568d7d9bca6ee6ce4311d9c60026cf0da8fdbf238c5913f816",
+      "source": "Original generation for this project using the built-in image tool",
+      "permission": "Generated project artwork; not claimed to be CC0 or copied from third-party screenshots"
+    },
+    {
+      "file": "terrain-source.png",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 3345602,
+      "sha256": "48e5d79de50d648198b4ac6da8f2f101429f18f2dab073b664ee650f0dda97fa",
+      "source": "Original generation for this project using the built-in image tool",
+      "permission": "Generated project artwork; not claimed to be CC0 or copied from third-party screenshots"
+    }
+  ],
+  "preparation": "Visible source RGB intact; alpha matte normalization, zeroing invisible RGB and cell crops only. Seated actor uses original V6 frame pixels. No primitive scenery reconstruction.",
+  "files": [
+    {
+      "file": "architecture-light.png",
+      "bytes": 268965,
+      "sha256": "7780a4e4eedc18be6d8d987e3d44f131d93a7e921f829c6aa50499428c2ebc4d"
+    },
+    {
+      "file": "architecture-source.png",
+      "bytes": 3063984,
+      "sha256": "2dbdfc20e0c67dc7fcc4310995afb59a3ed691abb139291e7df618f97f90f2b7"
+    },
+    {
+      "file": "architecture.png",
+      "bytes": 2267732,
+      "sha256": "03e017900cd1ef93b93fc600a0d9ea4136b84438d2a62ed07c7b6a6eab63109b"
+    },
+    {
+      "file": "botanical-source.png",
+      "bytes": 3583903,
+      "sha256": "b69bcdaa6db712568d7d9bca6ee6ce4311d9c60026cf0da8fdbf238c5913f816"
+    },
+    {
+      "file": "botanical.png",
+      "bytes": 2139656,
+      "sha256": "5e21af98336696acb299caa35dd90dd6f840330ed7600a3077497497c7a4db51"
+    },
+    {
+      "file": "seated.png",
+      "bytes": 2274,
+      "sha256": "da1e6575a73e8eee76575776f7c6941ca6e9024de890308a5678d89437133bc9"
+    },
+    {
+      "file": "terrain-source.png",
+      "bytes": 3345602,
+      "sha256": "48e5d79de50d648198b4ac6da8f2f101429f18f2dab073b664ee650f0dda97fa"
+    }
+  ]
+}

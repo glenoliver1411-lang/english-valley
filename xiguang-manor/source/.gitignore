@@ -40,3 +40,6 @@ __pycache__/
 !public/florist-review/**/*.png
 !src/assets/scenes/florist/*.png
 !public/florist-skill-review/**/*.png
+
+!src/assets/world/*.png
+!public/world-region-review/**/*.png

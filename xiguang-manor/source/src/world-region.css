@@ -1,0 +1,17 @@
+.world-region-ui{position:absolute;inset:0;pointer-events:none;color:#f5e7d3;font-size:12px}
+.world-region-ui header{position:absolute;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.world-region-ui header>span{background:#393441d9;border:1px solid #d4bea568;padding:8px 13px;border-radius:7px;box-shadow:0 3px 0 #2c273633}
+.world-region-ui small{display:none}.world-region-ui strong{font-weight:400;letter-spacing:3px;font-size:15px}
+.world-region-ui button,.world-region-ui summary{pointer-events:auto;min-height:44px;background:#393441de;color:#f5e7d3;border:1px solid #d4bea568;border-radius:7px;padding:9px 13px;font:inherit}
+.world-region-ui .scene-tools{top:72px;left:12px}.world-region-ui .scene-tools>div{display:grid;gap:6px;padding:6px}
+.district-loading{position:absolute;top:43%;left:20px;right:20px;text-align:center;background:#393441ed;padding:16px;border-radius:8px;pointer-events:auto}.world-region-ui.loaded .district-loading{display:none}
+.world-region-ui button:disabled{opacity:.5}.world-region-ui.loaded header button{opacity:1}
+.in-world .hud,.in-world .world-shortcuts,.in-world #time-badge,.in-world .scenery-badge,.in-world .adventure-dock{display:none!important}
+.in-world #scenery{display:none}.in-world .topbar nav{gap:5px}
+#district-stand[hidden]{display:none!important}
+.in-world #adventure-hud,.in-world #time-indicator{display:none!important}
+.in-world #adventure-tools,.in-world #manor-time{display:none!important}
+.in-world .topbar .icon-button{width:40px;height:44px;min-width:40px;min-height:44px}
+#district-stand{position:absolute;top:74px;right:12px;white-space:nowrap}.world-region-ui.seated header,.world-region-ui.seated .scene-tools{opacity:.2}.in-world .world-region-ui.seated~.bottom-controls{opacity:.2}
+.district-destinations{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.district-destinations button{min-height:48px;font-size:14px}.district-note{font-size:12px;line-height:1.7;color:#c5b2c8}
+@media(max-height:720px){.world-region-ui header{top:9px}.world-region-ui .scene-tools{top:64px}#district-stand{top:64px}}
