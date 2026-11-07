@@ -1,0 +1,22 @@
+{
+  "engine": "webkit",
+  "errors": [],
+  "steps": [
+    "first gift envelope and letter retained; accept/skip leads into native-art florist; complete graph cached",
+    "whole browser closed, browser offline and server 503; ?visit=florist still opens",
+    "empty real inventory -> flower sea -> harvest -> return original shop -> physically approach counter -> sell and save offline",
+    "second closed-browser offline restart preserves real proceeds and consumed flower"
+  ],
+  "cache": {
+    "version": "florist-original-20261107-1",
+    "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-original-preview/",
+    "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-original-preview/::florist-original-20261107-1",
+    "complete": true,
+    "files": 44,
+    "bytes": 4431504,
+    "cacheEntries": 45,
+    "internalBytes": 69,
+    "missing": [],
+    "missingDetails": []
+  }
+}

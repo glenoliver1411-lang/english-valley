@@ -11,7 +11,8 @@
     "build:pwa:preview": "vite build --mode pwa-preview",
     "build:play:preview": "vite build --mode gameplay-preview",
     "build:art:preview": "vite build --mode art-preview",
-    "build:reference:preview": "vite build --mode reference-preview"
+    "build:reference:preview": "vite build --mode reference-preview",
+    "build:florist:preview": "vite build --mode florist-preview"
   },
   "dependencies": {
     "phaser": "^3.90.0",

@@ -35,3 +35,6 @@ __pycache__/
 !src/assets/reference/**/*.png
 !src/assets/reference/*.png
 !public/reference-review/**/*.png
+
+!src/assets/florist-original/*.png
+!public/florist-review/**/*.png

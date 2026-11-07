@@ -32,7 +32,7 @@ const manifest=[...unique.values()];
 // retain stale CacheStorage.match results after a failed install/re-register;
 // accepting those would skip downloads that the actual release cache lacks.
 const precache=new PrecacheController({cacheName:CACHE,plugins:[{cachedResponseWillBeUsed:async({request,cacheName})=>{const response=await(await caches.open(cacheName)).match(request);return response?.ok?response:null}}]});precache.addToCacheList(manifest);
-registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^v$/, /^reload$/, /^renderer$/, /^return$/, /^retry$/, /^utm_/, /^fbclid$/]}));
+registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^visit$/, /^v$/, /^reload$/, /^renderer$/, /^return$/, /^retry$/, /^utm_/, /^fbclid$/]}));
 self.addEventListener('install',event=>event.waitUntil(precache.install(event)));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{await precache.activate(event);const cache=await caches.open(CACHE);await cache.put(MARK,new Response(JSON.stringify({version:VERSION,activatedAt:Date.now()}),{headers:{'Content-Type':'application/json'}}))})()));
 clientsClaim();
@@ -42,7 +42,7 @@ async function repair(event){for(const entry of manifest){const existing=await p
 
 // Old in-memory tabs may still request a content-hashed chunk while their
 // approved reload is taking place. Only this scope's completed releases qualify.
-registerRoute(({url})=>url.origin===self.location.origin&&url.pathname.startsWith(new URL('assets/',SCOPE).pathname)&&/-[\w-]{8}\.(?:js|css|png|webp)$/.test(url.pathname),async({request})=>{for(const name of(await caches.keys()).filter(n=>n.startsWith(PREFIX))){const c=await caches.open(name);if(!await c.match(MARK))continue;const r=await c.match(request,{ignoreSearch:true});if(r)return r}return fetch(request)});
+registerRoute(({url})=>url.origin===self.location.origin&&url.pathname.startsWith(new URL('assets/',SCOPE).pathname)&&/-[\w-]{8}\.(?:js|css|png|webp|jpe?g)$/.test(url.pathname),async({request})=>{for(const name of(await caches.keys()).filter(n=>n.startsWith(PREFIX))){const c=await caches.open(name);if(!await c.match(MARK))continue;const r=await c.match(request,{ignoreSearch:true});if(r)return r}return fetch(request)});
 async function prune(clientVersion){
  if(clientVersion!==VERSION||self.registration.installing||self.registration.waiting||(await windows()).length>1)return;
  const releases=[];for(const name of(await caches.keys()).filter(n=>n.startsWith(PREFIX))){const r=await(await caches.open(name)).match(MARK);if(r)releases.push({name,...await r.json()});else if(name!==CACHE)await caches.delete(name)}

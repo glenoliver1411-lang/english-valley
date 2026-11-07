@@ -1,0 +1,14 @@
+{
+  "name": "晚风花铺：用户提供的温室原画",
+  "source": "User image attachment in this conversation, 2026-11-07",
+  "receivedFormat": "JPEG",
+  "receivedDimensions": [
+    1169,
+    1280
+  ],
+  "originalFile": "original.jpg",
+  "originalSha256": "65894e680b4db173744c68b10af36c483657c911e4f8392a15cfce52109381e0",
+  "permission": "User explicitly requested use of this supplied artwork in the existing manor project. Author was not provided. No CC0 or independent redistribution license is asserted.",
+  "processing": "Original file retained byte-for-byte. Six cropped PNGs alter alpha only; all RGB values are taken directly from the uploaded image. Compositing the layers on the original is pixel-identical before characters. No redrawing, repeated tiles or synthesized furniture.",
+  "pixelIdentityVerified": true
+}

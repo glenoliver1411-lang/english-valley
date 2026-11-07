@@ -1,0 +1,12 @@
+.original-florist header>small,.original-florist header>p{display:none}
+.original-florist header{top:12px!important;left:12px!important;right:12px!important;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left!important;pointer-events:none}
+.original-florist header h2{margin:0!important;font-size:14px!important;letter-spacing:2px;background:#302a3be6;border:1px solid #c4a99b77;padding:9px 13px;border-radius:7px;font-weight:400}
+.original-florist header button{pointer-events:auto;background:#302a3bd9;border:1px solid #c4a99b77;border-radius:7px;min-height:44px}
+.original-florist .scene-tools{top:67px;left:12px}
+#florist-overview{position:absolute;top:67px;right:12px;min-height:44px;background:#302a3bd9;border:1px solid #c4a99b77;border-radius:7px;color:#efddc5;padding:9px 12px;pointer-events:auto}
+.florist-loading{position:absolute;inset:45% 20px auto;text-align:center;background:#302a3be6;color:#f3dfc5;padding:16px;border-radius:8px;pointer-events:none}
+.original-florist.loaded .florist-loading{display:none}
+.original-florist .scene-tools>summary{font-size:11px;min-height:44px}
+@media(max-height:720px){#florist-overview,.original-florist .scene-tools{top:63px}}
+/* These global panels are unavailable while shopping; keep only working controls. */
+.in-florist .topbar #scenery,.in-florist .topbar #journal{display:none}

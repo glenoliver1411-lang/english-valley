@@ -1,0 +1,14 @@
+{
+  "engine": "chromium",
+  "steps": [
+    "real counter touch -> walk -> flower sale, three-flower wrapping, bouquet sale and home display",
+    "continuous movement stays on real floor; front/back of flower table changes occlusion correctly",
+    "375×667 layout, three scene return cycles restore original canvas, constant texture count, all trades survive reload"
+  ],
+  "errors": [],
+  "textureCounts": [
+    51,
+    51,
+    51
+  ]
+}

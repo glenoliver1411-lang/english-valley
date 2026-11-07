@@ -1,0 +1,102 @@
+{
+  "release": "florist-original-20261107-1",
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "unitTests": {
+    "passed": 97,
+    "failed": 0
+  },
+  "source": {
+    "name": "晚风花铺：用户提供的温室原画",
+    "source": "User image attachment in this conversation, 2026-11-07",
+    "receivedFormat": "JPEG",
+    "receivedDimensions": [
+      1169,
+      1280
+    ],
+    "originalFile": "original.jpg",
+    "originalSha256": "65894e680b4db173744c68b10af36c483657c911e4f8392a15cfce52109381e0",
+    "permission": "User explicitly requested use of this supplied artwork in the existing manor project. Author was not provided. No CC0 or independent redistribution license is asserted.",
+    "processing": "Original file retained byte-for-byte. Six cropped PNGs alter alpha only; all RGB values are taken directly from the uploaded image. Compositing the layers on the original is pixel-identical before characters. No redrawing, repeated tiles or synthesized furniture.",
+    "pixelIdentityVerified": true
+  },
+  "journeys": {
+    "chromium": {
+      "engine": "chromium",
+      "steps": [
+        "real counter touch -> walk -> flower sale, three-flower wrapping, bouquet sale and home display",
+        "continuous movement stays on real floor; front/back of flower table changes occlusion correctly",
+        "375×667 layout, three scene return cycles restore original canvas, constant texture count, all trades survive reload"
+      ],
+      "errors": [],
+      "textureCounts": [
+        51,
+        51,
+        51
+      ]
+    },
+    "webkit": {
+      "engine": "webkit",
+      "steps": [
+        "real counter touch -> walk -> flower sale, three-flower wrapping, bouquet sale and home display",
+        "continuous movement stays on real floor; front/back of flower table changes occlusion correctly",
+        "375×667 layout, three scene return cycles restore original canvas, constant texture count, all trades survive reload"
+      ],
+      "errors": [],
+      "textureCounts": [
+        51,
+        51,
+        51
+      ]
+    }
+  },
+  "latestOfflineEntry": {
+    "chromium": {
+      "engine": "chromium",
+      "errors": [],
+      "steps": [
+        "first gift envelope and letter retained; accept/skip leads into native-art florist; complete graph cached",
+        "whole browser closed, browser offline and server 503; ?visit=florist still opens",
+        "empty real inventory -> flower sea -> harvest -> return original shop -> physically approach counter -> sell and save offline",
+        "second closed-browser offline restart preserves real proceeds and consumed flower"
+      ],
+      "cache": {
+        "version": "florist-original-20261107-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-original-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-original-preview/::florist-original-20261107-1",
+        "complete": true,
+        "files": 44,
+        "bytes": 4431504,
+        "cacheEntries": 45,
+        "internalBytes": 69,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "webkit": {
+      "engine": "webkit",
+      "errors": [],
+      "steps": [
+        "first gift envelope and letter retained; accept/skip leads into native-art florist; complete graph cached",
+        "whole browser closed, browser offline and server 503; ?visit=florist still opens",
+        "empty real inventory -> flower sea -> harvest -> return original shop -> physically approach counter -> sell and save offline",
+        "second closed-browser offline restart preserves real proceeds and consumed flower"
+      ],
+      "cache": {
+        "version": "florist-original-20261107-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-original-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-original-preview/::florist-original-20261107-1",
+        "complete": true,
+        "files": 44,
+        "bytes": 4431504,
+        "cacheEntries": 45,
+        "internalBytes": 69,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  }
+}

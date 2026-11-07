@@ -1,5 +1,7 @@
 # 曦光庄园：万圣夜的礼物 · V5.0
 
+本轮原画花铺独立样板：[手机直接试玩](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/florist-original-preview/?visit=florist&v=florist-original-20261107-1)。原图使用、分层与验收记录见 [ORIGINAL_FLORIST.md](ORIGINAL_FLORIST.md)。
+
 “你的名字好美，所以我送给你一座庄园。”
 
 Phaser 3 + JavaScript + Vite 的手机竖屏像素庄园。沿用原地图与角色，加入可散步的秘密花园、小屋和分层湖畔风景。没有 NPC、顾客、任务或每日登录要求。

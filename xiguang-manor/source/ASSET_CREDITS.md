@@ -138,3 +138,9 @@
 | LPC Containers | bluecarrot16、Sharm 等；[原页](https://opengameart.org/content/lpc-containers) | CC BY-SA 4.0 | 四种宝箱状态、金属包边、玻璃器皿 |
 
 以上所有作者与上游署名完整保留在 `src/assets/reference/originals/CREDITS-*.txt`，不要只保留表格中的简称。下载地址、原文件哈希、具体许可和改动记录见 `src/assets/reference/SOURCES.json`。组合图集及改编遵守 CC BY-SA 4.0，许可说明见同目录 `LICENSE.md`。玩家可在「庄园手记 → 美术来源与许可」离线查看完整署名。原有美术、代码和音频的许可保持原状。本轮没有新增音效或字体，没有收费素材。
+
+## 原画花铺样板 · 2026-11-07
+
+`src/assets/florist-original/original.jpg` 是用户本轮提供的花铺原画附件，1169×1280，原文件 SHA-256 为 `65894e680b4db173744c68b10af36c483657c911e4f8392a15cfce52109381e0`。手机聊天中收到的实际格式为 JPEG，已逐字节保留并直接作为游戏底图使用，没有重新压缩、重绘家具、生成地砖或替换原画。
+
+作者未提供；使用依据为用户本轮明确要求将此附件制作成本项目场景，不将其宣称为 CC0，也不将它重新许可为 LPC 图集的 CC BY-SA 4.0。原权利归原权利人。六张透明 PNG 是原图的局部裁片，只改变 alpha，RGB 与原图对应区域一致。原图与这些裁片叠合的像素一致性已由制作脚本验证。来源、文件哈希、尺寸和加工方式见同目录 `SOURCE.json`、`layers.json`；轮廓记录见 `regions.json`。本轮没有新增外部素材、音效或字体。
