@@ -1,3 +1,4 @@
+import {flowerTexture} from './flower-art.js';
 import room from './assets/cottage/room.webp';
 import manifest from './assets/cottage/atlas.json';
 import seated from './assets/world/seated.png';
@@ -17,16 +18,16 @@ export const COTTAGE={floorY:338,window:{x:123,y:81,w:187,h:182},fixed:[
 export function preloadCottage(s){
  if(!s.textures.exists('cottage-shell'))s.load.image('cottage-shell',room);
  if(!s.textures.exists('cottage-seated'))s.load.image('cottage-seated',seated);
- for(const name of Object.keys(manifest.frames))if(!s.textures.exists('cottage-'+name))s.load.image('cottage-'+name,cottageImage(name));
+ for(const name of Object.keys(manifest.frames).filter(n=>!n.startsWith('flower-')))if(!s.textures.exists('cottage-'+name))s.load.image('cottage-'+name,cottageImage(name));
 }
 export function installCottage(s){
  const t=s.textures.get('cottage-seated');t.setFilter(1);for(const[id,f]of Object.entries(world.seatedFrames))if(!t.has(id))t.add(id,0,f.x,f.y,f.w,f.h);
- for(const key of ['cottage-shell',...Object.keys(manifest.frames).map(n=>'cottage-'+n)])s.textures.get(key).setFilter(1);
+ for(const key of ['cottage-shell',...Object.keys(manifest.frames).filter(n=>!n.startsWith('flower-')).map(n=>'cottage-'+n)])s.textures.get(key).setFilter(1);
 }
 export function fitCottage(image,type,fixed=null){const f=fixed||HOME.items.find(i=>i.type===type),a=image.texture.getSourceImage();return image.setScale(Math.min(f.w/a.width,f.h/a.height))}
 export function cottageFlowers(s,image,item,bouquet,visible=true){
  if(item.type!=='vase')return;const flowers=bouquet?.flowers||[s.profile.romance.room.bouquet],signature=flowers.join('/');
- if(image.flowerSignature!==signature){image.sprays?.forEach(v=>v.destroy());image.flowerSignature=signature;image.sprays=flowers.map(kind=>s.add.image(0,0,'cottage-flower-'+kind).setOrigin(.5,1))}
+ if(image.flowerSignature!==signature){image.sprays?.forEach(v=>v.destroy());image.flowerSignature=signature;image.sprays=flowers.map(kind=>s.add.image(0,0,flowerTexture(kind)).setOrigin(.5,1))}
  image.sprays.forEach((v,i)=>{const many=flowers.length>1,w=many?16:26;v.setScale(w/v.width).setPosition(item.x+(many?(i-1)*8:0),item.y-38+(i%2?0:2)).setDepth(image.depth+.001+i*.0001).setAlpha(image.alpha).setVisible(visible)});
 }
 export const cottageWindow=(x,y)=>x>123&&x<309&&y>136&&y<258||y>82&&y<=136&&((x-216)/88)**2+((y-138)/58)**2<1;

@@ -1,7 +1,7 @@
 import {NATURE} from './nature-config.js';
 import {ROMANCE} from './romantic-config.js';
 const TAU=Math.PI*2,clamp=v=>Math.max(0,Math.min(1,v));
-export function flowerKind(object={}){if(object.color){const rgb=hex=>{const n=parseInt(hex.slice(1),16);return[n>>16&255,n>>8&255,n&255]},c=rgb(object.color);return ROMANCE.flowers.map(f=>({id:f.id,d:rgb(f.color).reduce((s,v,i)=>s+(v-c[i])**2,0)})).sort((a,b)=>a.d-b.d)[0].id}return ROMANCE.flowers[Math.abs(Math.round((object.x||0)*13+(object.y||0)*7))%4].id}
+export function flowerKind(object={}){if(object.color){const rgb=hex=>{const n=parseInt(hex.slice(1),16);return[n>>16&255,n>>8&255,n&255]},c=rgb(object.color);return ROMANCE.flowers.map(f=>({id:f.id,d:rgb(f.color).reduce((s,v,i)=>s+(v-c[i])**2,0)})).sort((a,b)=>a.d-b.d)[0].id}return ROMANCE.flowers[Math.abs(Math.round((object.x||0)*13+(object.y||0)*7))%ROMANCE.flowers.length].id}
 export class FlowerPickupEffects{
  constructor(){this.pool=Array.from({length:NATURE.flowerPool},()=>({active:false}));this.serial=0;this.low=false;this.still=false}
  emit(kind,x,y,target=null){const spec=NATURE.flowers[kind];if(!spec)return null;const b=this.pool.find(b=>!b.active)||this.pool.reduce((a,b)=>a.age>b.age?a:b);Object.assign(b,{active:true,kind,x,y,tx:target?.x??x,ty:target?.y??y-24,age:0,life:spec.duration,seed:(++this.serial)*2.39996});return b}
@@ -16,6 +16,17 @@ export class FlowerPickupEffects{
     for(let i=0;i<count/2;i++){const a=i*2.4+b.seed,x=b.x+Math.cos(a)*(5+n*23),y=b.y-16-Math.sin(a)*10-b.age*10+n*n*24;rect(x,y,1,3,spec.light,fade*.8);rect(x-1,y+2,3,1,spec.color,fade*.5)}
    }else if(b.kind==='aster'){
     for(let i=0;i<(this.low?5:8);i++){const a=i*TAU/8+b.seed+b.age*2.8,r=7+n*27,x=b.x+Math.cos(a)*r,y=b.y-12-b.age*13+Math.sin(a)*r*.6;rect(x-2,y,5,1,spec.color,fade*.85);rect(x,y-2,1,5,spec.color,fade*.85);rect(x,y,1,1,spec.light,fade);for(let k=1;k<4;k++){const lag=a-k*.13;rect(b.x+Math.cos(lag)*r,b.y-12-b.age*13+Math.sin(lag)*r*.6,1,1,spec.color,fade*(1-k/4)*.5)}}
+   }else if(spec.pattern){
+    for(let i=0;i<count/2;i++){const a=i*2.399+b.seed,r=6+n*25,drift=b.age*12;let x=b.x+Math.cos(a)*r,y=b.y-drift+Math.sin(a)*r*.45;
+     if(spec.pattern==='spiral'){x=b.x+Math.cos(a+b.age*2)*(3+n*17);y=b.y-drift-i*2;rect(x,y,2,3,spec.color,fade*.8)}
+     else if(spec.pattern==='rays'){const q=a+b.age*.25;x=b.x+Math.cos(q)*r;y=b.y-8+Math.sin(q)*r*.55;rect(x,y,2,2,spec.light,fade);rect(x+Math.cos(q)*3,y+Math.sin(q)*2,2,2,spec.color,fade*.7)}
+     else if(spec.pattern==='cups'){x+=Math.sin(b.age*2+i)*4;rect(x-2,y-2,2,4,spec.color,fade*.8);rect(x+1,y-3,2,4,spec.light,fade*.7)}
+     else if(spec.pattern==='daisies'){x+=b.age*9;rect(x-2,y,5,1,spec.color,fade*.8);rect(x,y-2,1,5,spec.color,fade*.8);rect(x,y,1,1,spec.light,fade)}
+     else if(spec.pattern==='clusters'){x=b.x+Math.cos(a)*r*.7;y=b.y-8-drift+Math.sin(a)*r*.5;for(let k=0;k<3;k++)rect(x+k%2*3,y+Math.floor(k/2)*3,2,2,k===1?spec.light:spec.color,fade*.75)}
+     else if(spec.pattern==='bloom'){const q=a+b.age*.5;rect(b.x+Math.cos(q)*r,b.y-8+Math.sin(q)*r*.55,3,2,spec.color,fade*.8);rect(b.x+Math.cos(q)*r*.65,b.y-8+Math.sin(q)*r*.35,2,2,spec.light,fade*.65)}
+     else if(spec.pattern==='helix'){x=b.x+Math.sin(b.age*3+i*.6)*(6+n*13);y=b.y-i*3-drift;rect(x,y,2,2,spec.color,fade*.85);rect(b.x-(x-b.x),y+2,1,2,spec.light,fade*.6)}
+     else{y-=i*1.5;rect(x-1,y,3,1,spec.color,fade*.8);rect(x,y-1,1,3,spec.light,fade*.8)}
+    }
    }else{
     for(let i=0;i<count;i++){const a=i*2.4+b.seed,x=b.x+Math.cos(a)*(5+n*25)+Math.sin(b.age*3+i)*5,y=b.y-n*(34+i%4*8)+Math.sin(a)*5,shine=(.4+.6*Math.sin(b.age*3+i)**2)*fade;rect(x-2,y-1,5,3,spec.light,shine*.07);rect(x,y,1,2,i%3?spec.light:spec.color,shine);rect(x-Math.sin(a)*2,y+5,1,1,spec.color,shine*.3)}
    }

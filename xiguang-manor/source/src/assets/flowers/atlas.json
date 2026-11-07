@@ -1,0 +1,132 @@
+{
+  "sources": [
+    {
+      "file": "source.png",
+      "sha256": "202f0150bef5e3cbe1bea7562f0b8bfaa4d7026c2b8781ccfccca65eb91d200d",
+      "pixels": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "soft-flowers-source.png",
+      "sha256": "c08393a9d500213c99402655a71a3bb56a592f078423f91eca85d30800ddcce7",
+      "pixels": [
+        2172,
+        724
+      ]
+    }
+  ],
+  "origin": "Original botanical pixel artwork created for this project using the built-in image tool; no third-party download; not represented as CC0.",
+  "preparation": "Cell cropping and alpha normalization only. Visible RGB source pixels retained. Lossless WebP verified pixel-for-pixel.",
+  "frames": {
+    "tulip": {
+      "file": "tulip.webp",
+      "width": 429,
+      "height": 440,
+      "source": "source.png",
+      "crop": [
+        22,
+        20,
+        451,
+        460
+      ]
+    },
+    "daisy": {
+      "file": "daisy.webp",
+      "width": 381,
+      "height": 437,
+      "source": "source.png",
+      "crop": [
+        554,
+        18,
+        935,
+        455
+      ]
+    },
+    "hydrangea": {
+      "file": "hydrangea.webp",
+      "width": 452,
+      "height": 436,
+      "source": "source.png",
+      "crop": [
+        1060,
+        23,
+        1512,
+        459
+      ]
+    },
+    "peony": {
+      "file": "peony.webp",
+      "width": 440,
+      "height": 460,
+      "source": "source.png",
+      "crop": [
+        15,
+        525,
+        455,
+        985
+      ]
+    },
+    "iris": {
+      "file": "iris.webp",
+      "width": 412,
+      "height": 473,
+      "source": "source.png",
+      "crop": [
+        542,
+        514,
+        954,
+        987
+      ]
+    },
+    "cosmos": {
+      "file": "cosmos.webp",
+      "width": 458,
+      "height": 470,
+      "source": "source.png",
+      "crop": [
+        1047,
+        517,
+        1505,
+        987
+      ]
+    },
+    "lily": {
+      "file": "lily.webp",
+      "width": 533,
+      "height": 646,
+      "source": "soft-flowers-source.png",
+      "crop": [
+        74,
+        33,
+        607,
+        679
+      ]
+    },
+    "aster": {
+      "file": "aster.webp",
+      "width": 578,
+      "height": 634,
+      "source": "soft-flowers-source.png",
+      "crop": [
+        786,
+        43,
+        1364,
+        677
+      ]
+    },
+    "glow": {
+      "file": "glow.webp",
+      "width": 560,
+      "height": 628,
+      "source": "soft-flowers-source.png",
+      "crop": [
+        1525,
+        50,
+        2085,
+        678
+      ]
+    }
+  }
+}

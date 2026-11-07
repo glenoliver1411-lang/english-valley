@@ -1,0 +1,58 @@
+{
+  "release": "manor-flowers-20261107-1",
+  "unit": {
+    "passed": 108,
+    "failed": 0
+  },
+  "physicalIPhoneTested": false,
+  "browser": {
+    "chromium": {
+      "engine": "chromium",
+      "steps": [
+        "old save quantities preserved; actual world walking/harvesting now puts lavender and sunflower into sale inventory",
+        "all twelve actual flower images are selectable and each harvest enters independent stock plus a permanent discovery",
+        "touching opaque pixels on the actual cosmos plant picks cosmos directly, without opening a generic menu",
+        "new hydrangea sells for its configured price without losing discovery; three real flowers wrap into a saved mixed bouquet and appear as three real sprites in the home vase",
+        "peony is really planted, watered, shown with its own mature plant sprite, harvested as three flowers, and recorded in the twelve-flower book",
+        "small-screen reload retains old goods, all twelve discoveries, new stocks, planted state and mixed home bouquet"
+      ],
+      "errors": [],
+      "growth": "Browser Date advanced by 61 seconds after actual watering; not a claim of waiting one minute in wall time."
+    },
+    "webkit": {
+      "engine": "webkit",
+      "steps": [
+        "old save quantities preserved; actual world walking/harvesting now puts lavender and sunflower into sale inventory",
+        "all twelve actual flower images are selectable and each harvest enters independent stock plus a permanent discovery",
+        "walking to a real cosmos plant and using its nearby interaction picks cosmos directly",
+        "new hydrangea sells for its configured price without losing discovery; three real flowers wrap into a saved mixed bouquet and appear as three real sprites in the home vase",
+        "peony is really planted, watered, shown with its own mature plant sprite, harvested as three flowers, and recorded in the twelve-flower book",
+        "small-screen reload retains old goods, all twelve discoveries, new stocks, planted state and mixed home bouquet"
+      ],
+      "errors": [],
+      "growth": "Browser Date advanced by 61 seconds after actual watering; not a claim of waiting one minute in wall time."
+    }
+  },
+  "offline": {
+    "steps": [
+      "complete release cached online, entire browser closed, restarted with browser offline and server503; flowers entry link works",
+      "all twelve actual flower images and new pickup effects work offline; every species enters independent stock and the discovery book",
+      "saved mature peony bed really harvests three new flowers by touch while offline (mature timestamp was a test fixture)",
+      "offline hydrangea sale, real three-flower wrapping and placing the mixed bouquet in the home retain all original old goods",
+      "second whole-browser offline restart preserves all twelve discoveries, exact remaining stocks, home arrangement and all original progress"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "manor-flowers-20261107-1",
+      "scope": "http://localhost:4188/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4188/english-valley/xiguang-manor/::manor-flowers-20261107-1",
+      "complete": true,
+      "files": 129,
+      "bytes": 30794609,
+      "cacheEntries": 130,
+      "internalBytes": 66,
+      "missing": [],
+      "missingDetails": []
+    }
+  }
+}

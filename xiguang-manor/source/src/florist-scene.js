@@ -1,3 +1,4 @@
+import {preloadFlowers,installFlowers} from './flower-art.js';
 import {EquipmentLayer} from './equipment-layer.js';
 import Phaser from 'phaser';
 import {controls} from './game.js';
@@ -7,9 +8,9 @@ import {FLORIST as F,floristBlocked,floristRoute,frontAt} from './florist-layout
 
 export class FloristScene extends Phaser.Scene{
  constructor(profile,api){super('florist');this.profile=profile;this.api=api}
- preload(){preloadFlorist(this)}
+ preload(){preloadFlorist(this);preloadFlowers(this)}
  create(){
-  if(!floristArtReady(this)){this.api.failed();return}
+  if(!floristArtReady(this)||!installFlowers(this)){this.api.failed();return}
   this.target=null;this.path=[];this.selected=null;this.facing=0;this.overview=false;this.entering=true;this.canvasRestored=false;
   const game=this.sys.game;this.previousPixelScale=game.manorPixelScale||1;
   const oldHeight=this.scale.gameSize.height/this.previousPixelScale;

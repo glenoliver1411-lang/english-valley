@@ -1,3 +1,4 @@
+import {FLOWERS} from './flower-catalog.js';
 // V4 风景、房间、花园与文字的统一配置；收礼人通过 fmt 的 {name} 修改。
 export const ROMANCE = {
   wander:'去逛逛 · 花海与小屋', photo:'风景拍照', title: '属于你的浪漫世界', version: 'V4.0 · A WORLD THAT BREATHES',
@@ -31,11 +32,6 @@ export const ROMANCE = {
     rainbow: {name:'雨后的彩虹', line:'雨停以后，世界轻轻换了一种颜色。'},
     moon: {name:'湖水里的月亮', line:'月亮落在水里，晚风替它折起细碎的光。'}
   },
-  flowers: [
-    {id:'rose',name:'草莓蔷薇',color:'#e7a5bd',center:'#ffe5b4'},
-    {id:'lily',name:'月光铃兰',color:'#eee1d1',center:'#c4b6d7'},
-    {id:'aster',name:'暮紫星花',color:'#b7a4d4',center:'#f4d3a4'},
-    {id:'glow',name:'曦光萤花',color:'#c5dac0',center:'#fff0bc'}
-  ],
+  flowers:FLOWERS,
   themes:[{id:'rose',name:'草莓晚安',rug:'#c899af',bed:'#e7b1c2'}, {id:'lavender',name:'月光小憩',rug:'#9f91ba',bed:'#beb0d8'}, {id:'cream',name:'奶油清晨',rug:'#c4ad8c',bed:'#ecd2a9'}]
 };

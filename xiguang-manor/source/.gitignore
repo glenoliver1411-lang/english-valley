@@ -52,3 +52,8 @@ __pycache__/
 !src/assets/candy-atelier/*.png
 !src/assets/candy-atelier/*.webp
 !public/candy-scenes-review/**/*.webp
+
+!src/assets/flowers/*.png
+!src/assets/flowers/*.webp
+
+!public/flowers-review/*.webp

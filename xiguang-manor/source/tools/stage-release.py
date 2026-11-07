@@ -28,6 +28,7 @@ if formal_review or args.preview in ('play-preview','v6-art-preview','reference-
   target=site/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(dist/name,target)
  review={'v6-art-preview':'v6-review','play-preview':'play-review','reference-art-preview':'reference-review','florist-original-preview':'florist-review','florist-skill-preview':'florist-skill-review','world-garden-preview':'world-region-review'}.get(args.preview,formal_gallery)
  shutil.copytree(dist/review,site/review,dirs_exist_ok=True)
+ if not args.preview and (dist/'flowers-review').is_dir():shutil.copytree(dist/'flowers-review',site/'flowers-review',dirs_exist_ok=True)
 else:
  for item in dist.iterdir():
   if item.is_dir():shutil.copytree(item,site/item.name,dirs_exist_ok=True)

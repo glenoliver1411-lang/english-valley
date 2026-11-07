@@ -6,3 +6,9 @@
 #toast.flower-toast{top:auto;bottom:130px;left:50%;right:auto;width:max-content;max-width:calc(100% - 40px);padding:7px 12px;font-size:10px;background:#332a42b8;transform:translate(-50%,7px);transition:opacity .25s,transform .25s}#toast.flower-toast.show{transform:translate(-50%,0)}
 
 .retreat-ui a{pointer-events:auto;text-decoration:none}.retreat-actions #retreat-aurora{font-size:10px;padding:7px 10px;color:#d4e5de;background:#303e4bc9;border:1px solid #b7d0c35c;border-radius:3px}.aurora-destination{margin-top:16px;padding-top:12px;border-top:1px solid #bca3b63b}.aurora-destination p{font-size:11px}.aurora-destination a{display:block;text-align:center;text-decoration:none}
+.flower-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.flower-gallery>*{min-height:100px;padding:9px 5px!important;gap:6px!important;background:#f2dfc5!important;color:#4d3654!important;border-radius:8px;box-shadow:0 2px #aa879e;font-size:12px;line-height:1.6;letter-spacing:0}
+.flower-gallery img{display:block;width:62px;height:60px;object-fit:contain;image-rendering:pixelated}
+.flower-gallery span{color:#4d3654;font-weight:600}.flower-gallery small{color:#69536a;opacity:1;font-size:10px;line-height:1.5}
+.flower-gallery .undiscovered-flower{opacity:1}.flower-gallery .undiscovered-flower img{opacity:.38;filter:grayscale(.8)}
+.romantic-card .flower-gallery+button{margin-top:10px}

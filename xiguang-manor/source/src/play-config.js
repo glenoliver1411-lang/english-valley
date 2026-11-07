@@ -1,6 +1,7 @@
+import {FLOWERS} from './flower-catalog.js';
 // 本轮玩法、价格、尺寸、规则与文案集中在这里；角色名字沿用 config.js。
 export const PLAY={
- flowers:[{id:'rose',name:'晚风玫瑰',price:2,color:'#dda4bd'},{id:'lily',name:'奶油百合',price:2,color:'#eee1ba'},{id:'aster',name:'雾紫星花',price:3,color:'#bca4d4'},{id:'glow',name:'月光铃兰',price:4,color:'#a9d6ca'}],
+ flowers:FLOWERS,
  wraps:[{id:'cream',name:'奶油花笺',bonus:3,color:'#e8cfac'},{id:'rose',name:'草莓来信',bonus:5,color:'#deb0be'},{id:'night',name:'星夜丝带',bonus:7,color:'#9790b8'}],
  goods:[
   {type:'berryLamp',name:'草莓小台灯',price:18,desc:'磨砂草莓灯罩、黄铜灯座。轻触点亮一角暖光。',w:34,h:49,footW:24,footH:14,action:'light'},

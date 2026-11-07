@@ -1,3 +1,4 @@
+import {FLOWERS} from './flower-catalog.js';
 import {HOME} from './home-config.js';
 export const furniture=type=>HOME.items.find(item=>item.type===type);
 export const roomDefaults=()=>({wallpaper:'original',floor:'original',bouquet:'rose',items:HOME.defaults.map(item=>({flip:false,on:false,...item}))});
@@ -22,7 +23,7 @@ export function putFurniture(room,item){if(!furniture(item.type)||!canPlace(room
 export function sanitizeRoom(raw){
  const d=roomDefaults();if(!raw||typeof raw!=='object')return d;
  if(HOME.walls.some(v=>v.id===raw.wallpaper))d.wallpaper=raw.wallpaper;if(HOME.floors.some(v=>v.id===raw.floor))d.floor=raw.floor;
- if(['rose','lily','aster','glow'].includes(raw.bouquet))d.bouquet=raw.bouquet;
+ if(FLOWERS.some(f=>f.id===raw.bouquet))d.bouquet=raw.bouquet;
  if(Array.isArray(raw.items)){d.items=[];for(const item of raw.items.slice(0,50)){if(!item||!furniture(item.type)||d.items.some(i=>i.type===item.type))continue;putFurniture(d,item);if(d.items.length===HOME.maxItems)break}}
  return d;
 }
