@@ -1,0 +1,193 @@
+{
+  "release": "manor-noflash-20261107-1",
+  "physicalIPhoneTested": false,
+  "browsers": {
+    "chromium": {
+      "engine": "chromium",
+      "forcedCanvas": false,
+      "passes": [
+        "fresh letter and skip, delayed new-map assets",
+        "returning player and skip",
+        "round trip: shop",
+        "round trip: cabin",
+        "round trip: garden",
+        "round trip: meadow",
+        "round trip: lake",
+        "forced stale visibility restore still cannot render the legacy map",
+        "small-screen resize",
+        "startup CSS gives destination/time buttons explicit dark ink on cream, including iOS text-fill and small-screen touch targets"
+      ],
+      "renderCalls": [
+        {
+          "frames": 106,
+          "legacy": []
+        },
+        {
+          "frames": 61,
+          "legacy": []
+        },
+        {
+          "frames": 95,
+          "legacy": []
+        },
+        {
+          "frames": 153,
+          "legacy": []
+        },
+        {
+          "frames": 177,
+          "legacy": []
+        },
+        {
+          "frames": 200,
+          "legacy": []
+        },
+        {
+          "frames": 228,
+          "legacy": []
+        },
+        {
+          "frames": 232,
+          "legacy": []
+        },
+        {
+          "frames": 256,
+          "legacy": []
+        }
+      ],
+      "errors": [],
+      "menu": {
+        "color": "rgb(77, 54, 84)",
+        "fill": "rgb(77, 54, 84)",
+        "background": "rgb(244, 225, 199)",
+        "size": "15px",
+        "height": 50
+      }
+    },
+    "webkit": {
+      "engine": "webkit",
+      "forcedCanvas": false,
+      "passes": [
+        "fresh letter and skip, delayed new-map assets",
+        "returning player and skip",
+        "round trip: shop",
+        "round trip: cabin",
+        "round trip: garden",
+        "round trip: meadow",
+        "round trip: lake",
+        "forced stale visibility restore still cannot render the legacy map",
+        "small-screen resize",
+        "startup CSS gives destination/time buttons explicit dark ink on cream, including iOS text-fill and small-screen touch targets"
+      ],
+      "renderCalls": [
+        {
+          "frames": 28,
+          "legacy": []
+        },
+        {
+          "frames": 16,
+          "legacy": []
+        },
+        {
+          "frames": 26,
+          "legacy": []
+        },
+        {
+          "frames": 41,
+          "legacy": []
+        },
+        {
+          "frames": 48,
+          "legacy": []
+        },
+        {
+          "frames": 55,
+          "legacy": []
+        },
+        {
+          "frames": 64,
+          "legacy": []
+        },
+        {
+          "frames": 68,
+          "legacy": []
+        },
+        {
+          "frames": 96,
+          "legacy": []
+        }
+      ],
+      "errors": [],
+      "menu": {
+        "color": "rgb(77, 54, 84)",
+        "fill": "rgb(77, 54, 84)",
+        "background": "rgb(244, 225, 199)",
+        "size": "15px",
+        "height": 50
+      }
+    },
+    "chromium-canvas": {
+      "engine": "chromium",
+      "forcedCanvas": true,
+      "passes": [
+        "fresh letter and skip, delayed new-map assets",
+        "returning player and skip",
+        "round trip: shop",
+        "round trip: cabin",
+        "round trip: garden",
+        "round trip: meadow",
+        "round trip: lake",
+        "forced stale visibility restore still cannot render the legacy map",
+        "small-screen resize"
+      ],
+      "renderCalls": [
+        {
+          "frames": 135,
+          "legacy": []
+        },
+        {
+          "frames": 49,
+          "legacy": []
+        },
+        {
+          "frames": 90,
+          "legacy": []
+        },
+        {
+          "frames": 135,
+          "legacy": []
+        },
+        {
+          "frames": 154,
+          "legacy": []
+        },
+        {
+          "frames": 174,
+          "legacy": []
+        },
+        {
+          "frames": 198,
+          "legacy": []
+        },
+        {
+          "frames": 219,
+          "legacy": []
+        },
+        {
+          "frames": 332,
+          "legacy": []
+        }
+      ],
+      "errors": []
+    }
+  },
+  "cache": {
+    "steps": [
+      "actual previous formal worker serves cached old HTML for the old v link",
+      "new build link bypasses that old HTML cache without clearing save; new page does not falsely claim the old resource set as its own offline version",
+      "explicit save-and-update activates the complete new version and keeps the old progress",
+      "closed-browser offline restart using the new build link works; new candy art and three actual cooking rounds load from cache"
+    ],
+    "errors": []
+  }
+}

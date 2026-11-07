@@ -32,7 +32,7 @@ const manifest=[...unique.values()];
 // retain stale CacheStorage.match results after a failed install/re-register;
 // accepting those would skip downloads that the actual release cache lacks.
 const precache=new PrecacheController({cacheName:CACHE,plugins:[{cachedResponseWillBeUsed:async({request,cacheName})=>{const response=await(await caches.open(cacheName)).match(request);return response?.ok?response:null}}]});precache.addToCacheList(manifest);
-registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^visit$/, /^light$/, /^v$/, /^reload$/, /^renderer$/, /^return$/, /^from$/, /^retry$/, /^utm_/, /^fbclid$/]}));
+registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^visit$/, /^light$/, /^v$/, /^build$/, /^reload$/, /^renderer$/, /^return$/, /^from$/, /^retry$/, /^utm_/, /^fbclid$/]}));
 self.addEventListener('install',event=>event.waitUntil(precache.install(event)));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{await precache.activate(event);const cache=await caches.open(CACHE);await cache.put(MARK,new Response(JSON.stringify({version:VERSION,activatedAt:Date.now()}),{headers:{'Content-Type':'application/json'}}))})()));
 clientsClaim();

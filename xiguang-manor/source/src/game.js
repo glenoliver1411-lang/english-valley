@@ -16,10 +16,12 @@ import {AT} from './adventure-config.js';
 import {registerWardrobe,outfitKey} from './wardrobe-art.js';
 import {mapHit,closeDecoration} from './world-touch.js';
 import {CONFIG,T,fmt} from './config.js';
+import {hideBackend,detachLegacyMap} from './backend-render.js';
 import {grow,quest} from './save.js';
 export const controls={x:0,y:0};
 export class Manor extends Phaser.Scene {
  constructor(data,api){super('manor');this.dataSave=data;this.api=api;this.ready=false;this.locked=true;this.room=false;this.target=null;this.elapsedSave=0;this.facing=0}
+ init(){hideBackend(this)}
  preload(){
   this.failedAssets=new Map();this.assetAttempts=0;
   this.load.on('progress',p=>bootStatus('assets',.15+p*.65));
@@ -53,7 +55,7 @@ export class Manor extends Phaser.Scene {
   this.input.on('pointerdown',p=>{if(!this.locked&&!this.room&&!this.observing&&!this.exploring){const hit=mapHit(this,p.worldX,p.worldY);if(hit){this.api.touch?.(hit);return}this.target={x:Phaser.Math.Clamp(p.worldX,22,410),y:Phaser.Math.Clamp(p.worldY,185,802)};this.ripple(p.worldX,p.worldY)}});
   this.nightVeil=this.add.rectangle(216,425,432,850,0x181c38,.20).setDepth(200).setVisible(false);
   this.stars=Array.from({length:20},(_,i)=>{let s=this.add.rectangle((i*83)%430,175+(i*73)%620,2,2,0xffe4b2,.6).setDepth(5);this.tweens.add({targets:s,alpha:.05,y:s.y-12,duration:1800+i*67,yoyo:true,repeat:-1});this.world.add(s);return s});
-  this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(30);addRomanticEntrances(this);this.environment=new MapEnvironment(this,this.dataSave,this.api);this.treeOcclusion=new TreeOcclusion(this);this.events.once('shutdown',()=>this.treeOcclusion.destroy());this.ready=true;this.refresh();this.api.ready(this);bootStatus('ready',1);
+  this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(30);addRomanticEntrances(this);this.environment=new MapEnvironment(this,this.dataSave,this.api);this.treeOcclusion=new TreeOcclusion(this);this.events.once('shutdown',()=>this.treeOcclusion.destroy());detachLegacyMap(this);this.ready=true;this.refresh();this.api.ready(this);bootStatus('ready',1);
  }
  refresh(){if(!this.ready)return;this.magic.forEach((s,i)=>s.setVisible(!this.dataSave.magic.includes(i)));this.plotSprites.forEach((s,i)=>{let p=grow(this.dataSave.plots[i]);s.setVisible(p.state>0);s.setTint(p.state===3?0xffffff:p.state===2?0xa8c4b0:0x8baf90);s.setScale(p.state===3?1.3:.65)});this.api.hud()}
  ripple(x,y){let s=this.add.circle(x,y,6,0xffe3ad,.1).setStrokeStyle(1,0xffe3ad,.7);this.tweens.add({targets:s,scale:3,alpha:0,duration:500,onComplete:()=>s.destroy()})}
