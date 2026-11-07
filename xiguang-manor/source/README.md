@@ -148,3 +148,7 @@ node tests/gift-opening-journey.mjs --webkit
 本轮是全世界规划与首区可玩样板，尚未重制全部区域。规划、素材缺口、存档边界见 [WORLD_PLAN.md](docs/world/WORLD_PLAN.md)，实际交付与浏览器验证见 [WORLD_REMASTER_STAGE1.md](WORLD_REMASTER_STAGE1.md)。从「花径与日常」可选目的地，角色会亲自走到房门；「看全门庭」可概览并轻点目的地。
 
 本地执行 `npm ci`，然后 `npm run dev -- --mode world-preview`；独立发行构建执行 `MANOR_RELEASE=world-garden-20261107-1 npm run build:world:preview`。浏览器访问构建对应的 `/english-valley/xiguang-manor/world-garden-preview/`。使用 `?visit=legacy` 可回到保留的旧主地图。图集再处理：`python tools/pack-world-art.py`；只裁切与整理透明度，不重绘生成源图。
+
+### 新庄园与小屋互动正式版
+
+已接入原正式路径：<https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/?v=manor-home-20261107-1>。新门庭为默认地图，花圃/遗迹/随身功能已接回，小屋使用独立高清家具原画，保留旧存档和离线。旧预览不覆盖；原地图可用`?visit=legacy`。修改与限制见[MANOR_HOME_RELEASE.md](MANOR_HOME_RELEASE.md)。

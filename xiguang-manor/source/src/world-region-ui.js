@@ -2,6 +2,7 @@ import {WorldRegionScene} from './world-region-scene.js';
 import {REGION as R} from './world-region-config.js';
 import {writeWorldPose} from './world-navigation.js';
 import {addFlower} from './play-model.js';
+import {grow} from './save.js';
 import './world-region.css';
 const $=s=>document.querySelector(s),button=(id,label,cls='secondary')=>`<button id="${id}" class="${cls}">${label}</button>`;
 export class WorldDistrict{
@@ -20,11 +21,14 @@ export class WorldDistrict{
  tick(canResume){if(this.pending&&canResume)this.enter()}
  resetPosition(){if(this.view){this.view.stopMoving();this.view.player.setPosition(650,1010);this.remember()}}
  interact(){if(this.api.isModal())return;if(this.view?.quiet){this.view.stand();return}const n=this.view?.nearest();if(n)this.action(n)}
- action(n){if(this.api.isModal())return;if(n.kind==='portal'){this.travel(n.destination);return}if(n.kind==='bench'){this.view.sit();return}if(n.kind==='cat'){this.api.cat();return}if(n.kind==='fountain'){this.api.chime();this.card(R.fountain,`<p>${R.fountainLine}</p>${button('district-card-close',R.back)}`);return}if(n.kind==='flower'){
+ action(n){if(this.api.isModal())return;if(n.kind==='portal'){this.travel(n.destination);return}if(n.kind==='bench'){this.view.sit();return}if(n.kind==='cat'){this.api.cat();return}if(n.kind==='fountain'){this.view.waterPulse=this.view.elapsed;this.api.chime();this.api.toast(R.fountainLine);return}if(n.kind==='tree'&&Number.isInteger(n.magicIndex)&&!this.data.magic.includes(n.magicIndex)){const result=this.api.transact(p=>{if(!p.magic.includes(n.magicIndex)){p.magic.push(n.magicIndex);p.candies++}return{found:true}});if(result.ok){this.view.pickup('glow',n);this.api.chime();this.api.toast(R.magicFound)}return}if(n.kind==='tree'||n.kind==='stone'){this.view.pickup(n.kind==='tree'?'rose':'glow',n);this.api.chime();this.api.toast(n.kind==='tree'?R.treeLine:R.stoneLine);return}if(n.kind==='plot'){
+   let stage;const result=this.api.transact(p=>{const plot=grow(p.plots[n.index]);stage=plot.state;if(stage===0)plot.state=1;else if(stage===1){plot.state=2;plot.wateredAt=Date.now()}else if(stage===3){addFlower(p,['rose','lily','aster','glow'][n.index],2);p.plots[n.index]={state:0,wateredAt:0}}return{stage}});
+   if(result.ok){this.view.pickup(stage===1?'lily':['rose','lily','aster','glow'][n.index],n);this.api.chime();this.api.toast(R.plotDone[stage]);this.view.refreshPlots()}else this.api.toast('浏览器暂时不能保存，花圃保留原来的样子。');return
+  }if(n.kind==='flower'){
    const result=this.api.transact(p=>{if(Date.now()-p.play.harvestAt<1200)return{ok:false,reason:'cooldown'};addFlower(p,n.flower,1);p.play.harvestAt=Date.now();return{flower:n.flower}});
    if(result.ok){this.view.pickup(n.flower,n);this.api.chime();this.api.toast(R.picked)}else this.api.toast(result.reason==='cooldown'?R.cooldown:'浏览器暂时不能保存，花朵还留在花枝上。');
   }}
  card(title,body){const tools=$('#district-tools');if(tools)tools.open=false;this.api.show(`<article class="card district-card"><button class="scenery-close" id="district-card-x" aria-label="关闭">×</button><span class="eyebrow">${R.title}</span><h2>${title}</h2>${body}</article>`,'district-modal');$('#district-card-x').onclick=this.api.close;if($('#district-card-close'))$('#district-card-close').onclick=this.api.close}
- destinations(){this.card(R.map,`<p>门庭里的房门与花径，都可以亲自走过去。</p><div class="district-destinations">${R.routes.map(([id,t])=>`<button data-district-way="${id}">${t}</button>`).join('')}</div><p class="district-note">这里通往现有可玩场景；森林、果园与山顶的高清区域仍在总体规划中。</p>`);for(const b of document.querySelectorAll('[data-district-way]'))b.onclick=()=>{this.api.close();this.view.approach(b.dataset.districtWay)}}
- lighting(){this.card(R.light,`<p>在门庭看一段喜欢的光。预览光照不会改写旧存档的庄园时钟。</p><div class="district-destinations">${R.periods.map(p=>`<button data-district-period="${p.id}">${p.name}</button>`).join('')}</div>`);for(const b of document.querySelectorAll('[data-district-period]'))b.onclick=()=>{this.selectedLight=b.dataset.districtPeriod;this.api.close();$('#district-light').textContent=R.light+' · '+this.period().name}}
+ destinations(){this.card(R.map,`<p>房门、花圃与花径，都可以亲自走过去。</p><div class="district-destinations">${R.routes.map(([id,t])=>`<button data-district-way="${id}">${t}</button>`).join('')}${['wardrobe','collection','skills'].map((id,i)=>`<button data-district-pocket="${id}">${['换装与装备','宝物收藏','探索技能'][i]}</button>`).join('')}</div>`);for(const b of document.querySelectorAll('[data-district-way]'))b.onclick=()=>{this.api.close();this.view.approach(b.dataset.districtWay)};for(const b of document.querySelectorAll('[data-district-pocket]'))b.onclick=()=>this.api[b.dataset.districtPocket]()}
+ lighting(){this.card(R.light,`<p>选一段喜欢的庄园时光。门庭与小屋会一起换上相应的光。</p><div class="district-destinations">${R.periods.map(p=>`<button data-district-period="${p.id}">${p.name}</button>`).join('')}</div>`);for(const b of document.querySelectorAll('[data-district-period]'))b.onclick=()=>{this.data.scenery.clock=R.periods.find(p=>p.id===b.dataset.districtPeriod).hour;this.selectedLight=null;this.api.save();this.api.close();$('#district-light').textContent=R.light+' · '+this.period().name}}
 }

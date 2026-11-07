@@ -1,0 +1,151 @@
+{
+  "chromium": {
+    "engine": "chromium",
+    "steps": [
+      "default URL restores the existing save into the new manor, with no visit query",
+      "walk to real planter, seed, water, wait actual 18-second growth, harvest two flowers to existing stock",
+      "physical ruins entrance starts the existing expedition; safe pause returns to the new manor without fake settlement",
+      "wardrobe is directly reachable from the default manor",
+      "actual touch on illustrated tea table walks to it and brews saved tea",
+      "catalog uses new PNG items; piano actually places, saves, and exposes playable keys",
+      "floor/wall materials and original furniture flip/placement controls remain functional",
+      "front-facing chair pose remains stable through eight samples and stands back onto clear floor",
+      "actual bed rest switches the retained game clock to night and changes local room lighting",
+      "three cabin round trips keep a stable texture count and correct camera density",
+      "reload preserves original clothes, relics, cat name, new flower stock, live expedition and room layout"
+    ],
+    "errors": [],
+    "textureCounts": [
+      86,
+      86,
+      86
+    ]
+  },
+  "webkit": {
+    "engine": "webkit",
+    "steps": [
+      "default URL restores the existing save into the new manor, with no visit query",
+      "walk to real planter, seed, water, wait actual 18-second growth, harvest two flowers to existing stock",
+      "physical ruins entrance starts the existing expedition; safe pause returns to the new manor without fake settlement",
+      "wardrobe is directly reachable from the default manor",
+      "actual touch on illustrated tea table walks to it and brews saved tea",
+      "catalog uses new PNG items; piano actually places, saves, and exposes playable keys",
+      "floor/wall materials and original furniture flip/placement controls remain functional",
+      "front-facing chair pose remains stable through eight samples and stands back onto clear floor",
+      "fixed sofa has a front-facing stable seated actor and matching original-art foreground crop",
+      "actual bed rest switches the retained game clock to night and changes local room lighting",
+      "three cabin round trips keep a stable texture count and correct camera density",
+      "reload preserves original clothes, relics, cat name, new flower stock, live expedition and room layout"
+    ],
+    "errors": [],
+    "textureCounts": [
+      86,
+      86,
+      86
+    ]
+  },
+  "artLayers": {
+    "engine": "webkit",
+    "flowers": [
+      "cottage-flower-rose",
+      "cottage-flower-lily",
+      "cottage-flower-aster"
+    ],
+    "textureCounts": [
+      92,
+      92,
+      92
+    ],
+    "verified": [
+      "actual saved mixed bouquet shown with three independent flower PNGs",
+      "curtain opens by choosing its original-pixel open/closed state",
+      "candles extinguish with an actual unlit sprite",
+      "real parquet/wallpaper textures, no repeated tile seams",
+      "three final-art cabin visits do not accumulate textures",
+      "original magic candy is collected once at its new tree, without duplicate rewards"
+    ],
+    "errors": []
+  },
+  "update": {
+    "steps": [
+      "fixture 0 installed completely at formal scope and opens the new default manor",
+      "final release downloads in background while furniture editing stays active; no automatic refresh",
+      "player-approved update from the default manor saves and reloads with every old field and furniture change intact",
+      "choosing morning in the final manor also sets the existing clock used by the cabin"
+    ],
+    "errors": [],
+    "fixture": "Same new manor features in two real production builds; synthetic version 0 -> final release 1, not the pre-PWA public site.",
+    "cache": {
+      "version": "manor-home-20261107-1",
+      "scope": "http://localhost:4178/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/::manor-home-20261107-1",
+      "complete": true,
+      "files": 94,
+      "bytes": 23716741,
+      "cacheEntries": 95,
+      "internalBytes": 63,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "chromiumOffline": {
+    "engine": "chromium",
+    "steps": [
+      "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+      "entire browser process closed then reopened offline; test server also returns 503",
+      "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+      "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+      "existing offline candy crafting still works through all three heat rounds",
+      "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+      "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+      "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+      "offline JSON backup includes new gameplay fields"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "manor-home-20261107-1",
+      "scope": "http://localhost:4178/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/::manor-home-20261107-1",
+      "complete": true,
+      "files": 94,
+      "bytes": 22208791,
+      "cacheEntries": 95,
+      "internalBytes": 63,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "webkitOffline": {
+    "engine": "webkit",
+    "steps": [
+      "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+      "entire browser process closed then reopened offline; test server also returns 503",
+      "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+      "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+      "existing offline candy crafting still works through all three heat rounds",
+      "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+      "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+      "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+      "offline JSON backup includes new gameplay fields"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "manor-home-20261107-1",
+      "scope": "http://localhost:4178/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/::manor-home-20261107-1",
+      "complete": true,
+      "files": 94,
+      "bytes": 22208791,
+      "cacheEntries": 95,
+      "internalBytes": 63,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "finalReleaseManifest": {
+    "version": "manor-home-20261107-1",
+    "files": 94,
+    "bytes": 23716802
+  },
+  "notes": "Real browser mobile emulation, controlled test profiles; not a physical iPhone benchmark. Main operation journeys precede final material/state-art derivatives. Offline/update reports retain their actual build bytes; final release manifest is separate. Public-site final smoke runs after deployment."
+}

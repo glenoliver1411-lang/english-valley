@@ -8,6 +8,7 @@ import {preloadWorldRegion,installWorldRegion,regionSprite,regionWindow} from '.
 import {worldNavigation,readWorldPose} from './world-navigation.js';
 import map from './assets/world/rose-court.json';
 import {FlowerPickupEffects} from './flower-effects.js';
+import {grow} from './save.js';
 
 const color=(a,b,t)=>{const A=Phaser.Display.Color.IntegerToColor(a),B=Phaser.Display.Color.IntegerToColor(b),c=Phaser.Display.Color.Interpolate.ColorWithColor(A,B,1,t);return Phaser.Display.Color.GetColor(c.r,c.g,c.b)};
 export class WorldRegionScene extends Phaser.Scene{
@@ -18,7 +19,7 @@ export class WorldRegionScene extends Phaser.Scene{
   this.releaseViewport=portraitViewport(this);this.nav=worldNavigation(map);this.elapsed=0;this.target=null;this.path=[];this.selected=null;this.facing=0;this.quiet=false;this.overview=false;
   const pose=this.api.returnPoint||readWorldPose(),start=pose&&!this.nav.blocked(pose.x,pose.y)?pose:map.spawn;
   this.ground=this.add.image(0,0,'world-hd-terrain').setOrigin(0).setScale(map.terrain.scale).setDepth(-1000);
-  this.nodes=map.objects.map(o=>{const sprite=regionSprite(this,o);let shadow;if(['building','tree'].includes(o.kind))shadow=this.add.image(o.x+13,o.y+7,sprite.texture.key,o.frame).setOrigin(.5,1).setScale(sprite.scaleX,sprite.scaleX*.13).setAngle(-17).setTint(0x294732).setAlpha(.16).setDepth(-990);const emission=o.kind==='building'?regionWindow(this,o):null;return{o,sprite,shadow,emission,scale:sprite.scaleX}});
+  this.nodes=map.objects.map(o=>{const sprite=regionSprite(this,o);let shadow;if(['building','tree'].includes(o.kind))shadow=this.add.image(o.x+13,o.y+7,sprite.texture.key,o.frame).setOrigin(.5,1).setScale(sprite.scaleX,sprite.scaleX*.13).setAngle(-17).setTint(0x294732).setAlpha(.16).setDepth(-990);const emission=o.kind==='building'?regionWindow(this,o):null;return{o,sprite,shadow,emission,scale:sprite.scaleX}});this.refreshPlots();
   this.contact=this.add.ellipse(start.x,start.y+4,31,9,0x354631,.24).setDepth(-2);
   this.player=this.add.sprite(start.x,start.y,outfitKey(this.profile),0).setOrigin(.5,.85).setScale(2).setDepth(start.y+.1);
   this.cat=this.add.image(820,1530,'cat').setScale(1.7).setDepth(1530);
@@ -46,7 +47,8 @@ export class WorldRegionScene extends Phaser.Scene{
  stopMoving(){this.target=null;this.path=[];this.selected=null;controls.x=controls.y=0;this.idle()}
  walkTo(p,selected=null){if(this.quiet)this.stand();if(this.overview)this.setOverview(false);const route=this.nav.route(this.player,p);this.stopMoving();if(!route.length){this.api.toast(R.roadBlocked);return false}this.target=route.shift();this.path=route;this.selected=selected;return true}
  approach(item){const p=typeof item==='string'?map.interactions.find(v=>v.id===item):item;if(p)this.walkTo(p.stand,p)}
- nearest(){if(this.quiet||this.overview)return null;const p=this.player;if(Math.hypot(p.x-this.cat.x,p.y-this.cat.y)<80)return{id:'cat',kind:'cat',title:'摸摸小猫'};return map.interactions.map(v=>({...v,d:Math.hypot(p.x-v.stand.x,p.y-v.stand.y)})).filter(v=>v.d<87).sort((a,b)=>a.d-b.d)[0]||null}
+ nearest(){if(this.quiet||this.overview)return null;const p=this.player;if(Math.hypot(p.x-this.cat.x,p.y-this.cat.y)<80)return{id:'cat',kind:'cat',title:'摸摸小猫'};return map.interactions.map(v=>({...v,title:v.kind==='plot'?R.plotLabels[grow(this.profile.plots[v.index]).state]:v.title,d:Math.hypot(p.x-v.stand.x,p.y-v.stand.y)})).filter(v=>v.d<87).sort((a,b)=>a.d-b.d)[0]||null}
+ refreshPlots(){for(const n of this.nodes.filter(n=>n.o.kind==='plot')){const stage=grow(this.profile.plots[n.o.index]).state;if(n.stage===stage)continue;n.stage=stage;n.sprite.setTexture(stage===0?'world-hd-planter-empty':'world-hd-planter');const image=n.sprite.texture.getSourceImage();n.sprite.setScale(n.o.width/image.width);n.growth?.destroy();n.growth=null;if(stage>=2)n.growth=regionSprite(this,{frame:['rose','daisies','hydrangea','lavender'][n.o.index],x:n.o.x,y:n.o.y-32,width:stage===3?110:46}).setDepth(n.o.y+.02)}}
  sit(){this.stopMoving();this.seatReturn={x:this.player.x,y:this.player.y};this.quiet=true;this.player.setPosition(930,1594);this.idle();this.api.near(null);this.api.seated(true)}
  stand(){if(!this.quiet)return;this.quiet=false;this.player.setPosition(this.seatReturn.x,this.seatReturn.y);this.idle();this.api.seated(false)}
  pickup(kind,point){this.pickups.emit(kind,point.x,point.y-35,{x:this.player.x+12,y:this.player.y-38})}
@@ -69,8 +71,8 @@ export class WorldRegionScene extends Phaser.Scene{
   const still=this.profile.romance.reducedMotion,low=this.profile.scenery.lowEffects;
   for(const n of this.nodes)if(n.o.wind!==undefined)n.sprite.rotation=still?0:(Math.sin(this.elapsed*.51+n.o.wind)*.003+Math.sin(this.elapsed*.87+n.o.wind*3)*.002)*(n.o.kind==='tree'?.6:1);
   if(!still){const follow=this.profile.romance.catFollow||this.profile.play.equipment.companion==='catbell',q=follow?{x:this.player.x+58,y:this.player.y+22}:{x:855+Math.sin(this.elapsed*.12)*85,y:1515+Math.sin(this.elapsed*.19)*35},step=Math.min(1,this.dt*.6);const x=this.cat.x+(q.x-this.cat.x)*step,y=this.cat.y+(q.y-this.cat.y)*step;if(!this.blocked(x,y))this.cat.setPosition(x,y)}this.cat.setDepth(this.cat.y+.01);
-  if(Math.floor(this.elapsed*(low?3:10))!==this.waterFrame){this.waterFrame=Math.floor(this.elapsed*(low?3:10));this.water.clear();if(!still)for(let i=0;i<3;i++){const age=(this.elapsed*.4+i/3)%1;this.water.lineStyle(1,0xffedc3,(1-age)*.35);this.water.strokeEllipse(930,1213+age*12,15+age*100,3+age*17)}}
-  this.updateLighting();if(!this.quiet)this.api.near(this.nearest());this.api.position(this.player);
+  if(Math.floor(this.elapsed*(low?3:10))!==this.waterFrame){this.waterFrame=Math.floor(this.elapsed*(low?3:10));this.water.clear();if(!still){const touched=this.elapsed-(this.waterPulse??-100)<3,count=touched&&!low?5:3;for(let i=0;i<count;i++){const age=(this.elapsed*.4+i/count)%1;this.water.lineStyle(1,0xffedc3,(1-age)*.35);this.water.strokeEllipse(930,1213+age*12,15+age*100,3+age*17)}}}
+  this.updateLighting();if(Math.floor(this.elapsed*2)!==this.plotTick){this.plotTick=Math.floor(this.elapsed*2);this.refreshPlots()}if(!this.quiet)this.api.near(this.nearest());this.api.position(this.player);
   this.pickups.update(this.dt,{reduced:low,still});const g=this.pickupGraphics;g.clear();this.pickups.draw((x,y,w,h,c,a)=>{g.fillStyle(parseInt(c.slice(1),16),a);g.fillRect(Math.round(x),Math.round(y),w*2,h*2)});
  }
 }

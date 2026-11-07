@@ -1,0 +1,500 @@
+{
+  "frames": {
+    "bed": {
+      "file": "bed.png",
+      "width": 339,
+      "height": 400,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        41,
+        9,
+        380,
+        409
+      ]
+    },
+    "sofa": {
+      "file": "sofa.png",
+      "width": 387,
+      "height": 309,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        433,
+        75,
+        820,
+        384
+      ]
+    },
+    "wardrobe": {
+      "file": "wardrobe.png",
+      "width": 273,
+      "height": 404,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        911,
+        5,
+        1184,
+        409
+      ]
+    },
+    "bookcase": {
+      "file": "bookcase.png",
+      "width": 263,
+      "height": 408,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        78,
+        424,
+        341,
+        832
+      ]
+    },
+    "fireplace": {
+      "file": "fireplace.png",
+      "width": 353,
+      "height": 401,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        443,
+        424,
+        796,
+        825
+      ]
+    },
+    "desk": {
+      "file": "desk.png",
+      "width": 367,
+      "height": 371,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        860,
+        445,
+        1227,
+        816
+      ]
+    },
+    "chair": {
+      "file": "chair.png",
+      "width": 304,
+      "height": 391,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        57,
+        851,
+        361,
+        1242
+      ]
+    },
+    "tea": {
+      "file": "tea.png",
+      "width": 327,
+      "height": 389,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        450,
+        853,
+        777,
+        1242
+      ]
+    },
+    "catBed": {
+      "file": "catBed.png",
+      "width": 348,
+      "height": 265,
+      "source": "furniture-source.png",
+      "sourceCrop": [
+        860,
+        930,
+        1208,
+        1195
+      ]
+    },
+    "piano": {
+      "file": "piano.png",
+      "width": 250,
+      "height": 261,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        41,
+        39,
+        291,
+        300
+      ]
+    },
+    "lamp": {
+      "file": "lamp.png",
+      "width": 168,
+      "height": 294,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        393,
+        12,
+        561,
+        306
+      ]
+    },
+    "plant": {
+      "file": "plant.png",
+      "width": 243,
+      "height": 267,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        665,
+        32,
+        908,
+        299
+      ]
+    },
+    "vase": {
+      "file": "vase.png",
+      "width": 142,
+      "height": 301,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        1025,
+        8,
+        1167,
+        309
+      ]
+    },
+    "candles": {
+      "file": "candles.png",
+      "width": 184,
+      "height": 289,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        68,
+        325,
+        252,
+        614
+      ]
+    },
+    "record": {
+      "file": "record.png",
+      "width": 220,
+      "height": 302,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        373,
+        320,
+        593,
+        622
+      ]
+    },
+    "screen": {
+      "file": "screen.png",
+      "width": 271,
+      "height": 294,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        649,
+        320,
+        920,
+        614
+      ]
+    },
+    "cushion": {
+      "file": "cushion.png",
+      "width": 278,
+      "height": 223,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        961,
+        364,
+        1239,
+        587
+      ]
+    },
+    "easel": {
+      "file": "easel.png",
+      "width": 199,
+      "height": 298,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        69,
+        630,
+        268,
+        928
+      ]
+    },
+    "berryLamp": {
+      "file": "berryLamp.png",
+      "width": 172,
+      "height": 270,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        388,
+        643,
+        560,
+        913
+      ]
+    },
+    "starProjector": {
+      "file": "starProjector.png",
+      "width": 159,
+      "height": 299,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        701,
+        641,
+        860,
+        940
+      ]
+    },
+    "laceDrape": {
+      "file": "laceDrape.png",
+      "width": 306,
+      "height": 310,
+      "source": "laceDrape.png + flowerSwing.png source-pixel layers",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "vintageSofa": {
+      "file": "vintageSofa.png",
+      "width": 302,
+      "height": 267,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        12,
+        966,
+        314,
+        1233
+      ]
+    },
+    "flowerSwing": {
+      "file": "flowerSwing.png",
+      "width": 308,
+      "height": 302,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        314,
+        941,
+        622,
+        1243
+      ]
+    },
+    "glassCabinet": {
+      "file": "glassCabinet.png",
+      "width": 251,
+      "height": 310,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        659,
+        940,
+        910,
+        1250
+      ]
+    },
+    "planter": {
+      "file": "planter.png",
+      "width": 293,
+      "height": 186,
+      "source": "decor-source.png",
+      "sourceCrop": [
+        949,
+        1011,
+        1242,
+        1197
+      ]
+    },
+    "rug": {
+      "file": "rug.png",
+      "width": 497,
+      "height": 341,
+      "source": "surfaces-source.png",
+      "sourceCrop": [
+        14,
+        55,
+        511,
+        396
+      ]
+    },
+    "giftClosed": {
+      "file": "giftClosed.png",
+      "width": 272,
+      "height": 271,
+      "source": "surfaces-source.png",
+      "sourceCrop": [
+        572,
+        105,
+        844,
+        376
+      ]
+    },
+    "giftOpen": {
+      "file": "giftOpen.png",
+      "width": 270,
+      "height": 348,
+      "source": "surfaces-source.png",
+      "sourceCrop": [
+        957,
+        35,
+        1227,
+        383
+      ]
+    },
+    "planterEmpty": {
+      "file": "planterEmpty.png",
+      "width": 445,
+      "height": 247,
+      "source": "surfaces-source.png",
+      "sourceCrop": [
+        1312,
+        113,
+        1757,
+        360
+      ]
+    },
+    "herringbone": {
+      "file": "herringbone.png",
+      "width": 854,
+      "height": 848,
+      "source": "surfaces-source.png mirrored painted texture",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "pale": {
+      "file": "pale.png",
+      "width": 850,
+      "height": 848,
+      "source": "surfaces-source.png mirrored painted texture",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "floral": {
+      "file": "floral.png",
+      "width": 424,
+      "height": 424,
+      "source": "surfaces-source.png",
+      "sourceCrop": [
+        899,
+        452,
+        1323,
+        876
+      ]
+    },
+    "gingham": {
+      "file": "gingham.png",
+      "width": 423,
+      "height": 424,
+      "source": "surfaces-source.png",
+      "sourceCrop": [
+        1337,
+        452,
+        1760,
+        876
+      ]
+    },
+    "vaseEmpty": {
+      "file": "vaseEmpty.png",
+      "width": 142,
+      "height": 301,
+      "source": "vase.png",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "laceDrapeClosed": {
+      "file": "laceDrapeClosed.png",
+      "width": 306,
+      "height": 310,
+      "source": "laceDrape.png + flowerSwing.png source-pixel layers",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "candlesOff": {
+      "file": "candlesOff.png",
+      "width": 184,
+      "height": 289,
+      "source": "candles.png",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "flower-rose": {
+      "file": "flower-rose.png",
+      "width": 345,
+      "height": 204,
+      "source": "../world/botanical.png / rose",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "flower-lily": {
+      "file": "flower-lily.png",
+      "width": 359,
+      "height": 165,
+      "source": "../world/botanical.png / daisies",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "flower-aster": {
+      "file": "flower-aster.png",
+      "width": 333,
+      "height": 160,
+      "source": "../world/botanical.png / hydrangea",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "flower-glow": {
+      "file": "flower-glow.png",
+      "width": 337,
+      "height": 188,
+      "source": "../world/botanical.png / lavender",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "flower-lavender": {
+      "file": "flower-lavender.png",
+      "width": 337,
+      "height": 188,
+      "source": "../world/botanical.png / lavender",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    },
+    "flower-sunflower": {
+      "file": "flower-sunflower.png",
+      "width": 331,
+      "height": 202,
+      "source": "../world/botanical.png / sunflower",
+      "operation": "Source pixel crop, alpha mask or spatial rearrangement only; no primitive redraw."
+    }
+  },
+  "sources": [
+    {
+      "file": "furniture-source.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "bytes": 2079670,
+      "sha256": "2382c24d6c02739502ea2e51670ff5f3db1229792d2d4f9acab45241bc30a3c5",
+      "source": "Original output from built-in image tool, 2026-11-07. No commercial screenshot or downloaded third-party asset.",
+      "permission": "Project-generated art; not declared CC0."
+    },
+    {
+      "file": "decor-source.png",
+      "pixels": [
+        1254,
+        1254
+      ],
+      "bytes": 2362220,
+      "sha256": "74ba54d4a7fbf563cbc4e46f468e24286bcb9ab33bea425d2834ec5585f568cf",
+      "source": "Original output from built-in image tool, 2026-11-07. No commercial screenshot or downloaded third-party asset.",
+      "permission": "Project-generated art; not declared CC0."
+    },
+    {
+      "file": "room-source.png",
+      "pixels": [
+        887,
+        1774
+      ],
+      "bytes": 2667183,
+      "sha256": "2851a34845c02f0ee727d2326d6fa0580d1f810e84fffa472e9111af843b4f9d",
+      "source": "Original output from built-in image tool, 2026-11-07. No commercial screenshot or downloaded third-party asset.",
+      "permission": "Project-generated art; not declared CC0."
+    },
+    {
+      "file": "surfaces-source.png",
+      "pixels": [
+        1774,
+        887
+      ],
+      "bytes": 2735160,
+      "sha256": "b1700e579a2342e328d3dd3e218788ba337429a3373dbbf94d4ea44c6a492640",
+      "source": "Original output from built-in image tool, 2026-11-07. No commercial screenshot or downloaded third-party asset.",
+      "permission": "Project-generated art; not declared CC0."
+    }
+  ],
+  "preparation": "Only alpha normalization and source crops, source files unchanged; visible RGB not repainted. Runtime WebP is lossless, verified pixel-for-pixel against PNG crops.",
+  "roomScale": 0.48703494926719276,
+  "roomWorld": [
+    432,
+    850
+  ]
+}

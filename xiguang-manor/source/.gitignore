@@ -43,3 +43,8 @@ __pycache__/
 
 !src/assets/world/*.png
 !public/world-region-review/**/*.png
+
+!src/assets/cottage/*.png
+!public/home-release-review/**/*.webp
+
+!src/assets/cottage/*.webp
