@@ -144,3 +144,13 @@
 `src/assets/florist-original/original.jpg` 是用户本轮提供的花铺原画附件，1169×1280，原文件 SHA-256 为 `65894e680b4db173744c68b10af36c483657c911e4f8392a15cfce52109381e0`。手机聊天中收到的实际格式为 JPEG，已逐字节保留并直接作为游戏底图使用，没有重新压缩、重绘家具、生成地砖或替换原画。
 
 作者未提供；使用依据为用户本轮明确要求将此附件制作成本项目场景，不将其宣称为 CC0，也不将它重新许可为 LPC 图集的 CC BY-SA 4.0。原权利归原权利人。六张透明 PNG 是原图的局部裁片，只改变 alpha，RGB 与原图对应区域一致。原图与这些裁片叠合的像素一致性已由制作脚本验证。来源、文件哈希、尺寸和加工方式见同目录 `SOURCE.json`、`layers.json`；轮廓记录见 `regions.json`。本轮没有新增外部素材、音效或字体。
+
+## 晚风花铺 Skill 附带的高清原画（2026-11-07）
+
+- 名称：`florist_original_concept.png`，1199×1312 RGB PNG，3,303,012 字节。
+- 来源：用户上传的《曦光庄园》美术 Skill ZIP；原路径 `.agents/skills/xiguang-scene-art/assets/florist_original_concept.png`。
+- 作者：用户提供的原创方向生成原画，未提供具名作者；不臆造署名。
+- 授权：用户明确要求在本项目中使用、分层、构建并发布试玩；不是 CC0 声明，不将第三方参考截图作为可分发素材。
+- 修改：游戏 `src/assets/scenes/florist/florist_original_concept.png` 与 ZIP 原文件逐字节相同；六张透明遮挡 PNG 仅裁切并写入 alpha，未重绘 RGB。叠回原图的像素一致性已验证。
+- SHA-256：`3eb12dcd11994bae79eeda031a541a2db7684647e9a91b82dcefde858834a886`。
+- 制作记录：`tools/prepare-florist-skill.py`、`src/assets/scenes/florist/SCENE_PLAN.md`、`SOURCE.json`。本轮没有引入外部图片、外部运行时链接、付费 API 或新 NPC。

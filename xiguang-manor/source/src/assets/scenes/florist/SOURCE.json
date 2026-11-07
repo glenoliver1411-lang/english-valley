@@ -1,0 +1,11 @@
+{
+  "name": "晚风花铺高清原画",
+  "source": "User-uploaded ZIP: .agents/skills/xiguang-scene-art/assets/florist_original_concept.png",
+  "author": "User-provided concept art; no named artist supplied",
+  "permission": "User explicitly authorized integration, modification and public preview in this project; no third-party CC0 claim",
+  "format": "PNG RGB",
+  "width": 1199,
+  "height": 1312,
+  "sha256": "3eb12dcd11994bae79eeda031a541a2db7684647e9a91b82dcefde858834a886",
+  "changes": "Original bytes unchanged. Six cropped PNGs change alpha only; no generated furniture, tiles or painted RGB."
+}

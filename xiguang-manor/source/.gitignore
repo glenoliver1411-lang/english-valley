@@ -38,3 +38,5 @@ __pycache__/
 
 !src/assets/florist-original/*.png
 !public/florist-review/**/*.png
+!src/assets/scenes/florist/*.png
+!public/florist-skill-review/**/*.png

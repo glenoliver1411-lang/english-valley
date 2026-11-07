@@ -1,3 +1,5 @@
+高清原画 Skill 花铺试玩：[手机直接打开](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/florist-skill-preview/?visit=florist&v=florist-skill-20261107-1)。安装、图层与测试见 [FLORIST_SKILL.md](FLORIST_SKILL.md)。
+
 # 曦光庄园：万圣夜的礼物 · V5.0
 
 本轮原画花铺独立样板：[手机直接试玩](https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/florist-original-preview/?visit=florist&v=florist-original-20261107-1)。原图使用、分层与验收记录见 [ORIGINAL_FLORIST.md](ORIGINAL_FLORIST.md)。

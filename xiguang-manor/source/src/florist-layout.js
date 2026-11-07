@@ -1,6 +1,8 @@
-// Native image coordinates, not replacement art. Feet collide with the floor
+// Reference-grid world coordinates, not replacement art. The 1199×1312 PNG
+// uses one uniform scale (1280/1312); never separate X/Y image stretching.
+// Feet collide with the floor
 // and furniture contact polygons; the upper floor and staircase remain scenery.
-export const FLORIST={text:{overview:'看全花铺',follow:'回到身边',loading:'正在走进晚风花铺……',hint:'轻点柜台、花桌或玻璃花罩，也可以用摇杆慢慢逛。',failed:'花铺原画暂未加载完成，请联网后重试。',retry:'重新打开花铺',meadow:'去花海采花'},actorScale:3,width:1169,height:1280,speed:200,spawn:{x:509,y:1123},
+export const FLORIST={text:{overview:'看全花铺',follow:'回到身边',loading:'正在走进晚风花铺……',hint:'轻点柜台、花桌或玻璃花罩，也可以用摇杆慢慢逛。',failed:'花铺原画暂未加载完成，请联网后重试。',retry:'重新打开花铺',meadow:'去花海采花'},actorScale:3,width:1199*1280/1312,height:1280,speed:200,spawn:{x:509,y:1123},
  floor:[[293,1080],[162,1002],[570,858],[568,763],[620,746],[718,772],[805,798],[920,768],[1087,815],[1145,855],[1150,1002],[948,1245],[546,1194],[418,1266],[279,1183],[302,1112]],
  obstacles:[
   {id:'counter',points:[[148,824],[508,711],[576,752],[576,873],[230,985],[149,930]]},

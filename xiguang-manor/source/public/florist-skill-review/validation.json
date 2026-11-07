@@ -1,0 +1,156 @@
+{
+  "chromium": {
+    "journey": {
+      "engine": "chromium",
+      "steps": [
+        "real counter touch -> walk -> flower sale, three-flower wrapping, bouquet sale and home display",
+        "continuous movement stays on real floor; front/back of flower table changes occlusion correctly",
+        "375×667 layout, three scene return cycles restore original canvas, constant texture count, all trades survive reload"
+      ],
+      "errors": [],
+      "textureCounts": [
+        51,
+        51,
+        51
+      ]
+    },
+    "entryOffline": {
+      "engine": "chromium",
+      "errors": [],
+      "steps": [
+        "first gift envelope and letter retained; accept/skip leads into native-art florist; complete graph cached",
+        "whole browser closed, browser offline and server 503; ?visit=florist still opens",
+        "empty real inventory -> flower sea -> harvest -> return original shop -> physically approach counter -> sell and save offline",
+        "second closed-browser offline restart preserves real proceeds and consumed flower"
+      ],
+      "cache": {
+        "version": "florist-skill-20261107-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/::florist-skill-20261107-1",
+        "complete": true,
+        "files": 44,
+        "bytes": 7254305,
+        "cacheEntries": 45,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "allScenesOffline": {
+      "engine": "chromium",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "florist-skill-20261107-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/::florist-skill-20261107-1",
+        "complete": true,
+        "files": 44,
+        "bytes": 7254305,
+        "cacheEntries": 45,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  },
+  "webkit": {
+    "journey": {
+      "engine": "webkit",
+      "steps": [
+        "real counter touch -> walk -> flower sale, three-flower wrapping, bouquet sale and home display",
+        "continuous movement stays on real floor; front/back of flower table changes occlusion correctly",
+        "375×667 layout, three scene return cycles restore original canvas, constant texture count, all trades survive reload"
+      ],
+      "errors": [],
+      "textureCounts": [
+        51,
+        51,
+        51
+      ]
+    },
+    "entryOffline": {
+      "engine": "webkit",
+      "errors": [],
+      "steps": [
+        "first gift envelope and letter retained; accept/skip leads into native-art florist; complete graph cached",
+        "whole browser closed, browser offline and server 503; ?visit=florist still opens",
+        "empty real inventory -> flower sea -> harvest -> return original shop -> physically approach counter -> sell and save offline",
+        "second closed-browser offline restart preserves real proceeds and consumed flower"
+      ],
+      "cache": {
+        "version": "florist-skill-20261107-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/::florist-skill-20261107-1",
+        "complete": true,
+        "files": 44,
+        "bytes": 7254305,
+        "cacheEntries": 45,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "allScenesOffline": {
+      "engine": "webkit",
+      "steps": [
+        "fresh legacy v1 migrated; discovered flowers do not mint stock; complete new production graph cached before any lazy visit",
+        "entire browser process closed then reopened offline; test server also returns 503",
+        "first offline flower sea and florist: harvest 7 real flowers, sell 1, wrap/sell 3, display 3 at home, buy permanent lamp",
+        "first offline cabin: all 12 old furniture remain free; paid PNG lamp really placed and saved",
+        "existing offline candy crafting still works through all three heat rounds",
+        "first offline ruins: real touch walk + animated chest, temporary bag only, reload/resume same seed, walk physical exit and settle once",
+        "independent aurora page, cached new equipment sprites and return to flower sea work offline",
+        "second closed-browser offline restart preserves new flower stock/bouquets/furniture/settlement and all old profile fields",
+        "offline JSON backup includes new gameplay fields"
+      ],
+      "errors": [],
+      "cache": {
+        "version": "florist-skill-20261107-1",
+        "scope": "http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/",
+        "cache": "xiguang-precache::http://localhost:4178/english-valley/xiguang-manor/florist-skill-preview/::florist-skill-20261107-1",
+        "complete": true,
+        "files": 44,
+        "bytes": 7254305,
+        "cacheEntries": 45,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  },
+  "actualRenderer": {
+    "viewport": [
+      375,
+      667
+    ],
+    "source": [
+      1199,
+      1312
+    ],
+    "scale": [
+      0.975609756097561,
+      0.975609756097561
+    ],
+    "display": [
+      1169.7560975609756,
+      1280
+    ],
+    "overflow": false,
+    "playerFeet": [
+      803,
+      1091
+    ],
+    "foregrounds": 6
+  }
+}

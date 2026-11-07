@@ -14,7 +14,7 @@ const saved=()=>p.evaluate(k=>JSON.parse(localStorage.getItem(k)),key);
 async function ready(){await p.click('#skip-return',{timeout:45000});await p.waitForSelector('#world-wander');await p.waitForFunction(()=>!document.querySelector('.device').classList.contains('returning'))}
 async function go(id){await p.click('#world-wander');await p.click('#world-'+id);await p.waitForSelector(id==='shop'?'#shop-make':id==='florist'?'#leave-florist':'#leave-retreat')}
 async function audit(){return p.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration(location.href),ch=new MessageChannel();return new Promise(resolve=>{ch.port1.onmessage=e=>resolve(e.data);r.active.postMessage({type:'PWA_STATUS'},[ch.port2])})})}
-async function shot(id){await mkdir('public/play-review',{recursive:true});await p.screenshot({path:`public/play-review/${name}-offline-${id}.png`})}
+async function shot(id){const dir=process.env.PLAY_SCREENSHOT_DIR||'public/play-review';await mkdir(dir,{recursive:true});await p.screenshot({path:`${dir}/${name}-offline-${id}.png`})}
 async function tapInitialRuins(x,y){const r=await p.locator('#game canvas').boundingBox(),h=await p.locator('#game canvas').evaluate(c=>c.height),scroll=1920-h;await p.touchscreen.tap(r.x+x/432*r.width,r.y+(y-scroll)/h*r.height)}
 try{
  await admin(false);await launch(false);const old=fresh();delete old.play;Object.assign(old,{accepted:true,completed:true,stage:5,candies:8,catName:'奶盖',favorite:'lavender'});old.adventure.inventory={oldkey:2,crown:1,rosepin:1,ghostlamp:1,catbell:1};old.adventure.activeRelic='ghostlamp';old.wardrobe.owned.push('cocoa');old.wardrobe.equipped='cocoa';old.romance.flowers=['rose'];old.romance.weather='rain';
