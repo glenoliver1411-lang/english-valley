@@ -1,0 +1,32 @@
+[
+  {
+    "source": "architecture.png",
+    "output": "architecture.webp",
+    "sourceBytes": 2267732,
+    "bytes": 1635070,
+    "width": 1536,
+    "height": 1024,
+    "sourceSha256": "03e017900cd1ef93b93fc600a0d9ea4136b84438d2a62ed07c7b6a6eab63109b",
+    "rgbaIdentical": true
+  },
+  {
+    "source": "botanical.png",
+    "output": "botanical.webp",
+    "sourceBytes": 2139656,
+    "bytes": 1612048,
+    "width": 1536,
+    "height": 1024,
+    "sourceSha256": "5e21af98336696acb299caa35dd90dd6f840330ed7600a3077497497c7a4db51",
+    "rgbaIdentical": true
+  },
+  {
+    "source": "architecture-light.png",
+    "output": "architecture-light.webp",
+    "sourceBytes": 268965,
+    "bytes": 190478,
+    "width": 1536,
+    "height": 1024,
+    "sourceSha256": "7780a4e4eedc18be6d8d987e3d44f131d93a7e921f829c6aa50499428c2ebc4d",
+    "rgbaIdentical": true
+  }
+]

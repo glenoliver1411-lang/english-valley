@@ -1,5 +1,6 @@
 import {earlyGift} from './early-gift.js';
 import {BOOT as B} from './boot-config.js';
+import {preloadWorldBackdrop} from './world-backdrop-preload.js';
 const root=document.querySelector('#manor-loading'),message=document.querySelector('#boot-message'),bar=document.querySelector('#boot-progress'),actions=root.querySelector('.boot-actions');
 let ready=false,failed=false,giftVisible=false;
 const recovery=phase=>{root.hidden=false;message.textContent=B[phase]||B.failed;actions.hidden=false};
@@ -19,4 +20,4 @@ window.addEventListener('error',fail);window.addEventListener('unhandledrejectio
 earlyGift();
 // Let the existing gift paint before parsing the world, while starting the real
 // engine immediately afterwards. The free-control metric still includes it.
-requestAnimationFrame(()=>setTimeout(()=>import('./main.js').catch(fail),0));
+requestAnimationFrame(()=>setTimeout(()=>{preloadWorldBackdrop();import('./main.js').catch(fail)},0));

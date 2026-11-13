@@ -15,7 +15,7 @@ import {worldActor,daylightBorders,updateBorders,updateDaylightCat} from './dayl
 const color=(a,b,t)=>{const A=Phaser.Display.Color.IntegerToColor(a),B=Phaser.Display.Color.IntegerToColor(b),c=Phaser.Display.Color.Interpolate.ColorWithColor(A,B,1,t);return Phaser.Display.Color.GetColor(c.r,c.g,c.b)};
 export class WorldRegionScene extends Phaser.Scene{
  constructor(profile,api){super('world-region');this.profile=profile;this.api=api}
- preload(){preloadWorldRegion(this)}
+ preload(){this.load.on('progress',p=>this.api.progress?.(p));preloadWorldRegion(this)}
  create(){
   if(!installWorldRegion(this)){this.api.failed();return}
   this.releaseViewport=portraitViewport(this);this.nav=worldNavigation(map);this.elapsed=0;this.target=null;this.path=[];this.selected=null;this.facing=0;this.quiet=false;this.overview=false;

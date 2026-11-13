@@ -61,3 +61,4 @@ __pycache__/
 !src/assets/daylight/*.png
 !src/assets/daylight/*.webp
 !public/daylight-review/**/*.webp
+!src/assets/world/*.webp

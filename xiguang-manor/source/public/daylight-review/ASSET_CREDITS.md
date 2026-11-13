@@ -187,3 +187,7 @@
 `src/assets/daylight/`四张源PNG为本轮内置图像工具的原创输出：晨光纯地形、分离树干/树冠与低矮植物、小曦原服装16帧、小猫12帧。设计参考本项目已获用户认可的原花铺/角色，未采样商业游戏截图，没有第三方下载或外部付费API，不声明CC0；按平台输出使用条款用于本项目。原始尺寸、SHA-256与裁片坐标见`atlas.json`，四张源PNG原样保留。
 
 `tools/prepare-daylight.py`只做alpha整理、原像素裁切、人物/猫咪最近邻归一化与无损WebP编码。9张运行资源均为本地导入，逐像素验证编码结果；不使用几何图形重画主体。现有用户花铺原画、LPC与CC0资源继续保留各自来源/完整作者/许可；没有把旧素材重新许可为本轮生成素材。
+
+## 白天主世界加载优化（2026-11-13）
+
+原`world/architecture.png`、`botanical.png`及`architecture-light.png`保留，运行改为无损WebP。没有缩小尺寸、减少颜色或重新绘制。`tools/pack-world-webp.py`逐像素检查完整RGBA一致，来源哈希与体积记录在`src/assets/world/transport.json`；现有来源与许可保持原样。三项合计减少1,238,757字节，不新增外部素材。

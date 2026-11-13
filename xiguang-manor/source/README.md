@@ -156,3 +156,5 @@ node tests/gift-opening-journey.mjs --webkit
 ### 白天主世界统一样板（2026-11-13）
 
 独立试玩目录`daylight-preview/`，正式版和既有预览保留。源码构建：`MANOR_RELEASE=daylight-20261113-1 npm run build:daylight:preview`。真实前后对比在新预览的`daylight-review/`，当前完成范围与素材许可见[DAYLIGHT_STAGE1.md](DAYLIGHT_STAGE1.md)，全地图后续路线见[ROADMAP_20261113.md](docs/world/ROADMAP_20261113.md)。
+
+白天预览加载修正`daylight-fast-20261113-1`：同目录新版入口`daylight-preview/?fast=20261113-1`，三张图集无损压缩、首屏/离线流量分阶段及后台限并发。真实测试方法和范围见[DAYLIGHT_LOADING.md](DAYLIGHT_LOADING.md)，手机报告在新预览`daylight-review/loading.html`。

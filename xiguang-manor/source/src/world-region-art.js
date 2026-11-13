@@ -1,10 +1,10 @@
 import {preloadFlowers,installFlowers,flowerSprite} from './flower-art.js';
 import emptyPlanter from './assets/cottage/planterEmpty.webp';
 import planter from './assets/cottage/planter.webp';
-import architecture from './assets/world/architecture.png';
-import botanical from './assets/world/botanical.png';
+import architecture from './assets/world/architecture.webp';
+import botanical from './assets/world/botanical.webp';
 import {daylightTerrain as terrain,preloadDaylight,installDaylight,daylightTree} from './daylight-art.js';
-import light from './assets/world/architecture-light.png';
+import light from './assets/world/architecture-light.webp';
 import seated from './assets/world/seated.png';
 import metadata from './assets/world/atlas.json';
 export function preloadWorldRegion(scene){preloadFlowers(scene);preloadDaylight(scene);for(const[key,url]of[['planter-empty',emptyPlanter],['planter',planter],['architecture',architecture],['botanical',botanical],['terrain',terrain],['light',light],['seated',seated]])if(!scene.textures.exists('world-hd-'+key))scene.load.image('world-hd-'+key,url)}

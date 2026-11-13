@@ -22,6 +22,7 @@ THE SOFTWARE.
 import {PrecacheController,PrecacheRoute} from 'workbox-precaching';
 import {registerRoute} from 'workbox-routing';
 import {clientsClaim} from 'workbox-core';
+import {precacheTraffic} from './precache-traffic.js';
 self.__WB_DISABLE_DEV_LOGS=true;
 const VERSION=__APP_VERSION__,SCOPE=self.registration.scope,PREFIX='xiguang-precache::'+SCOPE+'::',CACHE=PREFIX+VERSION,MARK=new URL('__offline_version__',SCOPE).href;
 const entries=self.__WB_MANIFEST;
@@ -31,8 +32,8 @@ const manifest=[...unique.values()];
 // Use the same explicit Cache handle for routing and auditing. Safari can
 // retain stale CacheStorage.match results after a failed install/re-register;
 // accepting those would skip downloads that the actual release cache lacks.
-const precache=new PrecacheController({cacheName:CACHE,plugins:[{cachedResponseWillBeUsed:async({request,cacheName})=>{const response=await(await caches.open(cacheName)).match(request);return response?.ok?response:null}}]});precache.addToCacheList(manifest);
-registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^visit$/, /^light$/, /^v$/, /^build$/, /^flowers$/, /^reload$/, /^renderer$/, /^return$/, /^from$/, /^retry$/, /^utm_/, /^fbclid$/]}));
+const precache=new PrecacheController({cacheName:CACHE,plugins:[precacheTraffic(2),{cachedResponseWillBeUsed:async({request,cacheName})=>{const response=await(await caches.open(cacheName)).match(request);return response?.ok?response:null}}]});precache.addToCacheList(manifest);
+registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^visit$/, /^light$/, /^v$/, /^fast$/, /^build$/, /^flowers$/, /^reload$/, /^renderer$/, /^return$/, /^from$/, /^retry$/, /^utm_/, /^fbclid$/]}));
 self.addEventListener('install',event=>event.waitUntil(precache.install(event)));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{await precache.activate(event);const cache=await caches.open(CACHE);await cache.put(MARK,new Response(JSON.stringify({version:VERSION,activatedAt:Date.now()}),{headers:{'Content-Type':'application/json'}}))})()));
 clientsClaim();

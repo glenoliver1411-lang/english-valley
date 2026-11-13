@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import {writeFile,mkdir} from 'node:fs/promises';
 import {fresh} from '../src/save.js';
 const resultDir=process.env.PWA_RESULTS_DIR||'verification/pwa-results';await mkdir(resultDir,{recursive:true});
-const engine=process.argv.includes('--webkit')?webkit:chromium,name=engine.name(),origin='http://localhost:4174',scope=origin+'/english-valley/xiguang-manor/experience-preview/',key='xiguang-manor-v1',steps=[];
+const engine=process.argv.includes('--webkit')?webkit:chromium,name=engine.name(),origin=process.env.PWA_ORIGIN||'http://localhost:4174',scope=origin+(process.env.PWA_PATH||'/english-valley/xiguang-manor/experience-preview/'),key='xiguang-manor-v1',steps=[];
 const admin=async params=>{assert.equal((await fetch(origin+'/__test?'+new URLSearchParams(params))).ok,true)};
 const b=await engine.launch({headless:true,...(engine===webkit?{executablePath:process.env.WEBKIT_PORTABLE_BIN}:{args:['--no-sandbox']})});let c,p;
 const open=async raw=>{c=await b.newContext({...devices[engine===webkit?'iPhone 13':'Pixel 7'],viewport:{width:390,height:844}});p=await c.newPage();p.setDefaultTimeout(30000);p.on('console',m=>{if(m.type()==='error')console.log('BROWSER',m.text())});p.on('dialog',d=>d.accept());await p.addInitScript(({key,raw,scope})=>{if(!localStorage.getItem(key))localStorage.setItem(key,raw);localStorage.setItem('xiguang-pocket:'+scope+':snooze',String(Date.now()+86400000))},{key,raw,scope});await p.goto(scope)};
-const panel=async()=>{await p.click('#journal');await p.click('#pocket-journal');await p.waitForSelector('#pocket-state')};
+const panel=async()=>{await p.waitForFunction(()=>!document.querySelector('.device.returning'));await p.click('#journal');await p.click('#pocket-journal');await p.waitForSelector('#pocket-state')};
 try{
  const seed={...fresh(),accepted:true,candies:29,catName:'奶盖',favorite:'lavender'};
  await admin({release:'a',offline:'0',fail:'candy-ui-'});await open(JSON.stringify(seed));await p.click('#skip-return');await panel();await p.waitForFunction(()=>/未能/.test(document.querySelector('#pocket-state')?.textContent),null,{timeout:60000});assert.notEqual(await p.evaluate(()=>document.documentElement.dataset.offlineReady),'true');assert.equal(await p.locator('#toast').textContent()==='庄园已经准备好，可以离线游玩',false);assert.equal(JSON.parse(await p.evaluate(k=>localStorage.getItem(k),key)).candies,29);steps.push('503 on a never-visited lazy candy chunk rejects whole install; no offline-ready claim or save reset');
