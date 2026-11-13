@@ -152,3 +152,7 @@ node tests/gift-opening-journey.mjs --webkit
 ### 新庄园与小屋互动正式版
 
 已接入原正式路径：<https://glenoliver1411-lang.github.io/english-valley/xiguang-manor/?v=manor-home-20261107-2>。新门庭为默认地图，花圃/遗迹/随身功能已接回，小屋使用独立高清家具原画，保留旧存档和离线。旧预览不覆盖；原地图可用`?visit=legacy`。修改与限制见[MANOR_HOME_RELEASE.md](MANOR_HOME_RELEASE.md)。
+
+### 白天主世界统一样板（2026-11-13）
+
+独立试玩目录`daylight-preview/`，正式版和既有预览保留。源码构建：`MANOR_RELEASE=daylight-20261113-1 npm run build:daylight:preview`。真实前后对比在新预览的`daylight-review/`，当前完成范围与素材许可见[DAYLIGHT_STAGE1.md](DAYLIGHT_STAGE1.md)，全地图后续路线见[ROADMAP_20261113.md](docs/world/ROADMAP_20261113.md)。

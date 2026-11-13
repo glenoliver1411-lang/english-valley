@@ -57,3 +57,7 @@ __pycache__/
 !src/assets/flowers/*.webp
 
 !public/flowers-review/*.webp
+
+!src/assets/daylight/*.png
+!src/assets/daylight/*.webp
+!public/daylight-review/**/*.webp

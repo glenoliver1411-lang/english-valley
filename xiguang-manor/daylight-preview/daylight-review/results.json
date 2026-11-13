@@ -1,0 +1,216 @@
+{
+  "chromium": {
+    "browser": "chromium",
+    "steps": [
+      "New native64×80 original-costume sprite is active; old goods unchanged; four trunks stay fixed while independent crowns move",
+      "Actual keyboard movement plays four correct directional cycles; crown remains above the head and lantern follows the hand",
+      "Bench remains stable through eight samples; standing returns to correct detailed sheet without flicker",
+      "A flower actually harvested in new world enters existing12-species shop and sells exactly once at unchanged price",
+      "Repeated room visits do not duplicate textures; an owned alternate costume still equips for free and keeps its original design",
+      "375×667 view and UI hiding work; full reload preserves original inventory, equipment, currencies, furniture and new harvest"
+    ],
+    "errors": [],
+    "physicalDevice": false,
+    "walk": [
+      {
+        "facing": 2,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-2",
+        "x": 667.4999999999998,
+        "y": 1010,
+        "head": 934.5999755859375,
+        "foot": 1010
+      },
+      {
+        "facing": 1,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-1",
+        "x": 693.7499999999994,
+        "y": 1010,
+        "head": 934.5999755859375,
+        "foot": 1010
+      },
+      {
+        "facing": 3,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-3",
+        "x": 650,
+        "y": 967.1308333333333,
+        "head": 891.7308349609375,
+        "foot": 967.1308333333333
+      },
+      {
+        "facing": 0,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-0",
+        "x": 650,
+        "y": 893.6308333333333,
+        "head": 818.2308349609375,
+        "foot": 893.6308333333333
+      }
+    ],
+    "textureCounts": [
+      116,
+      116,
+      116
+    ]
+  },
+  "webkit": {
+    "browser": "webkit",
+    "steps": [
+      "New native64×80 original-costume sprite is active; old goods unchanged; four trunks stay fixed while independent crowns move",
+      "Actual keyboard movement plays four correct directional cycles; crown remains above the head and lantern follows the hand",
+      "Bench remains stable through eight samples; standing returns to correct detailed sheet without flicker",
+      "A flower actually harvested in new world enters existing12-species shop and sells exactly once at unchanged price",
+      "Repeated room visits do not duplicate textures; an owned alternate costume still equips for free and keeps its original design",
+      "375×667 view and UI hiding work; full reload preserves original inventory, equipment, currencies, furniture and new harvest"
+    ],
+    "errors": [],
+    "physicalDevice": false,
+    "walk": [
+      {
+        "facing": 2,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-2",
+        "x": 676.2499999999997,
+        "y": 1010,
+        "head": 934.5999755859375,
+        "foot": 1010
+      },
+      {
+        "facing": 1,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-1",
+        "x": 667.4999999999998,
+        "y": 1010,
+        "head": 934.5999755859375,
+        "foot": 1010
+      },
+      {
+        "facing": 3,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-3",
+        "x": 644.1666666666667,
+        "y": 983.7500000000003,
+        "head": 908.3499755859375,
+        "foot": 983.7500000000003
+      },
+      {
+        "facing": 0,
+        "key": "daylight-xiaoxi",
+        "animation": "daylight-walk-0",
+        "x": 644.1666666666667,
+        "y": 1010.9858333333339,
+        "head": 935.5858154296875,
+        "foot": 1010.9858333333339
+      }
+    ],
+    "textureCounts": [
+      116,
+      116,
+      116
+    ]
+  },
+  "offline": {
+    "browser": "Chromium",
+    "errors": [],
+    "steps": [
+      "Complete scoped release cached; whole browser closed and reopened offline while fixture returns503; new world, trees, character and cat render",
+      "Offline12-species stock, rose sale, actual mixed bouquet and home display preserve unchanged transaction rules",
+      "Offline candy workshop completes actual stirring and three heat rounds, saving3 candies made",
+      "Offline meadow harvesting and independent aurora page work and return to the new map",
+      "Offline ruins open and suspend the existing expedition without settlement or lost permanent goods",
+      "Second whole-browser offline restart preserves bouquet, exact inventory, candy batch, cat name, furniture and suspended expedition"
+    ],
+    "cache": {
+      "version": "daylight-20261113-1",
+      "scope": "http://localhost:4188/english-valley/xiguang-manor/daylight-preview/",
+      "cache": "xiguang-precache::http://localhost:4188/english-valley/xiguang-manor/daylight-preview/::daylight-20261113-1",
+      "complete": true,
+      "files": 137,
+      "bytes": 30705898,
+      "cacheEntries": 138,
+      "internalBytes": 61,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "before": {
+    "phase": "before",
+    "origin": "http://localhost:5260/english-valley/xiguang-manor/",
+    "fixture": "Identical accepted save, original clothing, clock7.5, reduced motion, 390×844 DPR2; same world position and camera.",
+    "errors": [],
+    "shots": [
+      {
+        "name": "court",
+        "x": 650,
+        "y": 1010,
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "home-gate",
+        "x": 650,
+        "y": 600,
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "flower-arch",
+        "x": 640,
+        "y": 1705,
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "small",
+        "x": 650,
+        "y": 1010,
+        "width": 375,
+        "height": 667
+      }
+    ]
+  },
+  "after": {
+    "phase": "after",
+    "origin": "http://localhost:4189/english-valley/xiguang-manor/daylight-preview/",
+    "fixture": "Identical accepted save, original clothing, clock7.5, reduced motion, 390×844 DPR2; same world position and camera.",
+    "errors": [],
+    "shots": [
+      {
+        "name": "court",
+        "x": 650,
+        "y": 1010,
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "home-gate",
+        "x": 650,
+        "y": 600,
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "flower-arch",
+        "x": 640,
+        "y": 1705,
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "small",
+        "x": 650,
+        "y": 1010,
+        "width": 375,
+        "height": 667
+      }
+    ]
+  },
+  "release": "daylight-20261113-1",
+  "unit": {
+    "passed": 109,
+    "failed": 0
+  },
+  "physicalIPhoneTested": false
+}

@@ -1,0 +1,402 @@
+{
+  "sources": [
+    {
+      "file": "terrain-source.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "754c4ea5f5d488ffca4dd4b56f48d899897236a72a4f703a55b371da0ae932c8",
+      "origin": "Original built-in image-generation output, 2026-11-13; not CC0 or third-party game art"
+    },
+    {
+      "file": "woodland-source.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5c3a0d95eceabcb8627c5b07c280517c1b86d0b1356ccc935a30b2f4382e818a",
+      "origin": "Original built-in image-generation output, 2026-11-13; not CC0 or third-party game art"
+    },
+    {
+      "file": "xiaoxi-source.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "91a474495df41093801cb94a26f1cf08c6053145143550cdcf34cf91aca94f62",
+      "origin": "Original built-in image-generation output, 2026-11-13; not CC0 or third-party game art"
+    },
+    {
+      "file": "cat-source.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "fe8d18d3853f32d12fa50bac4b48b85d22be584401cb57a270ed655490712bfe",
+      "origin": "Original built-in image-generation output, 2026-11-13; not CC0 or third-party game art"
+    }
+  ],
+  "frames": {
+    "oak-canopy": {
+      "source": "woodland-source.png",
+      "cell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "crop": [
+        16,
+        53,
+        504,
+        428
+      ],
+      "width": 488,
+      "height": 375
+    },
+    "oak-trunk": {
+      "source": "woodland-source.png",
+      "cell": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "crop": [
+        30,
+        41,
+        483,
+        475
+      ],
+      "width": 453,
+      "height": 434
+    },
+    "birch-canopy": {
+      "source": "woodland-source.png",
+      "cell": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "crop": [
+        25,
+        17,
+        484,
+        467
+      ],
+      "width": 459,
+      "height": 450
+    },
+    "birch-trunk": {
+      "source": "woodland-source.png",
+      "cell": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "crop": [
+        50,
+        47,
+        436,
+        494
+      ],
+      "width": 386,
+      "height": 447
+    },
+    "fern": {
+      "source": "woodland-source.png",
+      "cell": [
+        0,
+        1024,
+        512,
+        512
+      ],
+      "crop": [
+        26,
+        115,
+        485,
+        404
+      ],
+      "width": 459,
+      "height": 289
+    },
+    "rose-border": {
+      "source": "woodland-source.png",
+      "cell": [
+        512,
+        1024,
+        512,
+        512
+      ],
+      "crop": [
+        18,
+        145,
+        485,
+        393
+      ],
+      "width": 467,
+      "height": 248
+    },
+    "xiaoxi-walk": {
+      "source": "xiaoxi-source.png",
+      "frameWidth": 64,
+      "frameHeight": 80,
+      "columns": 4,
+      "rows": 4,
+      "order": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "foot": [
+        32,
+        68
+      ],
+      "poses": [
+        {
+          "cell": [
+            0,
+            0,
+            314,
+            314
+          ],
+          "crop": [
+            100,
+            31,
+            226,
+            294
+          ]
+        },
+        {
+          "cell": [
+            314,
+            0,
+            627,
+            314
+          ],
+          "crop": [
+            99,
+            31,
+            225,
+            294
+          ]
+        },
+        {
+          "cell": [
+            627,
+            0,
+            940,
+            314
+          ],
+          "crop": [
+            99,
+            31,
+            226,
+            294
+          ]
+        },
+        {
+          "cell": [
+            940,
+            0,
+            1254,
+            314
+          ],
+          "crop": [
+            102,
+            31,
+            226,
+            294
+          ]
+        },
+        {
+          "cell": [
+            0,
+            314,
+            314,
+            627
+          ],
+          "crop": [
+            98,
+            31,
+            225,
+            290
+          ]
+        },
+        {
+          "cell": [
+            314,
+            314,
+            627,
+            627
+          ],
+          "crop": [
+            99,
+            31,
+            224,
+            294
+          ]
+        },
+        {
+          "cell": [
+            627,
+            314,
+            940,
+            627
+          ],
+          "crop": [
+            97,
+            31,
+            225,
+            292
+          ]
+        },
+        {
+          "cell": [
+            940,
+            314,
+            1254,
+            627
+          ],
+          "crop": [
+            100,
+            31,
+            225,
+            292
+          ]
+        },
+        {
+          "cell": [
+            0,
+            627,
+            314,
+            940
+          ],
+          "crop": [
+            96,
+            31,
+            222,
+            291
+          ]
+        },
+        {
+          "cell": [
+            314,
+            627,
+            627,
+            940
+          ],
+          "crop": [
+            97,
+            31,
+            218,
+            292
+          ]
+        },
+        {
+          "cell": [
+            627,
+            627,
+            940,
+            940
+          ],
+          "crop": [
+            96,
+            31,
+            221,
+            292
+          ]
+        },
+        {
+          "cell": [
+            940,
+            627,
+            1254,
+            940
+          ],
+          "crop": [
+            99,
+            31,
+            220,
+            292
+          ]
+        },
+        {
+          "cell": [
+            0,
+            940,
+            314,
+            1254
+          ],
+          "crop": [
+            100,
+            31,
+            226,
+            294
+          ]
+        },
+        {
+          "cell": [
+            314,
+            940,
+            627,
+            1254
+          ],
+          "crop": [
+            99,
+            32,
+            225,
+            295
+          ]
+        },
+        {
+          "cell": [
+            627,
+            940,
+            940,
+            1254
+          ],
+          "crop": [
+            99,
+            31,
+            226,
+            294
+          ]
+        },
+        {
+          "cell": [
+            940,
+            940,
+            1254,
+            1254
+          ],
+          "crop": [
+            100,
+            31,
+            226,
+            295
+          ]
+        }
+      ]
+    },
+    "cat": {
+      "source": "cat-source.png",
+      "frameWidth": 48,
+      "frameHeight": 48,
+      "columns": 4,
+      "rows": 3,
+      "order": [
+        "front",
+        "left",
+        "right",
+        "back"
+      ],
+      "states": [
+        "sit",
+        "walk-a",
+        "walk-b"
+      ],
+      "foot": [
+        24,
+        41
+      ]
+    }
+  },
+  "preparation": "Original pixels retained; alpha matte cleanup, native cell crops, nearest-neighbour character normalization, lossless RGBA-verified WebP. No primitive scenery drawing."
+}

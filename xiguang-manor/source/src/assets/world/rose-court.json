@@ -429,8 +429,8 @@
       "type": "ellipse",
       "x": 60,
       "y": 812,
-      "rx": 20,
-      "ry": 10
+      "rx": 54,
+      "ry": 17
     },
     {
       "id": "tree-foot-1",
@@ -453,16 +453,16 @@
       "type": "ellipse",
       "x": 65,
       "y": 1562,
-      "rx": 20,
-      "ry": 10
+      "rx": 54,
+      "ry": 17
     },
     {
       "id": "tree-foot-4",
       "type": "ellipse",
       "x": 1235,
       "y": 1672,
-      "rx": 20,
-      "ry": 10
+      "rx": 34,
+      "ry": 14
     },
     {
       "id": "tree-foot-5",
@@ -477,8 +477,8 @@
       "type": "ellipse",
       "x": 1210,
       "y": 492,
-      "rx": 20,
-      "ry": 10
+      "rx": 34,
+      "ry": 14
     },
     {
       "id": "tree-foot-7",

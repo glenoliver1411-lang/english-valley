@@ -1,0 +1,65 @@
+[
+  {
+    "file": "birch-canopy.webp",
+    "width": 459,
+    "height": 450,
+    "bytes": 206260,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "birch-trunk.webp",
+    "width": 386,
+    "height": 447,
+    "bytes": 77906,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "cat.webp",
+    "width": 192,
+    "height": 144,
+    "bytes": 18168,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "fern.webp",
+    "width": 459,
+    "height": 289,
+    "bytes": 171626,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "oak-canopy.webp",
+    "width": 488,
+    "height": 375,
+    "bytes": 214504,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "oak-trunk.webp",
+    "width": 453,
+    "height": 434,
+    "bytes": 147128,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "rose-border.webp",
+    "width": 467,
+    "height": 248,
+    "bytes": 157226,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "terrain.webp",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 2210342,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  },
+  {
+    "file": "xiaoxi-walk.webp",
+    "width": 256,
+    "height": 320,
+    "bytes": 47620,
+    "origin": "Original project artwork; technical crop/alpha cleanup only; not CC0"
+  }
+]

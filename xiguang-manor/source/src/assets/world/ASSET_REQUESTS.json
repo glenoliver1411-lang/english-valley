@@ -8,8 +8,12 @@
         2048,
         2048
       ],
-      "state": "missing",
-      "requirements": "石路/泥路/草边/岸线/台阶全套过渡，随机细节不形成方格"
+      "state": "partial",
+      "requirements": "石路/泥路/草边/岸线/台阶全套过渡，随机细节不形成方格",
+      "productionFiles": [
+        "../daylight/terrain.webp"
+      ],
+      "remaining": "New independent daylight terrain painting available; continuous tile transitions still missing."
     },
     {
       "region": "主世界",
@@ -38,8 +42,12 @@
         2048,
         2048
       ],
-      "state": "missing",
-      "requirements": "至少五种花的空地/幼苗/花苞/盛开/采后状态及近中远簇"
+      "state": "partial",
+      "requirements": "至少五种花的空地/幼苗/花苞/盛开/采后状态及近中远簇",
+      "productionFiles": [
+        "../flowers/atlas.json"
+      ],
+      "remaining": "Twelve mature flower types available; multi-stage and near/middle/far clusters remain."
     },
     {
       "region": "花谷",
@@ -68,8 +76,13 @@
         1024,
         1024
       ],
-      "state": "missing",
-      "requirements": "树干、树根、树冠分别透明层，精修细叶边缘"
+      "state": "available",
+      "requirements": "树干、树根、树冠分别透明层，精修细叶边缘",
+      "productionFiles": [
+        "../daylight/oak-trunk.webp",
+        "../daylight/oak-canopy.webp"
+      ],
+      "remaining": "Native split trunk/canopy used in playable court; full forest region not yet built."
     },
     {
       "region": "森林",
@@ -78,8 +91,14 @@
         1536,
         1536
       ],
-      "state": "missing",
-      "requirements": "桦木/杉木/蕨类/树洞/枯木，俯视透视一致"
+      "state": "partial",
+      "requirements": "桦木/杉木/蕨类/树洞/枯木，俯视透视一致",
+      "productionFiles": [
+        "../daylight/birch-trunk.webp",
+        "../daylight/birch-canopy.webp",
+        "../daylight/fern.webp"
+      ],
+      "remaining": "Split birch and fern available; complete forest kit and map remain."
     },
     {
       "region": "森林",
@@ -158,8 +177,12 @@
         1536,
         1536
       ],
-      "state": "missing",
-      "requirements": "无家具墙地底板，窗玻璃/窗框/窗帘分层"
+      "state": "partial",
+      "requirements": "无家具墙地底板，窗玻璃/窗框/窗帘分层",
+      "productionFiles": [
+        "../cottage/room.webp"
+      ],
+      "remaining": "Detailed room exists; baked sunlight requires independent clean plate/light layers."
     },
     {
       "region": "小屋",
@@ -168,8 +191,12 @@
         2048,
         2048
       ],
-      "state": "missing",
-      "requirements": "床/柜/沙发/桌椅/钢琴/灯/花瓶/猫窝；接地阴影、翻转及使用帧"
+      "state": "available",
+      "requirements": "床/柜/沙发/桌椅/钢琴/灯/花瓶/猫窝；接地阴影、翻转及使用帧",
+      "productionFiles": [
+        "../cottage/atlas.json"
+      ],
+      "remaining": "Existing42 prop/material/state crops, including18 placeable furniture types. Do not recreate all furniture unnecessarily."
     },
     {
       "region": "工坊",
@@ -178,8 +205,12 @@
         1536,
         1536
       ],
-      "state": "missing",
-      "requirements": "无家具墙地底板与分层窗灯"
+      "state": "partial",
+      "requirements": "无家具墙地底板与分层窗灯",
+      "productionFiles": [
+        "../candy-atelier/room.webp"
+      ],
+      "remaining": "Detailed room exists; independent period-lighting variants remain."
     },
     {
       "region": "工坊",
@@ -188,8 +219,12 @@
         2048,
         1536
       ],
-      "state": "missing",
-      "requirements": "玻璃柜、罐、剪刀、丝带、烤炉和搅拌操作帧"
+      "state": "partial",
+      "requirements": "玻璃柜、罐、剪刀、丝带、烤炉和搅拌操作帧",
+      "productionFiles": [
+        "../candy-atelier/atlas.json"
+      ],
+      "remaining": "Eight real station sprites available; spoon/syrup/baking animation layers remain."
     },
     {
       "region": "工坊",
@@ -198,8 +233,12 @@
         1024,
         1024
       ],
-      "state": "missing",
-      "requirements": "糖果、配方、结果、包装收藏品级图标"
+      "state": "available",
+      "requirements": "糖果、配方、结果、包装收藏品级图标",
+      "productionFiles": [
+        "../candy-atelier/atlas.json"
+      ],
+      "remaining": "Nine candy images and gift states already integrated."
     },
     {
       "region": "遗迹",
@@ -208,8 +247,13 @@
         2048,
         2048
       ],
-      "state": "missing",
-      "requirements": "三层石材差异、墙体厚度、破损、苔藓、拱门、柱、壁画"
+      "state": "partial",
+      "requirements": "三层石材差异、墙体厚度、破损、苔藓、拱门、柱、壁画",
+      "productionFiles": [
+        "../reference/atlas.json",
+        "../v6/atlas.json"
+      ],
+      "remaining": "Existing licensed stone/floor/chest art retained; coherent detailed three-floor replacement remains."
     },
     {
       "region": "遗迹",
@@ -238,8 +282,12 @@
         256,
         320
       ],
-      "state": "missing",
-      "requirements": "原发型和服装身份的64×80四向各4帧，脚底与装备锚点"
+      "state": "partial",
+      "requirements": "原发型和服装身份的64×80四向各4帧，脚底与装备锚点",
+      "productionFiles": [
+        "../daylight/xiaoxi-walk.webp"
+      ],
+      "remaining": "64x80 original-costume four-way16-frame set integrated in new court; six other costume sheets remain unchanged."
     },
     {
       "region": "角色",
@@ -261,5 +309,7 @@
       "state": "missing",
       "requirements": "同机位材质受光变体，非全屏色层"
     }
-  ]
+  ],
+  "reviewed": "2026-11-13",
+  "note": "States checked against current source. Available art is not the same as a completed region; daylight first sample does not claim forest/lake/ruins remade."
 }
