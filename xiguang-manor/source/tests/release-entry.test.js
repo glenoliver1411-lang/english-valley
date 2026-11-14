@@ -1,25 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {releaseEntryURL,releaseGameURL,consumeReleasePass} from '../src/release-entry-model.js';
+import {releaseEntryURL,releaseGameURL,releaseGameDocument} from '../src/release-entry-model.js';
 const base='/english-valley/xiguang-manor/',version='full-stage1-test';
-test('Release entry uses a new document path instead of an ignored cache-busting parameter',()=>{
- const location=new URL('https://example.com'+base+'?v=old&renderer=canvas#forest-garden');
+test('Each formal release has a unique game document, so an old worker cannot return its cached index',()=>{
+ const location=new URL('https://example.com'+base+'?v=old&ready=stale&renderer=canvas#forest-garden');
  const entry=new URL(releaseEntryURL(location,base));
  assert.equal(entry.pathname,base+'enter-stage1.html');
- assert.equal(entry.hash,'#forest-garden');
  const game=new URL(releaseGameURL(entry,base,version));
- assert.equal(game.pathname,base+'index.html');
+ assert.equal(game.pathname,base+'game-full-stage1-test.html');
  assert.equal(game.searchParams.get('v'),null);
+ assert.equal(game.searchParams.get('ready'),null);
  assert.equal(game.searchParams.get('renderer'),'canvas');
- assert.equal(game.searchParams.get('ready'),version);
  assert.equal(game.hash,'#forest-garden');
+ assert.notEqual(game.pathname,new URL(releaseGameURL(entry,base,'full-stage1-next')).pathname);
 });
-test('Only a matching one-use release pass starts the game and it never changes player data',()=>{
- let result=null;const history={replaceState:(_a,_b,url)=>result=url};
- const location=new URL('https://example.com'+base+'index.html?ready='+version+'&renderer=canvas#forest-garden');
- assert.equal(consumeReleasePass(location,'other-version',history),false);
- assert.equal(result,null);
- assert.equal(consumeReleasePass(location,version,history),true);
- assert.equal(result,base+'index.html?renderer=canvas#forest-garden');
- assert.equal(consumeReleasePass(new URL(result,location),version,history),false);
+test('Preview documents remain unchanged; generated release filenames stay inside their scope',()=>{
+ assert.equal(releaseGameDocument('forest-garden-test'),'index.html');
+ assert.equal(releaseGameDocument('full-stage1-../../bad'),'game-full-stage1-------bad.html');
 });

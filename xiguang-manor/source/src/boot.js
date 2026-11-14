@@ -1,4 +1,3 @@
-import {consumeReleasePass,releaseEntryURL} from './release-entry-model.js';
 import {earlyGift} from './early-gift.js';
 import {BOOT as B} from './boot-config.js';
 import {preloadWorldBackdrop} from './world-backdrop-preload.js';
@@ -18,8 +17,7 @@ const fail=()=>{if(!ready){failed=true;clearTimeout(timeout);recovery('failed')}
 window.addEventListener('error',fail);window.addEventListener('unhandledrejection',fail);
 // Keep this bootstrap independent of the game bundle: a missing or interrupted
 // module download is a recoverable screen, rather than an empty frozen shell.
-const releaseReady=!__APP_VERSION__.startsWith('full-stage1')||consumeReleasePass(location,__APP_VERSION__,history);if(!releaseReady)location.replace(releaseEntryURL(location,import.meta.env.BASE_URL));
-if(releaseReady)earlyGift();
+earlyGift();
 // Let the existing gift paint before parsing the world, while starting the real
 // engine immediately afterwards. The free-control metric still includes it.
-if(releaseReady)requestAnimationFrame(()=>setTimeout(()=>{preloadWorldBackdrop();import('./main.js').catch(fail)},0));
+requestAnimationFrame(()=>setTimeout(()=>{preloadWorldBackdrop();import('./main.js').catch(fail)},0));

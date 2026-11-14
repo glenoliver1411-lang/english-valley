@@ -1,15 +1,16 @@
 {
-  "version": "full-stage1-20261114-2",
-  "description": "Exact old formal cache reproduced, followed by automatic versioned entry and native garden, then full offline browser restart.",
+  "version": "full-stage1-20261114-3",
   "physicalDevice": false,
-  "browsers": {
+  "reason": "Full offline package no longer gates online gameplay",
+  "tests": {
     "chromium": {
       "engine": "chromium",
       "physicalDevice": false,
       "steps": [
-        "Exact old formal offline package installed with legacy outfit, flowers, furniture, wishes and relics",
-        "Reproduced user bug: v parameter serves old cached client and old garden",
-        "One direct release link automatically activates verified complete release and enters native garden, with no journal/update menu required",
+        "Old formal manor-flowers-20261107-1 offline package installed with legacy progress",
+        "Latest native garden starts under the old controller without waiting for a complete new offline package",
+        "Simulated night-art download failure prevents a false offline-ready message but does not block morning gameplay",
+        "Retry downloads the complete package; explicit saved update activates it and preserves the legacy save",
         "After whole-browser close, same direct entry starts offline with server503 and saved progress",
         "Original formal root bookmark also stays on the new client offline; old garden is absent"
       ],
@@ -26,14 +27,16 @@
         "missing": [],
         "missingDetails": []
       },
+      "onlineEntryMs": 2982,
+      "failedNonessentialDownloads": 2,
       "after": {
-        "version": "full-stage1-20261114-2",
+        "version": "full-stage1-20261114-3",
         "scope": "http://localhost:4198/english-valley/xiguang-manor/",
-        "cache": "xiguang-precache::http://localhost:4198/english-valley/xiguang-manor/::full-stage1-20261114-2",
+        "cache": "xiguang-precache::http://localhost:4198/english-valley/xiguang-manor/::full-stage1-20261114-3",
         "complete": true,
-        "files": 180,
-        "bytes": 47269922,
-        "cacheEntries": 181,
+        "files": 178,
+        "bytes": 47266875,
+        "cacheEntries": 179,
         "internalBytes": 64,
         "missing": [],
         "missingDetails": []
@@ -43,26 +46,15 @@
       "engine": "webkit",
       "physicalDevice": false,
       "steps": [
-        "Exact old formal offline package installed with legacy outfit, flowers, furniture, wishes and relics",
-        "Reproduced user bug: v parameter serves old cached client and old garden",
-        "One direct release link automatically activates verified complete release and enters native garden, with no journal/update menu required",
+        "Old formal full-stage1-20261114-2 offline package installed with legacy progress",
+        "Latest native garden starts under the old controller without waiting for a complete new offline package",
+        "Simulated night-art download failure prevents a false offline-ready message but does not block morning gameplay",
+        "Retry downloads the complete package; explicit saved update activates it and preserves the legacy save",
         "After whole-browser close, same direct entry starts offline with server503 and saved progress",
         "Original formal root bookmark also stays on the new client offline; old garden is absent"
       ],
       "errors": [],
       "before": {
-        "version": "manor-flowers-20261107-1",
-        "scope": "http://localhost:4199/english-valley/xiguang-manor/",
-        "cache": "xiguang-precache::http://localhost:4199/english-valley/xiguang-manor/::manor-flowers-20261107-1",
-        "complete": true,
-        "files": 129,
-        "bytes": 30794609,
-        "cacheEntries": 130,
-        "internalBytes": 66,
-        "missing": [],
-        "missingDetails": []
-      },
-      "after": {
         "version": "full-stage1-20261114-2",
         "scope": "http://localhost:4199/english-valley/xiguang-manor/",
         "cache": "xiguang-precache::http://localhost:4199/english-valley/xiguang-manor/::full-stage1-20261114-2",
@@ -70,6 +62,20 @@
         "files": 180,
         "bytes": 47269922,
         "cacheEntries": 181,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      },
+      "onlineEntryMs": 3546,
+      "failedNonessentialDownloads": 2,
+      "after": {
+        "version": "full-stage1-20261114-3",
+        "scope": "http://localhost:4199/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4199/english-valley/xiguang-manor/::full-stage1-20261114-3",
+        "complete": true,
+        "files": 178,
+        "bytes": 47266875,
+        "cacheEntries": 179,
         "internalBytes": 64,
         "missing": [],
         "missingDetails": []

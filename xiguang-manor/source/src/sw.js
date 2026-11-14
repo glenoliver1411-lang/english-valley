@@ -33,9 +33,9 @@ const manifest=[...unique.values()];
 // retain stale CacheStorage.match results after a failed install/re-register;
 // accepting those would skip downloads that the actual release cache lacks.
 const precache=new PrecacheController({cacheName:CACHE,plugins:[precacheTraffic(2),{cachedResponseWillBeUsed:async({request,cacheName})=>{const response=await(await caches.open(cacheName)).match(request);return response?.ok?response:null}}]});precache.addToCacheList(manifest);
-// The public release entry must see the latest HTML online. It never loads the
-// game until the matching complete worker controls it. Offline uses this exact
-// release's precached entry, keeping both paths on one verified version.
+// The public entry fetches the latest HTML online. The version-named game
+// document avoids stale cached HTML without gating online play on a complete
+// download. Offline uses this release's precached entry.
 registerRoute(({request,url})=>request.mode==='navigate'&&url.pathname===new URL('enter-stage1.html',SCOPE).pathname,async({request})=>{try{const r=await fetch(request,{cache:'no-store'});if(r.ok)return r}catch{}const cached=await precache.matchPrecache('enter-stage1.html');return cached||new Response('请联网准备新版庄园。',{status:503,headers:{'Content-Type':'text/plain;charset=utf-8'}})});
 registerRoute(new PrecacheRoute(precache,{directoryIndex:'index.html',ignoreURLParametersMatching:[/^visit$/, /^light$/, /^v$/, /^fast$/, /^actors$/, /^show$/, /^play$/, /^build$/, /^flowers$/, /^reload$/, /^renderer$/, /^ready$/, /^return$/, /^from$/, /^retry$/, /^utm_/, /^fbclid$/]}));
 self.addEventListener('install',event=>event.waitUntil(precache.install(event)));

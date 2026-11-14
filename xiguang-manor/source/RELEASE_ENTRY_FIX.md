@@ -1,15 +1,24 @@
-# Formal entry repair — 2026-11-14
+# Formal loading repair — 2026-11-14
 
-The previous `?v=full-stage1-20261114-1` link did not bypass the old offline HTML: the existing Workbox route deliberately ignores `v`. The new garden was published, but a player using that cache could continue to see the old game. Fresh-browser testing alone did not cover this delivery failure.
+## Why the second entry still blocked a phone
 
-`enter-stage1.html` is a distinct, lightweight document outside the old precache graph. It detects an old worker, downloads the current complete release, backs up `xiguang-manor-v1` to the existing `:before-update` backup slot, and requests activation only while no other game window is open. It verifies the controlling worker and resource audit before navigating into the game. The main save key is never deleted or replaced by the entry.
+The previous `?v=` release link was ignored by the legacy Workbox URL matcher. Release 2 addressed that stale HTML with an update bridge, but then made existing players wait for the complete roughly 47 MB offline package and cache audit before entering the game. Slow or failed nonessential downloads could therefore hold the player on “检测到旧离线版本 / 准备新版资料”. The fast local update test did not represent this phone experience.
 
-The formal manifest keeps its existing identity and scope, with this document as the new start URL. The current worker fetches the entry online and falls back to its own complete cached entry offline. Content-hashed assets from older releases stay on the server. Existing preview workers retain their isolated scopes.
+## Release 3
 
-Fresh visitors keep the letter-first startup and background offline install. A `#forest-garden` entry requests one visit to the new playable garden after the existing gift or return animation; returning from that garden resumes the complete manor normally.
+- Each formal build now emits its own game document, e.g. `game-full-stage1-20261114-3.html`. Its dependencies use Vite content hashes. An older worker cannot substitute its cached `index.html` for this distinct path; unchanged, identical assets can still come from the old cache.
+- `enter-stage1.html` redirects directly to that document using a tiny inline script and provides a real fallback link. It imports no game engine, cache auditor, save model or update coordinator. It never waits for Service Worker installation, activation, repair or a full download.
+- Ordinary game boot also starts immediately, without a release-pass redirect. The manifest retains its app ID and scope and starts the version-specific game document.
+- The full current Workbox package includes the new game document, all lazy game modules and all native art. Its registration/download remains behind the existing foreground-ready gate. Offline readiness still requires the complete current version. A failed nonessential download cannot incorrectly claim offline readiness.
+- An old active version of this scope's own `sw.js` is a valid registration to observe while downloading the new version. Different origins, script paths and scopes remain rejected.
+- Complete downloads still use the existing user-confirmed update, save backup, safe-state checks, multi-window guard and verified reload. The entry itself does not activate workers or change saves. Older content-hashed assets and prior previews remain on the server.
 
-Targeted regression: reproduce the old formal cache and ignored `v` link, open the new document without visiting update menus, verify the native garden and old progress, close the complete browser and repeat offline. Test both Chromium and WebKit with a 390×844 touch viewport; no physical iPhone verification is claimed.
+## Regression
 
-## Verified results
+The production fixture installs real old releases with saved candy, outfit data, purchased furniture, flower stock, relics and wishes. It then serves the latest entry while returning503 for the native night-art file: morning gameplay must open using the new document while the old worker still controls the page, and the latest offline flag must remain false. After restoring the network, a saved update from the main world completes the cache; the complete browser is closed, restarted offline, and both direct entry and the original root must still work with the protected progress.
 
-Both Chromium and WebKit reproduced the old cached garden, then passed automatic direct-entry upgrade and whole-browser offline restart. New cache audit: 180 resources / 47,269,922 bytes, no missing entries (181 CacheStorage entries including the activation marker). Protected legacy progress survived. All 120 model tests pass. Real device Safari was not tested. Actual results are recorded in `public/forest-garden-review/entry-update.json`; `entry-verified.png` is the running game after the upgrade.
+Chromium and WebKit automated touch viewports are used. No physical iPhone test is claimed. This is a loading fix; no art, gameplay, economy or save schema was changed.
+
+## Results
+
+Both browser engines passed the blocked nonessential download, explicit update retry, save comparison, complete-browser offline restart and original-root restart. Chromium began with the older129-file release; WebKit began with release2. The new verified cache contains178 resources /47,266,875 bytes, with no missing resources. All120 model tests pass. Entry timings in the evidence are from local production fixtures, not measured iPhone network performance.
