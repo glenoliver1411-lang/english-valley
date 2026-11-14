@@ -1,8 +1,8 @@
 {
-  "release": "home-stars-20261114-3",
+  "release": "home-stars-20261114-4",
   "nodeTests": {
-    "total": 115,
-    "passed": 115
+    "total": 116,
+    "passed": 116
   },
   "physicalDevice": false,
   "roomChromium": {
@@ -232,5 +232,6 @@
   "nativeLightAssets": {
     "files": 9,
     "bytes": 493916
-  }
+  },
+  "previousFullOfflineRelease": "home-stars-20261114-3"
 }

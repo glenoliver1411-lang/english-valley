@@ -27,3 +27,5 @@ test('Whole-room draft cancel never mutates the saved room; undo, redo and named
 test('Discarding a whole visit still rolls back rooms, schemes, surfaces and flower collections',()=>{
  const d=fresh(),storage={value:'',setItem(k,v){this.value=v}},session=new SessionProgress(d,storage),baseline=JSON.stringify(d.romance.room);d.romance.room.items=[];d.romance.room.bouquet='aster';d.romance.room.wallpaper='gingham';session.save(d);session.exit(d,false);assert.equal(JSON.stringify(JSON.parse(storage.value).romance.room),baseline);
 });
+
+test('Legacy paid curtains retain their original floor mounting and do not invalidate an existing purchased layout',()=>{const room=sanitizeRoom({items:[{type:'laceDrape',x:352,y:744,on:true}],bouquet:'rose'});assert.ok(room.items.some(i=>i.type==='laceDrape'));assert.ok(layoutResult(room).ok);});

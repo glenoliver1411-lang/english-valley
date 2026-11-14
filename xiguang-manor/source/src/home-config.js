@@ -6,7 +6,7 @@ export const HOME={
  walls:[{id:'original',name:'奶油木墙'},{id:'floral',name:'雾紫花枝'},{id:'gingham',name:'草莓格纹'}],
  floors:[{id:'original',name:'暖木地板'},{id:'herringbone',name:'蜂蜜鱼骨木'},{id:'pale',name:'月白木纹'}],
  items:[
-  ...PLAY.goods.map(f=>f.type==='laceDrape'?{...f,layer:'wall'}:f),
+  ...PLAY.goods,
   {type:'bed',name:'绣花床铺',desc:'松软的枕头，等一场好梦。',w:119,h:190,footW:102,footH:103,action:'rest'},
   {type:'sofa',name:'暖木沙发',desc:'坐在软垫上读一会儿书。',w:68,h:85,footW:57,footH:35,action:'sit'},
   {type:'desk',name:'窗边书桌',desc:'读一封留在庄园里的信。',w:156,h:76,footW:141,footH:23,action:'mail'},
