@@ -1,0 +1,189 @@
+{
+  "width": 720,
+  "height": 1280,
+  "source": "user-original.jpg",
+  "sha256": "3c94242760039682b4e6a2d15e7fdcb4564083131eb662a3511b5e175d5fc7d1",
+  "sourceFormat": "JPEG",
+  "sourceSuppliedByUser": true,
+  "preparation": "Decoded source kept pixel-identical in lossless WebP. Only transparent original-pixel masks and native crops; no repainted aurora/mountains/flowers/actor.",
+  "lights": [
+    {
+      "key": "light-0",
+      "file": "light-0.webp",
+      "x": 0,
+      "y": 218,
+      "w": 190,
+      "h": 357,
+      "phase": 0.0
+    },
+    {
+      "key": "light-1",
+      "file": "light-1.webp",
+      "x": 21,
+      "y": 199,
+      "w": 299,
+      "h": 372,
+      "phase": 0.731
+    },
+    {
+      "key": "light-2",
+      "file": "light-2.webp",
+      "x": 151,
+      "y": 206,
+      "w": 299,
+      "h": 324,
+      "phase": 1.462
+    },
+    {
+      "key": "light-3",
+      "file": "light-3.webp",
+      "x": 281,
+      "y": 115,
+      "w": 299,
+      "h": 354,
+      "phase": 2.193
+    },
+    {
+      "key": "light-4",
+      "file": "light-4.webp",
+      "x": 411,
+      "y": 40,
+      "w": 299,
+      "h": 390,
+      "phase": 2.924
+    },
+    {
+      "key": "light-5",
+      "file": "light-5.webp",
+      "x": 541,
+      "y": 4,
+      "w": 179,
+      "h": 359,
+      "phase": 3.655
+    }
+  ],
+  "stars": [
+    {
+      "x": 608,
+      "y": 548,
+      "frame": 0,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 368,
+      "y": 455,
+      "frame": 1,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 269,
+      "y": 549,
+      "frame": 2,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 138,
+      "y": 117,
+      "frame": 3,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 132,
+      "y": 54,
+      "frame": 4,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 33,
+      "y": 29,
+      "frame": 5,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 603,
+      "y": 34,
+      "frame": 6,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 677,
+      "y": 561,
+      "frame": 7,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 327,
+      "y": 507,
+      "frame": 8,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 546,
+      "y": 520,
+      "frame": 9,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 305,
+      "y": 463,
+      "frame": 10,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 675,
+      "y": 298,
+      "frame": 11,
+      "w": 12,
+      "h": 12
+    },
+    {
+      "x": 79,
+      "y": 199,
+      "frame": 12,
+      "w": 12,
+      "h": 12
+    }
+  ],
+  "flowers": [
+    {
+      "key": "flower-left",
+      "cleanKey": "flower-left-clean",
+      "file": "flower-left.webp",
+      "cleanFile": "flower-left-clean.webp",
+      "x": 64,
+      "y": 1167,
+      "w": 54,
+      "h": 112,
+      "anchorX": 26,
+      "anchorY": 110
+    },
+    {
+      "key": "flower-right",
+      "cleanKey": "flower-right-clean",
+      "file": "flower-right.webp",
+      "cleanFile": "flower-right-clean.webp",
+      "x": 635,
+      "y": 1151,
+      "w": 57,
+      "h": 128,
+      "anchorX": 27,
+      "anchorY": 126
+    }
+  ],
+  "foregroundRepair": {
+    "source": "foreground-repair-source.png",
+    "sha256": "49dc468048369dd15a7fd32906626198a9eed253dff00e97cb1c7936b7853349",
+    "origin": "Original local image-generation edit; only two tiny underpaint masks used; not a replacement scene"
+  }
+}

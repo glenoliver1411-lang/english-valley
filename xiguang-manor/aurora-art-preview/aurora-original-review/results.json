@@ -1,0 +1,235 @@
+{
+  "version": "aurora-original-20261114-1",
+  "source": {
+    "format": "JPEG",
+    "dimensions": [
+      720,
+      1280
+    ],
+    "noAdditionalActor": true
+  },
+  "pixelComparison": {
+    "chromium": {
+      "staticComparisons": [
+        {
+          "viewportWidth": 375,
+          "meanAbsoluteRGBError": 1.0518530734632683,
+          "p99AbsoluteRGBError": 11.0,
+          "sourcePhotoExactlyEqual": true
+        },
+        {
+          "viewportWidth": 390,
+          "meanAbsoluteRGBError": 1.8474186818973548,
+          "p99AbsoluteRGBError": 19.0,
+          "sourcePhotoExactlyEqual": true
+        },
+        {
+          "viewportWidth": 430,
+          "meanAbsoluteRGBError": 1.2441567272182852,
+          "p99AbsoluteRGBError": 14.0,
+          "sourcePhotoExactlyEqual": true
+        }
+      ],
+      "movingMeanRGBDifference": 0.33630605176813705,
+      "movingChangedPixelRatio": 0.106579626929153
+    },
+    "webkit": {
+      "staticComparisons": [
+        {
+          "viewportWidth": 375,
+          "meanAbsoluteRGBError": 0.7437131434282859,
+          "p99AbsoluteRGBError": 9.0,
+          "sourcePhotoExactlyEqual": true
+        },
+        {
+          "viewportWidth": 390,
+          "meanAbsoluteRGBError": 2.4532876615222587,
+          "p99AbsoluteRGBError": 29.0,
+          "sourcePhotoExactlyEqual": true
+        },
+        {
+          "viewportWidth": 430,
+          "meanAbsoluteRGBError": 1.1375280716638387,
+          "p99AbsoluteRGBError": 12.0,
+          "sourcePhotoExactlyEqual": true
+        }
+      ],
+      "movingMeanRGBDifference": 0.36657932312553165,
+      "movingChangedPixelRatio": 0.10555808725240005
+    }
+  },
+  "browser": {
+    "chromium": {
+      "engine": "chromium",
+      "errors": [],
+      "views": [
+        {
+          "w": 390,
+          "h": 844,
+          "layout": {
+            "scale": 1.31875,
+            "x": -111.12500000000006,
+            "y": 0,
+            "width": 949.5000000000001,
+            "height": 1688,
+            "complete": false
+          },
+          "renderer": 2,
+          "canvas": [
+            780,
+            1688
+          ],
+          "source": [
+            720,
+            1280
+          ],
+          "children": 24
+        },
+        {
+          "w": 375,
+          "h": 667,
+          "layout": {
+            "scale": 1.0421875,
+            "x": -0.375,
+            "y": 0,
+            "width": 750.375,
+            "height": 1334,
+            "complete": false
+          },
+          "renderer": 2,
+          "canvas": [
+            750,
+            1334
+          ],
+          "source": [
+            720,
+            1280
+          ],
+          "children": 24
+        },
+        {
+          "w": 430,
+          "h": 932,
+          "layout": {
+            "scale": 1.45625,
+            "x": -123.375,
+            "y": 0,
+            "width": 1048.5,
+            "height": 1864,
+            "complete": false
+          },
+          "renderer": 2,
+          "canvas": [
+            860,
+            1864
+          ],
+          "source": [
+            720,
+            1280
+          ],
+          "children": 24
+        }
+      ],
+      "physicalDevice": false
+    },
+    "webkit": {
+      "engine": "webkit",
+      "errors": [],
+      "views": [
+        {
+          "w": 390,
+          "h": 844,
+          "layout": {
+            "scale": 1.31875,
+            "x": -111.12500000000006,
+            "y": 0,
+            "width": 949.5000000000001,
+            "height": 1688,
+            "complete": false
+          },
+          "renderer": 2,
+          "canvas": [
+            780,
+            1688
+          ],
+          "source": [
+            720,
+            1280
+          ],
+          "children": 24
+        },
+        {
+          "w": 375,
+          "h": 667,
+          "layout": {
+            "scale": 1.0421875,
+            "x": -0.375,
+            "y": 0,
+            "width": 750.375,
+            "height": 1334,
+            "complete": false
+          },
+          "renderer": 2,
+          "canvas": [
+            750,
+            1334
+          ],
+          "source": [
+            720,
+            1280
+          ],
+          "children": 24
+        },
+        {
+          "w": 430,
+          "h": 932,
+          "layout": {
+            "scale": 1.45625,
+            "x": -123.375,
+            "y": 0,
+            "width": 1048.5,
+            "height": 1864,
+            "complete": false
+          },
+          "renderer": 2,
+          "canvas": [
+            860,
+            1864
+          ],
+          "source": [
+            720,
+            1280
+          ],
+          "children": 24
+        }
+      ],
+      "physicalDevice": false
+    }
+  },
+  "offline": {
+    "errors": [],
+    "steps": [
+      "After full browser close and offline503, native aurora opens at retina resolution with all local overlay assets",
+      "Offline photo exports720×1280 and return link enters the new playable map",
+      "Cocoa costume, owned goods, furniture, old relics, cat and candy progress survive native scenery and home round trip",
+      "Second complete offline browser restart retains save and playable new world"
+    ],
+    "cache": {
+      "version": "aurora-original-20261114-1",
+      "scope": "http://localhost:4195/english-valley/xiguang-manor/aurora-art-preview/",
+      "cache": "xiguang-precache::http://localhost:4195/english-valley/xiguang-manor/aurora-art-preview/::aurora-original-20261114-1",
+      "complete": true,
+      "files": 154,
+      "bytes": 31067360,
+      "cacheEntries": 155,
+      "internalBytes": 68,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "unitTests": {
+    "passed": 111,
+    "failed": 0
+  },
+  "physicalIPhoneTested": false
+}

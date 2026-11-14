@@ -62,3 +62,8 @@ __pycache__/
 !src/assets/daylight/*.webp
 !public/daylight-review/**/*.webp
 !src/assets/world/*.webp
+
+!src/assets/aurora-original/*.png
+!src/assets/aurora-original/*.jpg
+!src/assets/aurora-original/*.webp
+!public/aurora-original-review/**/*.webp

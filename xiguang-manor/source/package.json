@@ -15,7 +15,8 @@
     "build:florist:preview": "vite build --mode florist-preview",
     "build:florist:skill": "vite build --mode florist-skill-preview",
     "build:world:preview": "vite build --mode world-preview",
-    "build:daylight:preview": "vite build --mode daylight-preview"
+    "build:daylight:preview": "vite build --mode daylight-preview",
+    "build:aurora:preview": "vite build --mode aurora-art-preview"
   },
   "dependencies": {
     "phaser": "^3.90.0",

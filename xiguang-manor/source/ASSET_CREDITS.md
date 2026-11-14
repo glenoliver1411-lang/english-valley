@@ -199,3 +199,11 @@
 - 本地原始文件：`src/assets/daylight/xiaoxi-{cocoa,rose,wild,berry,pearl,mist,seated}-source.png`；来源、尺寸与SHA-256逐项记入同目录 `character-atlas.json`。
 - 修改：`tools/prepare-character-costumes.py`仅透明底清理、原画单元切帧、统一脚底与比例、最近邻像素缩放及PNG/无损WebP导出；WebP解码逐像素RGBA相等检查。没有以矩形、几何身体或自动重着色代替服装原画。
 - 使用/许可记录：原创生成资源随本项目在GitHub公开源码及网页游戏中使用和分发，受生成服务适用条款约束，无第三方署名或付费资产要求；此记录不将生成内容重新授予CC0。
+
+## 2026-11-14 · 用户原画极光花海
+
+- 素材：`src/assets/aurora-original/user-original.jpg`，本会话用户提供并明确要求用于游戏的原创极光花海。实际文件为720×1280 JPEG，保留附件原始字节；同名PNG为其解码副本，不冒充额外高清源图。
+- 作者/来源/许可：用户提供的原创作品；来源为本会话附件，无运行时外链。依据用户在本轮明确授权用于其《曦光庄园》项目公开预览与本地资源分发；不自行授予CC0。
+- 修改：`scene.webp`为RGB校验相同的无损副本；`light-0..5.webp`和`stars.webp`只提取原有光幕/恒星像素与透明度，形状位置不变；两块`flower-*.webp`取自原图前景花簇。
+- 局部修补：`foreground-repair-source.png`由内置图像生成编辑工具参考用户原图制作，仅其两个小蒙版区域作为移动花簇后的背景修补。原图的女孩、长椅、山脉、极光和整体花海不使用生成替代图。生成资源受服务适用条款约束，不宣称CC0，无第三方游戏素材。
+- 制作记录：`tools/prepare-aurora-original.py`与同目录`atlas.json`保存原图及修补源图SHA-256、所有原图像素坐标、锚点和处理方式。图集均本地存储；未使用付费第三方素材或外部图片API。
