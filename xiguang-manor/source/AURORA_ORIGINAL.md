@@ -31,3 +31,7 @@
 新增`aurora-photo-scene.js`、`aurora-photo-layout.js`、本地原图/蒙版/花簇、制作脚本与两项浏览器验证脚本；更新独立极光页、样式、HTML、独立预览配置和发布脚本。所有来源与SHA-256见`ASSET_CREDITS.md`及素材`atlas.json`。
 
 这是原画观景样板，不宣称完整互动角色分层或全地图原画重制已完成。原始图只有720像素宽，特别高像素密度屏幕仍受这个来源上限限制；需要更大原始文件才能增加真实细节。
+
+## 演出时间线后续修复
+
+`aurora-sequence-20261114-2`补回了真正的渐现与消散：无极光夜空→原画完整舒展→回到星空。保持原图和静止模式，增加对应的夜景底图、重播/跳过及可见时间时钟。详细阶段与验证见[AURORA_SEQUENCE.md](AURORA_SEQUENCE.md)，新实机记录位于`aurora-original-review/sequence.html`。

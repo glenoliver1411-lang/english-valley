@@ -1,0 +1,276 @@
+{
+  "version": "aurora-sequence-20261114-2",
+  "unitTests": {
+    "passed": 114,
+    "failed": 0
+  },
+  "video": {
+    "file": "/workspace/github/english-valley/xiguang-manor/source/verification/aurora-sequence/video/page@83b443a3da11788afd1b1ce8bd771c7d.webm",
+    "wallSeconds": 81.664,
+    "elapsed": 80.38680000000062,
+    "noSeekOrSpeedup": true
+  },
+  "browsers": {
+    "chromium": {
+      "engine": "chromium",
+      "errors": [],
+      "stages": [
+        {
+          "time": 0,
+          "phase": "quiet",
+          "reveal": 0,
+          "ended": false,
+          "elapsed": 0.24310000000149012,
+          "alpha": 0,
+          "low": false,
+          "light": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "quiet": true
+        },
+        {
+          "time": 7,
+          "phase": "appearing",
+          "reveal": 0.5195880449170841,
+          "ended": false,
+          "elapsed": 7.1045,
+          "alpha": 0.5195880449170841,
+          "low": false,
+          "light": [
+            0.024236073244999247,
+            0.02623639812179263,
+            0.02501764946475158,
+            0.02022565453903788,
+            0.01802172930936221,
+            0.017516522640261576
+          ],
+          "quiet": true
+        },
+        {
+          "time": 24,
+          "phase": "open",
+          "reveal": 1,
+          "ended": false,
+          "elapsed": 24.148,
+          "alpha": 1,
+          "low": false,
+          "light": [
+            0.03906576677951536,
+            0.037693328350211684,
+            0.04074438963510643,
+            0.04827976922144993,
+            0.05050523827639086,
+            0.04623525625102495
+          ],
+          "quiet": true
+        },
+        {
+          "time": 68,
+          "phase": "disappearing",
+          "reveal": 0.4434316401528474,
+          "ended": false,
+          "elapsed": 68.19560000000149,
+          "alpha": 0.4434316401528474,
+          "low": false,
+          "light": [
+            0.0066898121538259804,
+            0.008644527237921815,
+            0.009804671663262916,
+            0.011052694187602975,
+            0.01673566777062275,
+            0.0197119547818109
+          ],
+          "quiet": true
+        },
+        {
+          "time": 80,
+          "phase": "ended",
+          "reveal": 0,
+          "ended": true,
+          "elapsed": 80.14210000000149,
+          "alpha": 0,
+          "low": false,
+          "light": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "quiet": true
+        },
+        {
+          "time": 160,
+          "phase": "ended",
+          "reveal": 0,
+          "ended": true,
+          "elapsed": 160.201799999997,
+          "alpha": 0,
+          "low": false,
+          "light": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "quiet": true
+        }
+      ],
+      "physicalDevice": false,
+      "realClockStarted": true,
+      "lowFrameClockFollowsVisibleTime": true,
+      "explicitPlayOverridesOnlyThisVisit": true,
+      "replayPreferenceSurvivesReload": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "errors": [],
+      "stages": [
+        {
+          "time": 0,
+          "phase": "quiet",
+          "reveal": 0,
+          "ended": false,
+          "elapsed": 0.102,
+          "alpha": 0,
+          "low": false,
+          "light": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "quiet": true
+        },
+        {
+          "time": 7,
+          "phase": "appearing",
+          "reveal": 0.5264234872388502,
+          "ended": false,
+          "elapsed": 7.141,
+          "alpha": 0.5264234872388502,
+          "low": false,
+          "light": [
+            0.024531839242190337,
+            0.026580572498124483,
+            0.025367893408018816,
+            0.020519108335617663,
+            0.018259288703491926,
+            0.017754909986014793
+          ],
+          "quiet": true
+        },
+        {
+          "time": 24,
+          "phase": "open",
+          "reveal": 1,
+          "ended": false,
+          "elapsed": 24.108,
+          "alpha": 1,
+          "low": false,
+          "light": [
+            0.03904406933383736,
+            0.03769346708869015,
+            0.040788510319574464,
+            0.048318063634859326,
+            0.050504176522966,
+            0.04617811698226569
+          ],
+          "quiet": true
+        },
+        {
+          "time": 68,
+          "phase": "disappearing",
+          "reveal": 0.4514188909122042,
+          "ended": false,
+          "elapsed": 68.097,
+          "alpha": 0.4514188909122042,
+          "low": false,
+          "light": [
+            0.006830806937889256,
+            0.008833898378717559,
+            0.009983598230124206,
+            0.0113161089751116,
+            0.01712965149465394,
+            0.020070449465895014
+          ],
+          "quiet": true
+        },
+        {
+          "time": 80,
+          "phase": "ended",
+          "reveal": 0,
+          "ended": true,
+          "elapsed": 80.12,
+          "alpha": 0,
+          "low": false,
+          "light": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "quiet": true
+        },
+        {
+          "time": 160,
+          "phase": "ended",
+          "reveal": 0,
+          "ended": true,
+          "elapsed": 160.077,
+          "alpha": 0,
+          "low": false,
+          "light": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "quiet": true
+        }
+      ],
+      "physicalDevice": false,
+      "realClockStarted": true,
+      "lowFrameClockFollowsVisibleTime": true,
+      "explicitPlayOverridesOnlyThisVisit": true,
+      "replayPreferenceSurvivesReload": true
+    }
+  },
+  "offline": {
+    "errors": [],
+    "steps": [
+      "After full browser close and offline503, native aurora opens at retina resolution with all local overlay assets",
+      "The real opening animation also advances while offline and with the interface hidden",
+      "Offline photo exports720×1280 and return link enters the new playable map",
+      "Cocoa costume, owned goods, furniture, old relics, cat and candy progress survive native scenery and home round trip",
+      "Second complete offline browser restart retains save and playable new world"
+    ],
+    "cache": {
+      "version": "aurora-sequence-20261114-2",
+      "scope": "http://localhost:4196/english-valley/xiguang-manor/aurora-art-preview/",
+      "cache": "xiguang-precache::http://localhost:4196/english-valley/xiguang-manor/aurora-art-preview/::aurora-sequence-20261114-2",
+      "complete": true,
+      "files": 155,
+      "bytes": 31931174,
+      "cacheEntries": 156,
+      "internalBytes": 68,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "physicalIPhoneTested": false
+}

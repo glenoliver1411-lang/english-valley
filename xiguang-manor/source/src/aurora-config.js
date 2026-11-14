@@ -13,5 +13,7 @@ export const AURORA_PAGE={
  saveFailed:'进度暂时无法保存，请保持本页打开，稍后再试。',
  strength:.96,maxFps:30,lowFps:20,
  light:{fps:18,lowFps:8},
+ skip:'跳过演出，直接欣赏',
+ phases:{quiet:'夜色安静，极光还在远处。',appearing:'光幕正慢慢出现。',open:'极光轻轻舒展开来。',disappearing:'光幕渐渐远去。',ended:'极光散去了，星空还在。',view:'静静欣赏这片极光。',still:'原画静止欣赏。'},
  replay:'再看一次极光',cleanHint:'双击画面或按 Esc 恢复选项'
 };

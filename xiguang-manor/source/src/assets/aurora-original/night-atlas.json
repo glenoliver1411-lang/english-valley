@@ -1,0 +1,9 @@
+{
+  "source": "night-repair-source.png",
+  "sha256": "f72a6842331c1b76dd238d15e714dba46c8cb29243b2076b6d313f8a78c86886",
+  "file": "night-scene.webp",
+  "width": 720,
+  "height": 1280,
+  "landscapeUnchangedBelowY": 610,
+  "preparation": "Only soft aurora-region sky mask from original local image-generation clean plate. Original moon/bright stellar cores protected. All rows y>=610 exactly equal uploaded decoded pixels. Full original picture remains separate and unmodified for the peak."
+}
