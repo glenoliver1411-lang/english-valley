@@ -1,0 +1,79 @@
+{
+  "version": "full-stage1-20261114-2",
+  "description": "Exact old formal cache reproduced, followed by automatic versioned entry and native garden, then full offline browser restart.",
+  "physicalDevice": false,
+  "browsers": {
+    "chromium": {
+      "engine": "chromium",
+      "physicalDevice": false,
+      "steps": [
+        "Exact old formal offline package installed with legacy outfit, flowers, furniture, wishes and relics",
+        "Reproduced user bug: v parameter serves old cached client and old garden",
+        "One direct release link automatically activates verified complete release and enters native garden, with no journal/update menu required",
+        "After whole-browser close, same direct entry starts offline with server503 and saved progress",
+        "Original formal root bookmark also stays on the new client offline; old garden is absent"
+      ],
+      "errors": [],
+      "before": {
+        "version": "manor-flowers-20261107-1",
+        "scope": "http://localhost:4198/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4198/english-valley/xiguang-manor/::manor-flowers-20261107-1",
+        "complete": true,
+        "files": 129,
+        "bytes": 30794609,
+        "cacheEntries": 130,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      },
+      "after": {
+        "version": "full-stage1-20261114-2",
+        "scope": "http://localhost:4198/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4198/english-valley/xiguang-manor/::full-stage1-20261114-2",
+        "complete": true,
+        "files": 180,
+        "bytes": 47269922,
+        "cacheEntries": 181,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      }
+    },
+    "webkit": {
+      "engine": "webkit",
+      "physicalDevice": false,
+      "steps": [
+        "Exact old formal offline package installed with legacy outfit, flowers, furniture, wishes and relics",
+        "Reproduced user bug: v parameter serves old cached client and old garden",
+        "One direct release link automatically activates verified complete release and enters native garden, with no journal/update menu required",
+        "After whole-browser close, same direct entry starts offline with server503 and saved progress",
+        "Original formal root bookmark also stays on the new client offline; old garden is absent"
+      ],
+      "errors": [],
+      "before": {
+        "version": "manor-flowers-20261107-1",
+        "scope": "http://localhost:4199/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4199/english-valley/xiguang-manor/::manor-flowers-20261107-1",
+        "complete": true,
+        "files": 129,
+        "bytes": 30794609,
+        "cacheEntries": 130,
+        "internalBytes": 66,
+        "missing": [],
+        "missingDetails": []
+      },
+      "after": {
+        "version": "full-stage1-20261114-2",
+        "scope": "http://localhost:4199/english-valley/xiguang-manor/",
+        "cache": "xiguang-precache::http://localhost:4199/english-valley/xiguang-manor/::full-stage1-20261114-2",
+        "complete": true,
+        "files": 180,
+        "bytes": 47269922,
+        "cacheEntries": 181,
+        "internalBytes": 64,
+        "missing": [],
+        "missingDetails": []
+      }
+    }
+  }
+}

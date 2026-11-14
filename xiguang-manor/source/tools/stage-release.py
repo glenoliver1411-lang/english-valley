@@ -41,7 +41,7 @@ if source.resolve()!=project:
   if not (project/directory).exists():continue
   if target.exists():shutil.rmtree(target)
   shutil.copytree(project/directory,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
- for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','.gitignore','.env.pwa-preview','.env.gameplay-preview','.env.art-preview','.env.reference-preview','.env.florist-preview','.env.florist-skill-preview','.env.world-preview','.env.daylight-preview','.env.aurora-art-preview','.env.home-stars-preview','.env.forest-garden-preview','.env.full-stage1']:
+ for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','enter-stage1.html','.gitignore','.env.pwa-preview','.env.gameplay-preview','.env.art-preview','.env.reference-preview','.env.florist-preview','.env.florist-skill-preview','.env.world-preview','.env.daylight-preview','.env.aurora-art-preview','.env.home-stars-preview','.env.forest-garden-preview','.env.full-stage1']:
   shutil.copy2(project/name,source/name)
  for item in project.glob('*.md'):shutil.copy2(item,source/item.name)
 (site/'.nojekyll').touch()

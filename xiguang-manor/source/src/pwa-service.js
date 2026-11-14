@@ -2,7 +2,7 @@
 // exact-scope registration and a positive, resource-by-resource cache audit.
 export const APP_VERSION=__APP_VERSION__;
 export const PWA_SCOPE=new URL(import.meta.env.BASE_URL,location.href).href;
-const script=new URL('sw.js',PWA_SCOPE).href;
+const workerURL=new URL('sw.js',PWA_SCOPE);if(APP_VERSION.startsWith('full-stage1'))workerURL.searchParams.set('build',APP_VERSION);export const SERVICE_WORKER_URL=workerURL.href;const script=SERVICE_WORKER_URL;
 export function workerMessage(worker,type,extra={}){
  return new Promise((resolve,reject)=>{if(!worker)return reject(Error('worker unavailable'));const channel=new MessageChannel(),timer=setTimeout(()=>{channel.port1.close();reject(Error('worker timeout'))},type==='PWA_STATUS'?6000:45000);channel.port1.onmessage=e=>{clearTimeout(timer);channel.port1.close();resolve(e.data)};worker.postMessage({type,...extra},[channel.port2])});
 }

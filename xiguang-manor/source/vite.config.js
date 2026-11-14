@@ -13,11 +13,11 @@ export default defineConfig(({mode})=>{
     transformIndexHtml(html,ctx){
       return ctx.path==='/index.html'||ctx.filename?.endsWith('/index.html')?html.replace('<head>',`<head><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="曦光庄园"><link rel="apple-touch-icon" href="${base}pwa-icons/icon-180.png">`).replace('<body>','<body>'+bootShell()):html;
     }
-  },VitePWA({strategies:'injectManifest',srcDir:'src',filename:'sw.js',injectRegister:false,registerType:'prompt',scope:base,manifest:{id:base,name:'曦光庄园',short_name:'曦光庄园',description:'一座可以放进口袋、离线游玩的私人童话庄园',start_url:base+'index.html',scope:base,display:'standalone',orientation:'portrait',lang:'zh-CN',theme_color:'#28263f',background_color:'#28263f',icons:[{src:base+'pwa-icons/icon-192.png',sizes:'192x192',type:'image/png',purpose:'any'},{src:base+'pwa-icons/icon-512.png',sizes:'512x512',type:'image/png',purpose:'any maskable'}]},injectManifest:{rollupFormat:'iife',globPatterns:['index.html','aurora.html','manifest.webmanifest','assets/*','pwa-icons/*.png'],maximumFileSizeToCacheInBytes:6*1024*1024,manifestTransforms:[currentReleaseOnly(resolve('dist'),version,base)]},devOptions:{enabled:false}})],
+  },VitePWA({strategies:'injectManifest',srcDir:'src',filename:'sw.js',injectRegister:false,registerType:'prompt',scope:base,manifest:{id:base,name:'曦光庄园',short_name:'曦光庄园',description:'一座可以放进口袋、离线游玩的私人童话庄园',start_url:base+(version.startsWith('full-stage1')?'enter-stage1.html':'index.html'),scope:base,display:'standalone',orientation:'portrait',lang:'zh-CN',theme_color:'#28263f',background_color:'#28263f',icons:[{src:base+'pwa-icons/icon-192.png',sizes:'192x192',type:'image/png',purpose:'any'},{src:base+'pwa-icons/icon-512.png',sizes:'512x512',type:'image/png',purpose:'any maskable'}]},injectManifest:{rollupFormat:'iife',globPatterns:['index.html','aurora.html','enter-stage1.html','manifest.webmanifest','assets/*','pwa-icons/*.png'],maximumFileSizeToCacheInBytes:6*1024*1024,manifestTransforms:[currentReleaseOnly(resolve('dist'),version,base)]},devOptions:{enabled:false}})],
   build:{
     target:'es2020',assetsInlineLimit:0,manifest:true,
     rollupOptions:{
-      input:{manor:'index.html',aurora:'aurora.html'},
+      input:{manor:'index.html',aurora:'aurora.html',entry:'enter-stage1.html'},
       output:{manualChunks:{phaser:['phaser']}}
     }
   }
