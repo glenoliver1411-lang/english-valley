@@ -37,3 +37,7 @@
 核心源码：`daylight-art.js`、`world-region-art.js`、`world-region-scene.js`、`world-hit.js`、`equipment-layer.js`、`rose-court.json`。工具/配置：`prepare-daylight.py`、`.env.daylight-preview`、`stage-release.py`、`package.json`。新增真实操作测试：`daylight-journey.mjs`、`daylight-offline.mjs`及树冠透明命中用例。
 
 最终断网结果：Chromium在线完整缓存后关闭整个浏览器，浏览器离线且服务器503重开；137项资源、30705898字节，缺失0。实际完成售花/混搭花束/小屋展示、8次搅拌及三轮收火、花海采花、独立极光往返、遗迹暂存；第二次关闭/离线重开进度一致。WebKit完成手机视口交互回归；本轮严格整浏览器断网流程使用Chromium，不冒称实体手机或两内核离线均测。
+
+## 后续人物统一修复（2026-11-13）
+
+上文“其他六套服装与坐姿缺失”描述首批版本；`daylight-actors-20261113-1`已完成七套服装共112帧行走、14个正背面坐姿，主地图/小屋/花铺/工坊/花园/花海/遗迹与独立观景共用同一人物原画。角色身份、服装ID、糖果、家具和单存档不变。参见[人物连续性报告](CHARACTER_CONTINUITY.md)；其余全地图美术缺口仍按原规划保留，不以本轮人物完成替代整个世界的重制。

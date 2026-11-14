@@ -1,0 +1,100 @@
+{
+  "release": "daylight-actors-20261113-1",
+  "unitTests": {
+    "passed": 111,
+    "failed": 0
+  },
+  "chromiumTextureCounts": [
+    114,
+    114,
+    114
+  ],
+  "physicalIPhoneTested": false,
+  "sceneRuns": {
+    "chromium": {
+      "engine": "chromium",
+      "costumes": [],
+      "scenes": [
+        "florist",
+        "shop",
+        "garden",
+        "meadow",
+        "ruins",
+        "lake",
+        "independent aurora"
+      ],
+      "errors": [],
+      "physicalDevice": false
+    },
+    "webkit": {
+      "engine": "webkit",
+      "costumes": [],
+      "scenes": [
+        "florist",
+        "shop",
+        "garden",
+        "meadow",
+        "ruins",
+        "lake",
+        "independent aurora"
+      ],
+      "errors": [],
+      "physicalDevice": false
+    }
+  },
+  "costumeRuns": {
+    "chromium": {
+      "outfits": [
+        "original",
+        "cocoa",
+        "rose",
+        "wild",
+        "berry",
+        "pearl",
+        "mist"
+      ],
+      "walkingDirectionsPerOutfit": 4,
+      "seatedSamplesPerOutfit": 8,
+      "checked": "native64x80, matching costume after enter/stand/return, unchanged money",
+      "note": "Costume assertions completed; scene checks were run separately with the pre-existing candy favourite configured in the fixture."
+    },
+    "webkit": {
+      "outfits": [
+        "original",
+        "cocoa",
+        "rose",
+        "wild",
+        "berry",
+        "pearl",
+        "mist"
+      ],
+      "walkingDirectionsPerOutfit": 4,
+      "seatedSamplesPerOutfit": 8,
+      "checked": "native64x80, matching costume after enter/stand/return, unchanged money",
+      "note": "Costume assertions completed; scene checks were run separately with the pre-existing candy favourite configured in the fixture."
+    }
+  },
+  "offline": {
+    "errors": [],
+    "steps": [
+      "Complete scoped release cached; whole browser closed and reopened offline while fixture returns503; new world, trees, character and cat render",
+      "Offline12-species stock, rose sale, actual mixed bouquet and home display preserve unchanged transaction rules",
+      "Offline candy workshop completes actual stirring and three heat rounds, saving3 candies made",
+      "Offline meadow harvesting and independent aurora page work and return to the new map",
+      "Offline ruins open and suspend the existing expedition without settlement or lost permanent goods",
+      "Second whole-browser offline restart preserves bouquet, exact inventory, candy batch, cat name, furniture and suspended expedition"
+    ],
+    "cache": {
+      "version": "daylight-actors-20261113-1",
+      "scope": "http://localhost:4193/english-valley/xiguang-manor/daylight-preview/",
+      "cache": "xiguang-precache::http://localhost:4193/english-valley/xiguang-manor/daylight-preview/::daylight-actors-20261113-1",
+      "complete": true,
+      "files": 142,
+      "bytes": 29783679,
+      "cacheEntries": 143,
+      "internalBytes": 68,
+      "missing": [],
+      "missingDetails": []
+    }
+  }
+}

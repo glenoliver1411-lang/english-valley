@@ -191,3 +191,11 @@
 ## 白天主世界加载优化（2026-11-13）
 
 原`world/architecture.png`、`botanical.png`及`architecture-light.png`保留，运行改为无损WebP。没有缩小尺寸、减少颜色或重新绘制。`tools/pack-world-webp.py`逐像素检查完整RGBA一致，来源哈希与体积记录在`src/assets/world/transport.json`；现有来源与许可保持原样。三项合计减少1,238,757字节，不新增外部素材。
+
+## 2026-11-13 · 小曦七套服装与场景一致性
+
+- 名称：可可秋日、玫瑰奶霜、林间来信、草莓蝴蝶结、月眠珍珠、晨雾花笺四方向行走图集；七套衣服的正/背面坐姿。
+- 作者/来源：本项目使用内置图像生成编辑工具，以已经认可的 `src/assets/daylight/xiaoxi-source.png` 为角色身份参考，按原有 `ADVENTURE.outfits` 的服装描述及配色制作；不是第三方游戏截图或素材下载。无外部来源URL，不宣称CC0。
+- 本地原始文件：`src/assets/daylight/xiaoxi-{cocoa,rose,wild,berry,pearl,mist,seated}-source.png`；来源、尺寸与SHA-256逐项记入同目录 `character-atlas.json`。
+- 修改：`tools/prepare-character-costumes.py`仅透明底清理、原画单元切帧、统一脚底与比例、最近邻像素缩放及PNG/无损WebP导出；WebP解码逐像素RGBA相等检查。没有以矩形、几何身体或自动重着色代替服装原画。
+- 使用/许可记录：原创生成资源随本项目在GitHub公开源码及网页游戏中使用和分发，受生成服务适用条款约束，无第三方署名或付费资产要求；此记录不将生成内容重新授予CC0。

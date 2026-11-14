@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import {controls} from './game.js';
+import {poseCharacter,CHARACTER} from './character-art.js';
 import {outfitKey} from './wardrobe-art.js';
 import {EquipmentLayer} from './equipment-layer.js';
 import {portraitViewport} from './portrait-viewport.js';
@@ -46,7 +47,7 @@ export class WorldRegionScene extends Phaser.Scene{
  follow(){if(!this.player)return;const c=this.cameras.main;c.useBounds=true;c.setZoom(this.exploreZoom);c.startFollow(this.player,true,.1,.1,0,110)}
  setOverview(on){this.stopMoving();this.overview=on;const c=this.cameras.main;c.stopFollow();if(on){c.useBounds=false;c.setZoom(this.fitZoom);c.centerOn(map.width/2,map.height/2)}else this.follow();this.api.overview(on)}
  blocked(x,y){return this.nav.blocked(x,y)}
- idle(){if(!this.player)return;this.player.stop();if(this.quiet){if(this.player.texture.key!=='world-hd-seated'||this.player.frame.name!==this.profile.wardrobe.equipped)this.player.setTexture('world-hd-seated',this.profile.wardrobe.equipped);this.player.setScale(2).setDepth(1660.1)}else{worldActor(this,this.facing);this.player.setDepth(this.player.y+.1)}}
+ idle(){if(!this.player)return;this.player.stop();if(this.quiet){poseCharacter(this,{seated:true,scale:CHARACTER.worldScale});this.player.setDepth(1660.1)}else{worldActor(this,this.facing);this.player.setDepth(this.player.y+.1)}}
  stopMoving(){this.target=null;this.path=[];this.selected=null;controls.x=controls.y=0;this.idle()}
  walkTo(p,selected=null){if(this.quiet)this.stand();if(this.overview)this.setOverview(false);const route=this.nav.route(this.player,p);this.stopMoving();if(!route.length){this.api.toast(R.roadBlocked);return false}this.target=route.shift();this.path=route;this.selected=selected;return true}
  approach(item){const p=typeof item==='string'?map.interactions.find(v=>v.id===item):item;if(p)this.walkTo(p.stand,p)}

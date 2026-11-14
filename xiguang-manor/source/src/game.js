@@ -13,7 +13,7 @@ import {makeArt} from './art.js';
 import {MapEnvironment} from './environment.js';
 import {ST} from './scenery-config.js';
 import {AT} from './adventure-config.js';
-import {registerWardrobe,outfitKey} from './wardrobe-art.js';
+import {registerWardrobe,preloadWardrobe,outfitKey} from './wardrobe-art.js';
 import {mapHit,closeDecoration} from './world-touch.js';
 import {CONFIG,T,fmt} from './config.js';
 import {hideBackend,detachLegacyMap} from './backend-render.js';
@@ -27,7 +27,7 @@ export class Manor extends Phaser.Scene {
   this.load.on('progress',p=>bootStatus('assets',.15+p*.65));
   this.load.on('loaderror',file=>this.failedAssets.set(file.key,{key:file.key,url:file.url}));
   this.load.on('filecomplete',key=>this.failedAssets.delete(key));
-  preloadV5(this);preloadPlay(this);preloadV6(this);
+  preloadV5(this);preloadPlay(this);preloadV6(this);preloadWardrobe(this);
  }
  create(){
   if(this.failedAssets.size){
@@ -47,7 +47,7 @@ export class Manor extends Phaser.Scene {
   this.sweets=[[78,465],[309,575],[158,705],[292,250],[396,641]].map(([x,y],i)=>{let obj=this.add.image(x,y,['pink','orange','purple'][i%3]).setScale(.85);this.world.add(obj);return{obj,x,y,at:0}});
   this.plotSprites=this.dataSave.plots.map((_,i)=>{const x=57+(i%2)*49,y=561+Math.floor(i/2)*43;const flower=this.add.image(x,y,'flower-'+R.flowers[i].id).setScale(1.3);this.world.add(flower);return flower});
   this.gates=[this.add.rectangle(207,754,28,29,0x6e6079).setStrokeStyle(2,0xa893a8),this.add.rectangle(235,754,28,29,0x6e6079).setStrokeStyle(2,0xa893a8)];this.gates.forEach(v=>this.world.add(v));
-  this.player=this.add.sprite(this.dataSave.position.x,this.dataSave.position.y,outfitKey(this.dataSave),0).setScale(1.25).setOrigin(.5,.85);
+  this.player=this.add.sprite(this.dataSave.position.x,this.dataSave.position.y,outfitKey(this.dataSave),1).setScale(.75).setOrigin(.5,.85);
   for(let dir=0;dir<4;dir++)this.anims.create({key:`walk${dir}`,frames:this.anims.generateFrameNumbers('girl',{start:dir*4,end:dir*4+3}),frameRate:8,repeat:-1});
   this.world.add(this.player);this.contactShadow=this.add.ellipse(this.player.x,this.player.y+3,19,5,0x1d3540,.28).setDepth(9);this.world.addAt(this.contactShadow,this.world.getIndex(this.player));this.roomImage=this.add.image(0,0,'room').setOrigin(0).setVisible(false).setDepth(100);
   this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.08,.08,0,50);
@@ -71,7 +71,7 @@ export class Manor extends Phaser.Scene {
   this.sweets.filter(s=>!s.at).forEach(s=>spots.push({id:'sweet',sweet:s,x:s.x,y:s.y,title:T.pickup}));
   return spots.map(s=>({...s,d:Phaser.Math.Distance.Between(p.x,p.y,s.x,s.y)})).filter(s=>s.d<70).sort((a,b)=>a.d-b.d)[0]||closeDecoration(this);
  }
- refreshOutfit(){const f=this.facing*4;this.player.stop();this.player.setTexture(outfitKey(this.dataSave),f)}
+ refreshOutfit(){const f=this.facing*4+1;this.player.stop();this.player.setTexture(outfitKey(this.dataSave),f)}
  enterRoom(){this.room=true;this.target=null;this.roomImage.setVisible(true);this.cameras.main.stopFollow();this.cameras.main.setScroll(0,0)}
  leaveRoom(){this.room=false;this.roomImage.setVisible(false);this.cameras.main.startFollow(this.player,true,.08,.08,0,50)}
 

@@ -1,8 +1,6 @@
 import {flowerTexture} from './flower-art.js';
 import room from './assets/cottage/room.webp';
 import manifest from './assets/cottage/atlas.json';
-import seated from './assets/world/seated.png';
-import world from './assets/world/atlas.json';
 import {HOME} from './home-config.js';
 // The actual PNG pixels are also used by the furniture catalog.
 const files=import.meta.glob('./assets/cottage/*.webp',{eager:true,query:'?url',import:'default'});
@@ -17,11 +15,9 @@ export const COTTAGE={floorY:338,window:{x:123,y:81,w:187,h:182},fixed:[
 ]};
 export function preloadCottage(s){
  if(!s.textures.exists('cottage-shell'))s.load.image('cottage-shell',room);
- if(!s.textures.exists('cottage-seated'))s.load.image('cottage-seated',seated);
  for(const name of Object.keys(manifest.frames).filter(n=>!n.startsWith('flower-')))if(!s.textures.exists('cottage-'+name))s.load.image('cottage-'+name,cottageImage(name));
 }
 export function installCottage(s){
- const t=s.textures.get('cottage-seated');t.setFilter(1);for(const[id,f]of Object.entries(world.seatedFrames))if(!t.has(id))t.add(id,0,f.x,f.y,f.w,f.h);
  for(const key of ['cottage-shell',...Object.keys(manifest.frames).filter(n=>!n.startsWith('flower-')).map(n=>'cottage-'+n)])s.textures.get(key).setFilter(1);
 }
 export function fitCottage(image,type,fixed=null){const f=fixed||HOME.items.find(i=>i.type===type),a=image.texture.getSourceImage();return image.setScale(Math.min(f.w/a.width,f.h/a.height))}

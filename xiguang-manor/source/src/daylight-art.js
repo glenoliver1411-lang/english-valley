@@ -1,5 +1,4 @@
 import terrain from './assets/daylight/terrain.webp';
-import actor from './assets/daylight/xiaoxi-walk.webp';
 import cat from './assets/daylight/cat.webp';
 import oakCanopy from './assets/daylight/oak-canopy.webp';
 import oakTrunk from './assets/daylight/oak-trunk.webp';
@@ -7,13 +6,13 @@ import birchCanopy from './assets/daylight/birch-canopy.webp';
 import birchTrunk from './assets/daylight/birch-trunk.webp';
 import fern from './assets/daylight/fern.webp';
 import roseBorder from './assets/daylight/rose-border.webp';
-import {outfitKey} from './wardrobe-art.js';
+import {poseCharacter,CHARACTER} from './character-art.js';
 
 export const daylightTerrain=terrain;
 const images={'oak-canopy':oakCanopy,'oak-trunk':oakTrunk,'birch-canopy':birchCanopy,'birch-trunk':birchTrunk,fern,'rose-border':roseBorder};
-export function preloadDaylight(s){for(const [id,url]of Object.entries(images))if(!s.textures.exists('daylight-'+id))s.load.image('daylight-'+id,url);if(!s.textures.exists('daylight-xiaoxi'))s.load.spritesheet('daylight-xiaoxi',actor,{frameWidth:64,frameHeight:80});if(!s.textures.exists('daylight-cat'))s.load.spritesheet('daylight-cat',cat,{frameWidth:48,frameHeight:48})}
-export function installDaylight(s){if(![...Object.keys(images).map(id=>'daylight-'+id),'daylight-xiaoxi','daylight-cat'].every(id=>s.textures.exists(id)))return false;for(const id of Object.keys(images))s.textures.get('daylight-'+id).setFilter(1);s.textures.get('daylight-xiaoxi').setFilter(1);s.textures.get('daylight-cat').setFilter(1);for(let d=0;d<4;d++)if(!s.anims.exists('daylight-walk-'+d))s.anims.create({key:'daylight-walk-'+d,frames:s.anims.generateFrameNumbers('daylight-xiaoxi',{start:d*4,end:d*4+3}),frameRate:7,repeat:-1});return true}
-export function worldActor(s,facing=0,moving=false){const p=s.player;if(!p)return;const refined=s.profile.wardrobe.equipped==='original',key=refined?'daylight-xiaoxi':outfitKey(s.profile);if(p.texture.key!==key)p.setTexture(key,facing*4+(refined?1:0));p.setScale(refined?1.3:2);if(moving)p.play(refined?'daylight-walk-'+facing:`dress-${s.profile.wardrobe.equipped}-${facing}`,true);else{p.stop();p.setFrame(facing*4+(refined?1:0))}}
+export function preloadDaylight(s){for(const [id,url]of Object.entries(images))if(!s.textures.exists('daylight-'+id))s.load.image('daylight-'+id,url);if(!s.textures.exists('daylight-cat'))s.load.spritesheet('daylight-cat',cat,{frameWidth:48,frameHeight:48})}
+export function installDaylight(s){if(![...Object.keys(images).map(id=>'daylight-'+id),'daylight-cat'].every(id=>s.textures.exists(id)))return false;for(const id of Object.keys(images))s.textures.get('daylight-'+id).setFilter(1);s.textures.get('daylight-cat').setFilter(1);return true}
+export function worldActor(s,facing=0,moving=false){poseCharacter(s,{facing,moving,scale:CHARACTER.worldScale})}
 
 // Original trunks remain immobile. Only their independently illustrated crowns move.
 export function daylightTree(s,o){if(o.kind!=='tree'||!['oak','birch'].includes(o.frame))return null;const oak=o.frame==='oak',trunk=s.add.image(o.x,o.y,'daylight-'+o.frame+'-trunk').setOrigin(.5,1),canopy=s.add.image(o.x-6,o.y-o.width*(oak?.12:.16),'daylight-'+o.frame+'-canopy').setOrigin(.5,1);trunk.setScale(o.width*(oak?.77:.69)/trunk.width).setDepth(o.y);canopy.setScale(o.width*(oak?1.19:1.13)/canopy.width).setDepth(o.y+.002);trunk.canopy=canopy;return trunk}

@@ -2,6 +2,7 @@ import {preloadFlowers,installFlowers} from './flower-art.js';
 import {EquipmentLayer} from './equipment-layer.js';
 import Phaser from 'phaser';
 import {controls} from './game.js';
+import {poseCharacter,CHARACTER} from './character-art.js';
 import {outfitKey} from './wardrobe-art.js';
 import {preloadFlorist,originalFloristArt,floristArtReady} from './florist-art.js';
 import {FLORIST as F,floristBlocked,floristRoute,frontAt} from './florist-layout.js';
@@ -19,7 +20,7 @@ export class FloristScene extends Phaser.Scene{
   this.cameras.main.setBackgroundColor('#242134');
   const art=originalFloristArt(this);this.background=art.base;this.layers=art.layers;
   this.shadow=this.add.ellipse(F.spawn.x-9,F.spawn.y+8,53,14,0x443542,.19).setDepth(90);
-  this.player=this.add.sprite(F.spawn.x,F.spawn.y,outfitKey(this.profile),0).setOrigin(.5,.85).setScale(F.actorScale).setTint(0xfff0de).setDepth(100);
+  this.player=this.add.sprite(F.spawn.x,F.spawn.y,outfitKey(this.profile),1).setOrigin(.5,.85).setScale(CHARACTER.floristScale).setTint(0xfff0de).setDepth(100);
   this.equipment=new EquipmentLayer(this,this.profile);this.props=F.stations;
   this.keys=this.input.keyboard.createCursorKeys();this.extra=this.input.keyboard.addKeys('W,A,S,D');this.input.keyboard.on('keydown-E',()=>this.api.interact());
   this.input.on('pointerdown',p=>{
@@ -55,7 +56,7 @@ export class FloristScene extends Phaser.Scene{
   if(on){c.useBounds=false;c.setZoom(this.fitZoom);c.centerOn(F.width/2,F.height/2)}else this.followPlayer();this.api.overview?.(on);
  }
  blocked(x,y){return floristBlocked(x,y)}
- idle(){this.player.stop();this.player.setFrame(this.facing*4)}
+ idle(){poseCharacter(this,{scale:CHARACTER.floristScale})}
  stopMoving(){this.target=null;this.path=[];this.selected=null;controls.x=controls.y=0;if(this.player)this.idle()}
  walkTo(point,selected=null){const route=floristRoute(this.player,point);this.stopMoving();if(!route.length)return false;this.target=route.shift();this.path=route;this.selected=selected;return true}
  approach(id){
@@ -76,7 +77,7 @@ export class FloristScene extends Phaser.Scene{
   if((dx||dy)&&this.overview)this.setOverview(false);
   if(dx||dy){this.target=null;this.path=[];this.selected=null}else if(this.target){dx=this.target.x-this.player.x;dy=this.target.y-this.player.y;if(Math.hypot(dx,dy)<4){this.player.setPosition(this.target.x,this.target.y);this.target=this.path.shift()||null;if(this.target){dx=this.target.x-this.player.x;dy=this.target.y-this.player.y}else{const selected=this.selected;this.selected=null;this.idle();if(selected)this.api.action(selected.id);dx=dy=0}}}
   const len=Math.hypot(dx,dy);
-  if(len>.05&&!this.overview){const before={x:this.player.x,y:this.player.y},step=this.target?Math.min(F.speed*dt,len):F.speed*dt;dx/=Math.max(1,len);dy/=Math.max(1,len);if(!this.blocked(this.player.x+dx*step,this.player.y))this.player.x+=dx*step;if(!this.blocked(this.player.x,this.player.y+dy*step))this.player.y+=dy*step;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;if(Math.hypot(before.x-this.player.x,before.y-this.player.y)>.01)this.player.play(`dress-${this.profile.wardrobe.equipped}-${this.facing}`,true);else this.stopMoving()}else this.idle();
+  if(len>.05&&!this.overview){const before={x:this.player.x,y:this.player.y},step=this.target?Math.min(F.speed*dt,len):F.speed*dt;dx/=Math.max(1,len);dy/=Math.max(1,len);if(!this.blocked(this.player.x+dx*step,this.player.y))this.player.x+=dx*step;if(!this.blocked(this.player.x,this.player.y+dy*step))this.player.y+=dy*step;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;if(Math.hypot(before.x-this.player.x,before.y-this.player.y)>.01)poseCharacter(this,{moving:true,scale:CHARACTER.floristScale});else this.stopMoving()}else this.idle();
   this.shadow.setPosition(this.player.x-9,this.player.y+8);this.updateOcclusion();this.api.near(this.nearest());
  }
 }

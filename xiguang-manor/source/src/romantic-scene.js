@@ -20,6 +20,7 @@ import {starTwinkle} from './nature-config.js';
 import {retreatRoute} from './retreat-navigation.js';
 import Phaser from 'phaser';
 import {controls} from './game.js';
+import {poseCharacter,CHARACTER} from './character-art.js';
 import {outfitKey} from './wardrobe-art.js';
 import {retreatPainting} from './romantic-art.js';
 import {ROMANCE as R} from './romantic-config.js';
@@ -35,7 +36,7 @@ export class RomanticScene extends Phaser.Scene {
   if(!installFlowers(this)){this.api.failed?.();return}
   if(this.place==='cabin'){installCottage(this);this.releaseViewport=portraitViewport(this);this.cameras.main.setZoom(this.sys.game.manorPixelScale||1);this.onHomeResize=()=>this.cameras.main.setZoom(this.sys.game.manorPixelScale||1);this.scale.on('resize',this.onHomeResize)}
   this.cameras.main.setBackgroundColor('#493e52');this.repaint();
-  this.player=this.add.sprite(216,785,outfitKey(this.profile),12).setOrigin(.5,.85).setScale(1.25);
+  this.player=this.add.sprite(216,785,outfitKey(this.profile),13).setOrigin(.5,.85).setScale(CHARACTER.roomScale);
   this.equipment=new EquipmentLayer(this,this.profile);this.cat=this.add.image(251,772,'cat').setScale(1.1);this.groundShadow=this.add.graphics().setDepth(19);this.g=this.add.graphics().setDepth(35);this.pickups=new FlowerPickupEffects();this.pickupGraphics=this.add.graphics().setDepth(100);this.decorGraphics=this.add.graphics().setDepth(150);this.homeEffectGraphics=this.add.graphics().setDepth(110);this.syncHome();this.syncFixed();this.meadow=this.place!=='cabin'?new WindMeadow(432,850,{count:this.place==='meadow'?64:105,mask:this.place==='meadow'?(x,y)=>Math.abs(x-meadowPath(y).x)>meadowPath(y).width/2+7&&!(x>278&&x<393&&y>540&&y<622)&&!(x>55&&x<151&&y>614&&y<689):grassMask(this.background.texture.getSourceImage(),['#3d5557','#49645e','#617970']),minY:340,maxY:800,seed:407}):null;
   this.flowerPatches=this.place==='meadow'?MEADOW_FLOWERS.map((f,i)=>({flower:f.id,x:f.x,y:f.y,sprite:flowerSprite(this,f.id,f.x,f.y,46,32+(f.y-330)/480*28).setDepth(20+(f.y+9)*.01),phase:i*2.39})):[];this.gardenBlooms=this.place==='garden'?Array.from({length:6},(_,i)=>flowerSprite(this,'rose',87+i%2*67,401+Math.floor(i/2)*61,42,35).setVisible(false)):[];
   this.v5Sprigs=this.place==='meadow'?new MeadowSprigs(this):null;this.cameras.main.setBounds(0,0,432,850);this.cameras.main.startFollow(this.player,true,.07,.07,0,40);this.cameras.main.fadeIn(500,35,35,53);this.fadeTimeout=setTimeout(()=>{if(this.sys.isActive())this.cameras.main.fadeEffect.reset()},700);
@@ -61,17 +62,7 @@ export class RomanticScene extends Phaser.Scene {
  nearest(){return this.props().map(p=>({...p,d:Math.hypot(p.x-this.player.x,p.y-this.player.y)})).filter(p=>p.d<80).sort((a,b)=>a.d-b.d)[0]}
  playerDepth(){return this.quiet&&this.seat==='home'&&this.seatItem?20+this.seatItem.y*.01+.01:20+(this.player.y+4)*.01}
  idle(){
-  this.player.stop();
-  // Actor state is updated every frame, independently of decorative redraws.
-  // Never restore the standing sheet between two seated render frames.
-  if(this.quiet&&this.seat==='home'&&this.seatItem){
-   const period=v5Period(this.profile.scenery.clock),key='home-seated-'+this.profile.wardrobe.equipped+'-'+period;
-   if(this.place==='cabin'){if(this.player.texture.key!=='cottage-seated'||this.player.frame.name!==this.profile.wardrobe.equipped)this.player.setTexture('cottage-seated',this.profile.wardrobe.equipped)}else if(!this.textures.exists(key)){const bare={...this.profile,play:{equipment:{}}};this.textures.addCanvas(key,this.v5Cats.girl(bare,period));this.homeTextureKeys.add(key)}
-   if(this.place!=='cabin'&&this.player.texture.key!==key)this.player.setTexture(key);
-  }else{
-   const key=outfitKey(this.profile),frame=this.facing*4;
-   if(this.player.texture.key!==key||this.player.frame.name!==frame)this.player.setTexture(key,frame);
-  }
+  poseCharacter(this,{seated:this.quiet,facing:this.quiet&&['window','meadowBench','pool'].includes(this.seat)?3:this.facing,scale:this.place==='meadow'?(this.player.scaleX||CHARACTER.roomScale):CHARACTER.roomScale});
   this.player.setDepth(this.playerDepth());
  }
  stopMoving(){this.target=null;this.path=[];this.selected=null;controls.x=controls.y=0;this.input.keyboard.resetKeys();this.idle()}
@@ -91,7 +82,7 @@ export class RomanticScene extends Phaser.Scene {
   if(!this.blocked(nx,this.player.y))this.player.x=nx;
   if(!this.blocked(this.player.x,ny))this.player.y=ny;
   this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;
-  if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)this.player.play(`dress-${this.profile.wardrobe.equipped}-${this.facing}`,true);
+  if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)poseCharacter(this,{moving:true,scale:this.place==='meadow'?this.player.scaleX:CHARACTER.roomScale});
   else{if(this.target){this.target=null;this.path=[];this.selected=null}this.idle()}
  }
 
@@ -142,14 +133,14 @@ export class RomanticScene extends Phaser.Scene {
   if(this.paintKey()!==this.lastPaint)this.repaint();this.syncHome();this.syncFixed();this.updatePlacement();const a=skyPalette(this.profile.scenery.clock),day=a.day,t=w.reducedMotion?0:this.elapsed;const [basePeriod,blendPeriod,lightAlpha]=retreatPair(this.profile.scenery.clock,day);if(this.place==='cabin')cottageLighting(this,day);else{this.background.setTexture(this.ensurePeriod(basePeriod));this.blend.setTexture(this.ensurePeriod(blendPeriod)).setAlpha(lightAlpha)}
   if(this.place==='cabin'){const lamps=w.room.items.filter(item=>item.on&&['lamp','candles','berryLamp','starProjector','glassCabinet'].includes(item.type));for(const item of w.room.items){const image=this.homeSprites.get(item.type);let warm=0;for(const lamp of lamps)warm=Math.max(warm,Math.max(0,1-Math.hypot(item.x-lamp.x,item.y-lamp.y)/140));image?.setTint(parseInt(mix(mix('#c6bed0','#f3dcc4',warm*.45),'#fff6e6',day).slice(1),16))}}this.player.setDepth(this.playerDepth());this.cat.setDepth(20+(this.cat.y+13)*.01);this.v5Sprigs?.update(t,this.profile.scenery.clock,w.reducedMotion);const g=this.g;g.clear();const rect=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillRect(Math.round(x),Math.round(y),ww,hh)},ellipse=(x,y,ww,hh,col,alpha=1)=>{g.fillStyle(parseInt(col.slice(1),16),alpha);g.fillEllipse(x,y,ww,hh)};
   this.meadow?.draw(rect,{day,player:this.player});const fg=this.pickupGraphics;fg.clear();this.pickups.draw((x,y,w,h,color,alpha)=>{fg.fillStyle(parseInt(color.slice(1),16),alpha);fg.fillRect(Math.round(x),Math.round(y),w,h)});
-  this.groundShadow.clear().fillStyle(0x384955,.16).fillEllipse(this.player.x+2,this.player.y+3,20*this.player.scaleX/1.25,5).fillEllipse(this.cat.x+4,this.cat.y+15,25,4);
+  this.groundShadow.clear().fillStyle(0x384955,.16).fillEllipse(this.player.x+2,this.player.y+3,20*this.player.scaleX/CHARACTER.roomScale,5).fillEllipse(this.cat.x+4,this.cat.y+15,25,4);
   // The cat is always safe. It follows, chases a butterfly, stretches, then naps.
   const cycle=t%47,follow=(w.catFollow||this.profile.play.equipment.companion==='catbell')&&!this.quiet;
   const catBed=this.place==='cabin'?w.room.items.find(i=>i.type==='catBed'&&i.on):null;const cx=catBed&&!follow&&cycle>20?catBed.x:follow?this.player.x+30:this.place==='cabin'?cycle<14?255:325:this.place==='meadow'?this.quiet?this.player.x+30:cycle<20?330:112:cycle<15?286+Math.sin(t*.6)*23:254;
   const cy=catBed&&!follow&&cycle>20?catBed.y-12:follow?this.player.y-12:this.place==='cabin'?cycle<14?249:714:this.place==='meadow'?this.quiet?this.player.y+12:cycle<20?597:677:cycle<15?362+Math.cos(t*.5)*13:338;
   this.cat.x+=(cx-this.cat.x)*.065;this.cat.y+=(cy-this.cat.y)*.065;
   const sleep=!follow&&(this.quiet||cycle>28),stretch=!sleep&&cycle>23&&cycle<28?Math.sin((cycle-23)/5*Math.PI):0;
-  const perspective=this.place==='meadow'?.45+Math.max(0,Math.min(1,(this.cat.y-310)/500))*.55:1;this.cat.setTexture(sleep?'cat-sleep':'cat').setScale((1.1+stretch*.2)*perspective,(sleep?.8+Math.sin(t)*.008:1.1-stretch*.3)*perspective);if(this.place==='meadow')this.player.setScale(.55+Math.max(0,Math.min(1,(this.player.y-330)/480))*.7);const catPeriod=v5Period(this.profile.scenery.clock),catPose=sleep?'sleep':stretch>.2?'stretch':'sit',catTexture='v5-cat-'+catPeriod+'-'+catPose;if(!this.textures.exists(catTexture)){this.textures.addCanvas(catTexture,this.v5Cats.cat(catPeriod,catPose));this.homeTextureKeys.add(catTexture)}this.cat.setTexture(catTexture).setDisplaySize((37+stretch*4)*perspective,(26-stretch*2)*perspective);
+  const perspective=this.place==='meadow'?.45+Math.max(0,Math.min(1,(this.cat.y-310)/500))*.55:1;this.cat.setTexture(sleep?'cat-sleep':'cat').setScale((1.1+stretch*.2)*perspective,(sleep?.8+Math.sin(t)*.008:1.1-stretch*.3)*perspective);if(this.place==='meadow')this.player.setScale((.55+Math.max(0,Math.min(1,(this.player.y-330)/480))*.7)*.6);const catPeriod=v5Period(this.profile.scenery.clock),catPose=sleep?'sleep':stretch>.2?'stretch':'sit',catTexture='v5-cat-'+catPeriod+'-'+catPose;if(!this.textures.exists(catTexture)){this.textures.addCanvas(catTexture,this.v5Cats.cat(catPeriod,catPose));this.homeTextureKeys.add(catTexture)}this.cat.setTexture(catTexture).setDisplaySize((37+stretch*4)*perspective,(26-stretch*2)*perspective);
   for(const p of this.flowerPatches){p.sprite.setTint(a.day>.4?0xffffff:a.day>.1?0xe9c8c0:0x99acc5);p.sprite.rotation=w.reducedMotion?0:Math.sin(t*.6+p.phase)*.012}
   if(this.place==='meadow'){this.drawMeadow(rect,ellipse,a,t,reduced)}else if(this.place==='garden'){
    for(let i=0;i<6;i++){const b=w.beds[i],stage=flowerStage(b),x=87+i%2*67,y=401+Math.floor(i/2)*61,sprite=this.gardenBlooms[i];sprite.setVisible(stage>=3);if(stage>=3){sprite.setTexture(flowerTexture(b.flower));const height=stage===4?36:22;sprite.setScale(Math.min(43/sprite.width,height/sprite.height)).setDepth(20+y*.01+.02);sprite.rotation=w.reducedMotion?0:Math.sin(t*.7+i*2.3)*.025}else if(stage>0){const height=stage===1?5:10;rect(x,y-height,2,height,'#87a188');rect(x-5,y-height*.6,6,3,'#a1b398');if(stage===2)rect(x+6,y-7,2,3,'#badcdb')}}

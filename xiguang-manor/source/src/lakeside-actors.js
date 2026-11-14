@@ -1,6 +1,6 @@
 import {playFrame} from './play-assets.js';
 import {landscapePainter} from './landscape-detail.js';
-import {ADVENTURE} from './adventure-config.js';
+import {characterPainting} from './character-art.js';
 import {mix} from './sky-model.js';
 import {LAKESIDE} from './lakeside-config.js';
 
@@ -13,33 +13,15 @@ export class LakesideActors {
  constructor(){this.girls=new Map();this.cats=new Map()}
  girl(profile,period){
   const id=profile.wardrobe.equipped,key=id+'/'+period+'/'+Object.values(profile.play?.equipment||{}).join(',');if(this.girls.has(key))return this.girls.get(key);
-  const p=landscapePainter(24,34),r=p.r,a=LAKESIDE.periods[period],o=ADVENTURE.outfits.find(o=>o.id===id),coat=o?.coat||'#b598bc',top=o?.top||'#c5acd0',skirt=o?.skirt||'#8c6991';
-  const hair=period==='night'?['#44384f','#644b62','#816075','#a18096','#c3a6b9']:period==='dusk'?['#4c394f','#705063','#956b7f','#bc8c9f','#dfb2bd']:['#564052','#785568','#a27787','#c89da9','#e6c5c7'];
-  // Bent knees and the shadowed hem sit on the cushion, not above the backrest.
-  p.poly([[6,25],[17,25],[20,29],[18,32],[6,32],[4,30]],mix(skirt,a.bark[0],.28));
-  p.poly([[5,16],[8,14],[16,14],[19,17],[19.5,27],[17,30],[6,30],[4.5,27]],mix(coat,a.light,.10));
-  r(5.5,20,1,7,mix(coat,a.bark[0],.23));r(17,18,1,9,mix(coat,a.light,.30));
-  p.poly([[8,17],[16,17],[15.5,27],[8.5,27]],mix(top,a.light,.12));
-  for(let y=20;y<26;y+=2.5){r(8.5,y,7,.5,mix(top,coat,.4));r(15.5,y,.5,1,mix(top,a.light,.24))}
-  p.poly([[4.5,18],[6.5,17],[8,23],[10,26],[9,28],[6,26],[3.5,22]],coat);
-  p.poly([[18,17],[20,18],[21,23],[18,26],[15,27],[14,25],[18,23]],mix(coat,a.light,.16));
-  r(8.5,25.5,3,1.5,'#e1bcad');r(13,25.5,3,1.5,'#f4d4bd');
-  // Asymmetric hair outline, small overlapping locks and broken strand lights.
-  const hp=landscapePainter(24,22);
-  hp.poly([[6,2.5],[8,1],[16,1],[19,3],[20.5,7],[20,14],[21,18],[19.5,21],[16,19.5],[13,21],[9,20],[6,21],[4,17.5],[4.5,8]],hair[0]);
-  hp.poly([[6.5,3],[10,2],[16,2.5],[18.5,4.5],[19.5,9],[18.5,14],[19.5,18],[17.5,20],[14,18.5],[11,20],[7,18.5],[5.5,19],[5,15],[6,9]],hair[1]);
-  hp.poly([[8,3.5],[13,2.5],[17.5,4],[18,9],[16,16],[17,18.5],[14.5,17],[12,19],[9,17],[7,18],[7.5,12]],hair[2]);
-  hp.poly([[12,3],[16.5,3.5],[18,5],[18,8],[16.5,10],[16,7],[14,6],[12.5,7],[10,6]],hair[3]);
-  for(const points of [[[18.5,8],[18,12],[17.5,14]],[[15,8],[15.5,12],[14.5,16]],[[10,10],[10.5,14],[10,17]],[[7,8],[6.5,12],[7.5,15]]])for(let i=1;i<points.length;i++)line(hp,...points[i-1],...points[i],hair[i%2?1:3]);
-  hp.r(15,3.5,2.5,.5,hair[4]);hp.r(18,5,.5,2,hair[4]);
-  // The existing peach ribbon is the immediately recognizable identity cue.
-  hp.poly([[5,4],[10,3],[16,3.5],[19,5],[18.5,6],[15,5],[10,4.5],[5.5,5.5]],'#dab0b9');
-  hp.poly([[18,3],[21,2],[22,4],[21,6],[19,5],[18.5,7],[17,6]],'#f1c4bc');hp.r(19,3,1,2,'#ffe1c8');hp.r(20.5,5,.5,2,'#bf8f9d');
-  p.c.drawImage(hp.canvas,0,0,24,18.5);
-  // A fine moon/sun rim on the right shoulder binds the sprite to the scene.
-  r(20,18.5,.5,3,mix(coat,a.light,.55));r(18.5,24,1,.5,mix(coat,a.light,.4));
-  const eq=profile.play?.equipment||{};if(eq.head==='crown')p.c.drawImage(playFrame('equip-crown'),1,-1,23,11);if(eq.pin==='rosepin')p.c.drawImage(playFrame('equip-rosepin'),13,19,6,7);if(eq.hand==='ghostlamp')p.c.drawImage(playFrame('equip-ghostlamp'),18,22,7,12);this.girls.set(key,p.canvas);return p.canvas;
+  // Crop/composite the same native seated illustration used in playable rooms.
+  // Keep the approved face/hat identity through scenic views as well.
+  const c=document.createElement('canvas');c.width=64;c.height=80;const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.drawImage(characterPainting(profile,{seated:true,back:true}),0,0);
+  const eq=profile.play?.equipment||{};
+  if(eq.head==='crown')ctx.drawImage(playFrame('equip-crown'),21,5,22,10);
+  if(eq.hand==='ghostlamp')ctx.drawImage(playFrame('equip-ghostlamp'),40,44,10,16);
+  const cropped=document.createElement('canvas');cropped.width=48;cropped.height=68;cropped.getContext('2d').drawImage(c,8,2,48,68,0,0,48,68);this.girls.set(key,cropped);return cropped;
  }
+
  cat(period,pose='sleep'){
   const key=period+'/'+pose;if(this.cats.has(key))return this.cats.get(key);
   const p=landscapePainter(26,18),r=p.r,a=LAKESIDE.periods[period],fur=period==='night'?['#4c405c','#7c668c','#ad91b6','#d2b4cd']:['#66516e','#a180a5','#d2adc9','#ebcede'];
