@@ -30,7 +30,7 @@ export class LakesideWater {
   const s=this.scene,top=this.top,bottom=this.bottom,height=this.height,w=this.w,h=this.h;
   for(const[period,alpha]of weights(s,a)){c.globalAlpha=alpha;c.drawImage(this.cache.get(period),0,top,w,height)}c.globalAlpha=1;
   const rc=this.reflect.getContext('2d');rc.setTransform(1,0,0,1,0,0);rc.clearRect(0,0,w*2,height*2);rc.imageSmoothingEnabled=false;
-  rc.save();rc.translate(0,height*2);rc.scale(1,-1);rc.drawImage(s.mode==='fireworks'?c.canvas:s.reflectionSky,0,h*.402*2,w*2,h*.296*2,0,0,w*2,height*2);rc.restore();
+  rc.save();rc.translate(0,height*2);rc.scale(1,-1);const rs=s.mode==='fireworks'?2*(s.density||1):2;rc.drawImage(s.mode==='fireworks'?c.canvas:s.reflectionSky,0,h*.402*rs,w*rs,h*.296*rs,0,0,w*2,height*2);rc.restore();
   for(let row=0;row<height;row+=1){
    const drift=Math.round((Math.sin(row*.31+t*.47)*.55+Math.sin(row*.123-t*.27)*.6)*(row/height+.35)*2)/2;
    c.globalAlpha=(.27-row/height*.11)*(1-a.day*.23);

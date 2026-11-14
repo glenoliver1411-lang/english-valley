@@ -1,0 +1,96 @@
+{
+  "originalSHA256": "e512d0d1ccc643c6b194e1b195d1cd8b8904eec9bb2308a68a3d604686891d7f",
+  "method": "Original AI-assisted transparent light painting; technical crops only",
+  "frames": {
+    "ice-tail": {
+      "crop": [
+        65,
+        24,
+        934,
+        220
+      ],
+      "width": 869,
+      "height": 196
+    },
+    "ice-head": {
+      "crop": [
+        1252,
+        6,
+        1498,
+        240
+      ],
+      "width": 246,
+      "height": 234
+    },
+    "ice-dust": {
+      "crop": [
+        1837,
+        67,
+        1966,
+        188
+      ],
+      "width": 129,
+      "height": 121
+    },
+    "pearl-tail": {
+      "crop": [
+        65,
+        265,
+        955,
+        461
+      ],
+      "width": 890,
+      "height": 196
+    },
+    "pearl-head": {
+      "crop": [
+        1252,
+        247,
+        1498,
+        481
+      ],
+      "width": 246,
+      "height": 234
+    },
+    "pearl-dust": {
+      "crop": [
+        1837,
+        308,
+        1966,
+        429
+      ],
+      "width": 129,
+      "height": 121
+    },
+    "xi-tail": {
+      "crop": [
+        65,
+        506,
+        916,
+        702
+      ],
+      "width": 851,
+      "height": 196
+    },
+    "xi-head": {
+      "crop": [
+        1252,
+        488,
+        1498,
+        722
+      ],
+      "width": 246,
+      "height": 234
+    },
+    "xi-dust": {
+      "crop": [
+        1837,
+        549,
+        1966,
+        670
+      ],
+      "width": 129,
+      "height": 121
+    }
+  }
+}

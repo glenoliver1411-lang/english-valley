@@ -1,0 +1,236 @@
+{
+  "release": "home-stars-20261114-3",
+  "nodeTests": {
+    "total": 115,
+    "passed": 115
+  },
+  "physicalDevice": false,
+  "roomChromium": {
+    "errors": [],
+    "physicalDevice": false,
+    "engine": "chromium",
+    "nativeTouchDrag": true,
+    "nativePinchZoom": true
+  },
+  "roomWebKit": {
+    "errors": [],
+    "physicalDevice": false,
+    "engine": "webkit"
+  },
+  "meteorChromium": {
+    "engine": "chromium",
+    "errors": [],
+    "stages": [
+      {
+        "name": "meteor-opening",
+        "at": 2.1260000000000003,
+        "active": 0,
+        "near": 0,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      },
+      {
+        "name": "meteor-first",
+        "at": 5.92360000000008,
+        "active": 1,
+        "near": 1,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      },
+      {
+        "name": "meteor-peak",
+        "at": 18.403500000000104,
+        "active": 4,
+        "near": 1,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      },
+      {
+        "name": "meteor-xi",
+        "at": 26.606700000000394,
+        "active": 1,
+        "near": 1,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      }
+    ],
+    "physicalDevice": false,
+    "wallShowSeconds": 33.867
+  },
+  "meteorWebKit": {
+    "engine": "webkit",
+    "errors": [],
+    "stages": [
+      {
+        "name": "meteor-opening",
+        "at": 1.1830000000000005,
+        "active": 0,
+        "near": 0,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      },
+      {
+        "name": "meteor-first",
+        "at": 5.015999999999993,
+        "active": 1,
+        "near": 1,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      },
+      {
+        "name": "meteor-peak",
+        "at": 17.472000000000083,
+        "active": 4,
+        "near": 3,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      },
+      {
+        "name": "meteor-xi",
+        "at": 25.24100000000015,
+        "active": 1,
+        "near": 1,
+        "canvas": [
+          864,
+          1648
+        ],
+        "lightNodes": 94,
+        "variant": "moonfall"
+      }
+    ],
+    "physicalDevice": false,
+    "wallShowSeconds": 34.194
+  },
+  "memory": {
+    "renderer": "Phaser Canvas fallback",
+    "samples": [
+      {
+        "textures": 114,
+        "skyChildren": 0,
+        "homeChildren": 0,
+        "viewport": 1
+      },
+      {
+        "textures": 114,
+        "skyChildren": 0,
+        "homeChildren": 0,
+        "viewport": 1
+      },
+      {
+        "textures": 114,
+        "skyChildren": 0,
+        "homeChildren": 0,
+        "viewport": 1
+      }
+    ],
+    "errors": [],
+    "physicalDevice": false
+  },
+  "offlineChromium": {
+    "engine": "chromium",
+    "physicalDevice": false,
+    "steps": [
+      "Current production graph completely cached before opening any lazy indoor scene",
+      "Whole browser closed and reopened with browser offline and server returning503",
+      "Offline three independent chairs, layered rug, real long-press bookcase drag, named scheme and commit",
+      "Offline lazy candy module still completes eight stirs and three cooking rounds",
+      "Flower collection and home bouquet continue to save offline",
+      "Offline new native meteor textures, independent light layer, playback and skip",
+      "Existing native independent aurora still works offline and returns to the new manor",
+      "Second complete offline restart keeps every furniture instance, schemes, outfits, relics, flowers and candy progress",
+      "Reconnecting does not reset the room"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "home-stars-20261114-3",
+      "scope": "http://localhost:4196/english-valley/xiguang-manor/home-stars-preview/",
+      "cache": "xiguang-precache::http://localhost:4196/english-valley/xiguang-manor/home-stars-preview/::home-stars-20261114-3",
+      "complete": true,
+      "files": 165,
+      "bytes": 32443158,
+      "cacheEntries": 166,
+      "internalBytes": 63,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "offlineWebKit": {
+    "engine": "webkit",
+    "physicalDevice": false,
+    "steps": [
+      "Current production graph completely cached before opening any lazy indoor scene",
+      "Whole browser closed and reopened with browser offline and server returning503",
+      "Offline three independent chairs, layered rug, real long-press bookcase drag, named scheme and commit",
+      "Offline lazy candy module still completes eight stirs and three cooking rounds",
+      "Flower collection and home bouquet continue to save offline",
+      "Offline new native meteor textures, independent light layer, playback and skip",
+      "Existing native independent aurora still works offline and returns to the new manor",
+      "Second complete offline restart keeps every furniture instance, schemes, outfits, relics, flowers and candy progress",
+      "Reconnecting does not reset the room"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "home-stars-20261114-3",
+      "scope": "http://localhost:4196/english-valley/xiguang-manor/home-stars-preview/",
+      "cache": "xiguang-precache::http://localhost:4196/english-valley/xiguang-manor/home-stars-preview/::home-stars-20261114-3",
+      "complete": true,
+      "files": 165,
+      "bytes": 32443158,
+      "cacheEntries": 166,
+      "internalBytes": 63,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "baseline": {
+    "source": "03e66eb / preserved aurora-art-preview build",
+    "viewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 2,
+    "errors": []
+  },
+  "actions": {
+    "directEditor": true,
+    "flipSaved": true,
+    "hearthSitAndStand": true
+  },
+  "liveWish": {
+    "nativeTouchOnLiveXi": true,
+    "wishSaved": true,
+    "skipAfterWish": true
+  },
+  "nativeLightAssets": {
+    "files": 9,
+    "bytes": 493916
+  }
+}

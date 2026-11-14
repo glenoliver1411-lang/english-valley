@@ -4,7 +4,7 @@ import manifest from './assets/cottage/atlas.json';
 import {HOME} from './home-config.js';
 // The actual PNG pixels are also used by the furniture catalog.
 const files=import.meta.glob('./assets/cottage/*.webp',{eager:true,query:'?url',import:'default'});
-export const cottageImage=type=>files['./assets/cottage/'+type+'.webp'];
+export const cottageImage=type=>files['./assets/cottage/'+(type==='floralWall'?'floral':type)+'.webp'];
 export const COTTAGE={floorY:338,window:{x:123,y:81,w:187,h:182},fixed:[
  {type:'fireplace',id:'fire',x:77,y:330,w:103,h:142},
  {type:'desk',id:'mail',x:216,y:330,w:156,h:76},
@@ -28,14 +28,14 @@ export function cottageFlowers(s,image,item,bouquet,visible=true){
 }
 export const cottageWindow=(x,y)=>x>123&&x<309&&y>136&&y<258||y>82&&y<=136&&((x-216)/88)**2+((y-138)/58)**2<1;
 export function cottageLighting(s,day){
- const w=s.profile.romance,theme=w.theme,tint=day>.5?0xffffff:day>.1?0xdfc9be:0x888da8;
+ const w={...s.profile.romance,room:s.editing?.controller.room||s.profile.romance.room},theme=s.editing?.controller.theme||w.theme,tint=day>.5?0xffffff:day>.1?0xdfc9be:0x888da8;
  s.background.setTint(tint);s.cottageFloor.setTint(day>.5?(w.room.floor==='pale'?0xd9d3de:w.room.floor==='herringbone'?0xe9c696:0xffffff):0x9b899b);
  s.cottageWall.setTint(tint);
  s.cottageGlass.setTint(day>.3?0xffffff:0x667b9d);
  const floor=w.room.floor,wall=w.room.wallpaper;
  s.cottageSurface.setVisible(floor!=='original').setTexture('cottage-'+(floor==='pale'?'pale':'herringbone')).setTint(day>.3?0xffffff:0x8b8a9d);
  for(const panel of s.cottagePaper)panel.setVisible(wall!=='original').setTexture('cottage-'+(wall==='gingham'?'gingham':'floral')).setTint(tint);
- s.cottageRug.setTint(day>.3?theme==='cream'?0xffefd3:theme==='rose'?0xffe6ea:0xffffff:0xb2a2bc);
+
  s.cottageGift.setTexture('cottage-'+(w.personalStar?'giftOpen':'giftClosed'));
  for(const p of s.fixedSprites){p.setTint(day>.3?theme==='lavender'?0xeee4ff:theme==='cream'?0xfff3da:0xffffff:0xbaa5b4)}
 }
