@@ -17,7 +17,9 @@
     "build:world:preview": "vite build --mode world-preview",
     "build:daylight:preview": "vite build --mode daylight-preview",
     "build:aurora:preview": "vite build --mode aurora-art-preview",
-    "build:home:stars": "vite build --mode home-stars-preview"
+    "build:home:stars": "vite build --mode home-stars-preview",
+    "build:forest:preview": "vite build --mode forest-garden-preview",
+    "build:stage1": "vite build --mode full-stage1"
   },
   "dependencies": {
     "phaser": "^3.90.0",

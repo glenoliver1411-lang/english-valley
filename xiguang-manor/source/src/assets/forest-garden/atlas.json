@@ -1,0 +1,372 @@
+{
+  "frames": {
+    "tree": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 813,
+        "h": 535
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 813,
+        "h": 535
+      },
+      "sourceSize": {
+        "w": 813,
+        "h": 535
+      }
+    },
+    "leftBush": {
+      "frame": {
+        "x": 817,
+        "y": 0,
+        "w": 206,
+        "h": 231
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 206,
+        "h": 231
+      },
+      "sourceSize": {
+        "w": 206,
+        "h": 231
+      }
+    },
+    "frontLeft": {
+      "frame": {
+        "x": 0,
+        "y": 545,
+        "w": 361,
+        "h": 339
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 361,
+        "h": 339
+      },
+      "sourceSize": {
+        "w": 361,
+        "h": 339
+      }
+    },
+    "frontRight": {
+      "frame": {
+        "x": 364,
+        "y": 545,
+        "w": 347,
+        "h": 369
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 347,
+        "h": 369
+      },
+      "sourceSize": {
+        "w": 347,
+        "h": 369
+      }
+    },
+    "arch": {
+      "frame": {
+        "x": 715,
+        "y": 545,
+        "w": 245,
+        "h": 281
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 245,
+        "h": 281
+      },
+      "sourceSize": {
+        "w": 245,
+        "h": 281
+      }
+    },
+    "bed-0": {
+      "frame": {
+        "x": 0,
+        "y": 918,
+        "w": 148,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 41
+      }
+    },
+    "bed-1": {
+      "frame": {
+        "x": 150,
+        "y": 918,
+        "w": 148,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 41
+      }
+    },
+    "bed-2": {
+      "frame": {
+        "x": 300,
+        "y": 918,
+        "w": 148,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 41
+      }
+    },
+    "bed-3": {
+      "frame": {
+        "x": 450,
+        "y": 918,
+        "w": 148,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 41
+      }
+    },
+    "bed-4": {
+      "frame": {
+        "x": 600,
+        "y": 918,
+        "w": 148,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 41
+      }
+    },
+    "bed-5": {
+      "frame": {
+        "x": 750,
+        "y": 918,
+        "w": 148,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 41
+      }
+    }
+  },
+  "meta": {
+    "size": {
+      "w": 1024,
+      "h": 1024
+    },
+    "anchors": {
+      "tree": {
+        "x": 36.04058624577227,
+        "y": 75.49041713641488,
+        "depth": 339,
+        "sourceCrop": [
+          74,
+          155,
+          887,
+          690
+        ]
+      },
+      "leftBush": {
+        "x": 0.0,
+        "y": 564.9605411499437,
+        "depth": 677,
+        "sourceCrop": [
+          0,
+          1160,
+          206,
+          1391
+        ]
+      },
+      "frontLeft": {
+        "x": 0.0,
+        "y": 698.8951521984217,
+        "depth": 850,
+        "sourceCrop": [
+          0,
+          1435,
+          361,
+          1774
+        ]
+      },
+      "frontRight": {
+        "x": 262.9988726042841,
+        "y": 684.2841037204058,
+        "depth": 850,
+        "sourceCrop": [
+          540,
+          1405,
+          887,
+          1774
+        ]
+      },
+      "arch": {
+        "x": 312.67643742953777,
+        "y": 550.3494926719278,
+        "depth": 686,
+        "sourceCrop": [
+          642,
+          1130,
+          887,
+          1411
+        ]
+      },
+      "bed-0": {
+        "x": 37.98872604284104,
+        "y": 412.51860202931226,
+        "depth": 435,
+        "sourceCrop": [
+          78,
+          847,
+          226,
+          888
+        ]
+      },
+      "bed-1": {
+        "x": 123.21984216459977,
+        "y": 423.7204058624577,
+        "depth": 446,
+        "sourceCrop": [
+          253,
+          870,
+          401,
+          911
+        ]
+      },
+      "bed-2": {
+        "x": 27.273957158962794,
+        "y": 464.6313416009019,
+        "depth": 487,
+        "sourceCrop": [
+          56,
+          954,
+          204,
+          995
+        ]
+      },
+      "bed-3": {
+        "x": 117.37542277339345,
+        "y": 475.8331454340473,
+        "depth": 498,
+        "sourceCrop": [
+          241,
+          977,
+          389,
+          1018
+        ]
+      },
+      "bed-4": {
+        "x": 30.196166854565952,
+        "y": 519.6662908680947,
+        "depth": 542,
+        "sourceCrop": [
+          62,
+          1067,
+          210,
+          1108
+        ]
+      },
+      "bed-5": {
+        "x": 123.21984216459977,
+        "y": 533.7903043968432,
+        "depth": 556,
+        "sourceCrop": [
+          253,
+          1096,
+          401,
+          1137
+        ]
+      }
+    },
+    "sources": {
+      "morning": {
+        "file": "originals/morning.png",
+        "sha256": "309922b173f64da674f11890272c9ad4975000c96822a25158e89ee34380ebe8"
+      },
+      "day": {
+        "file": "originals/day.png",
+        "sha256": "7115615e1f6bcba78f346de512e3608ca0c2a938181fd41449ad15c4e7a2aedc"
+      },
+      "dusk": {
+        "file": "originals/dusk.png",
+        "sha256": "51cae10ccaca4ede6c74548ac5fe174ec5ec8a07c8753a82c387d61673c1d482"
+      },
+      "night": {
+        "file": "originals/night.png",
+        "sha256": "8549fb377d909e5f5685d36a329817334fe3cc194b005304bcb68388b8621b37"
+      }
+    },
+    "method": "Exact original RGB crops with alpha masks only"
+  }
+}

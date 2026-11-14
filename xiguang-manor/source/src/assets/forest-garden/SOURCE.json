@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "file": "originals/day.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "7115615e1f6bcba78f346de512e3608ca0c2a938181fd41449ad15c4e7a2aedc",
+      "size": [
+        887,
+        1774
+      ]
+    },
+    {
+      "file": "originals/dusk.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "51cae10ccaca4ede6c74548ac5fe174ec5ec8a07c8753a82c387d61673c1d482",
+      "size": [
+        887,
+        1774
+      ]
+    },
+    {
+      "file": "originals/garden-clean.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "7115615e1f6bcba78f346de512e3608ca0c2a938181fd41449ad15c4e7a2aedc",
+      "size": [
+        887,
+        1774
+      ]
+    },
+    {
+      "file": "originals/garden-props.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "a80c0cad394338bb6658a7d7b95bf0ac8f349441b77a92454d4adf9bfcea0b52",
+      "size": [
+        1263,
+        1246
+      ]
+    },
+    {
+      "file": "originals/garden-source.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "3c36e11c25626e33599f08e370b6d637e0d87a90245696cf3efdc8a438af207d",
+      "size": [
+        887,
+        1774
+      ]
+    },
+    {
+      "file": "originals/morning.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "309922b173f64da674f11890272c9ad4975000c96822a25158e89ee34380ebe8",
+      "size": [
+        887,
+        1774
+      ]
+    },
+    {
+      "file": "originals/night.png",
+      "author": "曦光庄园项目原创（AI辅助绘制/定向修图）",
+      "license": "Original project artwork; no third-party game assets or attribution obligations introduced",
+      "sha256": "8549fb377d909e5f5685d36a329817334fe3cc194b005304bcb68388b8621b37",
+      "size": [
+        887,
+        1774
+      ]
+    }
+  ],
+  "runtime": "Full-resolution lossless WebP. Foregrounds and props are technical crops and alpha masks of original paintings. No replacement rectangles or procedural terrain painting.",
+  "reused": "Existing native daylight-cat sprites, seven character outfits, flower PNGs and pearl glint keep their previous source licenses."
+}

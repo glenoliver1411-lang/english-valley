@@ -71,3 +71,7 @@ __pycache__/
 # Preserve this release’s authored source and real mobile review frames.
 !src/assets/meteor-light/original-atlas.png
 !public/home-stars-review/*.png
+
+# Original forest-garden paintings and actual mobile review screenshots.
+!src/assets/forest-garden/originals/*.png
+!public/forest-garden-review/*.png

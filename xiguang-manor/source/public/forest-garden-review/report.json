@@ -1,0 +1,151 @@
+{
+  "formalRelease": "full-stage1-20261114-1",
+  "forestTestRelease": "forest-garden-20261114-1",
+  "nodeTests": {
+    "total": 118,
+    "passed": 118
+  },
+  "physicalDevice": false,
+  "newArtBytes": 14803526,
+  "chromium": {
+    "engine": "chromium",
+    "physicalDevice": false,
+    "steps": [
+      "Original cocoa character enters the native 887×1774 forest in a 390×844 viewport",
+      "Real touch-to-walk follows the free garden path with native character animation",
+      "Touch empty wood-frame bed, plant lily, water and display original sprout/seedling art",
+      "Mature legacy bed harvest adds3 actual flowers and clears only that indexed soil bed",
+      "Independent original swing seat/ropes and native seated character animate; standing returns to safe ground",
+      "Natural pond interaction and safe shoreline stand/return work",
+      "Ancient tree awakening keeps original save flag"
+    ],
+    "errors": [],
+    "leaving": {
+      "forestTextures": [],
+      "retreatChildren": 0
+    }
+  },
+  "webkit": {
+    "engine": "webkit",
+    "physicalDevice": false,
+    "steps": [
+      "Original cocoa character enters the native 887×1774 forest in a 390×844 viewport",
+      "Real touch-to-walk follows the free garden path with native character animation",
+      "Touch empty wood-frame bed, plant lily, water and display original sprout/seedling art",
+      "Mature legacy bed harvest adds3 actual flowers and clears only that indexed soil bed",
+      "Independent original swing seat/ropes and native seated character animate; standing returns to safe ground",
+      "Natural pond interaction and safe shoreline stand/return work",
+      "Ancient tree awakening keeps original save flag"
+    ],
+    "errors": [],
+    "leaving": {
+      "forestTextures": [],
+      "retreatChildren": 0
+    }
+  },
+  "offlineChromium": {
+    "engine": "chromium",
+    "physicalDevice": false,
+    "steps": [
+      "Complete production cache, including all four native times, transparent foreground atlases and lazy gardening modules",
+      "Entire browser restarted offline while server returns503; first garden opens at native resolution",
+      "Scene-specific small menu automatically folds without blocking movement",
+      "All four separately painted lighting states load offline on demand",
+      "Legacy mature bed harvests3 real lilies; the same indexed bed can be replanted and watered offline",
+      "Native swing and pond touch interactions, seated character and safe stand-up remain playable offline",
+      "Second whole-browser offline restart keeps planting, old furniture positions/ownership, pearl outfit, tree/secret flags, cat and relics",
+      "Reconnecting does not reset old room or new garden progress"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "forest-garden-20261114-1",
+      "scope": "http://localhost:4197/english-valley/xiguang-manor/forest-garden-preview/",
+      "cache": "xiguang-precache::http://localhost:4197/english-valley/xiguang-manor/forest-garden-preview/::forest-garden-20261114-1",
+      "complete": true,
+      "files": 176,
+      "bytes": 47265404,
+      "cacheEntries": 177,
+      "internalBytes": 66,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "offlineWebKit": {
+    "engine": "webkit",
+    "physicalDevice": false,
+    "steps": [
+      "Complete production cache, including all four native times, transparent foreground atlases and lazy gardening modules",
+      "Entire browser restarted offline while server returns503; first garden opens at native resolution",
+      "Scene-specific small menu automatically folds without blocking movement",
+      "All four separately painted lighting states load offline on demand",
+      "Legacy mature bed harvests3 real lilies; the same indexed bed can be replanted and watered offline",
+      "Native swing and pond touch interactions, seated character and safe stand-up remain playable offline",
+      "Second whole-browser offline restart keeps planting, old furniture positions/ownership, pearl outfit, tree/secret flags, cat and relics",
+      "Reconnecting does not reset old room or new garden progress"
+    ],
+    "errors": [],
+    "cache": {
+      "version": "forest-garden-20261114-1",
+      "scope": "http://localhost:4197/english-valley/xiguang-manor/forest-garden-preview/",
+      "cache": "xiguang-precache::http://localhost:4197/english-valley/xiguang-manor/forest-garden-preview/::forest-garden-20261114-1",
+      "complete": true,
+      "files": 176,
+      "bytes": 47265404,
+      "cacheEntries": 177,
+      "internalBytes": 66,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "matchedBefore": {
+    "sourceCommit": "0701f29",
+    "version": "home-stars-20261114-4",
+    "viewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 2,
+    "clock": 6.8,
+    "outfit": "cocoa",
+    "weather": "clear",
+    "player": [
+      216,
+      785
+    ],
+    "soil": "bed index1 mature rose; other5 empty"
+  },
+  "formalUpgrade": {
+    "steps": [
+      "Exact old formal129-file release installed under the real formal scope with legacy progress",
+      "New full release downloads while the old playable client remains active; no automatic refresh",
+      "User-confirmed save/update activates complete176-file release; outfits, candy, relics, stock, wishes and old furniture positions survive",
+      "After whole-browser close, formal root starts offline with server503; native night garden and old save remain intact"
+    ],
+    "errors": [],
+    "physicalDevice": false,
+    "before": {
+      "version": "manor-flowers-20261107-1",
+      "scope": "http://localhost:4198/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4198/english-valley/xiguang-manor/::manor-flowers-20261107-1",
+      "complete": true,
+      "files": 129,
+      "bytes": 30794609,
+      "cacheEntries": 130,
+      "internalBytes": 66,
+      "missing": [],
+      "missingDetails": []
+    },
+    "after": {
+      "version": "full-stage1-20261114-1",
+      "scope": "http://localhost:4198/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:4198/english-valley/xiguang-manor/::full-stage1-20261114-1",
+      "complete": true,
+      "files": 176,
+      "bytes": 47261796,
+      "cacheEntries": 177,
+      "internalBytes": 64,
+      "missing": [],
+      "missingDetails": []
+    }
+  }
+}
