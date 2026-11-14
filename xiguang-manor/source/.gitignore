@@ -67,3 +67,7 @@ __pycache__/
 !src/assets/aurora-original/*.jpg
 !src/assets/aurora-original/*.webp
 !public/aurora-original-review/**/*.webp
+
+# Preserve this release’s authored source and real mobile review frames.
+!src/assets/meteor-light/original-atlas.png
+!public/home-stars-review/*.png
