@@ -1,0 +1,191 @@
+{
+  "chromium": {
+    "engine": "chromium",
+    "physicalDevice": false,
+    "steps": [
+      "Fresh owner creation replaces forced gift; white shirt, jeans, dark eyes and all four walk directions render in game",
+      "Three requested separate-part looks, four directions each, five named presets and unchanged gameplay inventory",
+      "Cottage wardrobe edits nickname live; sitting, garden, meadow, florist, candy and ruins retain the same player and cat",
+      "Tuxedo cat, blue eyes, bell, new nickname and all looks survive full page reload",
+      "Lake and native aurora use the saved avatar once, in front of a repaired empty bench background with original foreground slats",
+      "375×667 editor has visible save/cancel buttons; cancel does not change the live identity"
+    ],
+    "errors": [],
+    "scenes": [
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "cabin"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "garden"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "meadow"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "florist"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "shop"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "ruins"
+      }
+    ]
+  },
+  "webkit": {
+    "engine": "webkit",
+    "physicalDevice": false,
+    "steps": [
+      "Fresh owner creation replaces forced gift; white shirt, jeans, dark eyes and all four walk directions render in game",
+      "Three requested separate-part looks, four directions each, five named presets and unchanged gameplay inventory",
+      "Cottage wardrobe edits nickname live; sitting, garden, meadow, florist, candy and ruins retain the same player and cat",
+      "Tuxedo cat, blue eyes, bell, new nickname and all looks survive full page reload",
+      "Lake and native aurora use the saved avatar once, in front of a repaired empty bench background with original foreground slats",
+      "375×667 editor has visible save/cancel buttons; cancel does not change the live identity"
+    ],
+    "errors": [],
+    "scenes": [
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "cabin"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "garden"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "meadow"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "florist"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "shop"
+      },
+      {
+        "owner": "owner-6dn4sq",
+        "cat": "pet-19b1cnu",
+        "id": "ruins"
+      }
+    ]
+  },
+  "legacy": {
+    "steps": [
+      "Real pre-identity save migrates to its equipped native pearl outfit with all seven unlocks and progress",
+      "Five accessories combine; name and cat edits do not modify old candy, seven outfits, furniture or history",
+      "Simulated older formal autosave dropping unknown fields recovers cosmetics only and retains newer game progress",
+      "Existing paid/owned outfit catalogue still equips original native art with unchanged unlocks",
+      "A seated original outfit retains exactly one texture/frame across45 rendering frames; no stand/sit flicker",
+      "Storage-quota failure keeps the editor open and the original save/identity intact; cancel remains safe"
+    ],
+    "errors": [],
+    "physicalDevice": false
+  },
+  "offlineChromium": {
+    "engine": "chromium",
+    "production": true,
+    "physicalDevice": false,
+    "steps": [
+      "Production online cache completes before any lazy scene visit; original save is migrated without a forced creator",
+      "Entire browser closed and restarted offline with server returning503; saved owner and full cache survive",
+      "Previously unused hair, clothing, shoes, backpack, tuxedo cat and named fifth preset compose and save entirely offline",
+      "Real map routes reach cottage, candy and florist offline with current player art and dynamic cottage name",
+      "Independent native-resolution aurora and new seated avatar load offline",
+      "Second cold offline restart retains the tuxedo cat and preset;375×667 controls remain in view"
+    ],
+    "errors": [],
+    "online": {
+      "version": "identity-20261115-1",
+      "scope": "http://localhost:5241/english-valley/xiguang-manor/identity-preview/",
+      "cache": "xiguang-precache::http://localhost:5241/english-valley/xiguang-manor/identity-preview/::identity-20261115-1",
+      "complete": true,
+      "files": 232,
+      "bytes": 47953794,
+      "cacheEntries": 233,
+      "internalBytes": 61,
+      "missing": [],
+      "missingDetails": []
+    },
+    "offline": {
+      "version": "identity-20261115-1",
+      "scope": "http://localhost:5241/english-valley/xiguang-manor/identity-preview/",
+      "cache": "xiguang-precache::http://localhost:5241/english-valley/xiguang-manor/identity-preview/::identity-20261115-1",
+      "complete": true,
+      "files": 232,
+      "bytes": 47953794,
+      "cacheEntries": 233,
+      "internalBytes": 61,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "offlineWebKit": {
+    "engine": "webkit",
+    "production": true,
+    "physicalDevice": false,
+    "steps": [
+      "Production online cache completes before any lazy scene visit; original save is migrated without a forced creator",
+      "Entire browser closed and restarted offline with server returning503; saved owner and full cache survive",
+      "Previously unused hair, clothing, shoes, backpack, tuxedo cat and named fifth preset compose and save entirely offline",
+      "Real map routes reach cottage, candy and florist offline with current player art and dynamic cottage name",
+      "Independent native-resolution aurora and new seated avatar load offline",
+      "Second cold offline restart retains the tuxedo cat and preset;375×667 controls remain in view"
+    ],
+    "errors": [],
+    "online": {
+      "version": "identity-20261115-1",
+      "scope": "http://localhost:5242/english-valley/xiguang-manor/identity-preview/",
+      "cache": "xiguang-precache::http://localhost:5242/english-valley/xiguang-manor/identity-preview/::identity-20261115-1",
+      "complete": true,
+      "files": 232,
+      "bytes": 47953794,
+      "cacheEntries": 233,
+      "internalBytes": 61,
+      "missing": [],
+      "missingDetails": []
+    },
+    "offline": {
+      "version": "identity-20261115-1",
+      "scope": "http://localhost:5242/english-valley/xiguang-manor/identity-preview/",
+      "cache": "xiguang-precache::http://localhost:5242/english-valley/xiguang-manor/identity-preview/::identity-20261115-1",
+      "complete": true,
+      "files": 232,
+      "bytes": 47953794,
+      "cacheEntries": 233,
+      "internalBytes": 61,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "version": "identity-20261115-1",
+  "unitTests": {
+    "passed": 126,
+    "failed": 0
+  },
+  "artLimitations": [
+    "Modular LPC base differs from original seven HD whole outfits.",
+    "Long-skirt seated folds and backpack seated/gather poses are adapted, not separately repainted HD assets."
+  ],
+  "physicalIPhoneTest": false,
+  "productionUntouched": true
+}

@@ -1,3 +1,4 @@
+import {poseCharacter} from './character-art.js';
 import {preloadV6,installV6} from './v6-assets.js';
 import {preloadPlay,installPlay} from './play-assets.js';
 import {TreeOcclusion} from './tree-occlusion.js';
@@ -71,7 +72,7 @@ export class Manor extends Phaser.Scene {
   this.sweets.filter(s=>!s.at).forEach(s=>spots.push({id:'sweet',sweet:s,x:s.x,y:s.y,title:T.pickup}));
   return spots.map(s=>({...s,d:Phaser.Math.Distance.Between(p.x,p.y,s.x,s.y)})).filter(s=>s.d<70).sort((a,b)=>a.d-b.d)[0]||closeDecoration(this);
  }
- refreshOutfit(){const f=this.facing*4+1;this.player.stop();this.player.setTexture(outfitKey(this.dataSave),f)}
+ refreshOutfit(){poseCharacter(this,{scale:this.player.scaleX||.75})}
  enterRoom(){this.room=true;this.target=null;this.roomImage.setVisible(true);this.cameras.main.stopFollow();this.cameras.main.setScroll(0,0)}
  leaveRoom(){this.room=false;this.roomImage.setVisible(false);this.cameras.main.startFollow(this.player,true,.08,.08,0,50)}
 
@@ -79,7 +80,7 @@ export class Manor extends Phaser.Scene {
   if(this.locked||this.room||this.observing||this.exploring){this.player.anims.stop();return}
   let dx=controls.x+(this.cursor.right.isDown||this.keys.D.isDown?1:0)-(this.cursor.left.isDown||this.keys.A.isDown?1:0),dy=controls.y+(this.cursor.down.isDown||this.keys.S.isDown?1:0)-(this.cursor.up.isDown||this.keys.W.isDown?1:0);
   if(dx||dy)this.target=null;else if(this.target){dx=this.target.x-this.player.x;dy=this.target.y-this.player.y;if(Math.hypot(dx,dy)<4){this.target=null;dx=dy=0}}
-  const len=Math.hypot(dx,dy);if(len>.08){dx/=Math.max(1,len);dy/=Math.max(1,len);const oldX=this.player.x,oldY=this.player.y,step=Math.min(this.target?len:Infinity,86*Math.min(delta,40)/1000);let nx=this.player.x+dx*step,ny=this.player.y+dy*step;if(!this.blocked(nx,this.player.y))this.player.x=nx;else if(this.target)this.target=null;if(!this.blocked(this.player.x,ny))this.player.y=ny;else if(this.target)this.target=null;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)this.player.play(`dress-${this.dataSave.wardrobe.equipped}-${this.facing}`,true);else{this.player.stop();this.player.setFrame(this.facing*4)}}else{this.player.anims.stop();this.player.setFrame(this.facing*4)}
+  const len=Math.hypot(dx,dy);if(len>.08){dx/=Math.max(1,len);dy/=Math.max(1,len);const oldX=this.player.x,oldY=this.player.y,step=Math.min(this.target?len:Infinity,86*Math.min(delta,40)/1000);let nx=this.player.x+dx*step,ny=this.player.y+dy*step;if(!this.blocked(nx,this.player.y))this.player.x=nx;else if(this.target)this.target=null;if(!this.blocked(this.player.x,ny))this.player.y=ny;else if(this.target)this.target=null;this.facing=Math.abs(dx)>Math.abs(dy)?dx<0?1:2:dy<0?3:0;if(Math.hypot(this.player.x-oldX,this.player.y-oldY)>.001)poseCharacter(this,{moving:true,scale:this.player.scaleX});else{poseCharacter(this,{scale:this.player.scaleX})}}else{poseCharacter(this,{scale:this.player.scaleX})}
   this.contactShadow.setPosition(this.player.x+1,this.player.y+3);this.player.setDepth(10);this.api.near(this.nearest());this.elapsedSave+=delta;if(this.elapsedSave>1600){this.elapsedSave=0;this.dataSave.position={x:this.player.x,y:this.player.y};this.api.save()}
  }
 }

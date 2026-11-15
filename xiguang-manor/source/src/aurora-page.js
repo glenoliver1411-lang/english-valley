@@ -1,13 +1,14 @@
 import Phaser from 'phaser';
-import originalPhoto from './assets/aurora-original/scene.webp';
+import originalPhoto from './assets/identity/aurora-clean-scene.webp';
 import {AuroraPhotoScene} from './aurora-photo-scene.js';
 import './aurora-page.css';
 import {AURORA_PAGE as A} from './aurora-config.js';
 import {load} from './save.js';
 import {createSoundscape} from './soundscape.js';
-import {CONFIG} from './config.js';
+import {CONFIG,setPlayerProfile} from './config.js';
 
 const profile=load(),app=document.querySelector('#aurora-app');
+setPlayerProfile(profile);
 const fromWorld=new URLSearchParams(location.search).get('from')==='world';
 const prefers=matchMedia('(prefers-reduced-motion: reduce)');let paused=profile.romance.reducedMotion||prefers.matches,quiet=false,audioUnlocked=false,scene,photoURL;
 try{const saved=JSON.parse(localStorage.getItem(A.key));if(typeof saved?.paused==='boolean')paused=paused||saved.paused}catch{}
@@ -39,4 +40,4 @@ const density=Math.min(3,window.devicePixelRatio||1),viewport=()=>({width:Math.r
 const game=new Phaser.Game({type:Phaser.AUTO,parent:'aurora-canvas',...viewport(),backgroundColor:'#03112c',pixelArt:false,antialias:true,render:{roundPixels:false},scale:{mode:Phaser.Scale.NONE},audio:{noAudio:true},scene:new AuroraPhotoScene(profile,{paused:()=>paused,sequence:p=>{app.dataset.auroraPhase=p.phase;const line=$('#aurora-phase');if(line)line.textContent=A.phases[p.phase]||''},dialogOpen:()=>dialog.open,failed:()=>{const loading=$('#aurora-loading');if(loading)loading.textContent=A.failed},ready:s=>{scene=s;$('#aurora-loading')?.remove();$('#aurora-plate')?.remove()}})});
 new ResizeObserver(()=>{const v=viewport();if(v.width!==game.scale.gameSize.width||v.height!==game.scale.gameSize.height)game.scale.resize(v.width,v.height)}).observe(app);
 if(import.meta.env.DEV)window.__aurora={get scene(){return scene},get paused(){return paused},setQuiet,seek:t=>{scene.elapsed=t;scene.frame()}};
-if(import.meta.env.PROD)import('./pwa-service.js').then(({offlineManor})=>offlineManor.start());
+if(import.meta.env.PROD)import('./pwa-service.js').then(({offlineManor})=>offlineManor.start({canInstall:()=>!!scene}));

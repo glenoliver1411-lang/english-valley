@@ -1,3 +1,4 @@
+import {posePet} from './identity-phaser.js';
 import {FOREST_GARDEN as G,gardenBlocked,insidePolygon} from './forest-garden-config.js';
 import {preloadForest,forestReady,ForestGardenArt} from './forest-garden-art.js';
 import {preloadFlowers,installFlowers,flowerSprite,flowerTexture} from './flower-art.js';
@@ -142,7 +143,7 @@ export class RomanticScene extends Phaser.Scene {
   }else{
   this.cat.x+=(cx-this.cat.x)*.065;this.cat.y+=(cy-this.cat.y)*.065;
   const sleep=!follow&&(this.quiet||cycle>28),stretch=!sleep&&cycle>23&&cycle<28?Math.sin((cycle-23)/5*Math.PI):0;
-  const perspective=this.place==='meadow'?.45+Math.max(0,Math.min(1,(this.cat.y-310)/500))*.55:1;this.cat.setTexture(sleep?'cat-sleep':'cat').setScale((1.1+stretch*.2)*perspective,(sleep?.8+Math.sin(t)*.008:1.1-stretch*.3)*perspective);if(this.place==='meadow')this.player.setScale((.55+Math.max(0,Math.min(1,(this.player.y-330)/480))*.7)*.6);const catPeriod=v5Period(this.profile.scenery.clock),catPose=sleep?'sleep':stretch>.2?'stretch':'sit',catTexture='v5-cat-'+catPeriod+'-'+catPose;if(!this.textures.exists(catTexture)){this.textures.addCanvas(catTexture,this.v5Cats.cat(catPeriod,catPose));this.homeTextureKeys.add(catTexture)}this.cat.setTexture(catTexture).setDisplaySize((37+stretch*4)*perspective,(26-stretch*2)*perspective);
+  const perspective=this.place==='meadow'?.45+Math.max(0,Math.min(1,(this.cat.y-310)/500))*.55:1;if(this.place==='meadow')this.player.setScale((.55+Math.max(0,Math.min(1,(this.player.y-330)/480))*.7)*.6);posePet(this,this.cat,this.profile,{sleep,stretch:stretch>.2,moving:follow,size:38*perspective,footOffset:13});
   }
   for(const p of this.flowerPatches){p.sprite.setTint(a.day>.4?0xffffff:a.day>.1?0xe9c8c0:0x99acc5);p.sprite.rotation=w.reducedMotion?0:Math.sin(t*.6+p.phase)*.012}
   if(this.place==='meadow'){this.drawMeadow(rect,ellipse,a,t,reduced)}else if(this.place==='garden'){

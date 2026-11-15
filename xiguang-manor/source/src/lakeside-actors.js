@@ -1,3 +1,5 @@
+import {appearanceKey} from './identity-model.js';
+import {catPortrait} from './identity-art.js';
 import {playFrame} from './play-assets.js';
 import {landscapePainter} from './landscape-detail.js';
 import {characterPainting} from './character-art.js';
@@ -12,17 +14,18 @@ export function contact(p,x,y,rx,ry,color,alpha=1){p.c.save();p.c.globalAlpha=al
 export class LakesideActors {
  constructor(){this.girls=new Map();this.cats=new Map()}
  girl(profile,period){
-  const id=profile.wardrobe.equipped,key=id+'/'+period+'/'+Object.values(profile.play?.equipment||{}).join(',');if(this.girls.has(key))return this.girls.get(key);
+  const id=profile.wardrobe.equipped,key=id+'/'+profile.identity?.mode+'/'+appearanceKey(profile)+'/'+period+'/'+Object.values(profile.play?.equipment||{}).join(',');if(this.girls.has(key))return this.girls.get(key);
   // Crop/composite the same native seated illustration used in playable rooms.
   // Keep the approved face/hat identity through scenic views as well.
   const c=document.createElement('canvas');c.width=64;c.height=80;const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.drawImage(characterPainting(profile,{seated:true,back:true}),0,0);
   const eq=profile.play?.equipment||{};
   if(eq.head==='crown')ctx.drawImage(playFrame('equip-crown'),21,5,22,10);
   if(eq.hand==='ghostlamp')ctx.drawImage(playFrame('equip-ghostlamp'),40,44,10,16);
-  const cropped=document.createElement('canvas');cropped.width=48;cropped.height=68;cropped.getContext('2d').drawImage(c,8,2,48,68,0,0,48,68);this.girls.set(key,cropped);return cropped;
+  const pixels=ctx.getImageData(0,0,64,80).data;let x0=64,y0=80,x1=0,y1=0;for(let y=0;y<80;y++)for(let x=0;x<64;x++)if(pixels[(y*64+x)*4+3]>50){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x+1);y1=Math.max(y1,y+1)}const cropped=document.createElement('canvas');cropped.width=48;cropped.height=68;const g=cropped.getContext('2d');g.imageSmoothingEnabled=false;const scale=Math.min(44/(x1-x0),64/(y1-y0)),w=(x1-x0)*scale,h=(y1-y0)*scale;g.drawImage(c,x0,y0,x1-x0,y1-y0,(48-w)/2,67-h,w,h);this.girls.set(key,cropped);return cropped;
  }
 
- cat(period,pose='sleep'){
+ cat(period,pose='sleep',profile){
+  if(profile){const key=JSON.stringify(profile.identity?.cat||{})+'/'+pose;if(this.cats.has(key))return this.cats.get(key);const painted=catPortrait(profile,{sleep:pose==='sleep',stretch:pose==='stretch'});if(painted){const x=painted.getContext('2d').getImageData(0,0,64,64).data;let x0=64,y0=64,x1=0,y1=0;for(let y=0;y<64;y++)for(let xx=0;xx<64;xx++)if(x[(y*64+xx)*4+3]>50){x0=Math.min(x0,xx);y0=Math.min(y0,y);x1=Math.max(x1,xx+1);y1=Math.max(y1,y+1)}const out=document.createElement('canvas');out.width=26;out.height=18;const c=out.getContext('2d');c.imageSmoothingEnabled=false;const scale=Math.min(25/(x1-x0),17/(y1-y0)),w=(x1-x0)*scale,h=(y1-y0)*scale;c.drawImage(painted,x0,y0,x1-x0,y1-y0,(26-w)/2,18-h,w,h);this.cats.set(key,out);return out}}
   const key=period+'/'+pose;if(this.cats.has(key))return this.cats.get(key);
   const p=landscapePainter(26,18),r=p.r,a=LAKESIDE.periods[period],fur=period==='night'?['#4c405c','#7c668c','#ad91b6','#d2b4cd']:['#66516e','#a180a5','#d2adc9','#ebcede'];
   const stretch=pose==='stretch',awake=pose==='sit';

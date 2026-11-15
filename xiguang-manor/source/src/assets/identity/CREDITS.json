@@ -1,0 +1,821 @@
+{
+  "repository": "https://github.com/LiberatedPixelCup/Universal-LPC-Spritesheet-Character-Generator",
+  "commit": "04140673ec02906f8233523639733c83690df750",
+  "assets": [
+    {
+      "part": "body",
+      "file": "body/bodies/teen",
+      "authors": [
+        "bluecarrot16",
+        "Evert",
+        "TheraHedwig",
+        "Benjamin K. Smith (BenCreating)",
+        "MuffinElZangano",
+        "Durrani",
+        "Pierre Vigier (pvigier)",
+        "Eliza Wyatt (ElizaWy)",
+        "Matthew Krohn (makrohn)",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "https://opengameart.org/content/lpc-ladies",
+        "https://opengameart.org/content/lpc-teen-unisex-base-clothes",
+        "https://opengameart.org/content/lpc-jump-expanded",
+        "https://opengameart.org/content/lpc-revised-character-basics",
+        "https://opengameart.org/content/lpc-be-seated",
+        "https://gitlab.com/vagabondgame/lpc-characters",
+        "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+        "https://opengameart.org/content/lpc-jump-expanded"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "head",
+      "file": "head/heads/human/female",
+      "authors": [
+        "bluecarrot16",
+        "Benjamin K. Smith (BenCreating)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/",
+        "https://opengameart.org/content/lpc-character-bases"
+      ],
+      "notes": "original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "brow-thin",
+      "file": "eyes/eyebrows/thin",
+      "authors": [
+        "ElizaWy"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "brow-thick",
+      "file": "eyes/eyebrows/thick",
+      "authors": [
+        "ElizaWy"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "short",
+      "file": "hair/parted",
+      "authors": [
+        "JaidynReiman",
+        "Joe White",
+        "Manuel Riecke (MrBeast)"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/46ddcf05a0e43e7aa6ffd47d350eef0eb529ac24",
+        "https://opengameart.org/content/lpc-expanded-hair"
+      ],
+      "notes": "down 4 and 5 added by JaidynReiman; recolors by Joe White; original by Manuel Riecke (MrBeast)",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "medium",
+      "file": "hair/lob",
+      "authors": [
+        "bluecarrot16"
+      ],
+      "license": "CC0",
+      "upstreamOfferedLicenses": [
+        "CC0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-hair"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "long",
+      "file": "hair/long",
+      "authors": [
+        "JaidynReiman",
+        "Manuel Riecke (MrBeast)"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-expanded-hair"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "curly",
+      "file": "hair/curly_short",
+      "authors": [
+        "ElizaWy"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-hair",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "ponytail",
+      "file": "hair/high_ponytail",
+      "authors": [
+        "JaidynReiman",
+        "ElizaWy",
+        "bluecarrot16"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-hair",
+        "https://opengameart.org/content/lpc-expanded-hair"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "ponytail-rear",
+      "file": "hair/high_ponytail",
+      "authors": [
+        "JaidynReiman",
+        "ElizaWy",
+        "bluecarrot16"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-hair",
+        "https://opengameart.org/content/lpc-expanded-hair"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "twintails",
+      "file": "hair/pigtails_bangs",
+      "authors": [
+        "Emilio J. Sanchez-Sierra",
+        "bluecarrot16"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/steampun-a-fy-with-concept-art",
+        "https://opengameart.org/content/lpc-hair"
+      ],
+      "notes": "(astarea)",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "fringe",
+      "file": "hair/bangs",
+      "authors": [
+        "JaidynReiman",
+        "Manuel Riecke (MrBeast)"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-expanded-hair"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "shirt",
+      "file": "torso/clothes/longsleeve/longsleeve2_buttoned",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "http://opengameart.org/content/lpc-revised-character-basics",
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-simple-shirts"
+      ],
+      "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "tshirt",
+      "file": "torso/clothes/shortsleeve/tshirt",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-revised-character-basics",
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-simple-shirts"
+      ],
+      "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "knit",
+      "file": "torso/clothes/longsleeve/longsleeve2_vneck",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "http://opengameart.org/content/lpc-revised-character-basics",
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-simple-shirts"
+      ],
+      "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "sweater",
+      "file": "torso/clothes/longsleeve/longsleeve2",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-revised-character-basics",
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-simple-shirts"
+      ],
+      "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "jacket",
+      "file": "torso/clothes/longsleeve/longsleeve2_cardigan",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "http://opengameart.org/content/lpc-revised-character-basics",
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-simple-shirts"
+      ],
+      "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "vest",
+      "file": "torso/clothes/sleeveless/sleeveless2_cardigan",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "http://opengameart.org/content/lpc-revised-character-basics",
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-simple-shirts"
+      ],
+      "notes": "original by ElizaWy; sleeveless adapted from original by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "jeans",
+      "file": "legs/pants/thin",
+      "authors": [
+        "bluecarrot16",
+        "JaidynReiman",
+        "ElizaWy",
+        "Joe White",
+        "Matthew Krohn (makrohn)",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "GPL 3.0",
+        "CC-BY-SA 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "http://opengameart.org/content/lpc-clothing-updates",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "casual",
+      "file": "legs/formal",
+      "authors": [
+        "bluecarrot16",
+        "JaidynReiman",
+        "ElizaWy",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "https://opengameart.org/content/lpc-2-characters",
+        "https://opengameart.org/content/lpc-gentleman",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "Original pants by Stephen Challener (Redshrike), thrust/shoot bases by Wulax, Formal Pants by Bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "casual",
+      "file": "legs/formal/thin",
+      "authors": [
+        "bluecarrot16",
+        "JaidynReiman",
+        "ElizaWy",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "https://opengameart.org/content/lpc-2-characters",
+        "https://opengameart.org/content/lpc-gentleman",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "Original pants by Stephen Challener (Redshrike), thrust/shoot bases by Wulax, Formal Pants by Bluecarrot16, Female/Thin version by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "wide",
+      "file": "legs/pantaloons",
+      "authors": [
+        "Nila122",
+        "JaidynReiman",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "GPL 2.0",
+        "GPL 3.0",
+        "CC-BY-SA 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-pirates",
+        "https://opengameart.org/content/more-lpc-clothes-and-hair",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, Original Pantaloons by Nila122, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "wide",
+      "file": "legs/pantaloons/thin",
+      "authors": [
+        "Nila122",
+        "JaidynReiman",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 2.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-pirates",
+        "https://opengameart.org/content/more-lpc-clothes-and-hair",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, Original Pantaloons by Nila122, Female/Teen version by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "cargo",
+      "file": "legs/pants2",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, original pants by ElizaWy, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "shorts",
+      "file": "legs/shorts/shorts",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-pants"
+      ],
+      "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, original shorts by ElizaWy, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "longskirt",
+      "file": "legs/skirts/belle",
+      "authors": [
+        "bluecarrot16",
+        "Matthew Krohn (makrohn)",
+        "Lanea Zimmerman (Sharm)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+        "https://opengameart.org/content/lpc-dress-in-combat-poses",
+        "http://opengameart.org/content/lpc-clothing-updates"
+      ],
+      "notes": "extended to all poses by makrohn, edited to v3 bases and animation cleanup by bluecarrot16",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "shortskirt",
+      "file": "legs/skirts/plain",
+      "authors": [
+        "bluecarrot16",
+        "Pierre Vigier (pvigier)",
+        "Johannes Sjölund (wulax)",
+        "Ahmad3366",
+        "JaidynReiman"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites"
+      ],
+      "notes": "original by wulax, edited for female base by pvigier, edited for v3 base by bluecarrot16, idle & sit by Ahmad3366, color reduced & female sit/emote by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "sneakers",
+      "file": "feet/shoes/revised",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-socks-shoes"
+      ],
+      "notes": "original by ElizaWy, remaining frames by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "leather",
+      "file": "feet/shoes",
+      "authors": [
+        "JaidynReiman",
+        "bluecarrot16",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "http://opengameart.org/content/lpc-clothing-updates",
+        "https://opengameart.org/content/lpc-expanded-socks-shoes"
+      ],
+      "notes": "original by wulax, edited for v3 base by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "leather",
+      "file": "feet/shoes/basic/thin",
+      "authors": [
+        "JaidynReiman",
+        "Joe White",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "http://opengameart.org/content/lpc-clothing-updates",
+        "https://opengameart.org/content/lpc-expanded-socks-shoes"
+      ],
+      "notes": "original by wulax, edited for female base by Joe White, edited for v3 base by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "canvas",
+      "file": "feet/shoes/ghillies",
+      "authors": [
+        "bluecarrot16",
+        "JaidynReiman",
+        "Thane Brimhall (pennomi)",
+        "laetissima",
+        "Matthew Krohn (makrohn)"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-2-characters",
+        "http://opengameart.org/content/lpc-clothing-updates",
+        "https://opengameart.org/content/lpc-expanded-socks-shoes"
+      ],
+      "notes": "original by pennomi, laetissima and makrohn; edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "boots",
+      "file": "feet/boots/revised",
+      "authors": [
+        "ElizaWy",
+        "JaidynReiman",
+        "Stephen Challener (Redshrike)",
+        "Johannes Sjölund (wulax)"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+        "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+        "https://opengameart.org/content/lpc-expanded-socks-shoes"
+      ],
+      "notes": "original by ElizaWy, remaining frames by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "glasses",
+      "file": "facial/glasses/round",
+      "authors": [
+        "bluecarrot16",
+        "Thane Brimhall (pennomi)",
+        "laetissima"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/clothing-facial-features-and-ui-elements",
+        "https://opengameart.org/content/lpc-gentleman"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "hat",
+      "file": "hat/pirate/bonnie",
+      "authors": [
+        "bluecarrot16",
+        "JaidynReiman"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-pirates",
+        "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+      ],
+      "notes": "Bonnie Hat by Bluecarrot16, layers and added animations by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "scarf",
+      "file": "neck/scarf",
+      "authors": [
+        "Nila122",
+        "JaidynReiman",
+        "Johannes Sjölund (wulax)",
+        "Stephen Challener (Redshrike)"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-SA 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 2.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/more-lpc-clothes-and-hair"
+      ],
+      "notes": "Original by Nila122, climb/sit/emote/jump/run animations by JaidynReiman",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "backpack",
+      "file": "backpack/backpack",
+      "authors": [
+        "Benjamin K. Smith (BenCreating)",
+        "macmanmatty"
+      ],
+      "license": "CC-BY-SA 3.0",
+      "upstreamOfferedLicenses": [
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-backpacks"
+      ],
+      "notes": "trivial adjustments by bluecarrot16 to be compatible with v3 bases",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "hood",
+      "file": "hat/cloth/hood",
+      "authors": [
+        "Johannes Sjölund (wulax)",
+        "JaidynReiman"
+      ],
+      "license": "OGA-BY 3.0",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0",
+        "CC-BY-SA 3.0",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+        "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+      ],
+      "notes": "Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    },
+    {
+      "part": "hairclip",
+      "file": "hat/headband/hairtie",
+      "authors": [
+        "JaidynReiman"
+      ],
+      "license": "OGA-BY 3.0+",
+      "upstreamOfferedLicenses": [
+        "OGA-BY 3.0+",
+        "CC-BY 3.0+",
+        "GPL 3.0"
+      ],
+      "urls": [
+        "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail",
+        "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+      ],
+      "notes": "",
+      "modifications": "Selected original animation frames; common pixel grid and foot anchor; lossless WebP. Runtime palette remapping. Additional local cloth-pattern variants and anchored props as described in atlas.json."
+    }
+  ],
+  "licenseLinks": {
+    "OGA-BY 3.0": "https://opengameart.org/content/oga-by-30-faq",
+    "CC-BY-SA 3.0": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "derivativeLicense": "CC-BY-SA 4.0"
+}

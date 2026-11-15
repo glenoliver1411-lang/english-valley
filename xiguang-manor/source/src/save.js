@@ -1,3 +1,4 @@
+import {identityDefaults,sanitizeIdentity} from './identity-model.js';
 import {playDefaults,sanitizePlay,equipmentSlots} from './play-model.js';
 import {romanticDefaults,sanitizeRomantic} from './romantic-model.js';
 import {candyDefaults,sanitizeCandy} from './candy-model.js';
@@ -5,9 +6,14 @@ import {adventureDefaults,wardrobeDefaults,sanitizeAdventure,sanitizeWardrobe} f
 import {sceneryDefaults,sanitizeScenery} from './sky-model.js';
 import {SCENERY} from './scenery-config.js';
 export const SAVE_KEY='xiguang-manor-v1';
-export const fresh=()=>({version:1,play:playDefaults(),romance:romanticDefaults(),shop:candyDefaults(),adventure:adventureDefaults(),wardrobe:wardrobeDefaults(),scenery:sceneryDefaults(),accepted:false,stage:0,favorite:null,catName:'',catMet:false,magic:[],candies:0,plots:Array.from({length:4},()=>({state:0,wateredAt:0})),completed:false,music:false,position:{x:216,y:728}});
+// A cosmetic recovery cache, never a second playable save. Older formal clients
+// discard unknown fields when autosaving; recover only appearance preferences,
+// while every inventory/progress value always comes from the one primary save.
+const APPEARANCE_RECOVERY=SAVE_KEY+':appearance-recovery';
+export const fresh=()=>({version:1,identity:identityDefaults(),play:playDefaults(),romance:romanticDefaults(),shop:candyDefaults(),adventure:adventureDefaults(),wardrobe:wardrobeDefaults(),scenery:sceneryDefaults(),accepted:false,stage:0,favorite:null,catName:'',catMet:false,magic:[],candies:0,plots:Array.from({length:4},()=>({state:0,wateredAt:0})),completed:false,music:false,position:{x:216,y:728}});
 export function sanitize(raw){
  const d=fresh(); if(!raw||raw.version!==1)return d;
+ d.identity=sanitizeIdentity(raw.identity,raw);
  d.scenery=sanitizeScenery(raw.scenery,SCENERY.stars.map(s=>s.id));
  d.adventure=sanitizeAdventure(raw.adventure);d.wardrobe=sanitizeWardrobe(raw.wardrobe);
  d.shop=sanitizeCandy(raw.shop);
@@ -29,11 +35,12 @@ function remember(storage,guard,isDefault){if(storage&&typeof storage==='object'
 export function saveProtection(storage){return {...(storage?guards.get(storage)||{blocked:false}:defaultGuard)}}
 export function load(storage){const isDefault=storage===undefined;let raw=null;
  try{storage??=defaultStore();raw=storage.getItem(SAVE_KEY);if(raw==null){remember(storage,{blocked:false,reason:'',raw:null},isDefault);return fresh()}
-  const value=JSON.parse(raw);if(!value||Array.isArray(value)||typeof value!=='object'||value.version!==1||!['accepted','candies','plots','position'].some(k=>Object.prototype.hasOwnProperty.call(value,k)))throw Error('unreadable');
-  remember(storage,{blocked:false,reason:'',raw},isDefault);return sanitize(value);
+  const value=JSON.parse(raw);if(!value||Array.isArray(value)||typeof value!=='object'||value.version!==1||value.identity?.version>1||!['accepted','candies','plots','position'].some(k=>Object.prototype.hasOwnProperty.call(value,k)))throw Error('unreadable');
+  let owner=value.identity;if(owner===undefined){try{const recovery=JSON.parse(storage.getItem(APPEARANCE_RECOVERY));if(recovery?.format==='xiguang-appearance-recovery'&&recovery.version===1&&recovery.identity?.version===1&&recovery.identity.created)owner=recovery.identity}catch{}}
+  remember(storage,{blocked:false,reason:'',raw},isDefault);return sanitize(owner===undefined?value:{...value,identity:owner});
  }catch{remember(storage,{blocked:true,reason:raw===null?'storage':'format',raw},isDefault);return fresh()}
 }
-export function persist(data,storage){const isDefault=storage===undefined;try{storage??=defaultStore();if((isDefault&&defaultGuard.blocked)||guards.get(storage)?.blocked)return false;storage.setItem(SAVE_KEY,JSON.stringify(data));return true}catch{return false}}
+export function persist(data,storage){const isDefault=storage===undefined;try{storage??=defaultStore();if((isDefault&&defaultGuard.blocked)||guards.get(storage)?.blocked)return false;storage.setItem(SAVE_KEY,JSON.stringify(data));if(data.identity?.created){try{storage.setItem(APPEARANCE_RECOVERY,JSON.stringify({format:'xiguang-appearance-recovery',version:1,identity:data.identity}))}catch{}}return true}catch{return false}}
 export function backupCurrent(kind='before-update',storage){
  try{storage??=defaultStore();const raw=storage.getItem(SAVE_KEY);storage.setItem(SAVE_KEY+':'+kind,JSON.stringify({savedAt:new Date().toISOString(),raw}));return true}catch{return false}
 }

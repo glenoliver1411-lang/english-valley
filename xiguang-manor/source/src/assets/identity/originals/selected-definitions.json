@@ -1,0 +1,2949 @@
+{
+  "commit": "04140673ec02906f8233523639733c83690df750",
+  "parts": {
+    "body": {
+      "definition": "sheet_definitions/body/body.json",
+      "name": "Body Color",
+      "layers": {
+        "layer_1": "body/bodies/teen/"
+      },
+      "data": {
+        "name": "Body Color",
+        "priority": 10,
+        "layer_1": {
+          "zPos": 10,
+          "male": "body/bodies/male/",
+          "muscular": "body/bodies/muscular/",
+          "female": "body/bodies/female/",
+          "pregnant": "body/bodies/pregnant/",
+          "teen": "body/bodies/teen/",
+          "child": "body/bodies/child/"
+        },
+        "match_body_color": true,
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "body/bodies/male",
+            "notes": "see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "Benjamin K. Smith (BenCreating)",
+              "Evert",
+              "Eliza Wyatt (ElizaWy)",
+              "TheraHedwig",
+              "MuffinElZangano",
+              "Durrani",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+              "https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle",
+              "https://opengameart.org/content/lpc-revised-character-basics",
+              "https://opengameart.org/content/lpc-be-seated",
+              "https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-character-bases"
+            ]
+          },
+          {
+            "file": "body/bodies/female",
+            "notes": "see details at https://opengameart.org/content/lpc-character-bases",
+            "authors": [
+              "Benjamin K. Smith (BenCreating)",
+              "bluecarrot16",
+              "TheraHedwig",
+              "Evert",
+              "MuffinElZangano",
+              "Durrani",
+              "Pierre Vigier (pvigier)",
+              "ElizaWy",
+              "Matthew Krohn (makrohn)",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-ladies",
+              "https://opengameart.org/content/lpc-7-womens-shirts",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-be-seated",
+              "https://opengameart.org/content/lpc-revised-character-basics",
+              "https://gitlab.com/vagabondgame/lpc-characters",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+              "https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle"
+            ]
+          },
+          {
+            "file": "body/bodies/muscular",
+            "notes": "see details at https://opengameart.org/content/lpc-character-bases",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "Evert",
+              "TheraHedwig",
+              "MuffinElZangano",
+              "Durrani",
+              "Sander Frenken (castelonia)",
+              "Benjamin K. Smith (BenCreating)",
+              "Eliza Wyatt (ElizaWy)",
+              "dalonedrau",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-barbarian-sprite-base",
+              "https://opengameart.org/content/lpc-muscular-swing-animation",
+              "https://opengameart.org/content/lpc-muscular-hurt-animation",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-revised-character-basics",
+              "https://opengameart.org/content/lpc-be-seated",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-character-bases",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani"
+            ]
+          },
+          {
+            "file": "body/bodies/teen",
+            "notes": "",
+            "authors": [
+              "bluecarrot16",
+              "Evert",
+              "TheraHedwig",
+              "Benjamin K. Smith (BenCreating)",
+              "MuffinElZangano",
+              "Durrani",
+              "Pierre Vigier (pvigier)",
+              "Eliza Wyatt (ElizaWy)",
+              "Matthew Krohn (makrohn)",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-ladies",
+              "https://opengameart.org/content/lpc-teen-unisex-base-clothes",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-revised-character-basics",
+              "https://opengameart.org/content/lpc-be-seated",
+              "https://gitlab.com/vagabondgame/lpc-characters",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+              "https://opengameart.org/content/lpc-jump-expanded"
+            ]
+          },
+          {
+            "file": "body/bodies/pregnant",
+            "notes": "see details at https://opengameart.org/content/lpc-character-bases; Pregnant Revised Run/Combat Idle/Emotes by JaidynReiman (based on ElizaWy's LPC Revised)",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "Evert",
+              "TheraHedwig",
+              "MuffinElZangano",
+              "Durrani",
+              "Benjamin K. Smith (BenCreating)",
+              "Pierre Vigier (pvigier)",
+              "Eliza Wyatt (ElizaWy)",
+              "Matthew Krohn (makrohn)",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-ladies",
+              "https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear",
+              "https://opengameart.org/content/lpc-7-womens-shirts",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://gitlab.com/vagabondgame/lpc-characters",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+              "https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle"
+            ]
+          },
+          {
+            "file": "body/bodies/child",
+            "notes": "",
+            "authors": [
+              "bluecarrot16",
+              "Benjamin K. Smith (BenCreating)",
+              "ElizaWy",
+              "MuffinElZangano",
+              "Durrani",
+              "Nila122",
+              "kheftel",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-child-standing-template",
+              "https://opengameart.org/content/lpc-children-walk-animation",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+              "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+              "https://opengameart.org/content/lpc-jump-expanded",
+              "https://opengameart.org/content/lpc-jump-expanded"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "body",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "body"
+      }
+    },
+    "head": {
+      "definition": "sheet_definitions/head/heads/human/heads_human_female.json",
+      "name": "Human Female",
+      "layers": {
+        "layer_1": "head/heads/human/female/"
+      },
+      "data": {
+        "name": "Human Female",
+        "tags": [
+          "human",
+          "adult",
+          "small"
+        ],
+        "layer_1": {
+          "zPos": 100,
+          "male": "head/heads/human/female/",
+          "muscular": "head/heads/human/female/",
+          "female": "head/heads/human/female/",
+          "pregnant": "head/heads/human/female/",
+          "teen": "head/heads/human/female/"
+        },
+        "match_body_color": true,
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "head/heads/human/female",
+            "notes": "original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16",
+            "authors": [
+              "bluecarrot16",
+              "Benjamin K. Smith (BenCreating)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/",
+              "https://opengameart.org/content/lpc-character-bases"
+            ]
+          }
+        ],
+        "recolors": {
+          "color_1": {
+            "material": "body",
+            "palettes": [
+              "ulpc",
+              "lpcr",
+              "all.lpcr"
+            ]
+          },
+          "color_2": {
+            "type_name": "eyes",
+            "label": "Eye Color",
+            "material": "eye",
+            "palettes": [
+              "ulpc",
+              "lpcr"
+            ]
+          }
+        },
+        "type_name": "head"
+      }
+    },
+    "brow-thin": {
+      "definition": "sheet_definitions/head/eyebrows/eyebrows_thin.json",
+      "name": "Thin Eyebrows",
+      "layers": {
+        "layer_1": "eyes/eyebrows/thin/adult/"
+      },
+      "data": {
+        "name": "Thin Eyebrows",
+        "layer_1": {
+          "zPos": 106,
+          "male": "eyes/eyebrows/thin/adult/",
+          "muscular": "eyes/eyebrows/thin/adult/",
+          "female": "eyes/eyebrows/thin/adult/",
+          "teen": "eyes/eyebrows/thin/adult/",
+          "pregnant": "eyes/eyebrows/thin/adult/",
+          "child": "eyes/eyebrows/thin/child/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "eyes/eyebrows/thin",
+            "notes": "",
+            "authors": [
+              "ElizaWy"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "eyebrows"
+      }
+    },
+    "brow-thick": {
+      "definition": "sheet_definitions/head/eyebrows/eyebrows_thick.json",
+      "name": "Thick Eyebrows",
+      "layers": {
+        "layer_1": "eyes/eyebrows/thick/adult/"
+      },
+      "data": {
+        "name": "Thick Eyebrows",
+        "layer_1": {
+          "zPos": 106,
+          "male": "eyes/eyebrows/thick/adult/",
+          "muscular": "eyes/eyebrows/thick/adult/",
+          "female": "eyes/eyebrows/thick/adult/",
+          "teen": "eyes/eyebrows/thick/adult/",
+          "pregnant": "eyes/eyebrows/thick/adult/",
+          "child": "eyes/eyebrows/thick/child/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "eyes/eyebrows/thick",
+            "notes": "",
+            "authors": [
+              "ElizaWy"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "eyebrows"
+      }
+    },
+    "short": {
+      "definition": "sheet_definitions/hair/short/hair_parted.json",
+      "name": "Parted",
+      "layers": {
+        "layer_1": "hair/parted/adult/"
+      },
+      "data": {
+        "name": "Parted",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/parted/adult/",
+          "muscular": "hair/parted/adult/",
+          "female": "hair/parted/adult/",
+          "pregnant": "hair/parted/adult/",
+          "teen": "hair/parted/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/parted",
+            "notes": "down 4 and 5 added by JaidynReiman; recolors by Joe White; original by Manuel Riecke (MrBeast)",
+            "authors": [
+              "JaidynReiman",
+              "Joe White",
+              "Manuel Riecke (MrBeast)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/46ddcf05a0e43e7aa6ffd47d350eef0eb529ac24",
+              "https://opengameart.org/content/lpc-expanded-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "medium": {
+      "definition": "sheet_definitions/hair/bob/hair_lob.json",
+      "name": "Lob",
+      "layers": {
+        "layer_1": "hair/lob/adult/"
+      },
+      "data": {
+        "name": "Lob",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/lob/adult/",
+          "muscular": "hair/lob/adult/",
+          "female": "hair/lob/adult/",
+          "pregnant": "hair/lob/adult/",
+          "teen": "hair/lob/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/lob",
+            "notes": "",
+            "authors": [
+              "bluecarrot16"
+            ],
+            "licenses": [
+              "CC0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "long": {
+      "definition": "sheet_definitions/hair/long/hair_long.json",
+      "name": "Long",
+      "layers": {
+        "layer_1": "hair/long/adult/"
+      },
+      "data": {
+        "name": "Long",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/long/adult/",
+          "muscular": "hair/long/adult/",
+          "female": "hair/long/adult/",
+          "pregnant": "hair/long/adult/",
+          "teen": "hair/long/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/long",
+            "notes": "",
+            "authors": [
+              "JaidynReiman",
+              "Manuel Riecke (MrBeast)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-expanded-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "curly": {
+      "definition": "sheet_definitions/hair/curly/hair_curly_short.json",
+      "name": "Curly short",
+      "layers": {
+        "layer_1": "hair/curly_short/adult/"
+      },
+      "data": {
+        "name": "Curly short",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/curly_short/adult/",
+          "muscular": "hair/curly_short/adult/",
+          "female": "hair/curly_short/adult/",
+          "pregnant": "hair/curly_short/adult/",
+          "teen": "hair/curly_short/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/curly_short",
+            "notes": "",
+            "authors": [
+              "ElizaWy"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-hair",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "ponytail": {
+      "definition": "sheet_definitions/hair/braids/hair_high_ponytail.json",
+      "name": "High ponytail",
+      "layers": {
+        "layer_1": "hair/high_ponytail/adult/fg/",
+        "layer_2": "hair/high_ponytail/adult/bg/"
+      },
+      "data": {
+        "name": "High ponytail",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/high_ponytail/adult/fg/",
+          "muscular": "hair/high_ponytail/adult/fg/",
+          "female": "hair/high_ponytail/adult/fg/",
+          "pregnant": "hair/high_ponytail/adult/fg/",
+          "teen": "hair/high_ponytail/adult/fg/"
+        },
+        "layer_2": {
+          "zPos": 9,
+          "male": "hair/high_ponytail/adult/bg/",
+          "muscular": "hair/high_ponytail/adult/bg/",
+          "female": "hair/high_ponytail/adult/bg/",
+          "pregnant": "hair/high_ponytail/adult/bg/",
+          "teen": "hair/high_ponytail/adult/bg/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/high_ponytail",
+            "notes": "",
+            "authors": [
+              "JaidynReiman",
+              "ElizaWy",
+              "bluecarrot16"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-hair",
+              "https://opengameart.org/content/lpc-expanded-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "twintails": {
+      "definition": "sheet_definitions/hair/pigtails/hair_pigtails_bangs.json",
+      "name": "Pigtails bangs",
+      "layers": {
+        "layer_1": "hair/pigtails_bangs/adult/"
+      },
+      "data": {
+        "name": "Pigtails bangs",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/pigtails_bangs/adult/",
+          "muscular": "hair/pigtails_bangs/adult/",
+          "female": "hair/pigtails_bangs/adult/",
+          "pregnant": "hair/pigtails_bangs/adult/",
+          "teen": "hair/pigtails_bangs/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/pigtails_bangs",
+            "notes": "(astarea)",
+            "authors": [
+              "Emilio J. Sanchez-Sierra",
+              "bluecarrot16"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/steampun-a-fy-with-concept-art",
+              "https://opengameart.org/content/lpc-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "fringe": {
+      "definition": "sheet_definitions/hair/short/hair_bangs.json",
+      "name": "Bangs",
+      "layers": {
+        "layer_1": "hair/bangs/adult/"
+      },
+      "data": {
+        "name": "Bangs",
+        "layer_1": {
+          "zPos": 120,
+          "male": "hair/bangs/adult/",
+          "muscular": "hair/bangs/adult/",
+          "female": "hair/bangs/adult/",
+          "pregnant": "hair/bangs/adult/",
+          "teen": "hair/bangs/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hair/bangs",
+            "notes": "",
+            "authors": [
+              "JaidynReiman",
+              "Manuel Riecke (MrBeast)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-expanded-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "hair",
+          "palettes": [
+            "ulpc",
+            "lpcr",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hair"
+      }
+    },
+    "shirt": {
+      "definition": "sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2_buttoned.json",
+      "name": "Longsleeve 2 Buttoned",
+      "layers": {
+        "layer_1": "torso/clothes/longsleeve/longsleeve2_buttoned/teen/"
+      },
+      "data": {
+        "name": "Longsleeve 2 Buttoned",
+        "layer_1": {
+          "zPos": 35,
+          "male": "torso/clothes/longsleeve/longsleeve2_buttoned/male/",
+          "female": "torso/clothes/longsleeve/longsleeve2_buttoned/female/",
+          "teen": "torso/clothes/longsleeve/longsleeve2_buttoned/teen/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "torso/clothes/longsleeve/longsleeve2_buttoned",
+            "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "http://opengameart.org/content/lpc-revised-character-basics",
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-simple-shirts"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "clothes"
+      }
+    },
+    "tshirt": {
+      "definition": "sheet_definitions/torso/shirts/shortsleeve/torso_clothes_tshirt.json",
+      "name": "TShirt",
+      "layers": {
+        "layer_1": "torso/clothes/shortsleeve/tshirt/teen/"
+      },
+      "data": {
+        "name": "TShirt",
+        "layer_1": {
+          "zPos": 35,
+          "male": "torso/clothes/shortsleeve/tshirt/male/",
+          "female": "torso/clothes/shortsleeve/tshirt/female/",
+          "teen": "torso/clothes/shortsleeve/tshirt/teen/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "torso/clothes/shortsleeve/tshirt",
+            "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-revised-character-basics",
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-simple-shirts"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "clothes"
+      }
+    },
+    "knit": {
+      "definition": "sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2_vneck.json",
+      "name": "Longsleeve 2 VNeck",
+      "layers": {
+        "layer_1": "torso/clothes/longsleeve/longsleeve2_vneck/teen/"
+      },
+      "data": {
+        "name": "Longsleeve 2 VNeck",
+        "layer_1": {
+          "zPos": 35,
+          "male": "torso/clothes/longsleeve/longsleeve2_vneck/male/",
+          "female": "torso/clothes/longsleeve/longsleeve2_vneck/female/",
+          "teen": "torso/clothes/longsleeve/longsleeve2_vneck/teen/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "torso/clothes/longsleeve/longsleeve2_vneck",
+            "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "http://opengameart.org/content/lpc-revised-character-basics",
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-simple-shirts"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "clothes"
+      }
+    },
+    "sweater": {
+      "definition": "sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2.json",
+      "name": "Longsleeve 2",
+      "layers": {
+        "layer_1": "torso/clothes/longsleeve/longsleeve2/teen/"
+      },
+      "data": {
+        "name": "Longsleeve 2",
+        "layer_1": {
+          "zPos": 35,
+          "male": "torso/clothes/longsleeve/longsleeve2/male/",
+          "female": "torso/clothes/longsleeve/longsleeve2/female/",
+          "teen": "torso/clothes/longsleeve/longsleeve2/teen/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "torso/clothes/longsleeve/longsleeve2",
+            "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-revised-character-basics",
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-simple-shirts"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "clothes"
+      }
+    },
+    "jacket": {
+      "definition": "sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2_cardigan.json",
+      "name": "Cardigan",
+      "layers": {
+        "layer_1": "torso/clothes/longsleeve/longsleeve2_cardigan/teen/"
+      },
+      "data": {
+        "name": "Cardigan",
+        "layer_1": {
+          "zPos": 35,
+          "male": "torso/clothes/longsleeve/longsleeve2_cardigan/male/",
+          "female": "torso/clothes/longsleeve/longsleeve2_cardigan/female/",
+          "teen": "torso/clothes/longsleeve/longsleeve2_cardigan/teen/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "torso/clothes/longsleeve/longsleeve2_cardigan",
+            "notes": "original by ElizaWy; spellcast/thrust/shoot/hurt/male adapted from original by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "http://opengameart.org/content/lpc-revised-character-basics",
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-simple-shirts"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "clothes"
+      }
+    },
+    "vest": {
+      "definition": "sheet_definitions/torso/shirts/sleeveless/torso_clothes_sleeveless2_cardigan.json",
+      "name": "Sleeveless 2 Cardigan",
+      "layers": {
+        "layer_1": "torso/clothes/sleeveless/sleeveless2_cardigan/teen/"
+      },
+      "data": {
+        "name": "Sleeveless 2 Cardigan",
+        "layer_1": {
+          "zPos": 35,
+          "male": "torso/clothes/sleeveless/sleeveless2_cardigan/male/",
+          "female": "torso/clothes/sleeveless/sleeveless2_cardigan/female/",
+          "teen": "torso/clothes/sleeveless/sleeveless2_cardigan/teen/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "torso/clothes/sleeveless/sleeveless2_cardigan",
+            "notes": "original by ElizaWy; sleeveless adapted from original by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "http://opengameart.org/content/lpc-revised-character-basics",
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-simple-shirts"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "clothes"
+      }
+    },
+    "jeans": {
+      "definition": "sheet_definitions/legs/pants/legs_pants.json",
+      "name": "Pants",
+      "layers": {
+        "layer_1": "legs/pants/thin/"
+      },
+      "data": {
+        "name": "Pants",
+        "layer_1": {
+          "zPos": 20,
+          "male": "legs/pants/male/",
+          "muscular": "legs/pants/male/",
+          "female": "legs/pants/thin/",
+          "teen": "legs/pants/thin/",
+          "pregnant": "legs/pants/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "legs/pants/male",
+            "notes": "original male pants by wulax, recolors and edits to v3 base by bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "ElizaWy",
+              "Matthew Krohn (makrohn)",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 3.0",
+              "CC-BY-SA 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          },
+          {
+            "file": "legs/pants/thin",
+            "notes": "original male pants by wulax, edited for female by Joe White, recolors and edits to v3 base by bluecarrot16, teen legs by ElizaWy derived from base, climb/jump/run/sit/emotes/revised combat by JaidynReiman based on ElizaWy's LPC Revised",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "ElizaWy",
+              "Joe White",
+              "Matthew Krohn (makrohn)",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 3.0",
+              "CC-BY-SA 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "http://opengameart.org/content/lpc-clothing-updates",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "legs"
+      }
+    },
+    "casual": {
+      "definition": "sheet_definitions/legs/pants/legs_formal.json",
+      "name": "Formal Pants",
+      "layers": {
+        "layer_1": "legs/formal/thin/"
+      },
+      "data": {
+        "name": "Formal Pants",
+        "layer_1": {
+          "zPos": 20,
+          "male": "legs/formal/male/",
+          "muscular": "legs/formal/male/",
+          "female": "legs/formal/thin/",
+          "teen": "legs/formal/thin/",
+          "pregnant": "legs/formal/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "legs/formal",
+            "notes": "Original pants by Stephen Challener (Redshrike), thrust/shoot bases by Wulax, Formal Pants by Bluecarrot16, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "ElizaWy",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-2-characters",
+              "https://opengameart.org/content/lpc-gentleman",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          },
+          {
+            "file": "legs/formal/thin",
+            "notes": "Original pants by Stephen Challener (Redshrike), thrust/shoot bases by Wulax, Formal Pants by Bluecarrot16, Female/Thin version by JaidynReiman",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "ElizaWy",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-2-characters",
+              "https://opengameart.org/content/lpc-gentleman",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "aliases": {
+          "Fur_Pants_*": "Formal_Pants_*",
+          "Fur_Pants_fur": "Formal_Pants_brown",
+          "Formal_Pants_fur": "Formal_Pants_brown"
+        },
+        "type_name": "legs"
+      }
+    },
+    "wide": {
+      "definition": "sheet_definitions/legs/pants/legs_pantaloons.json",
+      "name": "Pantaloons",
+      "layers": {
+        "layer_1": "legs/pantaloons/thin/"
+      },
+      "data": {
+        "name": "Pantaloons",
+        "layer_1": {
+          "zPos": 20,
+          "male": "legs/pantaloons/male/",
+          "muscular": "legs/pantaloons/muscular/",
+          "female": "legs/pantaloons/thin/",
+          "pregnant": "legs/pantaloons/thin/",
+          "teen": "legs/pantaloons/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "legs/pantaloons",
+            "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, Original Pantaloons by Nila122, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+            "authors": [
+              "Nila122",
+              "JaidynReiman",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 2.0",
+              "GPL 3.0",
+              "CC-BY-SA 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-pirates",
+              "https://opengameart.org/content/more-lpc-clothes-and-hair",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          },
+          {
+            "file": "legs/pantaloons/thin",
+            "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, Original Pantaloons by Nila122, Female/Teen version by JaidynReiman",
+            "authors": [
+              "Nila122",
+              "JaidynReiman",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 2.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-pirates",
+              "https://opengameart.org/content/more-lpc-clothes-and-hair",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          },
+          {
+            "file": "legs/pantaloons/muscular",
+            "notes": "",
+            "authors": [
+              "Nila122",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 2.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/more-lpc-clothes-and-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "legs"
+      }
+    },
+    "cargo": {
+      "definition": "sheet_definitions/legs/pants/legs_pants2.json",
+      "name": "Long Pants",
+      "layers": {
+        "layer_1": "legs/pants2/thin/"
+      },
+      "data": {
+        "name": "Long Pants",
+        "layer_1": {
+          "zPos": 20,
+          "male": "legs/pants2/male/",
+          "female": "legs/pants2/thin/",
+          "teen": "legs/pants2/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "legs/pants2/male",
+            "notes": "original overalls by ElizaWy, base animations adapted from v3 overalls by bluecarrot16, pants by JaidynReiman",
+            "authors": [
+              "JaidynReiman",
+              "ElizaWy",
+              "Bluecarrot16",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          },
+          {
+            "file": "legs/pants2",
+            "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, original pants by ElizaWy, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "legs"
+      }
+    },
+    "shorts": {
+      "definition": "sheet_definitions/legs/shorts/legs_shorts.json",
+      "name": "Shorts",
+      "layers": {
+        "layer_1": "legs/shorts/shorts/thin/"
+      },
+      "data": {
+        "name": "Shorts",
+        "layer_1": {
+          "zPos": 20,
+          "male": "legs/shorts/shorts/male/",
+          "female": "legs/shorts/shorts/thin/",
+          "teen": "legs/shorts/shorts/thin/",
+          "pregnant": "legs/shorts/shorts/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "legs/shorts/shorts/male",
+            "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, original overalls and shorts by ElizaWy, base animations adapted from v3 overalls by bluecarrot16, shorts by JaidynReiman",
+            "authors": [
+              "JaidynReiman",
+              "ElizaWy",
+              "Bluecarrot16",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          },
+          {
+            "file": "legs/shorts/shorts",
+            "notes": "Original bases by Redshrike, thrust/shoot bases by Wulax, original shorts by ElizaWy, climb/jump/run/sit/emotes/revised combat by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-pants"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "legs"
+      }
+    },
+    "longskirt": {
+      "definition": "sheet_definitions/legs/skirts/legs_skirt_belle.json",
+      "name": "Belle skirt",
+      "layers": {
+        "layer_1": "legs/skirts/belle/thin/"
+      },
+      "data": {
+        "name": "Belle skirt",
+        "layer_1": {
+          "zPos": 20,
+          "female": "legs/skirts/belle/thin/",
+          "pregnant": "legs/skirts/belle/thin/",
+          "teen": "legs/skirts/belle/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "climb",
+          "idle",
+          "emote"
+        ],
+        "credits": [
+          {
+            "file": "legs/skirts/belle",
+            "notes": "extended to all poses by makrohn, edited to v3 bases and animation cleanup by bluecarrot16",
+            "authors": [
+              "bluecarrot16",
+              "Matthew Krohn (makrohn)",
+              "Lanea Zimmerman (Sharm)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+              "https://opengameart.org/content/lpc-dress-in-combat-poses",
+              "http://opengameart.org/content/lpc-clothing-updates"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "legs"
+      }
+    },
+    "shortskirt": {
+      "definition": "sheet_definitions/legs/skirts/legs_skirts_plain.json",
+      "name": "Plain skirt",
+      "layers": {
+        "layer_1": "legs/skirts/plain/thin/"
+      },
+      "data": {
+        "name": "Plain skirt",
+        "layer_1": {
+          "zPos": 20,
+          "male": "legs/skirts/plain/male/",
+          "female": "legs/skirts/plain/thin/",
+          "teen": "legs/skirts/plain/thin/",
+          "pregnant": "legs/skirts/plain/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "climb",
+          "idle",
+          "sit",
+          "emote"
+        ],
+        "credits": [
+          {
+            "file": "legs/skirts/plain",
+            "notes": "original by wulax, edited for female base by pvigier, edited for v3 base by bluecarrot16, idle & sit by Ahmad3366, color reduced & female sit/emote by JaidynReiman",
+            "authors": [
+              "bluecarrot16",
+              "Pierre Vigier (pvigier)",
+              "Johannes Sjölund (wulax)",
+              "Ahmad3366",
+              "JaidynReiman"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "legs"
+      }
+    },
+    "sneakers": {
+      "definition": "sheet_definitions/feet/shoes/feet_shoes_revised.json",
+      "name": "Revised Shoes",
+      "layers": {
+        "layer_1": "feet/shoes/revised/thin/"
+      },
+      "data": {
+        "name": "Revised Shoes",
+        "priority": 20,
+        "layer_1": {
+          "zPos": 15,
+          "male": "feet/shoes/revised/male/",
+          "muscular": "feet/shoes/revised/male/",
+          "female": "feet/shoes/revised/thin/",
+          "teen": "feet/shoes/revised/thin/",
+          "pregnant": "feet/shoes/revised/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "feet/shoes/revised/male",
+            "notes": "original overalls and shoes by ElizaWy, base animations adapted from v3 overalls by bluecarrot16, shoes by JaidynReiman",
+            "authors": [
+              "JaidynReiman",
+              "ElizaWy",
+              "Bluecarrot16",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          },
+          {
+            "file": "feet/shoes/revised",
+            "notes": "original by ElizaWy, remaining frames by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "metal.ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "shoes"
+      }
+    },
+    "leather": {
+      "definition": "sheet_definitions/feet/shoes/feet_shoes_basic.json",
+      "name": "Basic Shoes",
+      "layers": {
+        "layer_1": "feet/shoes/basic/thin/"
+      },
+      "data": {
+        "name": "Basic Shoes",
+        "priority": 10,
+        "layer_1": {
+          "zPos": 15,
+          "female": "feet/shoes/basic/thin/",
+          "pregnant": "feet/shoes/basic/thin/",
+          "teen": "feet/shoes/basic/thin/",
+          "male": "feet/shoes/basic/male/",
+          "muscular": "feet/shoes/basic/male/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "feet/shoes",
+            "notes": "original by wulax, edited for v3 base by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman",
+            "authors": [
+              "JaidynReiman",
+              "bluecarrot16",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "http://opengameart.org/content/lpc-clothing-updates",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          },
+          {
+            "file": "feet/shoes/basic/thin",
+            "notes": "original by wulax, edited for female base by Joe White, edited for v3 base by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman",
+            "authors": [
+              "JaidynReiman",
+              "Joe White",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "http://opengameart.org/content/lpc-clothing-updates",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "metal.ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "shoes"
+      }
+    },
+    "canvas": {
+      "definition": "sheet_definitions/feet/shoes/feet_shoes_ghillies.json",
+      "name": "Ghillies",
+      "layers": {
+        "layer_1": "feet/shoes/ghillies/thin/"
+      },
+      "data": {
+        "name": "Ghillies",
+        "priority": 40,
+        "layer_1": {
+          "zPos": 15,
+          "female": "feet/shoes/ghillies/thin/",
+          "teen": "feet/shoes/ghillies/thin/",
+          "pregnant": "feet/shoes/ghillies/thin/",
+          "male": "feet/shoes/ghillies/male/",
+          "muscular": "feet/shoes/ghillies/male/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "feet/shoes/ghillies",
+            "notes": "original by pennomi, laetissima and makrohn; edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman",
+              "Thane Brimhall (pennomi)",
+              "laetissima",
+              "Matthew Krohn (makrohn)"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-2-characters",
+              "http://opengameart.org/content/lpc-clothing-updates",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "shoes"
+      }
+    },
+    "boots": {
+      "definition": "sheet_definitions/feet/boots/feet_boots_revised.json",
+      "name": "Revised Boots",
+      "layers": {
+        "layer_1": "feet/boots/revised/thin/"
+      },
+      "data": {
+        "name": "Revised Boots",
+        "priority": 20,
+        "layer_1": {
+          "zPos": 25,
+          "male": "feet/boots/revised/male/",
+          "muscular": "feet/boots/revised/male/",
+          "female": "feet/boots/revised/thin/",
+          "teen": "feet/boots/revised/thin/",
+          "pregnant": "feet/boots/revised/thin/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "feet/boots/revised/male",
+            "notes": "original overalls and boots by ElizaWy, base animations adapted from v3 overalls by bluecarrot16, boots by JaidynReiman",
+            "authors": [
+              "JaidynReiman",
+              "ElizaWy",
+              "Bluecarrot16",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          },
+          {
+            "file": "feet/boots/revised",
+            "notes": "original by ElizaWy, remaining frames by JaidynReiman",
+            "authors": [
+              "ElizaWy",
+              "JaidynReiman",
+              "Stephen Challener (Redshrike)",
+              "Johannes Sjölund (wulax)"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+              "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+              "https://opengameart.org/content/lpc-expanded-socks-shoes"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "metal.ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "shoes"
+      }
+    },
+    "glasses": {
+      "definition": "sheet_definitions/headwear/accessories/glasses/facial_glasses_round.json",
+      "name": "Round Glasses",
+      "layers": {
+        "layer_1": "facial/glasses/round/adult/"
+      },
+      "data": {
+        "name": "Round Glasses",
+        "layer_1": {
+          "zPos": 115,
+          "male": "facial/glasses/round/adult/",
+          "muscular": "facial/glasses/round/adult/",
+          "female": "facial/glasses/round/adult/",
+          "pregnant": "facial/glasses/round/adult/",
+          "teen": "facial/glasses/round/adult/",
+          "child": "facial/glasses/round/child/"
+        },
+        "variants": [
+          "base",
+          "sunglasses",
+          "black",
+          "blue",
+          "bluegray",
+          "brown",
+          "charcoal",
+          "forest",
+          "gray",
+          "green",
+          "lavender",
+          "leather",
+          "maroon",
+          "navy",
+          "orange",
+          "pink",
+          "purple",
+          "red",
+          "rose",
+          "sky",
+          "slate",
+          "tan",
+          "teal",
+          "walnut",
+          "white",
+          "yellow",
+          "steel",
+          "iron",
+          "ceramic",
+          "brass",
+          "copper",
+          "bronze",
+          "silver",
+          "gold"
+        ],
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "facial/glasses/round",
+            "notes": "",
+            "authors": [
+              "bluecarrot16",
+              "Thane Brimhall (pennomi)",
+              "laetissima"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/clothing-facial-features-and-ui-elements",
+              "https://opengameart.org/content/lpc-gentleman"
+            ]
+          }
+        ],
+        "type_name": "facial_eyes"
+      }
+    },
+    "hat": {
+      "definition": "sheet_definitions/headwear/hats/caps/hat_cap_bonnie.json",
+      "name": "Bonnie",
+      "layers": {
+        "layer_1": "hat/pirate/bonnie/adult/"
+      },
+      "data": {
+        "name": "Bonnie",
+        "layer_1": {
+          "zPos": 130,
+          "male": "hat/pirate/bonnie/adult/",
+          "muscular": "hat/pirate/bonnie/adult/",
+          "female": "hat/pirate/bonnie/adult/",
+          "teen": "hat/pirate/bonnie/adult/",
+          "pregnant": "hat/pirate/bonnie/adult/"
+        },
+        "variants": [
+          "black",
+          "blue",
+          "bluegray",
+          "brown",
+          "charcoal",
+          "forest",
+          "gray",
+          "green",
+          "lavender",
+          "leather",
+          "maroon",
+          "navy",
+          "orange",
+          "pink",
+          "purple",
+          "red",
+          "rose",
+          "sky",
+          "slate",
+          "tan",
+          "teal",
+          "walnut",
+          "white",
+          "yellow"
+        ],
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hat/pirate/bonnie",
+            "notes": "Bonnie Hat by Bluecarrot16, layers and added animations by JaidynReiman",
+            "authors": [
+              "bluecarrot16",
+              "JaidynReiman"
+            ],
+            "licenses": [
+              "OGA-BY 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-pirates",
+              "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+            ]
+          }
+        ],
+        "type_name": "hat"
+      }
+    },
+    "scarf": {
+      "definition": "sheet_definitions/headwear/neck/neck_scarf.json",
+      "name": "Scarf",
+      "layers": {
+        "layer_1": "neck/scarf/"
+      },
+      "data": {
+        "name": "Scarf",
+        "priority": 50,
+        "layer_1": {
+          "zPos": 90,
+          "male": "neck/scarf/",
+          "female": "neck/scarf/",
+          "pregnant": "neck/scarf/",
+          "muscular": "neck/scarf/",
+          "teen": "neck/scarf/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote"
+        ],
+        "credits": [
+          {
+            "file": "neck/scarf",
+            "notes": "Original by Nila122, climb/sit/emote/jump/run animations by JaidynReiman",
+            "authors": [
+              "Nila122",
+              "JaidynReiman",
+              "Johannes Sjölund (wulax)",
+              "Stephen Challener (Redshrike)"
+            ],
+            "licenses": [
+              "OGA-SA 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 2.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/more-lpc-clothes-and-hair"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "neck"
+      }
+    },
+    "backpack": {
+      "definition": "sheet_definitions/torso/backpack/backpack.json",
+      "name": "Backpack",
+      "layers": {
+        "layer_1": "backpack/backpack/female/"
+      },
+      "data": {
+        "name": "Backpack",
+        "tags": [
+          "back",
+          "backpack"
+        ],
+        "preview_row": 0,
+        "layer_1": {
+          "zPos": 110,
+          "male": "backpack/backpack/male/",
+          "muscular": "backpack/backpack/male/",
+          "female": "backpack/backpack/female/",
+          "pregnant": "backpack/backpack/female/"
+        },
+        "variants": [
+          "black",
+          "blue",
+          "bluegray",
+          "forest",
+          "gray",
+          "green",
+          "lavender",
+          "leather",
+          "maroon",
+          "navy",
+          "orange",
+          "pink",
+          "purple",
+          "red",
+          "sky",
+          "tan",
+          "teal",
+          "walnut",
+          "white",
+          "yellow"
+        ],
+        "credits": [
+          {
+            "file": "backpack/backpack",
+            "notes": "trivial adjustments by bluecarrot16 to be compatible with v3 bases",
+            "authors": [
+              "Benjamin K. Smith (BenCreating)",
+              "macmanmatty"
+            ],
+            "licenses": [
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-backpacks"
+            ]
+          }
+        ],
+        "type_name": "backpack"
+      }
+    },
+    "hood": {
+      "definition": "sheet_definitions/headwear/coverings/hoods/hat_hood_cloth.json",
+      "name": "Hood",
+      "layers": {
+        "layer_1": "hat/cloth/hood/adult/"
+      },
+      "data": {
+        "name": "Hood",
+        "layer_1": {
+          "zPos": 130,
+          "male": "hat/cloth/hood/adult/",
+          "female": "hat/cloth/hood/adult/",
+          "muscular": "hat/cloth/hood/adult/",
+          "pregnant": "hat/cloth/hood/adult/",
+          "teen": "hat/cloth/hood/adult/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hat/cloth/hood",
+            "notes": "Brown hood by Wulax, original black/white recolors by ??, mapped to idle/run/jump/revised combat by JaidynReiman, along with additional recolors.",
+            "authors": [
+              "Johannes Sjölund (wulax)",
+              "JaidynReiman"
+            ],
+            "licenses": [
+              "OGA-BY 3.0",
+              "CC-BY-SA 3.0",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+              "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hat"
+      }
+    },
+    "hairclip": {
+      "definition": "sheet_definitions/headwear/coverings/headbands/hat_headband_hairtie.json",
+      "name": "Hair Tie",
+      "layers": {
+        "layer_1": "hat/headband/hairtie/adult/"
+      },
+      "data": {
+        "name": "Hair Tie",
+        "layer_1": {
+          "zPos": 125,
+          "female": "hat/headband/hairtie/adult/",
+          "male": "hat/headband/hairtie/adult/",
+          "muscular": "hat/headband/hairtie/adult/",
+          "pregnant": "hat/headband/hairtie/adult/",
+          "teen": "hat/headband/hairtie/adult/",
+          "child": "hat/headband/hairtie/child/"
+        },
+        "animations": [
+          "spellcast",
+          "thrust",
+          "walk",
+          "slash",
+          "shoot",
+          "hurt",
+          "watering",
+          "idle",
+          "jump",
+          "run",
+          "sit",
+          "emote",
+          "climb",
+          "combat",
+          "1h_slash",
+          "1h_backslash",
+          "1h_halfslash"
+        ],
+        "credits": [
+          {
+            "file": "hat/headband/hairtie",
+            "notes": "",
+            "authors": [
+              "JaidynReiman"
+            ],
+            "licenses": [
+              "OGA-BY 3.0+",
+              "CC-BY 3.0+",
+              "GPL 3.0"
+            ],
+            "urls": [
+              "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail",
+              "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+            ]
+          }
+        ],
+        "recolors": {
+          "material": "cloth",
+          "palettes": [
+            "ulpc",
+            "all.lpcr"
+          ]
+        },
+        "type_name": "hairtie"
+      }
+    }
+  },
+  "downloads": {
+    "body-layer_1-walk": {
+      "file": "spritesheets/body/bodies/teen/walk.png"
+    },
+    "body-layer_1-sit": {
+      "file": "spritesheets/body/bodies/teen/sit.png"
+    },
+    "body-layer_1-slash": {
+      "file": "spritesheets/body/bodies/teen/slash.png"
+    },
+    "head-layer_1-walk": {
+      "file": "spritesheets/head/heads/human/female/walk.png"
+    },
+    "head-layer_1-sit": {
+      "file": "spritesheets/head/heads/human/female/sit.png"
+    },
+    "head-layer_1-slash": {
+      "file": "spritesheets/head/heads/human/female/slash.png"
+    },
+    "brow-thin-layer_1-walk": {
+      "file": "spritesheets/eyes/eyebrows/thin/adult/walk.png"
+    },
+    "brow-thin-layer_1-sit": {
+      "file": "spritesheets/eyes/eyebrows/thin/adult/sit.png"
+    },
+    "brow-thin-layer_1-slash": {
+      "file": "spritesheets/eyes/eyebrows/thin/adult/slash.png"
+    },
+    "brow-thick-layer_1-walk": {
+      "file": "spritesheets/eyes/eyebrows/thick/adult/walk.png"
+    },
+    "brow-thick-layer_1-sit": {
+      "file": "spritesheets/eyes/eyebrows/thick/adult/sit.png"
+    },
+    "brow-thick-layer_1-slash": {
+      "file": "spritesheets/eyes/eyebrows/thick/adult/slash.png"
+    },
+    "short-layer_1-walk": {
+      "file": "spritesheets/hair/parted/adult/walk.png"
+    },
+    "short-layer_1-sit": {
+      "file": "spritesheets/hair/parted/adult/sit.png"
+    },
+    "short-layer_1-slash": {
+      "file": "spritesheets/hair/parted/adult/slash.png"
+    },
+    "medium-layer_1-walk": {
+      "file": "spritesheets/hair/lob/adult/walk.png"
+    },
+    "medium-layer_1-sit": {
+      "file": "spritesheets/hair/lob/adult/sit.png"
+    },
+    "medium-layer_1-slash": {
+      "file": "spritesheets/hair/lob/adult/slash.png"
+    },
+    "long-layer_1-walk": {
+      "file": "spritesheets/hair/long/adult/walk.png"
+    },
+    "long-layer_1-sit": {
+      "file": "spritesheets/hair/long/adult/sit.png"
+    },
+    "long-layer_1-slash": {
+      "file": "spritesheets/hair/long/adult/slash.png"
+    },
+    "curly-layer_1-walk": {
+      "file": "spritesheets/hair/curly_short/adult/walk.png"
+    },
+    "curly-layer_1-sit": {
+      "file": "spritesheets/hair/curly_short/adult/sit.png"
+    },
+    "curly-layer_1-slash": {
+      "file": "spritesheets/hair/curly_short/adult/slash.png"
+    },
+    "ponytail-layer_1-walk": {
+      "file": "spritesheets/hair/high_ponytail/adult/fg/walk.png"
+    },
+    "ponytail-layer_1-sit": {
+      "file": "spritesheets/hair/high_ponytail/adult/fg/sit.png"
+    },
+    "ponytail-layer_1-slash": {
+      "file": "spritesheets/hair/high_ponytail/adult/fg/slash.png"
+    },
+    "ponytail-layer_2-walk": {
+      "file": "spritesheets/hair/high_ponytail/adult/bg/walk.png"
+    },
+    "ponytail-layer_2-sit": {
+      "file": "spritesheets/hair/high_ponytail/adult/bg/sit.png"
+    },
+    "ponytail-layer_2-slash": {
+      "file": "spritesheets/hair/high_ponytail/adult/bg/slash.png"
+    },
+    "twintails-layer_1-walk": {
+      "file": "spritesheets/hair/pigtails_bangs/adult/walk.png"
+    },
+    "twintails-layer_1-sit": {
+      "file": "spritesheets/hair/pigtails_bangs/adult/sit.png"
+    },
+    "twintails-layer_1-slash": {
+      "file": "spritesheets/hair/pigtails_bangs/adult/slash.png"
+    },
+    "fringe-layer_1-walk": {
+      "file": "spritesheets/hair/bangs/adult/walk.png"
+    },
+    "fringe-layer_1-sit": {
+      "file": "spritesheets/hair/bangs/adult/sit.png"
+    },
+    "fringe-layer_1-slash": {
+      "file": "spritesheets/hair/bangs/adult/slash.png"
+    },
+    "shirt-layer_1-walk": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_buttoned/teen/walk.png"
+    },
+    "shirt-layer_1-sit": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_buttoned/teen/sit.png"
+    },
+    "shirt-layer_1-slash": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_buttoned/teen/slash.png"
+    },
+    "tshirt-layer_1-walk": {
+      "file": "spritesheets/torso/clothes/shortsleeve/tshirt/teen/walk.png"
+    },
+    "tshirt-layer_1-sit": {
+      "file": "spritesheets/torso/clothes/shortsleeve/tshirt/teen/sit.png"
+    },
+    "tshirt-layer_1-slash": {
+      "file": "spritesheets/torso/clothes/shortsleeve/tshirt/teen/slash.png"
+    },
+    "knit-layer_1-walk": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_vneck/teen/walk.png"
+    },
+    "knit-layer_1-sit": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_vneck/teen/sit.png"
+    },
+    "knit-layer_1-slash": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_vneck/teen/slash.png"
+    },
+    "sweater-layer_1-walk": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2/teen/walk.png"
+    },
+    "sweater-layer_1-sit": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2/teen/sit.png"
+    },
+    "sweater-layer_1-slash": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2/teen/slash.png"
+    },
+    "jacket-layer_1-walk": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_cardigan/teen/walk.png"
+    },
+    "jacket-layer_1-sit": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_cardigan/teen/sit.png"
+    },
+    "jacket-layer_1-slash": {
+      "file": "spritesheets/torso/clothes/longsleeve/longsleeve2_cardigan/teen/slash.png"
+    },
+    "vest-layer_1-walk": {
+      "file": "spritesheets/torso/clothes/sleeveless/sleeveless2_cardigan/teen/walk.png"
+    },
+    "vest-layer_1-sit": {
+      "file": "spritesheets/torso/clothes/sleeveless/sleeveless2_cardigan/teen/sit.png"
+    },
+    "vest-layer_1-slash": {
+      "file": "spritesheets/torso/clothes/sleeveless/sleeveless2_cardigan/teen/slash.png"
+    },
+    "jeans-layer_1-walk": {
+      "file": "spritesheets/legs/pants/thin/walk.png"
+    },
+    "jeans-layer_1-sit": {
+      "file": "spritesheets/legs/pants/thin/sit.png"
+    },
+    "jeans-layer_1-slash": {
+      "file": "spritesheets/legs/pants/thin/slash.png"
+    },
+    "casual-layer_1-walk": {
+      "file": "spritesheets/legs/formal/thin/walk.png"
+    },
+    "casual-layer_1-sit": {
+      "file": "spritesheets/legs/formal/thin/sit.png"
+    },
+    "casual-layer_1-slash": {
+      "file": "spritesheets/legs/formal/thin/slash.png"
+    },
+    "wide-layer_1-walk": {
+      "file": "spritesheets/legs/pantaloons/thin/walk.png"
+    },
+    "wide-layer_1-sit": {
+      "file": "spritesheets/legs/pantaloons/thin/sit.png"
+    },
+    "wide-layer_1-slash": {
+      "file": "spritesheets/legs/pantaloons/thin/slash.png"
+    },
+    "cargo-layer_1-walk": {
+      "file": "spritesheets/legs/pants2/thin/walk.png"
+    },
+    "cargo-layer_1-sit": {
+      "file": "spritesheets/legs/pants2/thin/sit.png"
+    },
+    "cargo-layer_1-slash": {
+      "file": "spritesheets/legs/pants2/thin/slash.png"
+    },
+    "shorts-layer_1-walk": {
+      "file": "spritesheets/legs/shorts/shorts/thin/walk.png"
+    },
+    "shorts-layer_1-sit": {
+      "file": "spritesheets/legs/shorts/shorts/thin/sit.png"
+    },
+    "shorts-layer_1-slash": {
+      "file": "spritesheets/legs/shorts/shorts/thin/slash.png"
+    },
+    "longskirt-layer_1-walk": {
+      "file": "spritesheets/legs/skirts/belle/thin/walk.png"
+    },
+    "longskirt-layer_1-sit": {
+      "file": "spritesheets/legs/skirts/belle/thin/sit.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "longskirt-layer_1-slash": {
+      "file": "spritesheets/legs/skirts/belle/thin/slash.png"
+    },
+    "shortskirt-layer_1-walk": {
+      "file": "spritesheets/legs/skirts/plain/thin/walk.png"
+    },
+    "shortskirt-layer_1-sit": {
+      "file": "spritesheets/legs/skirts/plain/thin/sit.png"
+    },
+    "shortskirt-layer_1-slash": {
+      "file": "spritesheets/legs/skirts/plain/thin/slash.png"
+    },
+    "sneakers-layer_1-walk": {
+      "file": "spritesheets/feet/shoes/revised/thin/walk.png"
+    },
+    "sneakers-layer_1-sit": {
+      "file": "spritesheets/feet/shoes/revised/thin/sit.png"
+    },
+    "sneakers-layer_1-slash": {
+      "file": "spritesheets/feet/shoes/revised/thin/slash.png"
+    },
+    "leather-layer_1-walk": {
+      "file": "spritesheets/feet/shoes/basic/thin/walk.png"
+    },
+    "leather-layer_1-sit": {
+      "file": "spritesheets/feet/shoes/basic/thin/sit.png"
+    },
+    "leather-layer_1-slash": {
+      "file": "spritesheets/feet/shoes/basic/thin/slash.png"
+    },
+    "canvas-layer_1-walk": {
+      "file": "spritesheets/feet/shoes/ghillies/thin/walk.png"
+    },
+    "canvas-layer_1-sit": {
+      "file": "spritesheets/feet/shoes/ghillies/thin/sit.png"
+    },
+    "canvas-layer_1-slash": {
+      "file": "spritesheets/feet/shoes/ghillies/thin/slash.png"
+    },
+    "boots-layer_1-walk": {
+      "file": "spritesheets/feet/boots/revised/thin/walk.png"
+    },
+    "boots-layer_1-sit": {
+      "file": "spritesheets/feet/boots/revised/thin/sit.png"
+    },
+    "boots-layer_1-slash": {
+      "file": "spritesheets/feet/boots/revised/thin/slash.png"
+    },
+    "glasses-layer_1-walk": {
+      "file": "spritesheets/facial/glasses/round/adult/walk.png"
+    },
+    "glasses-layer_1-sit": {
+      "file": "spritesheets/facial/glasses/round/adult/sit.png"
+    },
+    "glasses-layer_1-slash": {
+      "file": "spritesheets/facial/glasses/round/adult/slash.png"
+    },
+    "hat-layer_1-walk": {
+      "file": "spritesheets/hat/pirate/bonnie/adult/walk.png"
+    },
+    "hat-layer_1-sit": {
+      "file": "spritesheets/hat/pirate/bonnie/adult/sit.png"
+    },
+    "hat-layer_1-slash": {
+      "file": "spritesheets/hat/pirate/bonnie/adult/slash.png"
+    },
+    "scarf-layer_1-walk": {
+      "file": "spritesheets/neck/scarf/walk.png"
+    },
+    "scarf-layer_1-sit": {
+      "file": "spritesheets/neck/scarf/sit.png"
+    },
+    "scarf-layer_1-slash": {
+      "file": "spritesheets/neck/scarf/slash.png"
+    },
+    "backpack-layer_1-walk": {
+      "file": "spritesheets/backpack/backpack/female/walk/white.png"
+    },
+    "backpack-layer_1-sit": {
+      "file": "spritesheets/backpack/backpack/female/sit.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "backpack-layer_1-slash": {
+      "file": "spritesheets/backpack/backpack/female/slash.png",
+      "error": "HTTP Error 404: Not Found"
+    },
+    "hood-layer_1-walk": {
+      "file": "spritesheets/hat/cloth/hood/adult/walk.png"
+    },
+    "hood-layer_1-sit": {
+      "file": "spritesheets/hat/cloth/hood/adult/sit.png"
+    },
+    "hood-layer_1-slash": {
+      "file": "spritesheets/hat/cloth/hood/adult/slash.png"
+    },
+    "hairclip-layer_1-walk": {
+      "file": "spritesheets/hat/headband/hairtie/adult/walk.png"
+    },
+    "hairclip-layer_1-sit": {
+      "file": "spritesheets/hat/headband/hairtie/adult/sit.png"
+    },
+    "hairclip-layer_1-slash": {
+      "file": "spritesheets/hat/headband/hairtie/adult/slash.png"
+    }
+  }
+}

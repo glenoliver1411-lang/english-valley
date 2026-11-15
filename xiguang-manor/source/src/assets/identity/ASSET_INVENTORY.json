@@ -1,0 +1,1289 @@
+{
+  "generated": "2026-11-15",
+  "files": [
+    {
+      "file": "CREDITS.json",
+      "bytes": 33315,
+      "sha256": "095ea165fcecbebcc50c0e5fff924a28e70b309bf2cf6ef5e29c71b912fedc6f",
+      "runtime": true
+    },
+    {
+      "file": "atlas.json",
+      "bytes": 46602,
+      "sha256": "44fb7823b892ea3387ad1959f49a26fb45c5cd2e58b14239490e8abc2258d271",
+      "runtime": true
+    },
+    {
+      "file": "aurora-bench-front.webp",
+      "bytes": 20868,
+      "sha256": "bc8082233a4e2766d4f26c236515f6c02f0d05e1ed9e557aa6c750a2cbdb0772",
+      "runtime": true
+    },
+    {
+      "file": "aurora-clean-night-scene.webp",
+      "bytes": 861646,
+      "sha256": "3a05db8f1fda46c581f0dcaea8b0577f2107fdccf279bae6236908543d332294",
+      "runtime": true
+    },
+    {
+      "file": "aurora-clean-scene.webp",
+      "bytes": 807728,
+      "sha256": "7645d674ec36ecead73c11edd4acadd2a7e8d718966d5eef0984ae69315fc959",
+      "runtime": true
+    },
+    {
+      "file": "aurora-repair.json",
+      "bytes": 568,
+      "sha256": "4fdf15191d86fa1f70d367213de5a3b296faa0355b38e8319241f2fcc46ce3dd",
+      "runtime": false
+    },
+    {
+      "file": "cats/atlas.json",
+      "bytes": 2415,
+      "sha256": "f6d0c307ced7af8fd38476340b1ba0bba8c125ca8127102a36a2661fc7e2ccc3",
+      "runtime": true
+    },
+    {
+      "file": "cats/black.webp",
+      "bytes": 60110,
+      "sha256": "a24826103ae829bbdc68fed2897d9e13a4045bc712e1fb11457b0f07fd202128",
+      "runtime": true
+    },
+    {
+      "file": "cats/calico.webp",
+      "bytes": 68252,
+      "sha256": "89e4394d0bb1536efcd3873146fbc9a806eaf891f09cc4e4e165542f429333a3",
+      "runtime": true
+    },
+    {
+      "file": "cats/gray.webp",
+      "bytes": 58084,
+      "sha256": "7a1bc850b9324d8df24f921b2feea00766d83f5218573522a1595a80663ef842",
+      "runtime": true
+    },
+    {
+      "file": "cats/orange.webp",
+      "bytes": 74454,
+      "sha256": "aaf11c10f873a5c6b39aa782f427086fcc9ef9998fa934a6bcbc55eaec4dc693",
+      "runtime": true
+    },
+    {
+      "file": "cats/tabby.webp",
+      "bytes": 69478,
+      "sha256": "3a84148bb8007539ca39ead24a0957904dbfc4ea1ec85cde3b0c60130a290b5f",
+      "runtime": true
+    },
+    {
+      "file": "cats/tuxedo.webp",
+      "bytes": 61536,
+      "sha256": "24d35aa21f25b9dfe204159064f4082452f7f9681a36bd0368bb14feffdd5eb7",
+      "runtime": true
+    },
+    {
+      "file": "cats/white.webp",
+      "bytes": 67758,
+      "sha256": "1ec24b34cef30e5d933bc0e58b1096c4fb2d81e22dd3822cc37c29c4266f929e",
+      "runtime": true
+    },
+    {
+      "file": "licenses/CC-BY-3.0.txt",
+      "bytes": 19467,
+      "sha256": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+      "runtime": false
+    },
+    {
+      "file": "licenses/CC-BY-SA-3.0.txt",
+      "bytes": 22240,
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f",
+      "runtime": false
+    },
+    {
+      "file": "licenses/CC-BY-SA-4.0.txt",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966",
+      "runtime": false
+    },
+    {
+      "file": "licenses/CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "runtime": false
+    },
+    {
+      "file": "licenses/OGA-BY-3.0.html",
+      "bytes": 40576,
+      "sha256": "97e38592f7d7364c07eade59543a952bd9cb12b55a061955c554f60eb37ac1c3",
+      "runtime": false
+    },
+    {
+      "file": "licenses/OGA-BY-3.0.txt",
+      "bytes": 18213,
+      "sha256": "a88798a4f7ec10432d3ed2bf92e4a7ecae0db1e4b55f29c160cb8689201efdad",
+      "runtime": false
+    },
+    {
+      "file": "originals/aurora-person-repair.png",
+      "bytes": 2109145,
+      "sha256": "06fd7b7175ec28ce87fa80cba4d38b8214dc0d1b736dd418c3b6dbed66f2f661",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/black.png",
+      "bytes": 1550770,
+      "sha256": "2a61cf36f1d5eaf93720d670d6cec8dfeee462f101db9cb4dede8e176921c525",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/calico.png",
+      "bytes": 2438503,
+      "sha256": "3ca806f098836768b4262baa46df474e5b42bcfbb72950e1ec4f5bd178101fdd",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/gray.png",
+      "bytes": 1634375,
+      "sha256": "5745507e51019f2d4206d078b4773f0d6c302af84fbe87dabb99fb9aacca920a",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/orange.png",
+      "bytes": 2453482,
+      "sha256": "7e9a56a9b150e1b943c599c54870dbbc6356c78b5885c6dba0d5dfcaf209eb43",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/tabby.png",
+      "bytes": 1805461,
+      "sha256": "7af654013458c25117f2ad957575cad7627dc46baaadc1c5640ec7793d8cc229",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/tuxedo.png",
+      "bytes": 1730829,
+      "sha256": "b8edd3923cf07dae2476a8dbaa59f5ba08398e380c3dc2b413d938d85207975f",
+      "runtime": false
+    },
+    {
+      "file": "originals/cats/white.png",
+      "bytes": 1869632,
+      "sha256": "aad7621bae458fe46c99afb58d6a5140e59be8f4fbc0fd6bb09af3dfcd869cf6",
+      "runtime": false
+    },
+    {
+      "file": "originals/selected-definitions.json",
+      "bytes": 87553,
+      "sha256": "86b35b370efc42ad8adf34104822c13fc96f42d2415a0b0ab04bd72975fb160b",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/body/body.json",
+      "bytes": 8278,
+      "sha256": "8298ebb76c327c821f466a7bffa2eeccc45af105b8ad0ab18381bd254d942e87",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/feet/boots/feet_boots_revised.json",
+      "bytes": 1870,
+      "sha256": "b909b5a3df838f4ea9056640ea58f81c98466246bf6ea162a2b5d400588d52f0",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/feet/shoes/feet_shoes_basic.json",
+      "bytes": 1961,
+      "sha256": "f5a0a5316a7ac48634a8ee866b13ea988e4c57b9889caaf445fa1718638c9744",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/feet/shoes/feet_shoes_ghillies.json",
+      "bytes": 1351,
+      "sha256": "8351fd4e7316eaaded8aa258bfd5fd903f6b382bd2218f24095510dc76a3814e",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/feet/shoes/feet_shoes_revised.json",
+      "bytes": 1792,
+      "sha256": "776101ab3625950b69c51a0ad8abcae085dc1ec9d220ed57970c85431901a030",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/bob/hair_lob.json",
+      "bytes": 864,
+      "sha256": "d9b5608239e33505b1a331175c87cdbfc4b1ae19ea831f9c36924c5dd9df2604",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/braids/hair_high_ponytail.json",
+      "bytes": 1324,
+      "sha256": "530973368e641b5d3278bdd294d742dee10ab6323c37b58839de4d8a4075ca28",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/curly/hair_curly_short.json",
+      "bytes": 996,
+      "sha256": "bf703e31625d538144b1d3c11bd2a30c440cb8741987b8f8683c0f0f069d7761",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/long/hair_long.json",
+      "bytes": 1040,
+      "sha256": "647e2ebe7f12341c435cfb872ca8150a429cb9395a2dfad31a7f52f40f091ea0",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/pigtails/hair_pigtails_bangs.json",
+      "bytes": 1088,
+      "sha256": "278bc736ee05884e7a1982d035f110e59ee36b21eaf914c26cb0cf0aa4803253",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/short/hair_bangs.json",
+      "bytes": 1047,
+      "sha256": "b035ef0cb57914653fc6884bf4cfd37b54f2d8dfdc21821412a1e921dd8e6f2b",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/hair/short/hair_parted.json",
+      "bytes": 1283,
+      "sha256": "fd7e643f56993d0bcdc7fabf91f3338121cce8dbde479a71fcdc1425d9c48912",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/head/eyebrows/eyebrows_thick.json",
+      "bytes": 1080,
+      "sha256": "e3d8b4c743d75bcfe9242e457b14f4c733df5cb6f3b6ce2496d49a7773d6589e",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/head/eyebrows/eyebrows_thin.json",
+      "bytes": 1072,
+      "sha256": "55704d8a218ec5b526fef142d73ab71caabd3bef2e3e1da34e48adfe66bb0499",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/head/heads/human/heads_human_female.json",
+      "bytes": 1486,
+      "sha256": "4012ebc5cc914b2e0b16a547613c7dcd6fad7a697d7d8785eb6d954c36c1badc",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/headwear/accessories/glasses/facial_glasses_round.json",
+      "bytes": 1533,
+      "sha256": "029b7712c97bbd978e019a293d6da3f465deb564c5fe82b07ec9cf5b07fe737a",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/headwear/coverings/headbands/hat_headband_hairtie.json",
+      "bytes": 1121,
+      "sha256": "cb03dbca73e44d036c9b732b9f0ff80b9658622721244eb1f9e02b4e0328e9ea",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/headwear/coverings/hoods/hat_hood_cloth.json",
+      "bytes": 1226,
+      "sha256": "9425e094dba5fe8cc7bf206326d9db3a5070022a2a0dfa1bafebad32bada30dc",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/headwear/hats/caps/hat_cap_bonnie.json",
+      "bytes": 1325,
+      "sha256": "36cdea134b02310a77d4373f503952ce2c045b0f0294fdda5e7f2e636f595b3d",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/headwear/neck/neck_scarf.json",
+      "bytes": 1025,
+      "sha256": "8ca8419b5ca7451ff8573a764a58f98b6143a3bbf1e4b9fbfd00440f3489c893",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/pants/legs_formal.json",
+      "bytes": 2513,
+      "sha256": "32947567878b1a7716458b972082a3b266b0bf86ec6d36fc8e102c66aee971ab",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/pants/legs_pantaloons.json",
+      "bytes": 2388,
+      "sha256": "a36d28194b48a59bcf765e42d109540425227698e58ce192308e88f2a9f8fab2",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/pants/legs_pants.json",
+      "bytes": 2372,
+      "sha256": "91f0a9f9d3661aafa865a57448f9c72d9b957e35a5cae512cc2a84142327e896",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/pants/legs_pants2.json",
+      "bytes": 1844,
+      "sha256": "db66d2871acaa4920d6192dba518d4cacb1104c2be87286f81e2225a85560f76",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/shorts/legs_shorts.json",
+      "bytes": 1916,
+      "sha256": "242ccffc1f067e194c7946d17601b7f5e0d50dfb645b8d19e9926132ef3da2fc",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/skirts/legs_skirt_belle.json",
+      "bytes": 1109,
+      "sha256": "d10d638294c2d1f6cefd5df91988bac4bef45b77bbd713bc1f3424c6c06adfa6",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/legs/skirts/legs_skirts_plain.json",
+      "bytes": 1132,
+      "sha256": "3b8204cbdba1f9297ecaa4d6dddbae77fe32b580d4710cdf7e954f1566081db8",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/backpack/backpack.json",
+      "bytes": 1001,
+      "sha256": "92223f2b62a03d69720574008eea80a88444acfc72ab9cf9319986d0a1b7d35f",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2.json",
+      "bytes": 1334,
+      "sha256": "7bac8caeedf738b18c5925be1efd8b9799a9f45f3e82b1963750ac589f6b9f24",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2_buttoned.json",
+      "bytes": 1378,
+      "sha256": "dd4d5805d0f303401bc6bdf388b6bcae55efc4588454ba23f5f9df18fb4ca84b",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2_cardigan.json",
+      "bytes": 1365,
+      "sha256": "215bb4e4e4f2926e491f6e5ad744c7962f75f44f935379b02a39b54fbc949422",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/shirts/longsleeve/torso_clothes_longsleeve2_vneck.json",
+      "bytes": 1363,
+      "sha256": "5a1e0c0268bd147743e96c821804c021273d7ebd8011437b91134ab57d73608f",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/shirts/shortsleeve/torso_clothes_tshirt.json",
+      "bytes": 1312,
+      "sha256": "1d9cc905cf914473d88367c31c1d31065a4600bb840c8c43c956f19f05acbc26",
+      "runtime": false
+    },
+    {
+      "file": "originals/sheet_definitions/torso/shirts/sleeveless/torso_clothes_sleeveless2_cardigan.json",
+      "bytes": 1356,
+      "sha256": "5cbfe36a7ad7ff5aa2fa5df6907023f0de26d6744fa5a3b3bfb504afbe3b92b4",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/backpack/backpack/female/walk/white.png",
+      "bytes": 1144,
+      "sha256": "0b6fcad5f2de9c5fd84726976da5dc82b1fba0c59bfed51380e62241b687f108",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/body/bodies/teen/sit.png",
+      "bytes": 7753,
+      "sha256": "36ef39826d334e21ee932c80d305b943abb9ed9596f0ac70ee0435bc73d0e5bb",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/body/bodies/teen/slash.png",
+      "bytes": 9620,
+      "sha256": "f12f140dc74342008a3f6208f60403705e41a694fa66ecfcac4a8e321a82a32d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/body/bodies/teen/walk.png",
+      "bytes": 13268,
+      "sha256": "822b2ac63b6a648233b5878277bee5fcc331acce26d1d8ec24800fdafe3a4a34",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/eyes/eyebrows/thick/adult/sit.png",
+      "bytes": 464,
+      "sha256": "daa07df3b1e0b69a16742d0ef184b4a56dcdb56fbb14ff07871bd27d0162f367",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/eyes/eyebrows/thick/adult/slash.png",
+      "bytes": 535,
+      "sha256": "93da13f0cfcfb789bedd0f100aa9a40df2f77035903b756b465eab67d2b85ffb",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/eyes/eyebrows/thick/adult/walk.png",
+      "bytes": 535,
+      "sha256": "cc232732bf5270a9bd5c7b7868ebafac40f939414cbadaba9a75eccc7b20c01b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/eyes/eyebrows/thin/adult/sit.png",
+      "bytes": 425,
+      "sha256": "fadbbcfa742b462b52f91d5c367e2c989544b8c3a3efd97fefa8886f99975e2a",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/eyes/eyebrows/thin/adult/slash.png",
+      "bytes": 463,
+      "sha256": "ce56442a0bda90be35d44bf3d923b4acbd758a3148f6e99f26e0d8bb4324679e",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/eyes/eyebrows/thin/adult/walk.png",
+      "bytes": 444,
+      "sha256": "0f97688c229faad3a3e5f7e8e2ab7d539627f2182f122c7abf5917a16fe70a7b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/facial/glasses/round/adult/sit.png",
+      "bytes": 640,
+      "sha256": "b8877cd161ac5215beffba6a196ff0e6174ff388f94700036f55d90a5a5a345d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/facial/glasses/round/adult/slash.png",
+      "bytes": 773,
+      "sha256": "9c8ce79cb256b239a67f709a9cdd7c8c95e7b3a663ebace4371fd30593c27160",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/facial/glasses/round/adult/walk.png",
+      "bytes": 704,
+      "sha256": "b7feff84cf5f1db801b1b54921bef07ce7bcd9a80c5eab28c4dd3d3e1360b11f",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/boots/revised/thin/sit.png",
+      "bytes": 2073,
+      "sha256": "a23ad87ad387338ff179d1efc6b792a3d63401039fa372c131f5f8e44395c2ea",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/boots/revised/thin/slash.png",
+      "bytes": 2764,
+      "sha256": "08ade41223a39933f3d0e89a095cf471bfd669f3a04eb1f240a623e9f7d6b1d4",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/boots/revised/thin/walk.png",
+      "bytes": 5208,
+      "sha256": "0d7291b72beb5336b047f15a29fcda00988c389b0f5875b8274f460c8ff0bdd8",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/basic/thin/sit.png",
+      "bytes": 2103,
+      "sha256": "ca6e1877e96c952ce1c2ae95436b3370797ddca0f0847461f2e9dcd2957dbb4e",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/basic/thin/slash.png",
+      "bytes": 723,
+      "sha256": "41a4e670a5c1dd36579bf4109ff35162315f49658ceec6f606c7448458f7001a",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/basic/thin/walk.png",
+      "bytes": 4702,
+      "sha256": "b8cb7d702e03637a9207b3544a20909a287e1bde93b4208a6544a0b2b9d3c12a",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/ghillies/thin/sit.png",
+      "bytes": 1186,
+      "sha256": "6cc9aaa8ace35bff882befa2347ec9662d407a2137172235d40145d59fa48e3d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/ghillies/thin/slash.png",
+      "bytes": 1798,
+      "sha256": "807623cfdd86f278f1b13d8b8fed5e1da492e8bdeb23da16765be74642f8efa7",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/ghillies/thin/walk.png",
+      "bytes": 3213,
+      "sha256": "72b9041945608008f5bc5c63b36aba2dbc661da221e21fe16ac6bc5f44b99450",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/revised/thin/sit.png",
+      "bytes": 1360,
+      "sha256": "fc8ffa90ad8825a2a33692678c5bfbe6fabca6348a031169c07cd6d8f235e2dc",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/revised/thin/slash.png",
+      "bytes": 1765,
+      "sha256": "fa286e6d101fd58a7ec8f99a95bd3a78f7a4f3f78fb7c018e471403b9316273d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/feet/shoes/revised/thin/walk.png",
+      "bytes": 4076,
+      "sha256": "5e19a1e69411c93de00b8021ecdced45136a7b04c332e493a0341a82ecce44f6",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/bangs/adult/sit.png",
+      "bytes": 3664,
+      "sha256": "196fbaa329aeec7ffcf809c637b8fcd23f82ec4bfa700c1997d7ad9c7e917a31",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/bangs/adult/slash.png",
+      "bytes": 4142,
+      "sha256": "c7b69e8c93d65cb8247a5c1205f7601a4726ebd7f662b8d0ee94ca1a2085f8be",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/bangs/adult/walk.png",
+      "bytes": 4649,
+      "sha256": "4a651dd4a38627a2efd176a65fdc2027e220643136426dec292c8bcaa00e3280",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/curly_short/adult/sit.png",
+      "bytes": 2817,
+      "sha256": "2eba97c76c47e6d441cb0a74cb56990b04c874dc655a165bb957de7317c447c2",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/curly_short/adult/slash.png",
+      "bytes": 2546,
+      "sha256": "189c64084bd8651ab7d770b81cf491c96ee760742c70ae10d49c5e63df679b8d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/curly_short/adult/walk.png",
+      "bytes": 1857,
+      "sha256": "aca65f3f0e4c16ae936a9ed5aa78ffe439cc8f6abc9df79cbe796bae308e7317",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/high_ponytail/adult/bg/sit.png",
+      "bytes": 819,
+      "sha256": "2b57d82cbebc1790fa045c0b5481fdf000a3e2e632a4940d34507cf7b4d84d68",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/high_ponytail/adult/bg/slash.png",
+      "bytes": 1092,
+      "sha256": "d6ab1f07f05711eda5de6952dffa60a8218c9cd37e6791060a6cf80f661785f6",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/high_ponytail/adult/bg/walk.png",
+      "bytes": 1414,
+      "sha256": "4d0375e9b3ffae7658e50875e981b15bc564c29b5c726a825c16efba7148d6c0",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/high_ponytail/adult/fg/sit.png",
+      "bytes": 3269,
+      "sha256": "9cccb3a8ef56ccf0020fd642caf4aabd2a4cedb282819134ac10e4915413bcdd",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/high_ponytail/adult/fg/slash.png",
+      "bytes": 4002,
+      "sha256": "9b2bfb30bc6b7b94a3a1f58c03be4a0130e8e16df7dd7eabea5f975bad667a24",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/high_ponytail/adult/fg/walk.png",
+      "bytes": 4599,
+      "sha256": "c5df6bfa38dafbae8b985a1fa7b81acf6d36e079225b2f540fa59f0a76d3145b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/lob/adult/sit.png",
+      "bytes": 3915,
+      "sha256": "bf4f4079e6a33cc9f014be245f3003c59ba84e85e68876de5604bc4ab044a4c7",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/lob/adult/slash.png",
+      "bytes": 4643,
+      "sha256": "5ee95253fb684adddf8d741209f40377853d2ac58caf614b36fd929261c1fe92",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/lob/adult/walk.png",
+      "bytes": 5270,
+      "sha256": "bd4543642b80fc92cb945bc67f2c434d8872ee4921eb01e7ca4c4d3358f0102a",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/long/adult/sit.png",
+      "bytes": 4235,
+      "sha256": "23e212d60c06ab55b4c2b09028b95f2e4d9d32d855c9b0549782c48a5acb3559",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/long/adult/slash.png",
+      "bytes": 4960,
+      "sha256": "134b6839643253e631c3adcb351c01489906e26dabdf1a7c1f3dd96ecb8d8bf6",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/long/adult/walk.png",
+      "bytes": 5627,
+      "sha256": "e5017ce13b1788fb70e0268170cebff2819f5dbf3256a108189816b3f219bbb0",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/parted/adult/sit.png",
+      "bytes": 3775,
+      "sha256": "60b9a0839868f47d5762b778a3b32e22053e85711c2d7c1dbc3843d34b98d8de",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/parted/adult/slash.png",
+      "bytes": 4133,
+      "sha256": "8f33b471227be37a071a3ba4fc695ba21e380c94aacf6031cb8cad206e07bb69",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/parted/adult/walk.png",
+      "bytes": 4782,
+      "sha256": "aa86f9c6af54afb0b5ec52417fabf48f8d667a40ab9ccb44c8c46569b085898e",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/pigtails_bangs/adult/sit.png",
+      "bytes": 3526,
+      "sha256": "c27ab41e3e46195150954c283cf13bd8f87808c67eb7849a8b4e2c4079ba225b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/pigtails_bangs/adult/slash.png",
+      "bytes": 4432,
+      "sha256": "bf4decc883a3cbaf0ce45e9d0e879c75a0996a4d5b5f38b30b35acc2c35dcaca",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hair/pigtails_bangs/adult/walk.png",
+      "bytes": 4915,
+      "sha256": "24a5083165dfb265931fe0e8d3a4696b2be228b27cc449404ad1911a399336c7",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/cloth/hood/adult/sit.png",
+      "bytes": 5141,
+      "sha256": "975524bebf1e46e40318d76ee9cd086fabff024efee5bba13b8cd698069a2fd2",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/cloth/hood/adult/slash.png",
+      "bytes": 6375,
+      "sha256": "97bf330847366a36cc773ae88d8b08ff91d3fe1ed610b58299301cd5104fe7e9",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/cloth/hood/adult/walk.png",
+      "bytes": 7041,
+      "sha256": "9fdab38441d1489abfcabfaf87a80ac902179cd1a56efa8d3104344e0f710acb",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/headband/hairtie/adult/sit.png",
+      "bytes": 679,
+      "sha256": "0530648cebdac5d1da1b7646898ac0e702eaafcc0e545a63bb85b588dba68e02",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/headband/hairtie/adult/slash.png",
+      "bytes": 932,
+      "sha256": "faf4c2820c7e168c2086d9755544b9902a9208cd6d114df1f96a3f98a7a7ed4b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/headband/hairtie/adult/walk.png",
+      "bytes": 1290,
+      "sha256": "b1b63055a8612d7161da680c410d9cc4f15f6cecc8f6c98932285047e478952e",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/pirate/bonnie/adult/sit.png",
+      "bytes": 1589,
+      "sha256": "a023178588959e763cb2b783246b9b370be439017fbbe88c580c62a00cf6a539",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/pirate/bonnie/adult/slash.png",
+      "bytes": 1951,
+      "sha256": "a7f0c95538c11396901a2e38e08cdbc2f09404482ce141ef975fbd8a2ea469e6",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/hat/pirate/bonnie/adult/walk.png",
+      "bytes": 1492,
+      "sha256": "1992896448779b3ec180a87ac3039e94dfbccd963e88a4fe66ad40d6a923fe43",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/head/heads/human/female/sit.png",
+      "bytes": 1195,
+      "sha256": "8180341d3c2d7208f01e462fc606a81b8a72edacda6f9161fcd37de79b9af135",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/head/heads/human/female/slash.png",
+      "bytes": 1574,
+      "sha256": "c90885124c21b884eae8e6290f65a8b4554fec08d693b36d3bebe5470f7d11c5",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/head/heads/human/female/walk.png",
+      "bytes": 1613,
+      "sha256": "7ac84c09c9e126e5fd0b648c180901e24ddb116c7965cd3db6f2f653947b90bd",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/formal/thin/sit.png",
+      "bytes": 1999,
+      "sha256": "f0aee637da417b8e7483f8a8be09f2136715ed27edf465ebe40d4d5d23efe468",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/formal/thin/slash.png",
+      "bytes": 1400,
+      "sha256": "c88d86732e7c714600bb8cb8409d07b1e0f72ec550560b73900c9177e801ee3b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/formal/thin/walk.png",
+      "bytes": 2048,
+      "sha256": "3c60f2356bc821d50b7d851a18d2fa45b0976c02a674c656dd7775d69ffceac8",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pantaloons/thin/sit.png",
+      "bytes": 1158,
+      "sha256": "50d2bd607cd6262c7f08179dc822f4e0242e682de207b6b17cc2d6b3f12e6a4e",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pantaloons/thin/slash.png",
+      "bytes": 1697,
+      "sha256": "7e5e37a5a5527be3146a0a580aa7a32a3fe201d06ab55074efce53f34ed63ac6",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pantaloons/thin/walk.png",
+      "bytes": 2682,
+      "sha256": "7e8c2d97e35100a40168c39bafe3bc2e3c1c144dcf4f5ebfa7778403cb19379b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pants/thin/sit.png",
+      "bytes": 1031,
+      "sha256": "82aad1d1c6eb2761d88538552aa2e86ad140108717ea69426e91541f90439535",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pants/thin/slash.png",
+      "bytes": 1462,
+      "sha256": "a164eb1ff0ee774fdeac374b9feadfb224801be8020d5380a649c54741967a81",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pants/thin/walk.png",
+      "bytes": 2177,
+      "sha256": "064ffc33544e67bd13c574fd8b18a82a51e25d77e628f5eeccbc76a8860b2f83",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pants2/thin/sit.png",
+      "bytes": 1068,
+      "sha256": "f99790f1fb19ac3d87a343367378a0f6650f6e1b8c49ad90f0c54d68d79252e8",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pants2/thin/slash.png",
+      "bytes": 4303,
+      "sha256": "7a4cb2a706f430dec7cb9c4d9f6289a8338b7e25b8139375b5f768396fac8f2d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/pants2/thin/walk.png",
+      "bytes": 2442,
+      "sha256": "ec5f085eab4f3cd1088a97bdde9831f24dbd90adaa3bc66c4adf28f5b386d773",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/shorts/shorts/thin/sit.png",
+      "bytes": 729,
+      "sha256": "f06af07a6bade66f895689b74388c3665757b5462b7da1f22f3f42909d18f635",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/shorts/shorts/thin/slash.png",
+      "bytes": 1300,
+      "sha256": "b22dedd0f454cf44e4499be9104b4f0f2f40c120317269ce4edb3d01675aa251",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/shorts/shorts/thin/walk.png",
+      "bytes": 1899,
+      "sha256": "5cecbc6bf4922c65f737e67e2dbb98ca6e154513614d4ce2097abe4aec502ba8",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/skirts/belle/thin/slash.png",
+      "bytes": 4720,
+      "sha256": "1a64614b1a9f823ab4b53e86860abb9d67050172af07db27b1dae4f28af325de",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/skirts/belle/thin/walk.png",
+      "bytes": 5661,
+      "sha256": "0a869f9c858d955cb97b41d06bcfb01ea2eef941e97b2b0d06201f5b70ce8f33",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/skirts/plain/thin/sit.png",
+      "bytes": 4069,
+      "sha256": "1899a72a30368f9c2d7698e53b19f89498c9a00fe5978b9112405ea2ca6accc7",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/skirts/plain/thin/slash.png",
+      "bytes": 3933,
+      "sha256": "bba599b2d8712dee99a302c33a4b71eaff59820ee5900457226477c62280ceee",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/legs/skirts/plain/thin/walk.png",
+      "bytes": 6239,
+      "sha256": "1b503548b639dc0913052831de2e89ca389cbb62784347b1665362f8ae58093d",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/neck/scarf/sit.png",
+      "bytes": 1960,
+      "sha256": "142cf1812a2ce24bab3462e102f786e20968150fcca40a7aed46bdd6299fed79",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/neck/scarf/slash.png",
+      "bytes": 2543,
+      "sha256": "6a428e6f7bbeabdf2309d657a56ad03b541d79a98ce82f5b8cf2ebc7736aebc9",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/neck/scarf/walk.png",
+      "bytes": 2881,
+      "sha256": "aff4cd6233d0b3d3821272fb7834783bd9382220fa80880d8212d56659ef5ca3",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2/teen/sit.png",
+      "bytes": 1341,
+      "sha256": "3d25916c17176bf0351e2772f686ff784f4da5ce13d3192f027e004ea792cfe7",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2/teen/slash.png",
+      "bytes": 2337,
+      "sha256": "ef2167f2f76ab9a83fb75fb57dd3c22f4e7d8a90f3155dd465050e4e8da5f63c",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2/teen/walk.png",
+      "bytes": 2772,
+      "sha256": "b56d4d70cdf3adc38520f461da8047054163ff12dac4e0a431685a80925a0bd9",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_buttoned/teen/sit.png",
+      "bytes": 1356,
+      "sha256": "07969741702abc87db5071223792fa98b9fc2561d95c90981e1baf3ee38cadfd",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_buttoned/teen/slash.png",
+      "bytes": 2373,
+      "sha256": "845948d6892f31a68664b44addab98a08c5a4d65600948888e0a73647da2d579",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_buttoned/teen/walk.png",
+      "bytes": 2853,
+      "sha256": "5967aa2c2697c6dd4b85ca51bf32efd644f04399e0aaac4657588298ba6cc370",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_cardigan/teen/sit.png",
+      "bytes": 1364,
+      "sha256": "e2c04b584849a6f7b64788d1c2c0597942b737004d4c43cb8ced29c42f720b72",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_cardigan/teen/slash.png",
+      "bytes": 5834,
+      "sha256": "9b813b5169646acf89afd2d291693d0be290aa446eb4a7382926726de23fdc12",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_cardigan/teen/walk.png",
+      "bytes": 2805,
+      "sha256": "ae902d7d1e98445bb6fb7a2ddb0e9a2861ab314fd84235429198b734d3746cff",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_vneck/teen/sit.png",
+      "bytes": 1355,
+      "sha256": "558e022a6577a8400a693efc1c3f87e445f778a08414395d7e2463b4d34f3021",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_vneck/teen/slash.png",
+      "bytes": 2400,
+      "sha256": "e603e3d66ff332549a5813ea0ddcc285de35014325ccc4c8ab9e2599fdc228f1",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/longsleeve/longsleeve2_vneck/teen/walk.png",
+      "bytes": 2839,
+      "sha256": "f50fb8d97c1d101ac16d5a113cabcc63a64a2f91efe0c186ec566583cd849742",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/shortsleeve/tshirt/teen/sit.png",
+      "bytes": 1181,
+      "sha256": "e79f4f9fe04c1fc8f2ff5d75a34fd028792f963d12a410f16c63b3de0b08be9f",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/shortsleeve/tshirt/teen/slash.png",
+      "bytes": 1956,
+      "sha256": "ee77d64723a56923f36d0c72b41c3868dab9a253b95a67941b120dd3b216bcb3",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/shortsleeve/tshirt/teen/walk.png",
+      "bytes": 2214,
+      "sha256": "ab54f0736a8781821e84997a0a5108ef1261bb337c578c65eac62794dfb1347b",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/sleeveless/sleeveless2_cardigan/teen/sit.png",
+      "bytes": 2503,
+      "sha256": "8373d47fb8e02edf0758367f553f285e77248ffec17f3b08139d3c85b2842b59",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/sleeveless/sleeveless2_cardigan/teen/slash.png",
+      "bytes": 3463,
+      "sha256": "a235c1c2d4800add195028a62b55a54a518577da99d6210cb381337265ecf27a",
+      "runtime": false
+    },
+    {
+      "file": "originals/spritesheets/torso/clothes/sleeveless/sleeveless2_cardigan/teen/walk.png",
+      "bytes": 4005,
+      "sha256": "d30ca884131009c14deaa70bd6f1d3d6c49e42cb224297efca718f4d64272169",
+      "runtime": false
+    },
+    {
+      "file": "parts/backpack.webp",
+      "bytes": 1120,
+      "sha256": "ea88b39d660d23125114e3c68929af76ba6d6f67c9d70e16e825c1213b77474e",
+      "runtime": true
+    },
+    {
+      "file": "parts/body.webp",
+      "bytes": 7282,
+      "sha256": "d22be64f6822d3fe4f71e357b2a0d49faa2041499412a9d3fae2594aa8636ff1",
+      "runtime": true
+    },
+    {
+      "file": "parts/boots.webp",
+      "bytes": 2520,
+      "sha256": "e391fced911ac66fa9a20267478a7e3f1bbe7a1756da3c1d50e7b795baa1fe11",
+      "runtime": true
+    },
+    {
+      "file": "parts/brow-thick.webp",
+      "bytes": 256,
+      "sha256": "d89bb7385e0357cf6880e1cc36d2b8d9d726b2d30ff3870c84c290a129972c42",
+      "runtime": true
+    },
+    {
+      "file": "parts/brow-thin.webp",
+      "bytes": 190,
+      "sha256": "58c2b9dca838edd078ac88f602a6b53c0b5fb579624ae8b985b3e0b6c810bf26",
+      "runtime": true
+    },
+    {
+      "file": "parts/canvas.webp",
+      "bytes": 1518,
+      "sha256": "6adad803f4330b245ba897d690a55edf265bdb0e514868a20ea55204ae150534",
+      "runtime": true
+    },
+    {
+      "file": "parts/cargo.webp",
+      "bytes": 3724,
+      "sha256": "8e7788f17a1e401692f859340397e6bcac7c01afed1640344ee3abd37b17e785",
+      "runtime": true
+    },
+    {
+      "file": "parts/casual.webp",
+      "bytes": 3368,
+      "sha256": "6862fbf800778fe65c67b16bc84ee832e08304288c29db2f7738224f0299fbba",
+      "runtime": true
+    },
+    {
+      "file": "parts/curly.webp",
+      "bytes": 3400,
+      "sha256": "d8db77e056ba3c3e359a439d77a5de5a216c6a0b641d3dd615998e042e41e372",
+      "runtime": true
+    },
+    {
+      "file": "parts/fringe.webp",
+      "bytes": 2588,
+      "sha256": "4800c8a4a72b994c446a7ae3d56873cb026267be4e1c1ae72aa9c6dde7e94a5f",
+      "runtime": true
+    },
+    {
+      "file": "parts/glasses.webp",
+      "bytes": 662,
+      "sha256": "f47d39ec6bccb3d7cf1e6743a80121a161d95da6bb5799a7a60d5ba1b59fd3c3",
+      "runtime": true
+    },
+    {
+      "file": "parts/hairclip.webp",
+      "bytes": 538,
+      "sha256": "a1f3582336d3c990952243a6745b9a7a4066b0b25b1f35323bec47b35a930f78",
+      "runtime": true
+    },
+    {
+      "file": "parts/hat.webp",
+      "bytes": 2268,
+      "sha256": "84913b5d0236e2a4496145cc29a8b3761a8709574439340a68846dd16c105cd6",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-bright-calm.webp",
+      "bytes": 2156,
+      "sha256": "29ff12f1998be7fec072dd2d27adb09ca7f5303be65872ddf1bdb9d0125fced0",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-bright-focused.webp",
+      "bytes": 2218,
+      "sha256": "06153771c275e548b7baf8bc584dd029678e28d2df54fb59ce2ae561d29c4105",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-bright-smile.webp",
+      "bytes": 2210,
+      "sha256": "9c1fce066aeb1dd8fcf2cba097e89a47d53471029e9b6c3d890739c1c10bc115",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-narrow-calm.webp",
+      "bytes": 2130,
+      "sha256": "fef593217b9af60957bfebc464e8f151e38506efb052acca09013aa8be194f07",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-narrow-focused.webp",
+      "bytes": 2190,
+      "sha256": "742f8a5f4d02e43b35ef71a3e98f2499b230240086373a93ba09086d10efd617",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-narrow-smile.webp",
+      "bytes": 2186,
+      "sha256": "2164cc22c639d88297e3a2b43bc3a0881a3cb4e1973c7425869aa1581498c015",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-round-calm.webp",
+      "bytes": 2138,
+      "sha256": "09cda20786d61b473d984538af4a902cb19e78743648352870d5145e1c28df9d",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-round-focused.webp",
+      "bytes": 2198,
+      "sha256": "0b9390d4d332a2e9c3079917965c7bcd7077952ac51dedce312497d20d315e6f",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-round-smile.webp",
+      "bytes": 2194,
+      "sha256": "40fdb430b833e16ad68a6d97480e6543596ab75d4e399bfbb164fb16480a88a0",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-soft-calm.webp",
+      "bytes": 2152,
+      "sha256": "be87d3579f89f979bc8db9dc21fe6723ea11faf19a6753fcc516d85534eaa22f",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-soft-focused.webp",
+      "bytes": 2216,
+      "sha256": "cbd6973d0d4fad45f1ab79b4f8c0a48059ef4f4b08a40ea8ef3418d73cffac35",
+      "runtime": true
+    },
+    {
+      "file": "parts/head-soft-smile.webp",
+      "bytes": 2212,
+      "sha256": "83539264c5e9394a8d82a4be1ab716024457f948dc04ea6189bb3b2199ee1567",
+      "runtime": true
+    },
+    {
+      "file": "parts/head.webp",
+      "bytes": 2138,
+      "sha256": "09cda20786d61b473d984538af4a902cb19e78743648352870d5145e1c28df9d",
+      "runtime": true
+    },
+    {
+      "file": "parts/hood.webp",
+      "bytes": 4560,
+      "sha256": "3c4bb325d26379a525442e6826f60534cfcc084a409dd1dff15ccce09a90bd5f",
+      "runtime": true
+    },
+    {
+      "file": "parts/hoodie.webp",
+      "bytes": 4210,
+      "sha256": "5750ed1892226924530a54e39c56fb91dd83dd6cc522b3ea550ac1e6f17fffaf",
+      "runtime": true
+    },
+    {
+      "file": "parts/jacket.webp",
+      "bytes": 3474,
+      "sha256": "991962eca127af5417e2ed64bdca04607319c7cc5ecb294da704c4f007c26ddd",
+      "runtime": true
+    },
+    {
+      "file": "parts/jeans.webp",
+      "bytes": 3682,
+      "sha256": "4aaaded2255bc5419b4040c7d7b5d410673d011fd3c8ba29de3987d1172c3034",
+      "runtime": true
+    },
+    {
+      "file": "parts/knit.webp",
+      "bytes": 3556,
+      "sha256": "c91fb79e9ddd8821992d441db81a95afa4cf7c9bee68bf8fa0a74e871fd9f118",
+      "runtime": true
+    },
+    {
+      "file": "parts/leather.webp",
+      "bytes": 1972,
+      "sha256": "22a6c6f6cd37862971ae8c029ca6c069ca7194178bba9a9c74c0199741a17596",
+      "runtime": true
+    },
+    {
+      "file": "parts/long.webp",
+      "bytes": 3070,
+      "sha256": "d7f89c42287262041c844b3b4f3319a2657eb60cc409b69b675a6daf79555a6a",
+      "runtime": true
+    },
+    {
+      "file": "parts/longskirt.webp",
+      "bytes": 2542,
+      "sha256": "9db9f1d5a4e9ceedcfafbe5733ec4a31f73cf24dce372886d3fbcf4030546777",
+      "runtime": true
+    },
+    {
+      "file": "parts/medium.webp",
+      "bytes": 2794,
+      "sha256": "650a06c904ade617cdc897ddb28ab49e5a98c3599e4fca6bf28f8e302fbe221e",
+      "runtime": true
+    },
+    {
+      "file": "parts/plaid.webp",
+      "bytes": 5120,
+      "sha256": "fa820f0f59464dd611a37dd86eb6a8de823ff6e92823af820019450e6db3f4f2",
+      "runtime": true
+    },
+    {
+      "file": "parts/ponytail-rear.webp",
+      "bytes": 568,
+      "sha256": "c7f2fa47922b58e171cff3887cbbc7f72e15ad4c0640ef23957074fbff9fcd96",
+      "runtime": true
+    },
+    {
+      "file": "parts/ponytail.webp",
+      "bytes": 2282,
+      "sha256": "4338eaf288aa14ee8fd12f4b47ef95c4e9d41350d097d3e77a31ae1112ffc5a6",
+      "runtime": true
+    },
+    {
+      "file": "parts/scarf.webp",
+      "bytes": 1388,
+      "sha256": "b930043630e0a62a4d14103ca67049098eefc96d5069b77c08557a6926e667cc",
+      "runtime": true
+    },
+    {
+      "file": "parts/shirt.webp",
+      "bytes": 3560,
+      "sha256": "9f1472bc8fd0bd1382b7b844672fc430253144badadd9977670b05b6d7a79c49",
+      "runtime": true
+    },
+    {
+      "file": "parts/short.webp",
+      "bytes": 2404,
+      "sha256": "6b940a3cc1c2b1a84244bb42e988122208e6f0bade0b6662690c095f9982c61a",
+      "runtime": true
+    },
+    {
+      "file": "parts/shorts.webp",
+      "bytes": 2128,
+      "sha256": "6d4ed8ff8fdd0591b1fa34668fe0a6c450018494e133b38636839dcd99751591",
+      "runtime": true
+    },
+    {
+      "file": "parts/shortskirt.webp",
+      "bytes": 2966,
+      "sha256": "b9d447c739a2180223d0cabe65a075e69f7f287e1abda59e645b746922385ece",
+      "runtime": true
+    },
+    {
+      "file": "parts/sneakers.webp",
+      "bytes": 1820,
+      "sha256": "3784100e5401c75ed8deca2a35055d10d8b23af8fbe58b3968f8f9984657742a",
+      "runtime": true
+    },
+    {
+      "file": "parts/sweater.webp",
+      "bytes": 3428,
+      "sha256": "8f60a9b3d55bc0ccf242b339a348769ee78fa1b4d738a86322538fa780a0e0f8",
+      "runtime": true
+    },
+    {
+      "file": "parts/tshirt.webp",
+      "bytes": 2696,
+      "sha256": "5ab7da68a78914a8084f21cc762b392bf3c43f5d84c7c2b2df00db4fd240673b",
+      "runtime": true
+    },
+    {
+      "file": "parts/twintails.webp",
+      "bytes": 2592,
+      "sha256": "02a129574616ee17c0216cee572f4efefe7e2657624328c596163f2a30dea8ae",
+      "runtime": true
+    },
+    {
+      "file": "parts/vest.webp",
+      "bytes": 2110,
+      "sha256": "61856613c5770043e697898b3b248a293ffb432bde0eb27515368964c119134c",
+      "runtime": true
+    },
+    {
+      "file": "parts/wide.webp",
+      "bytes": 3016,
+      "sha256": "0339d9ab56a4b6fe5650872595860831406198e431e6f110f520cd7b58367886",
+      "runtime": true
+    }
+  ]
+}

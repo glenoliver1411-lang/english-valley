@@ -21,13 +21,13 @@ for revision in ([] if args.preview else ['origin/main','origin/main^']):
 # Never remove the older content-hashed files when installing a new graph.
 formal_gallery=args.review or ('candy-scenes-review' if (dist/'candy-scenes-review').is_dir() else 'home-release-review')
 formal_review=not args.preview and (dist/formal_gallery).is_dir()
-if formal_review or args.preview in ('play-preview','v6-art-preview','reference-art-preview','florist-original-preview','florist-skill-preview','world-garden-preview','daylight-preview','aurora-art-preview','home-stars-preview','forest-garden-preview'):
+if formal_review or args.preview in ('play-preview','v6-art-preview','reference-art-preview','florist-original-preview','florist-skill-preview','world-garden-preview','daylight-preview','aurora-art-preview','home-stars-preview','forest-garden-preview','identity-preview'):
  # This new preview needs the playable graph and this round's evidence, not
  # copies of every historical art review. Existing hashed files remain safe.
  release=json.loads((dist/'offline-release.json').read_text())
  for name in [*[a['url'] for a in release['assets']],'offline-release.json','sw.js']:
   target=site/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(dist/name,target)
- review={'v6-art-preview':'v6-review','play-preview':'play-review','reference-art-preview':'reference-review','florist-original-preview':'florist-review','florist-skill-preview':'florist-skill-review','world-garden-preview':'world-region-review','daylight-preview':'daylight-review','aurora-art-preview':'aurora-original-review','home-stars-preview':'home-stars-review','forest-garden-preview':'forest-garden-review'}.get(args.preview,formal_gallery)
+ review={'v6-art-preview':'v6-review','play-preview':'play-review','reference-art-preview':'reference-review','florist-original-preview':'florist-review','florist-skill-preview':'florist-skill-review','world-garden-preview':'world-region-review','daylight-preview':'daylight-review','aurora-art-preview':'aurora-original-review','home-stars-preview':'home-stars-review','forest-garden-preview':'forest-garden-review','identity-preview':'identity-review'}.get(args.preview,formal_gallery)
  shutil.copytree(dist/review,site/review,dirs_exist_ok=True)
  if not args.preview and (dist/'flowers-review').is_dir():shutil.copytree(dist/'flowers-review',site/'flowers-review',dirs_exist_ok=True)
 else:
@@ -41,7 +41,7 @@ if source.resolve()!=project:
   if not (project/directory).exists():continue
   if target.exists():shutil.rmtree(target)
   shutil.copytree(project/directory,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
- for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','enter-stage1.html','.gitignore','.env.pwa-preview','.env.gameplay-preview','.env.art-preview','.env.reference-preview','.env.florist-preview','.env.florist-skill-preview','.env.world-preview','.env.daylight-preview','.env.aurora-art-preview','.env.home-stars-preview','.env.forest-garden-preview','.env.full-stage1']:
+ for name in ['package.json','package-lock.json','vite.config.js','index.html','aurora.html','enter-stage1.html','.gitignore','.env.pwa-preview','.env.gameplay-preview','.env.art-preview','.env.reference-preview','.env.florist-preview','.env.florist-skill-preview','.env.world-preview','.env.daylight-preview','.env.aurora-art-preview','.env.home-stars-preview','.env.forest-garden-preview','.env.full-stage1','.env.identity-preview']:
   shutil.copy2(project/name,source/name)
  for item in project.glob('*.md'):shutil.copy2(item,source/item.name)
 (site/'.nojekyll').touch()

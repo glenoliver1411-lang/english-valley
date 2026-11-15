@@ -231,3 +231,59 @@
 - `props.webp` / `props.json`：原画中的秋千绳索/木座、前沿和两条鱼的透明裁切，加上原创幼苗、花瓣、叶片以及局部水面片段。干净背景已去除静态座椅、绳索和鱼，避免重复叠影。
 - 小猫、七套人物服装、成熟花朵及微光复用项目已有本地素材，原来源和许可记录不变。
 - `public/forest-garden-review/` 为真实游戏截图；修改前来自保留的 `0701f29` 对应发行图，人物、视口、时间和花圃状态一致。原画没有冒充实机截图。
+
+
+## 2026-11-15 玩家身份与小猫素材
+
+角色制作使用 Universal LPC 的**美术文件**，没有引入其 GPL 生成器代码。上游仓库与锁定版本：
+https://github.com/LiberatedPixelCup/Universal-LPC-Spritesheet-Character-Generator/tree/04140673ec02906f8233523639733c83690df750 。
+逐项作者、原素材 URL、所选许可证及修改说明见 [CREDITS.json](src/assets/identity/CREDITS.json)；原始 PNG、定义 JSON 与 SHA-256 均随源码保存。不能把 LPC 或 OpenGameArt 整个平台视为 CC0。
+
+| 部件 | 所选许可证 | 作者（完整名单见上述 JSON） |
+|---|---|---|
+| body | OGA-BY 3.0 | bluecarrot16, Evert, TheraHedwig, Benjamin K. Smith (BenCreating), MuffinElZangano, Durrani, Pierre Vigier (pvigier), Eliza Wyatt (ElizaWy), Matthew Krohn (makrohn), Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| head | OGA-BY 3.0 | bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike) |
+| brow-thin | OGA-BY 3.0 | ElizaWy |
+| brow-thick | OGA-BY 3.0 | ElizaWy |
+| short | CC-BY-SA 3.0 | JaidynReiman, Joe White, Manuel Riecke (MrBeast) |
+| medium | CC0 | bluecarrot16 |
+| long | CC-BY-SA 3.0 | JaidynReiman, Manuel Riecke (MrBeast) |
+| curly | OGA-BY 3.0 | ElizaWy |
+| ponytail | OGA-BY 3.0 | JaidynReiman, ElizaWy, bluecarrot16 |
+| ponytail-rear | OGA-BY 3.0 | JaidynReiman, ElizaWy, bluecarrot16 |
+| twintails | CC-BY-SA 3.0 | Emilio J. Sanchez-Sierra, bluecarrot16 |
+| fringe | CC-BY-SA 3.0 | JaidynReiman, Manuel Riecke (MrBeast) |
+| shirt | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| tshirt | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| knit | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| sweater | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| jacket | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| vest | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| jeans | OGA-BY 3.0 | bluecarrot16, JaidynReiman, ElizaWy, Joe White, Matthew Krohn (makrohn), Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| casual | OGA-BY 3.0 | bluecarrot16, JaidynReiman, ElizaWy, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| casual | OGA-BY 3.0 | bluecarrot16, JaidynReiman, ElizaWy, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| wide | OGA-BY 3.0 | Nila122, JaidynReiman, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| wide | OGA-BY 3.0 | Nila122, JaidynReiman, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| cargo | OGA-BY 3.0 | ElizaWy, JaidynReiman, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| shorts | OGA-BY 3.0 | ElizaWy, JaidynReiman, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| longskirt | OGA-BY 3.0 | bluecarrot16, Matthew Krohn (makrohn), Lanea Zimmerman (Sharm) |
+| shortskirt | OGA-BY 3.0 | bluecarrot16, Pierre Vigier (pvigier), Johannes Sjölund (wulax), Ahmad3366, JaidynReiman |
+| sneakers | OGA-BY 3.0 | ElizaWy, JaidynReiman |
+| leather | OGA-BY 3.0 | JaidynReiman, bluecarrot16, Johannes Sjölund (wulax) |
+| leather | OGA-BY 3.0 | JaidynReiman, Joe White, Johannes Sjölund (wulax) |
+| canvas | CC-BY-SA 3.0 | bluecarrot16, JaidynReiman, Thane Brimhall (pennomi), laetissima, Matthew Krohn (makrohn) |
+| boots | OGA-BY 3.0 | ElizaWy, JaidynReiman, Stephen Challener (Redshrike), Johannes Sjölund (wulax) |
+| glasses | CC-BY-SA 3.0 | bluecarrot16, Thane Brimhall (pennomi), laetissima |
+| hat | OGA-BY 3.0 | bluecarrot16, JaidynReiman |
+| scarf | CC-BY-SA 3.0 | Nila122, JaidynReiman, Johannes Sjölund (wulax), Stephen Challener (Redshrike) |
+| backpack | CC-BY-SA 3.0 | Benjamin K. Smith (BenCreating), macmanmatty |
+| hood | OGA-BY 3.0 | Johannes Sjölund (wulax), JaidynReiman |
+| hairclip | OGA-BY 3.0+ | JaidynReiman |
+
+本项目的组合角色衍生图集以 **CC-BY-SA 4.0** 提供，许可证副本位于 `src/assets/identity/licenses/`；原始 CC-BY-SA 3.0 素材仍按其原许可保留，衍生版本依其适用的后续版本条款使用 4.0。其他 OGA-BY、CC-BY、CC0 部件的作者及其许可同样随图集保留。源图的裁切、动作帧选择、脚点对齐、调色、格纹变体、衣裤延长、坐姿适配与小配饰锚点见 `atlas.json` 和 `tools/prepare-identity-art.py`。没有宣称把所有第三方原作改为本项目原创。
+
+七种小猫由本轮图像生成工具原创制作，非下载的商业游戏角色，亦不宣称为 CC0。保留原始 20 姿态 PNG 与哈希于 `originals/cats/`，运行图集为 `cats/*.webp`（坐下、睡觉、伸展、四向走路）；处理脚本只做透明边缘清理、分帧、统一脚点和像素缩放。项圈/蝴蝶结复用上述有署名的围巾/发带局部，铃铛复用项目原有 atelier 图集。
+
+极光原画只在原人物占据的区域进行局部去人修补：保留图像生成的修补母图、三个精确补丁矩形、原始/结果哈希于 `aurora-repair.json` 和 `originals/aurora-person-repair.png`。原天空、极光、山脉和花海未重绘；原长椅木条裁成 `aurora-bench-front.webp`，实时角色在其后显示。去人底图是原场景的衍生版本，不是新摄影素材。
+
+本轮全部新增文件清单、体积及校验：[ASSET_INVENTORY.json](src/assets/identity/ASSET_INVENTORY.json)。运行时不访问外部素材网站。原始制作 PNG、许可证与测试截图不进入游戏离线包。

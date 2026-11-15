@@ -75,3 +75,7 @@ __pycache__/
 # Original forest-garden paintings and actual mobile review screenshots.
 !src/assets/forest-garden/originals/*.png
 !public/forest-garden-review/*.png
+
+# Attributed modular sprite originals, generated pet masters, and real preview evidence.
+!src/assets/identity/**/*.png
+!public/identity-review/*.webp

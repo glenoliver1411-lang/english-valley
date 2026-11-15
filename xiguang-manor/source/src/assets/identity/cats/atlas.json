@@ -1,0 +1,55 @@
+{
+  "width": 64,
+  "height": 64,
+  "foot": [
+    32,
+    54
+  ],
+  "columns": 4,
+  "frames": 20,
+  "sources": [
+    {
+      "coat": "white",
+      "file": "originals/cats/white.png",
+      "sha256": "aad7621bae458fe46c99afb58d6a5140e59be8f4fbc0fd6bb09af3dfcd869cf6",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    },
+    {
+      "coat": "orange",
+      "file": "originals/cats/orange.png",
+      "sha256": "7e9a56a9b150e1b943c599c54870dbbc6356c78b5885c6dba0d5dfcaf209eb43",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    },
+    {
+      "coat": "tuxedo",
+      "file": "originals/cats/tuxedo.png",
+      "sha256": "b8edd3923cf07dae2476a8dbaa59f5ba08398e380c3dc2b413d938d85207975f",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    },
+    {
+      "coat": "calico",
+      "file": "originals/cats/calico.png",
+      "sha256": "3ca806f098836768b4262baa46df474e5b42bcfbb72950e1ec4f5bd178101fdd",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    },
+    {
+      "coat": "black",
+      "file": "originals/cats/black.png",
+      "sha256": "2a61cf36f1d5eaf93720d670d6cec8dfeee462f101db9cb4dede8e176921c525",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    },
+    {
+      "coat": "gray",
+      "file": "originals/cats/gray.png",
+      "sha256": "5745507e51019f2d4206d078b4773f0d6c302af84fbe87dabb99fb9aacca920a",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    },
+    {
+      "coat": "tabby",
+      "file": "originals/cats/tabby.png",
+      "sha256": "7af654013458c25117f2ad957575cad7627dc46baaadc1c5640ec7793d8cc229",
+      "origin": "Original image-generation animation painting for Xiguang Manor, 2026-11-15. Not third-party game art; not declared CC0."
+    }
+  ],
+  "preparation": "Original painting cell crops, largest connected alpha component, common scale and foot anchor, nearest-neighbour resampling, lossless WebP. No generated geometric cat bodies."
+}

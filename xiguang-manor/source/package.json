@@ -19,7 +19,8 @@
     "build:aurora:preview": "vite build --mode aurora-art-preview",
     "build:home:stars": "vite build --mode home-stars-preview",
     "build:forest:preview": "vite build --mode forest-garden-preview",
-    "build:stage1": "vite build --mode full-stage1"
+    "build:stage1": "vite build --mode full-stage1",
+    "build:identity:preview": "vite build --mode identity-preview"
   },
   "dependencies": {
     "phaser": "^3.90.0",

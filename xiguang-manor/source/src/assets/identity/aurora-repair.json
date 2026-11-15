@@ -1,0 +1,26 @@
+{
+  "source": "Original user-supplied aurora scene, unchanged outside the listed person repair rectangles",
+  "rectangles": [
+    [
+      375,
+      919,
+      439,
+      973
+    ],
+    [
+      375,
+      983,
+      439,
+      991
+    ],
+    [
+      375,
+      1001,
+      439,
+      1009
+    ]
+  ],
+  "repairSource": "originals/aurora-person-repair.png",
+  "generatedRepairSHA256": "06fd7b7175ec28ce87fa80cba4d38b8214dc0d1b736dd418c3b6dbed66f2f661",
+  "purpose": "Remove embedded person, draw the current saved avatar once and restore original bench slats in front"
+}

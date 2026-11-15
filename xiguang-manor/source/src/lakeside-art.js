@@ -81,7 +81,7 @@ export class LakesideArt {
   const still=this.scene.profile.romance.reducedMotion,awake=this.scene.catAwakeUntil>this.scene.elapsed,cycle=still?0:t%47;
   const pose=awake?'sit':p>.65&&p<.84?'stretch':a.day>.45&&cycle>21&&cycle<25?'stretch':a.day>.45&&cycle>=25&&cycle<36?'sit':'sleep';
   const stretch=pose==='stretch'?Math.sin((p>.65?(p-.65)/.19:(cycle-21)/4)*Math.PI):0,catX=126+offset+(a.day>.6&&cycle>36?Math.sin((cycle-36)*.4)*1.5:0);
-  c.drawImage(this.actors.cat(period,pose),catX,this.h-35+stretch*.3,26,18);
+  c.drawImage(this.actors.cat(period,pose,this.scene.profile),catX,this.h-35+stretch*.3,26,18);
  }
  ambient(c,a,p,t,offset){
   const s=this.scene,still=s.profile.romance.reducedMotion,h=this.h,w=this.w,g=h*.88;
