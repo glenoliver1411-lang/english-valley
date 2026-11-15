@@ -23,6 +23,7 @@ import {PrecacheController,PrecacheRoute} from 'workbox-precaching';
 import {registerRoute} from 'workbox-routing';
 import {clientsClaim} from 'workbox-core';
 import {precacheTraffic} from './precache-traffic.js';
+import {releaseGameDocument} from './release-entry-model.js';
 self.__WB_DISABLE_DEV_LOGS=true;
 const VERSION=__APP_VERSION__,SCOPE=self.registration.scope,PREFIX='xiguang-precache::'+SCOPE+'::',CACHE=PREFIX+VERSION,MARK=new URL('__offline_version__',SCOPE).href;
 const entries=self.__WB_MANIFEST;
@@ -33,6 +34,11 @@ const manifest=[...unique.values()];
 // retain stale CacheStorage.match results after a failed install/re-register;
 // accepting those would skip downloads that the actual release cache lacks.
 const precache=new PrecacheController({cacheName:CACHE,plugins:[precacheTraffic(2),{cachedResponseWillBeUsed:async({request,cacheName})=>{const response=await(await caches.open(cacheName)).match(request);return response?.ok?response:null}}]});precache.addToCacheList(manifest);
+// Installed home-screen shortcuts may retain an older version-named start_url.
+// After the player approves this complete update, route that old document to
+// the current cached release, including when the next launch is offline.
+const gameDocument=releaseGameDocument(VERSION),scopePath=new URL(SCOPE).pathname;
+registerRoute(({request,url})=>VERSION.startsWith('full-stage1')&&request.mode==='navigate'&&url.origin===self.location.origin&&url.pathname.startsWith(scopePath)&&/^game-full-stage1-[a-z0-9-]+\.html$/i.test(url.pathname.slice(scopePath.length))&&url.pathname!==new URL(gameDocument,SCOPE).pathname,({url})=>{const target=new URL(gameDocument,SCOPE);target.search=url.search;return Response.redirect(target.href,302)});
 // The public entry fetches the latest HTML online. The version-named game
 // document avoids stale cached HTML without gating online play on a complete
 // download. Offline uses this release's precached entry.

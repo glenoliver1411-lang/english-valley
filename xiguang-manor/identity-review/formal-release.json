@@ -1,0 +1,83 @@
+{
+  "chromium": {
+    "engine": "chromium",
+    "production": true,
+    "physicalDevice": false,
+    "steps": [
+      "Installed the exact previous formal release under its unchanged scope and old home-screen start URL",
+      "Complete new version waits for approval while old gameplay and save remain active",
+      "Approved update redirects old start URL to the new complete formal document; every existing game-progress field survives",
+      "New editor works in the formal build, preserves owned outfits and changes only identity/cat name",
+      "Whole browser closed: offline old home-screen shortcut redirects to current cached release with saved owner/cat intact",
+      "Original formal root also opens offline; no preview URL is required"
+    ],
+    "errors": [],
+    "before": {
+      "version": "full-stage1-20261114-3",
+      "scope": "http://localhost:5251/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:5251/english-valley/xiguang-manor/::full-stage1-20261114-3",
+      "complete": true,
+      "files": 178,
+      "bytes": 47266875,
+      "cacheEntries": 179,
+      "internalBytes": 64,
+      "missing": [],
+      "missingDetails": []
+    },
+    "after": {
+      "version": "full-stage1-identity-20261115-1",
+      "scope": "http://localhost:5251/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:5251/english-valley/xiguang-manor/::full-stage1-identity-20261115-1",
+      "complete": true,
+      "files": 233,
+      "bytes": 47953223,
+      "cacheEntries": 234,
+      "internalBytes": 73,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "webkit": {
+    "engine": "webkit",
+    "production": true,
+    "physicalDevice": false,
+    "steps": [
+      "Installed the exact previous formal release under its unchanged scope and old home-screen start URL",
+      "Complete new version waits for approval while old gameplay and save remain active",
+      "Approved update redirects old start URL to the new complete formal document; every existing game-progress field survives",
+      "New editor works in the formal build, preserves owned outfits and changes only identity/cat name",
+      "Whole browser closed: offline old home-screen shortcut redirects to current cached release with saved owner/cat intact",
+      "Original formal root also opens offline; no preview URL is required"
+    ],
+    "errors": [],
+    "before": {
+      "version": "full-stage1-20261114-3",
+      "scope": "http://localhost:5252/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:5252/english-valley/xiguang-manor/::full-stage1-20261114-3",
+      "complete": true,
+      "files": 178,
+      "bytes": 47266875,
+      "cacheEntries": 179,
+      "internalBytes": 64,
+      "missing": [],
+      "missingDetails": []
+    },
+    "after": {
+      "version": "full-stage1-identity-20261115-1",
+      "scope": "http://localhost:5252/english-valley/xiguang-manor/",
+      "cache": "xiguang-precache::http://localhost:5252/english-valley/xiguang-manor/::full-stage1-identity-20261115-1",
+      "complete": true,
+      "files": 233,
+      "bytes": 47953223,
+      "cacheEntries": 234,
+      "internalBytes": 73,
+      "missing": [],
+      "missingDetails": []
+    }
+  },
+  "release": "full-stage1-identity-20261115-1",
+  "modelTests": {
+    "passed": 126,
+    "failed": 0
+  }
+}
